@@ -2,13 +2,15 @@
 
 **Proyecto de ingeniería software #1 - MySpot App.**
 
-**Descripcion de la aplicacion:** registro de parqueos y reservacion de espacios registrados para los costarricenses.
+**Descripcion de la aplicacion:** Registro de parqueos y reservacion de espacios registrados para los costarricenses.
 
 Link del repositorio: https://github.com/Marcos-s-c/Proyecto1.git
 
 ---
 
 ## Estructura del repositorio:
+
+---
 
 > ### _/api/_----(relacionado al servidor)
 
