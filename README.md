@@ -1,4 +1,4 @@
-# Proyecto1
+# Proyecto1 - MySpot
 
 Proyecto de ingeniería software #1 - MySpot App.
 
@@ -7,7 +7,7 @@ Descripcion de la aplicacion: registro de parqueos y reservacion de espacios reg
 Link del repositorio: https://github.com/Marcos-s-c/Proyecto1.git
 
 -------------------------------------------------------------------------------------------------------------------------------------
-## Estructura del proyecto carpetas:
+## Estructura del repositorio:
 
 >### */api/*----(relacionado al servidor)
 
