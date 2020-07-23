@@ -12,13 +12,13 @@
 
 ---
 
-> ### _/api/_----relacionado al servidor
+> ### _/api/_---- relacionado al servidor
 
-> ### _/cliente/_----aqui van los casos de usos o nuestra programacion de la pagina agrupadas por carpetas y mas cosas relacionado a la pagina del cliente
+> ### _/cliente/_---- aqui van los casos de usos o nuestra programacion de la pagina agrupadas por carpetas y mas cosas relacionado a la pagina del cliente
 
-> ### _/ficha_tecnica/_----donde hacemos nuestra ficha tecnica en html
+> ### _/ficha_tecnica/_---- donde hacemos nuestra ficha tecnica en html
 
-> ### _/Landing_page/_----aqui va el landing page
+> ### _/Landing_page/_---- aqui va el landing page
 
 ---
 
