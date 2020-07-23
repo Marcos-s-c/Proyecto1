@@ -9,13 +9,13 @@ Link del repositorio: https://github.com/Marcos-s-c/Proyecto1.git
 -------------------------------------------------------------------------------------------------------------------------------------
 ## Estructura del proyecto carpetas:
 
->### 1. /api/----(relacionado al servidor)
+>### * /api/----(relacionado al servidor)
 
->### 1. /cliente/----(aqui van los casos de usos o nuestra programacion de la pagina agrupadas por carpetas y mas cosas relacionado a la pagina del cliente)
+>### * /cliente/----(aqui van los casos de usos o nuestra programacion de la pagina agrupadas por carpetas y mas cosas relacionado a la pagina del cliente)
 
->### 1. /ficha_tecnica/----(donde hacemos nuestra ficha tecnica en html)
+>### * /ficha_tecnica/----(donde hacemos nuestra ficha tecnica en html)
 
->### 1. /Landing_page/----(aqui va el landing page)
+>### * /Landing_page/----(aqui va el landing page)
 -------------------------------------------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------------------------------------------
