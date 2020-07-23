@@ -20,9 +20,9 @@ Existe un css general para que tengamos el mismo estilo y solo lo llamemos
 
 /cliente/assets/css/styles.css ----(es nuetro css global)
 
-!-----------------------------------------------------------------------------------------------------------------------------------!
-en /clientes/components/ se hace su respectivo archivo de java, css y html por cada carpeta y sus respectivos links a estos archivos
-!-----------------------------------------------------------------------------------------------------------------------------------!
+-------------------------------------------------------------------------------------------------------------------------------------
+> en /clientes/components/ se hace su respectivo archivo de java, css y html por cada carpeta y sus respectivos links a estos archivos
+-------------------------------------------------------------------------------------------------------------------------------------
 
 
 !-Importante saber si crean una carpeta y no le agregan contenido no va a ser agregada a nuestro repositorio tienen que agregarle un archivo para que nos salga a todos-
