@@ -22,8 +22,8 @@ Estructura del proyecto carpetas:
 > ### /cliente/assets/css/styles.css ----(es nuetro archivo css global)
 -------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------
-> ### en /clientes/components/ 
-> ## se hace su respectivo archivo de java, css y html por cada carpeta y sus respectivos links a estos archivos
+> ## en /clientes/components/ 
+> ### se hace su respectivo archivo de java, css y html por cada carpeta y sus respectivos links a estos archivos
 -------------------------------------------------------------------------------------------------------------------------------------
 
 
