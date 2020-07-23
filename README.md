@@ -38,4 +38,4 @@ Link del repositorio: https://github.com/Marcos-s-c/Proyecto1.git
 
 ---
 
-## Importante saber que si crean una carpeta y no le agregan contenido no va a ser agregada a nuestro repositorio tienen que agregarle un archivo para que nos salga a todos-
+## Importante saber que si crean una carpeta y no le agregan contenido no va a ser agregada a nuestro repositorio tienen que agregarle un archivo para que nos salga a todos.
