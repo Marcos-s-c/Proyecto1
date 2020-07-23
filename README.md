@@ -17,12 +17,12 @@ Estructura del proyecto carpetas:
 1. /Landing_page/----(aqui va el landing page)
 
 -------------------------------------------------------------------------------------------------------------------------------------
-> Existe un css general para que tengamos el mismo estilo y solo lo llamemos
+> ## Existe un css general para que tengamos el mismo estilo y solo lo llamemos
 
-> /cliente/assets/css/styles.css ----(es nuetro css global)
+> ### /cliente/assets/css/styles.css ----(es nuetro css global)
 -------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------
-> en /clientes/components/ se hace su respectivo archivo de java, css y html por cada carpeta y sus respectivos links a estos archivos
+> ## en /clientes/components/ se hace su respectivo archivo de java, css y html por cada carpeta y sus respectivos links a estos archivos
 -------------------------------------------------------------------------------------------------------------------------------------
 
 
