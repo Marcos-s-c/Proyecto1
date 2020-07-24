@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado Usuarios</title>
+
+    <link rel="stylesheet" href="../assets/css/globales.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a class="alt_letra tituloHeader" href="index.html"
+          ><i class="fas fa-clipboard-list"></i> ADMINISTRADOR DE USUARIOS</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <!-- =======================================
+                            Contenido  Inicio
+    =================================================-->
+
+      <div class="contenido">
+        <br />
+        <br />
+        <section class="listado_usuarios">
+          <input type="text" class="fondoI" placeholder="Nombre" id="nombre" />
+          <input
+            type="text"
+            class="fondoI"
+            placeholder="Apellido"
+            id="apellido"
+          />
+          <input type="text" class="fondoI" placeholder="Cedula" id="cedula" />
+          <input type="text" class="fondoI" placeholder="Correo" id="correo" />
+          <input type="text" class="fondoI" placeholder="Nivel" id="nivel" />
+
+          <button class="botonAzul alt_letra fondoB" type="button">
+            <a class="redireccion" onclick="GuardarUsuario()"
+              >AGREGAR NUEVO USUARIO</a
+            >
+          </button>
+
+          <br />
+          <br />
+          <br />
+          <br />
+
+          <table id="tabla_usuarios" class="tablaListar">
+            <thead class="alt_letra">
+              <tr>
+                <th id="">Nombre</th>
+                <th id="">Apellido</th>
+                <th id="">Cedula</th>
+                <th id="">Correo</th>
+                <th id="">Nivel</th>
+              </tr>
+            </thead>
+
+            <tbody id="contenido_tabla">
+              <tr>
+                <td id="">Nombre</td>
+                <td id="">Apellido</td>
+                <td id="">Cedula</td>
+                <td id="">Correo</td>
+                <td id="">Nivel</td>
+              </tr>
+              <tr>
+                <td id="">Nombre</td>
+                <td id="">Apellido</td>
+                <td id="">Cedula</td>
+                <td id="">Correo</td>
+                <td id="">Nivel</td>
+              </tr>
+              <tr>
+                <td id="">Nombre</td>
+                <td id="">Apellido</td>
+                <td id="">Cedula</td>
+                <td id="">Correo</td>
+                <td id="">Nivel</td>
+              </tr>
+              <tr>
+                <td id="">Nombre</td>
+                <td id="">Apellido</td>
+                <td id="">Cedula</td>
+                <td id="">Correo</td>
+                <td id="">Nivel</td>
+              </tr>
+              <tr>
+                <td id="">Nombre</td>
+                <td id="">Apellido</td>
+                <td id="">Cedula</td>
+                <td id="">Correo</td>
+                <td id="">Nivel</td>
+              </tr>
+              <tr>
+                <td id="">Nombre</td>
+                <td id="">Apellido</td>
+                <td id="">Cedula</td>
+                <td id="">Correo</td>
+                <td id="">Nivel</td>
+              </tr>
+              <tr>
+                <td id="">Nombre</td>
+                <td id="">Apellido</td>
+                <td id="">Cedula</td>
+                <td id="">Correo</td>
+                <td id="">Nivel</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <br />
+        <br />
+      </div>
+
+      <!-- =======================================
+                            Contenido Final
+    =================================================-->
+    </main>
+
+    <!-- =======================================
+            FOOTER
+    =================================================-->
+
+    <footer>
+      <h3 class="">
+        Practica de guardar usuarios &copy;
+        <span> Saludos a todos </span>
+      </h3>
+    </footer>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

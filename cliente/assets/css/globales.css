@@ -1,0 +1,185 @@
+/** ==================================
+    GLOBALES
+    =================================**/
+:root {
+  --azul: #022534;
+  --azul2: #094f6e;
+  --azul3: #2d7a9c;
+  --azul4: #96c7d5;
+  --azul5: #e4f5ff;
+}
+.rojo {
+  color: rgb(192, 24, 24);
+}
+.amarillo {
+  color: rgb(243, 166, 65);
+}
+.verde {
+  color: #96c7d5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.alt_letra {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+}
+.derecha {
+  float: right;
+}
+.izquierda {
+  float: left;
+}
+
+h1 {
+  color: #022534;
+  text-transform: uppercase;
+  letter-spacing: 8px !important;
+}
+/** ==================================
+                          HEADER
+       =================================**/
+
+nav {
+  background-color: #094f6e;
+  height: 100px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 20px;
+}
+
+.tituloHeader {
+  float: left;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+main .contenido {
+  margin-left: 5%;
+}
+
+/** ==================================
+                          CONTENIDO PRINCIPAL
+      =================================**/
+
+/** ==================================
+               BOTONES
+  =================================**/
+.fondoB {
+  background-color: #2d7a9c;
+  border: none;
+  padding: 20px;
+  margin-right: 1%;
+  width: 250px;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+}
+.fondoB::placeholder {
+  color: white;
+}
+
+.botonAzul {
+  color: white;
+  background-color: #2d7a9c;
+  width: 20%;
+  font-size: 14px;
+  box-shadow: 1px 1px 10px #96c7d5;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.botonAzul:hover {
+  box-shadow: 1px 1px 7px #2d7a9c;
+  background-color: #094f6e;
+}
+
+.fondoI {
+  background-color: #a8998c21;
+  border: 1px solid #2d7a9c;
+  padding: 15px 15px;
+  margin-right: 1%;
+  width: 200px;
+  color: #022534;
+  border-radius: 5px;
+  outline: none;
+  font-size: 20px;
+}
+.fondoI::placeholder {
+  color: #2d7a9c;
+}
+
+/** ==================================
+               TABLA
+  =================================**/
+
+table {
+  overflow: hidden;
+  color: #666666;
+  border-radius: 5px;
+}
+
+.tablaListar {
+  max-width: 95%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 17px;
+}
+.tablaListar th {
+  padding: 20px;
+  font-size: 18px;
+  background-color: #96c7d5;
+  color: white;
+  text-transform: uppercase;
+}
+.tablaListar tr {
+  background-color: #a8998c21;
+}
+
+.tablaListar th {
+  width: 15%;
+}
+.tablaListar th:nth-last-child(1) {
+  width: 1%;
+}
+
+.tablaListar td {
+  text-align: center;
+  padding: 10px;
+}
+
+.tablaListar tr:hover {
+  background-color: #a8998c38;
+}
+
+/** ==================================
+                          VALIDACIONES
+     =================================**/
+
+.datoVacioBorde {
+  border: red 2px solid;
+}
+.datoVacioBorde::placeholder {
+  color: rgb(94, 29, 29);
+  font-size: 17px;
+}
+
+/** ==================================
+                          FOOTER
+    =================================**/
+footer {
+  background-color: #022534;
+  color: white;
+}
+footer h3 {
+  padding: 10px 20px;
+}
