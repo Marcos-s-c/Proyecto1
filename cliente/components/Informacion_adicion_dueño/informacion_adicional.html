@@ -15,7 +15,7 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="../cliente/assets/css/styles.css"
+      href="../../../cliente/assets/css/styles.css"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
@@ -29,6 +29,39 @@
     />
   </head>
   <body>
+    <div class="left-menu-container">
+      <ul>
+        <li><a href="#">Mi Parqueo</a></li>
+        <li><a href="#">Mi Perfil</a></li>
+        <li><a href="#">Tarifas</a></li>
+        <li><a href="#">Reportes</a></li>
+        <li><a href="#">Convenios</a></li>
+      </ul>
+    </div>
+    <div class="right-content-container">
+      <form id="login-form" action="#">
+        <h1>Información Adicional</h1>
+        <div class="left-input">
+          <label>avatar</label>
+          <input type="text" class="" id="avatar" />
+          <label>Nombre de Usuario</label>
+          <input type="text" class="" id="username" />
+        </div>
+        <div class="right-input">
+          <label>Fecha de nacimiento</label>
+          <input type="date" class="" id="birthdate" />
+          <label>Edad</label>
+          <input type="text" class="" id="age" />
+        </div>
+        <label>Fotos del Parqueo</label>
+        <input type="file" id="img" name="img" accept="image/*" />
+
+        <div class="button-siguiente">
+          <button type="button" class="black-button">Siguiente</button>
+        </div>
+      </form>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>
