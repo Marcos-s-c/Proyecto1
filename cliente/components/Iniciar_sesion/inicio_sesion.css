@@ -1,0 +1,53 @@
+.login-container {
+  text-align: center;
+  padding-left: 35%;
+  padding-right: 35%;
+}
+.login-container h1 {
+  text-align: left;
+  font-weight: normal;
+}
+
+.login-container button {
+  width: 100%;
+  text-align: left;
+  padding-left: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  font-size: 18px;
+}
+
+.fa-arrow-right {
+  color: white !important;
+  padding-left: 76%;
+  padding-right: 0%;
+}
+
+.login-container input {
+  padding-bottom: 1%;
+  width: 99%;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.email-input,.password-input {
+  padding-top: 2%;
+}
+
+
+
+.login-flex-container {
+  display: flex;
+}
+
+.logo img {
+  width: 30%;
+}
+
+.register {
+  width: 50%;
+  text-align: left;
+}
+.lost-password {
+  padding-left: 20%;
+}

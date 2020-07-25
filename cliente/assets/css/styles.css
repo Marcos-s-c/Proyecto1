@@ -1,0 +1,29 @@
+/* tipo de font para todos */
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+body button{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+/* inputs con solo el border abajo */
+.input-bottom-border-only {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid grey;
+  }
+
+  .black-button{
+      background-color: black;
+      color: white;
+      border: none;
+      border-width: 0px;
+  }
+
+  .black-button:focus{
+      outline: 0;
+  }
