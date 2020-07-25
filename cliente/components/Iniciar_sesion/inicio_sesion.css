@@ -28,6 +28,7 @@
   width: 99%;
   box-sizing: border-box;
   font-size: 15px;
+  outline: none;
 }
 
 .email-input,.password-input {
