@@ -1,0 +1,9 @@
+.user-picture img {
+  width: 100%;
+}
+.user-picture button {
+  width: 3%;
+  border: none;
+  outline: none;
+}
+
