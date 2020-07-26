@@ -1,13 +1,20 @@
 /* tipo de font para todos */
 body{
     font-family: 'Open Sans', sans-serif;
+    margin: 0px;
 }
 
 body button{
     font-family: 'Open Sans', sans-serif;
 }
 
-
+a{
+    text-decoration: none;
+    color:inherit;
+}
+div{
+    overflow: auto;
+}
 
 /* inputs con solo el border abajo */
 .input-bottom-border-only {
@@ -27,3 +34,28 @@ body button{
   .black-button:focus{
       outline: 0;
   }
+
+  header{
+   background-color: #82B0B0;  
+   padding-right: 20px;
+  }
+  
+.profileIcon {
+    color:  #E3E3E4;
+    float: right;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+main{
+    background-color: #F1F3F4;
+}
+
+.ManagmentPagesTitle{
+    font-weight: 400;
+}
+
+.managmentPagesHeader{
+    padding-left: 20px;
+    color:#82B0B0;
+}
