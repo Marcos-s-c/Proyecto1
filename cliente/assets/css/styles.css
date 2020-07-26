@@ -1,61 +1,68 @@
 /* tipo de font para todos */
-body{
-    font-family: 'Open Sans', sans-serif;
-    margin: 0px;
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
 }
 
-body button{
-    font-family: 'Open Sans', sans-serif;
+body button {
+  font-family: "Open Sans", sans-serif;
 }
 
-a{
-    text-decoration: none;
-    color:inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
-div{
-    overflow: auto;
+div {
+  overflow: auto;
 }
 
 /* inputs con solo el border abajo */
 .input-bottom-border-only {
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    border-bottom: 1px solid grey;
-  }
-
-  .black-button{
-      background-color: black;
-      color: white;
-      border: none;
-      border-width: 0px;
-  }
-
-  .black-button:focus{
-      outline: 0;
-  }
-
-  header{
-   background-color: #82B0B0;  
-   padding-right: 20px;
-  }
-  
-.profileIcon {
-    color:  #E3E3E4;
-    float: right;
-    padding-right: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-main{
-    background-color: #F1F3F4;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid grey;
 }
 
-.ManagmentPagesTitle{
-    font-weight: 400;
+.black-button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-width: 0px;
 }
 
-.managmentPagesHeader{
-    padding-left: 20px;
-    color:#82B0B0;
+.black-button:focus {
+  outline: 0;
+}
+
+header {
+  background-color: #82b0b0;
+  padding-right: 20px;
+}
+
+header i {
+  color: #e3e3e4;
+  float: right;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+main {
+  background-color: #f1f3f4;
+}
+
+.managment-pages h2 {
+  font-weight: 400;
+  padding-left: 50px;
+  color: #82b0b0;
+}
+
+.managment-pages-header {
+  padding-left: 20px;
+  color: #82b0b0;
+}
+
+.managment-pages ul li {
+  color: #82b0b0;
+  display: inline !important;
 }
