@@ -15,12 +15,12 @@
   padding-top: 3%;
   padding-bottom: 3%;
   font-size: 18px;
+
 }
 
 .fa-arrow-right {
   color: white !important;
-  padding-left: 70%;
-  padding-right: 0%;
+  padding-left: 75%;
 }
 
 .login-container input {
@@ -31,11 +31,10 @@
   outline: none;
 }
 
-.email-input,.password-input {
+.email-input,
+.password-input {
   padding-top: 2%;
 }
-
-
 
 .login-flex-container {
   display: flex;
