@@ -36,7 +36,7 @@ div {
 }
 
 header {
-  background-color: #82b0b0;
+  background-color: black;
   padding-right: 20px;
 }
 
@@ -48,7 +48,6 @@ header i {
   padding-bottom: 5px;
 }
 main {
-  background-color: #f1f3f4;
 }
 
 .managment-pages h2 {
