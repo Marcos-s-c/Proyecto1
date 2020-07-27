@@ -8,14 +8,16 @@
   font-weight: normal;
 }
 
-.login-container button {
-  width: 100%;
+.access-container button {
   text-align: left;
   padding-left: 3%;
   padding-top: 3%;
   padding-bottom: 3%;
   font-size: 18px;
+}
 
+.access-container{
+  
 }
 
 .fa-arrow-right {
@@ -51,7 +53,6 @@
 .lost-password {
   padding-left: 20%;
 }
-
 
 .black-button {
   background-color: black;

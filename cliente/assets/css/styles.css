@@ -25,12 +25,7 @@ div {
   border-bottom: 1px solid grey;
 }
 
-.black-button {
-  background-color: black;
-  color: white;
-  border: none;
-  border-width: 0px;
-}
+
 
 .black-button:focus {
   outline: 0;
@@ -133,6 +128,10 @@ header i {
   padding-top: 3%;
   padding-bottom: 3%;
   font-size: 18px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-width: 0px;
 }
 
 /*Input de páginas de acceso a la aplicación*/
