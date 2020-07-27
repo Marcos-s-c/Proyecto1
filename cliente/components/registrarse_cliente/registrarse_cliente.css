@@ -1,0 +1,60 @@
+.login-container {
+    text-align: center;
+    padding-left: 35%;
+    padding-right: 35%;
+  }
+  .login-container h1 {
+    text-align: center;
+    font-weight: normal;
+  }
+  
+  .login-container button {
+    width: 100%;
+    text-align: center;
+    padding-left: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 18px;
+  
+  }
+  
+  .fa-arrow-right {
+    color: white !important;
+    padding-left: 75%;
+  }
+  
+  .login-container input {
+    padding-bottom: 1%;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+    outline: none;
+  }
+
+
+ 
+  .login-flex-container {
+    display: flex;
+  }
+  
+  .logo img {
+    width: 30%;
+  }
+  
+  
+
+  
+  .black-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-width: 0px;
+  }
+  
+  .black-button:focus {
+    outline: 0;
+  }
+  
+  .form input{
+    padding-top: 2%;
+  }

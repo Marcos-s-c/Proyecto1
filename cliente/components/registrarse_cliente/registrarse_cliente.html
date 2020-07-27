@@ -16,7 +16,7 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="inicio_sesion.css"
+      href="registrarse_cliente.css"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
@@ -39,42 +39,78 @@
       <div class="logo">
         <img src="../../assets/img/test-logo.png" alt="Logo" />
       </div>
+      <div class="form">
       <form id="login-form" action="#">
-        <h1>Iniciar Sessión</h1>
-        <div class="email-input">
+        <h1>Registrate</h1>
+        <div class="name-input">
           <input
             type="text"
-            id="loginEmail"
-            name="login"
-            placeholder="Introduce tu email"
+            id="name"
+            name="register"
+            placeholder="Introduce tu nombre"
             class="input-bottom-border-only"
           /><br /><br />
         </div>
-        <div class="password-input">
+        <div class="apellido-input">
           <input
-            type="password"
-            id="loginPassword"
-            name="password"
-            placeholder="Contraseña"
+            type="text"
+            id="apellido"
+            name="register"
+            placeholder="Introduce tu apellido"
             class="input-bottom-border-only"
           />
           <br />
           <br />
         </div>
+        <div class="cedula-input">
+          <input
+          type="text"
+          id="cedula"
+          name="register"
+          placeholder="Introduce tu cedula"
+          class="input-bottom-border-only"
+        /><br /><br />
+        </div>
+        <div class="fecha-nacimiento-input">
+          <input
+          type="date"
+          id="fecha-nacimiento"
+          name="register"
+          placeholder="Introduce tu fecha de nacimiento"
+          class="input-bottom-border-only"
+        /><br /><br />
+        </div>
+        <div class="numero-de-telefono">
+          <input
+          type="tel"
+          id="numero"
+          name="register"
+          placeholder="Introduce tu numero de telefono"
+          class="input-bottom-border-only"
+        /><br /><br />
+        </div>
+        <div class="email">
+          <input
+          type="email"
+          id="email-register"
+          name="register"
+          placeholder="Introduce tu correo electronico"
+          class="input-bottom-border-only"
+        /><br /><br />
+        </div>
+
         <div class="button-container">
           <button type="button" class="black-button">
-            SIGUIENTE <span id="right"><i class="fas fa-arrow-right"></i></span></i>
+            REGISTRATE <span id="right"></span></i>
           </button>
         </div>
         <div class="login-flex-container">
           <div class="register">
-            <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
-          </div>
-          <div class="lost-password">
-            <p><a href="#">¿Olvidó la contraseña?</a></p>
+            <p>Al hacer clic en "Regístrate", aceptas las condiciones de uso de (nombre de empresa) y reconoces haber leído la política de privacidad.</p>
           </div>
         </div>
       </form>
     </div>
+  </div>
   </body>
 </html>
