@@ -39,6 +39,8 @@ div {
 header {
   background-color: black;
   padding-right: 20px;
+  padding-top: 13px;
+  height: 44px;
 }
 
 /*Ícono perfil*/
@@ -106,4 +108,29 @@ header i {
 
 /*Contenedor buscador*/
 .search-wrapper {
+  float: right;
+}
+
+/*Clases de páginas de acceso a la aplicación*/
+/* Contenedor páginas de acceso*/
+.access-container {
+  text-align: center;
+  padding-left: 35%;
+  padding-right: 35%;
+}
+
+/*Título 1 de páginas de acceso a la aplicación*/
+.access-container h1 {
+  text-align: left;
+  font-weight: normal;
+}
+
+/*Botón largo de páginas de acceso a la aplicación*/
+.access-container button {
+  width: 100%;
+  text-align: left;
+  padding-left: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  font-size: 18px;
 }
