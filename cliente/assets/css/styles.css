@@ -14,6 +14,7 @@ a {
 }
 div {
   overflow: auto;
+  box-sizing: border-box;
 }
 
 /* inputs con solo el border abajo */
@@ -40,6 +41,7 @@ header {
   padding-right: 20px;
 }
 
+/*Ícono perfil*/
 header i {
   color: #e3e3e4;
   float: right;
@@ -67,7 +69,7 @@ header i {
   border-top: solid thin #e3e3e4;
 }
 
-/*menú izquierdo páginas administrativas(dueño y administrador)*/
+/*Menú izquierdo páginas administrativas(dueño y administrador)*/
 .left-menu {
   float: left;
   line-height: 30px;
@@ -81,8 +83,10 @@ header i {
   float: left;
   background-color: #e3e3e4;
   width: 100%;
+  padding-right: 10px;
 }
 
+/* Ícono agregar*/
 .managment-header i {
   padding-left: 30px;
   padding-top: 10px;
@@ -91,6 +95,9 @@ header i {
   color: #595959;
 }
 
-/*Bloque horizontal de páginas administrativas(dueño y administrador)*/
-.managment-datagrid-wrapper {
+/* Buscador*/
+.managment-header input {
+  float: right;
+  margin-top: 14px;
+  border: none;
 }
