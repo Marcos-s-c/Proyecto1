@@ -47,21 +47,43 @@ header i {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-main {
-}
 
-.managment-pages h2 {
+/*Contenedor páginas administrativas(dueño y administrador)*/
+.managment-pages-wrapper h2 {
   font-weight: 400;
   padding-left: 50px;
-  color: #82b0b0;
+  color: black;
 }
 
-.managment-pages-header {
-  padding-left: 20px;
-  color: #82b0b0;
-}
-
+/*Lista del menú izquierdo páginas administrativas(dueño y administrador)*/
 .managment-pages ul li {
-  color: #82b0b0;
-  display: inline !important;
+  display: flex;
+  color: black;
+}
+
+/*Bloque de menu y contenido de la página*/
+.menu-datagrid {
+  overflow: auto;
+  border-top: solid thin #e3e3e4;
+}
+
+/*menú izquierdo páginas administrativas(dueño y administrador)*/
+.left-menu {
+  float: left;
+  line-height: 30px;
+  padding-right: 10px;
+  overflow-y: scroll;
+  padding-right: 30px;
+}
+
+/*Header horizontal de páginas administrativas(dueño y administrador)*/
+.managment-header {
+  float: left;
+}
+
+/*Bloque horizontal de páginas administrativas(dueño y administrador)*/
+.managment-datagrid-wrapper {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
