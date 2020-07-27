@@ -1,0 +1,252 @@
+/*********** GENERAL ***************************/
+body{
+    padding: 0;
+    margin: 0;
+}
+.topHeaderFill{
+    width: 100%;
+    height: 50px;
+    margin: 0;
+}
+h1{
+    text-align: center;
+}
+h1, h2, h3{
+    padding: 4% 0%;
+}
+h1, h2, h3, h4{
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+}
+
+p, a{
+    font-family: 'Open Sans', sans-serif;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border-radius: 3px;
+    border-style: none;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 2%;
+}
+
+/********** HEADER *******************************/
+
+/*top*/
+.header-top{
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    top: 0;
+    width: 100%;
+    background-color: #234f58;
+    z-index: 999;
+}
+
+.header-top{
+    padding: 1% 2%;
+}
+.header-top .logo{
+    width: 40%;
+}
+.header-top .logo img{
+    height: 50px;
+}
+.header-top .menu{
+    width: 60%;
+    overflow: auto;
+    padding-top: 1%;
+    box-sizing: border-box;
+}
+.header-top .menu .leftOptions{
+    float: left;
+    width: 65%;
+    border-right: 1px solid white;
+}
+.header-top .menu .rightOptions{
+    float: left;
+    width: 30%;
+}
+.header-top .menu li{
+    display: inline;
+    padding: 2%;
+}
+.header-top .menu a{
+    color: white;
+    font-size: 18px;
+}
+
+/*Middle*/
+.header-middle{
+    background-image: url(imgs/parqueo-cel.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+.header-middle h1{
+    color: white;
+    font-size: 70px;
+    width: 30%;
+    text-align: center;
+    margin-left: 5%;
+    text-shadow: 1px 1px 1px black;
+}
+
+/************ ABOUT SECTION ***************/
+
+.aboutSection{
+    background-color: #F1F3F4;
+    text-align: center;
+}
+
+.mission{
+    display: flex;
+    justify-content: space-between;
+}
+.mission .leftBox, .mission .rightBox{
+    width: 45%;
+    border: 1px solid;
+    margin: 2%;
+    text-align: center;
+}
+.mission .leftBox{
+    background-image: url(imgs/parqueo-noche.jpg);
+    background-size: contain;
+}
+
+.mission .rightBox{
+    background-image: url(imgs/parqueo-dia.jpg);
+    background-size: contain;
+}
+
+
+/******* BENEFITS SECTION ****************/
+
+.rentingService, searchingService{
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+.rentingService .leftSection, .rentingService .rightSection,
+.searchingService .leftSection, .searchingService .rightSection{
+    float: left;
+    width: 50%;
+}
+.rentingService img, .searchingService img{
+    width: 100%;
+}
+
+/************* REVIEWS SECTION ***********************/
+
+.reviewsSection{
+    clear: both;
+    padding: 10% 5%;
+    text-align: center;
+
+}
+
+.reviewsContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+.reviewItem{
+    padding: 2%;
+    border: 1px solid black;
+    margin: 3%;
+    width: 25%;
+}
+.reviewItem img{
+    width: 25%;
+}
+
+
+/*************** CONTACT INFO *******************/
+
+.contactInfo{
+    padding: 0% 5%;
+}
+.contactInfo .container{
+    overflow: auto;
+}
+.contactInfo .leftSection, .contactInfo .rightSection{
+    margin: 2%;
+}
+.contactInfo .container .leftSection{
+    float: left;
+    width: 40%;
+    border: 1px solid;
+}
+.contactInfo .container .rightSection{
+    float: left;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+}
+.contactInfo .container .leftSection input{
+    width: 90%;
+    padding: 2%;
+    border-style: none;
+    background-color: #F1F3F4;
+    margin: 3%;
+    font-size: 15px;
+
+}
+.contactInfo .container .leftSection button{
+    float: right;
+    margin-right: 3%;
+}
+
+.contactInfo .infoBox{
+    float: left;
+    width: 70%;
+    padding-left: 5%;
+}
+.contactInfo .infoBox .fas{
+    padding: 1%;
+}
+.contactInfo .infoBox li{
+    padding-bottom: 2%;
+}
+.contactInfo .infoBox p{
+    display: inline;
+}
+.contactInfo .socialMedia{
+    float: right;
+    width: 30%;
+    border: 1px solid;
+}
+.contactInfo .socialMedia .fa-facebook-f,
+.contactInfo .socialMedia .fa-twitter,
+.contactInfo .socialMedia .fa-instagram{
+    display: block;
+    font-size: 40px;
+    color: black;
+    padding: 2%;
+}
+
+/************ FOOTER ************************/
+
+footer{
+    background-color: #595959;
+    padding-top: 10%;
+    padding-bottom: 1%;
+    text-align: center;
+}
+footer p{
+    color: white;
+    margin: 0;
+}
