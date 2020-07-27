@@ -1,4 +1,4 @@
-/* tipo de font para todos */
+/* body */
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0px;
@@ -12,101 +12,15 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 div {
   overflow: auto;
   box-sizing: border-box;
 }
-
-/* inputs con solo el border abajo */
-.input-bottom-border-only {
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  border-bottom: 1px solid grey;
-}
-
-
-
-.black-button:focus {
-  outline: 0;
-}
-
-header {
-  background-color: black;
-  padding-right: 20px;
-  padding-top: 13px;
-  height: 44px;
-}
-
-/*Ícono perfil*/
-header i {
-  color: #e3e3e4;
-  float: right;
-  padding-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-/*Contenedor páginas administrativas(dueño y administrador)*/
-.managment-pages-wrapper h2 {
-  font-weight: 400;
-  padding-left: 50px;
-}
-
-/*Lista del menú izquierdo páginas administrativas(dueño y administrador)*/
-.managment-pages-wrapper ul li {
-  display: flex;
-  font-weight: 300;
-  font-size: 18px;
-}
-
-/*Bloque de menu y contenido de la página*/
-.menu-datagrid {
-  overflow: auto;
-  border-top: solid thin #e3e3e4;
-}
-
-/*Menú izquierdo páginas administrativas(dueño y administrador)*/
-.left-menu {
-  float: left;
-  line-height: 30px;
-  padding-right: 10px;
-  overflow-y: scroll;
-  padding-right: 30px;
-}
-
-/*Header horizontal de páginas administrativas(dueño y administrador)*/
-.managment-header {
-  float: left;
-  background-color: #e3e3e4;
-  width: 100%;
-  padding-right: 10px;
-}
-
-/* Ícono agregar*/
-.managment-header i {
-  padding-left: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 25px;
-  color: #595959;
-}
-
-/*Input buscador*/
-.managment-header input {
-  float: right;
-  margin-top: 14px;
-  border: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-/*Contenedor buscador*/
-.search-wrapper {
-  float: right;
-}
+/* end body */
 
 /*Clases de páginas de acceso a la aplicación*/
+
 /* Contenedor páginas de acceso*/
 .access-container {
   text-align: center;
