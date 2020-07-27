@@ -79,11 +79,13 @@ header i {
 /*Header horizontal de páginas administrativas(dueño y administrador)*/
 .managment-header {
   float: left;
+  background-color: #e3e3e4;
+  width: 60%;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 /*Bloque horizontal de páginas administrativas(dueño y administrador)*/
 .managment-datagrid-wrapper {
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
