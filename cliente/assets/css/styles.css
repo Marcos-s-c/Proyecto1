@@ -54,13 +54,13 @@ header i {
 .managment-pages-wrapper h2 {
   font-weight: 400;
   padding-left: 50px;
-  color: black;
 }
 
 /*Lista del menú izquierdo páginas administrativas(dueño y administrador)*/
-.managment-pages ul li {
+.managment-pages-wrapper ul li {
   display: flex;
-  color: black;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 /*Bloque de menu y contenido de la página*/
@@ -95,9 +95,15 @@ header i {
   color: #595959;
 }
 
-/* Buscador*/
+/*Input buscador*/
 .managment-header input {
   float: right;
   margin-top: 14px;
   border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*Contenedor buscador*/
+.search-wrapper {
 }
