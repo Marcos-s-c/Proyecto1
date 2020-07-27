@@ -1,0 +1,9 @@
+
+.header li{
+    display: inline-block;
+}
+
+.left-menu-container{
+    display: block;
+    text-decoration: none;
+}
