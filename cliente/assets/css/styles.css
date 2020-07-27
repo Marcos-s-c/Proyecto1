@@ -80,10 +80,15 @@ header i {
 .managment-header {
   float: left;
   background-color: #e3e3e4;
-  width: 60%;
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  width: 100%;
+}
+
+.managment-header i {
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 25px;
+  color: #595959;
 }
 
 /*Bloque horizontal de páginas administrativas(dueño y administrador)*/
