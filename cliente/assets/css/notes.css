@@ -27,13 +27,11 @@ body {
   
   
   
-  .black-button:focus {
-    outline: 0;
-  }
+  
   
   header {
     background-color: black;
-    padding-right: 20px;
+    padding-right: 20%;
     padding-top: 13px;
     height: 44px;
   }

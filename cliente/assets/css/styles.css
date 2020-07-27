@@ -1,3 +1,18 @@
+/* header */
+
+header {
+ 
+}
+/*Ícono perfil*/
+header i{
+
+}
+
+/* end header */
+
+
+
+
 /* body */
 body {
   font-family: "Open Sans", sans-serif;
@@ -19,7 +34,23 @@ div {
 }
 /* end body */
 
-/*Clases de páginas de acceso a la aplicación*/
+/* button color */
+button{
+  color: white;
+    border: none;
+    border-width: 0px;
+background-color: #82b0b0;
+}
+
+/* páginas de acceso a la aplicación*/
+
+ /* inputs con solo el border abajo */
+ .input-bottom-border-only {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid grey;
+}
 
 /* Contenedor páginas de acceso*/
 .access-container {
@@ -46,6 +77,11 @@ div {
   color: white;
   border: none;
   border-width: 0px;
+  
+}
+
+.access-container button:focus{
+  outline: 0;
 }
 
 /*Input de páginas de acceso a la aplicación*/
