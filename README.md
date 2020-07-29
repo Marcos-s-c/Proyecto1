@@ -48,4 +48,4 @@
 
 ---
 
-## Importante saber que si crean una carpeta y no le agregan contenido no va a ser agregada a nuestro repositorio tienen que agregarle un archivo para que nos salga a todos.
+
