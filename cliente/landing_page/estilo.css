@@ -5,22 +5,38 @@ body{
 }
 .topHeaderFill{
     width: 100%;
-    height: 50px;
+    height: 85px;
     margin: 0;
 }
+/******** font sizes **********/
+h1{
+    font-size: 3em;
+}
+h2{
+    font-size: 2em;
+}
+h3{
+    font-size: 1em;
+}
+p{
+    font-size: 18px;
+    line-height: 30px;
+}
+
+/*************************************/
 h1{
     text-align: center;
 }
 h1, h2, h3{
     padding: 4% 0%;
-}
-h1, h2, h3, h4{
     font-family: 'Quicksand', sans-serif;
     text-transform: uppercase;
+    font-weight: 400;
 }
-
-p, a{
+p, a, input{
+    text-decoration: none;
     font-family: 'Open Sans', sans-serif;
+    color: black;
 }
 ul{
     list-style-type: none;
@@ -28,18 +44,22 @@ ul{
     padding-left: 0;
 }
 
-a{
-    text-decoration: none;
-}
-
 button{
     border-radius: 3px;
     border-style: none;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Open Sans', sans-serif;
-    padding: 2%;
+    padding: 3%;
 }
-
+.hide{
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
+}
+.remove{
+    display: none;
+}
 /********** HEADER *******************************/
 
 /*top*/
@@ -52,38 +72,44 @@ button{
     background-color: #234f58;
     z-index: 999;
 }
-
 .header-top{
     padding: 1% 2%;
 }
 .header-top .logo{
-    width: 40%;
+    width: 20%;
 }
 .header-top .logo img{
     height: 50px;
 }
 .header-top .menu{
-    width: 60%;
-    overflow: auto;
+    width: 80%;
+    display: flex;
     padding-top: 1%;
     box-sizing: border-box;
 }
+.header-top ul{
+    width: 100%;
+    text-align: end;
+}
 .header-top .menu .leftOptions{
-    float: left;
-    width: 65%;
-    border-right: 1px solid white;
+    width: 75%;
 }
 .header-top .menu .rightOptions{
-    float: left;
-    width: 30%;
+    width: 25%;
+    padding-right: 5%;
 }
-.header-top .menu li{
+.header-top .leftOptions li{
+    border-right: 1px solid #f2f2f2;
     display: inline;
-    padding: 2%;
+    padding: 0% 1%
+}
+.header-top .rightOptions li{
+    display: inline;
+    padding: 0% 5% ;
 }
 .header-top .menu a{
     color: white;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /*Middle*/
@@ -105,20 +131,52 @@ button{
 
 /************ ABOUT SECTION ***************/
 
-.aboutSection{
-    background-color: #F1F3F4;
+.aboutUs{
+    padding-bottom: 5%;
+    margin-top: -10%;
+}
+.aboutUs-container{
     text-align: center;
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+.main-heading{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.main-heading h1{
+    color: white;
+    margin: auto;
+    text-align: center;
+}
+
+.aboutUs-container p{
+    padding-top: 6%;
+    width: 70%;
+    text-align: center;
+    margin: auto;
 }
 
 .mission{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
 }
 .mission .leftBox, .mission .rightBox{
     width: 45%;
     border: 1px solid;
-    margin: 2%;
+    margin: 1%;
     text-align: center;
+    border-style: none;
 }
 .mission .leftBox{
     background-image: url(imgs/parqueo-noche.jpg);
@@ -128,6 +186,11 @@ button{
 .mission .rightBox{
     background-image: url(imgs/parqueo-dia.jpg);
     background-size: contain;
+}
+.mission .leftBox p, .mission .rightBox p,
+.mission .leftBox h3, .mission .rightBox h3{
+    color: white;
+
 }
 
 
@@ -241,12 +304,98 @@ button{
 /************ FOOTER ************************/
 
 footer{
-    background-color: #595959;
-    padding-top: 10%;
+    background-color: #404040;
+    padding-top: 4%;
     padding-bottom: 1%;
     text-align: center;
 }
 footer p{
     color: white;
     margin: 0;
+    font-size: 15px;
 }
+.main-heading{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    text-align: center;
+    background: #000;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.main-heading h1{
+    color: white;
+    margin: auto;
+    text-align: center;
+}
+
+/********* registrar parqueo estilo ***********************/
+
+/********** main section ***********/
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(imgs/parqueo8.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 20% 0%;
+}
+.form{
+    width: 25%;
+    position: absolute;
+    float: right;
+    right: 7%;
+    top: 30%;
+    box-shadow: 1px 1px 5px black;
+    padding: 1% 2% 5% 2%;
+    background-color: white;
+
+}
+.form h3{
+    width: 80%;
+    padding: 3% 0%;
+    font-size: 20px;
+}
+.birth-date-box{
+    overflow: auto;
+    width: 100%;
+    margin: auto;
+    padding-top: 3%;
+}
+.birth-date-box input, .birth-date-box p{
+    position: left;
+    display: inline;
+    color: #8c8c8c;
+}
+#birth-date {
+    width: 60%;
+    float: left;
+    padding: 2%;
+}
+.birth-date-box p{
+    font-size: 10px;
+    float: right;
+}
+.page-heading{
+    width: 50%;
+    margin: 0;
+    padding: 4% 0%;
+}
+
+.form-input{
+    display: block;
+    padding: 5% 0%;
+    width: 100%;
+    margin: 2% 0%;
+    border-style: none;
+    border-bottom: 1px solid #8c8c8c;
+}
+
+.form button{
+    margin-top: 30%;
+    float: right;
+    background-color: #82B0B0;
+    color: white;
+}
+
