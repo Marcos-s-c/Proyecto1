@@ -1,62 +1,84 @@
-<!-- esta es una plantilla de html-->
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="../../../cliente/assets/css/styles.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
+      href="assets/css/styles.css"
     />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/da33aea8dd.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Page Title</title>
   </head>
-  <header>
-    <div class="header-top">
-      <div class="logo">
-        <img src="logo21.png" />
-      </div>
-      <div class="menu">
-        <div class="leftOptions">
-          <ul>
-            <li><a href="#">Sobre nosotros</a></li>
-            <li><a href="#">Cómo funciona?</a></li>
-            <li><a href="#">Contáctenos</a></li>
-            <li><a href="#">Ayuda</a></li>
-          </ul>
-        </div>
-        <div class="rightOptions">
-          <ul>
-            <li><a href="#">Iniciar sesión</a></li>
-            <li><a href="#">Registrarse</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="topHeaderFill">relleno</div>
-    <div class="header-middle">
-      <h1>Tu parqueo al alcance de la mano</h1>
-    </div>
-  </header>
-
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <script src="main.js"></script>
+    <!-- Header -->
+    <div class="user-page-header">
+      <div class="logo">
+        <img src="./assets/img/logo.png" />
+      </div>
+      <div class="sub-menu">
+        <div class="dropdown">
+          <i class="fas fa-user-circle"></i>
+          <div class="dropdown-content">
+            <ul>
+              <li><a href="#">Ver perfil</a></li>
+              <li><a href="#">Cerrar sesión</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <!-- Header end -->
+
+    <!-- lAYOUT GRID -->
+    <div class="row">
+      <div class="side">
+        <div class="side-menu">
+          <ul>
+            <li>
+              <a href="#"><i class="fas fa-qrcode"></i>Mi Parqueo</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-link"></i>Mi Perfil</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-stream"></i>Tarifas</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-calendar-week"></i>Reportes</a>
+            </li>
+            <li>
+              <a href="#"><i class="far fa-question-circle"></i>Convenios</a>
+            </li>
+            <li>
+              <a href="#"><i class="far fa-question-circle"></i>Clientes</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main"></div>
+    </div>
+    <!-- lAYOUT GRID END -->
+    <!-- Footer -->
+    <footer>
+      <p>San José, Costa Rica.</p>
+      <p>&reg;Todos los derechos reservados</p>
+    </footer>
+    <!-- Footer END -->
   </body>
 </html>

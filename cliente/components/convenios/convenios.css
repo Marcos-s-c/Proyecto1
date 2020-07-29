@@ -1,4 +1,9 @@
 
+.search input {
+  margin-top: 8px;
+  outline: none;
+  width: 10%;
+}
 
 
 .search {
@@ -12,6 +17,7 @@
   padding: 1%;
   float: left;
   font-size: 24px;
+  color: #82B0B0;
 }
 
 
@@ -54,11 +60,11 @@
 }
 
 input:checked + .slider {
-  background-color: #595959;
+  background-color: #82B0B0;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #595959;
+  box-shadow: 0 0 1px #82B0B0;
 }
 
 input:checked + .slider:before {

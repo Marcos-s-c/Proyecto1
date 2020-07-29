@@ -114,7 +114,7 @@ button{
 
 /*Middle*/
 .header-middle{
-    background-image: url(imgs/parqueo-cel.jpg);
+    background-image: url(../assets/img/parqueo-cel.jpg);
     background-size: cover;
     background-position: center;
     padding-top: 15%;
@@ -179,12 +179,12 @@ button{
     border-style: none;
 }
 .mission .leftBox{
-    background-image: url(imgs/parqueo-noche.jpg);
+    background-image: url(../assets/img/parqueo-noche.jpg);
     background-size: contain;
 }
 
 .mission .rightBox{
-    background-image: url(imgs/parqueo-dia.jpg);
+    background-image: url(../assets/img/parqueo-dia.jpg);
     background-size: contain;
 }
 .mission .leftBox p, .mission .rightBox p,
@@ -336,7 +336,7 @@ footer p{
 .main{
     display: flex;
     flex-wrap: wrap;
-    background-image: url(imgs/parqueo8.jpg);
+    background-image: url(../assets/img/parqueo8.jpg);
     background-size: cover;
     background-position: center;
     padding: 20% 0%;
