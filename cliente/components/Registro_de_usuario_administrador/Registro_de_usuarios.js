@@ -52,15 +52,12 @@ const GuardarUsuario = () => {
       },
     })
       .then(function (data) {
-        return data.json();
-      })
-      .then(function (res) {
-        console.log(res);
+        console.log(data);
+        swal("enviado");
       })
       .catch(function (error) {
         console.log(error);
+        swal("error");
       });
-
-    swal("Good job!", "You clicked the button!", "success");
   }
 };
