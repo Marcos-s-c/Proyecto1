@@ -4,10 +4,17 @@
 
 **Descripcion de la aplicacion:** Registro de parqueos y reservacion de espacios registrados para los costarricenses.
 
-**Link de github-desktop:** https://desktop.github.com/ || **Link del repositorio:** https://github.com/Marcos-s-c/Proyecto1.git 
+**Link de github-desktop:** https://desktop.github.com/ || **Link del repositorio:** https://github.com/Marcos-s-c/Proyecto1.git
 
 **Link de NodeJS:** https://nodejs.org/en/
 
+Paleta de colores
+#82B0B0
+#C3ECE8
+#595959
+#E3E3E4
+#F1F3F4
+#AA889A
 
 ---
 
