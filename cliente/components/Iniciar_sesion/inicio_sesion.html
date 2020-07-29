@@ -31,13 +31,39 @@
     <script src="main.js"></script>
   </head>
   <body>
+    <header>
+      <div class="header-top">
+          <div class="logo">
+              <img src="../../assets/img/logo.png"/>
+          </div>
+          <div class="menu">
+              <div class="leftOptions">
+                  <ul>
+                      <li><a href="registrarParqueo.html">Sobre nosotros</a></li>
+                      <li><a href="modificarPerfil.html">Cómo funciona?</a></li>
+                      <li><a href="#">Contáctenos</a></li>
+                      <li><a href="#">Ayuda</a></li>
+                  </ul>
+              </div>
+              <div class="rightOptions">
+                  <ul> 
+                      <li><a href="#">Iniciar sesión</a></li>
+                      <li><a href="#">Registrarse</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="topHeaderFill">relleno</div>
+      <div class="header-middle">
+          <h1>Tu parqueo al alcance de la mano</h1>
+      </div>
+  </header>
     <div class="login-container">
-      <!-- aqui va el header  -->
       <br />
       <br />
       <br />
       <div class="logo">
-        <img src="../../assets/img/test-logo.png" alt="Logo" />
+        <img src="../../assets/img/logo.png" alt="Logo" />
       </div>
       <form id="login-form" action="#">
         <h1>Iniciar Sessión</h1>
@@ -61,10 +87,10 @@
           <br />
           <br />
         </div>
+        <button type="button" >
+          SIGUIENTE <span id="right"><i class="fas fa-arrow-right"></span></i>
+        </button>
         <div class="access-container">
-          <button type="button" >
-            SIGUIENTE <span id="right"><i class="fas fa-arrow-right"></span></i>
-          </button>
         </div>
         <div class="login-flex-container">
           <div class="register">
