@@ -16,10 +16,11 @@ router.post("/persona", function (req, res) {
 
   GuardarUsuario.save()
     .then(function (resultado) {
-      res.json(resultado);
+      res.json("correcto");
+
     })
     .catch(function (error) {
-      console.log("error");
+      res.json("error");
     });
 });
 
