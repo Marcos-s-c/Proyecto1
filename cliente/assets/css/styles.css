@@ -193,6 +193,12 @@ ul li:hover a {
   background-color: #f1f3f4;
 }
 
+/* table icon size */
+td i {
+  font-size: 24px;
+  padding-left: 19px;
+}
+
 /* TABLE SEARCH */
 /* table search input */
 

@@ -13,10 +13,7 @@
   float: left;
   font-size: 24px;
 }
-td i {
-  font-size: 24px;
-  padding-left: 19px;
-}
+
 
 /*toggle button*/
 .switch {
