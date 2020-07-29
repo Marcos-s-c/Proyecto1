@@ -9,7 +9,7 @@
   display: flex;
   top: 0;
   width: 100%;
-  background-color: #82b0b0;
+  background-color: #234f58;
   z-index: 999;
   box-sizing: border-box;
 }
@@ -88,19 +88,15 @@ button {
 
 }
 
-
-
 /* LAYOUT GRID */
 
 /* Columna table.table */
-
 .row {
-  
   display: flex;
   flex-wrap: wrap;
-  padding-top: 4%;
+  padding-top: 3%;
   padding-bottom: 3%;
-  padding-left: 2%;
+  padding-left: 1%;
 }
 
 /* Create two unequal columns that sits next to each other */
@@ -109,7 +105,6 @@ button {
   flex: 20%;
   background-color: #f1f1f1;
   padding: 20px;
-  
 }
 
 /* Main column */
@@ -161,15 +156,15 @@ ul li:hover a {
 /* SIDE MENU END */
 
 /* TABLE START  */
-.table h1{
-    color:#82b0b0;
-    text-align: center;
-}
 
 /* table head h1 */
+.title-table{
+  text-align: center;
+  color: #82b0b0;
+}
 .table th h1 {
   font-weight: bold;
-  font-size: 1em;
+  font-size: 20px;
   text-align: left;
   color: white;
 }
@@ -219,8 +214,6 @@ ul li:hover a {
   padding: 6px 10px;
   margin-top: 8px;
   margin-right: 16px;
-  background: transparent;
-  color: #82b0b0;
   font-size: 17px;
   border: none;
   cursor: pointer;
@@ -285,8 +278,8 @@ ul li:hover a {
 /* FOOTER */
 
 footer {
-  background-color: #234f58;
-  padding-top: 5%;
+  background-color: #595959;
+  padding-top: 3%;
   padding-bottom: 1%;
   text-align: center;
 }
@@ -295,4 +288,7 @@ footer p {
   margin: 0;
 }
 
+footer img{
+  width: 15%;
+}
 /* FOOTER END */
