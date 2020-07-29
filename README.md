@@ -8,7 +8,7 @@
 
 **Link de NodeJS:** https://nodejs.org/en/
 
-**Paleta de colores:
+**Paleta de colores:**
 #82B0B0
 #C3ECE8
 #595959
