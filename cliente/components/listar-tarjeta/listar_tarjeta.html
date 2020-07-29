@@ -10,105 +10,127 @@
     <script src="https://kit.fontawesome.com/649e6ace6e.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" media="screen" href="listar_tarjeta.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../../assets/css/styles.css"
+    />
 
-
-<body>
-
-
-    <header>
-        <label class="labelMenu"><i class="fa fa-bars"></i></label>
-        <div class="logo">
-            <img src="./spot.png">
-        </div>
-    </header>
-
-    <div class="menu">
-        <h1><i class="fa fa-address-card"></i></h1>
-
-        <nav>
-            <ul>
-                <a href="">
-                    <li class="icone1"><i class="fas fa-handshake"></i></li>
-                    <li>Convenios</li>
-                </a>
-
-                <a href="">
-                    <li class="icone2"><i class="fa fa-envelope"></i></li>
-                    <li>Solicitudes</li>
-                </a>
-
-                <a href="">
-                    <li class="icone3"><i class="fa fa-book"></i></li>
-                    <li>Reservas</li>
-                </a>
-
-                <a href="">
-                    <li class="icone4"><i class="far fa-credit-card"></i></li>
-                    <li>Tarifas</li>
-                </a>
-            </ul>
-
-            <ul>
-                <a href="">
-                    <li class="icone5"><i class="fa fa-lightbulb"></i></li>
-                    <li>Ajuda</li>
-                </a>
-
-                <a href="">
-                    <li class="icone6"><i class="fa fa-cog"></i></li>
-                    <li>Configuración</li>
-                </a>
-
-                <a href="">
-                    <li class="icone7"><i class="fa fa-comment"></i></li>
-                    <li>Comentarios</li>
-                </a>
-
-                <a href="">
-                    <li class="icone8"><i class="fa fa-angle-double-left"></i></li>
-                    <li>Sair</li>
-                </a>
-            </ul>
-        </nav>
-    </div>
-    <!-- Para imprimir la lista -->
-    <div class="quiz-window">
+    <body>
+        <!-- Header -->
         <div class="header">
-            <div class="quiz-window-title">Mis Tarjetas</div>
-
+          <header>
+            <div class="header-top">
+              <div class="logo">
+                <img src="logo21.png" />
+              </div>
+              <div class="menu">
+                <div class="leftOptions">
+                  <ul>
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><a href="#">Cómo funciona?</a></li>
+                    <li><a href="#">Contáctenos</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                  </ul>
+                </div>
+                <div class="rightOptions">
+                  <ul>
+                    <li><a href="#">Iniciar sesión</a></li>
+                    <li><a href="#">Registrarse</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </header>
+        <br>
+        <br>
+        <br>
+    
         </div>
-        <div class="body">
-
-            <ul class="filas tittles">
-
-                <li class="parqueo">Tarjeta</li>
-
-                <li ">All Time</li>
-            </ul><!-- guiz-awards-row -->
-            <ul class=" filas ">
-              <li class=""><span class=" star goldstar"></span></li>
-                <li class="pass">2345
-                    <!-- <div class="">90-100% correct answers</div> -->
+    
+        <!-- The flexible grid (content) -->
+        <div class="row">
+          <div class="side">
+            <div class="sidebar">
+              <header></header>
+              <ul>
+                <li>
+                  <a href="#"><i class="fas fa-qrcode"></i>Mi Parqueo</a>
                 </li>
-                <li class="icon"><i class="fas fa-trash-alt"></i></li>
-
-            </ul>
-            <ul class="filas">
-                <li class=""><span class="star silverstar"></span></li>
-                <li class="pass">2222
-                    <!-- <div class="">80-90% correct answers</div> -->
+                <li>
+                  <a href="#"><i class="fas fa-link"></i>Mi Perfil</a>
                 </li>
-                <li class="icon"><i class="fas fa-trash-alt"></i></li>
-
-            </ul>
+                <li>
+                  <a href="#"><i class="fas fa-stream"></i>Tarifas</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-calendar-week"></i>Reportes</a>
+                </li>
+                <li>
+                  <a href="#"><i class="far fa-question-circle"></i>Convenios</a>
+                </li>
+                <li>
+                  <a href="#"><i class="far fa-question-circle"></i>Clientes</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="main">
+            <div class="title">
+              <h1>Tarjetas</h1>
+            </div>
+            <div class="button-container">
+                <button type="button" class="black-button"><i class="fas fa-plus-circle"></i> 
+                  Agregar Tarjeta <span id="right"></span>
+                </button>
+            </div>
+            <table class="container">
+              <thead>
+                <tr>
+                  <th><h1>Mis Tarjetas</h1></th>
+                  
+                  <th><h1>Eliminar</h1></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="icon" ><i class="far fa-credit-card"></i></span>*****    8364</td>
+                 
+                  <td>
+                    <i class="far fa-trash-alt"  ></></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="icon" ><i class="far fa-credit-card"></i></span>***** 3852</td>
+                 
+                  <td>
+                    <i class="far fa-trash-alt"></></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="icon" ><i class="far fa-credit-card"></i></span>***** 0233</td>
+                 
+                  <td>
+                    <i class="far fa-trash-alt"></></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="icon" ><i class="far fa-credit-card"></i></span>***** 3442</td>
+                  
+                  <td>
+                    <i class="far fa-trash-alt"></></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-    </div>
-    <div class="opacMenu"></div>
-
-    <!--  Jquery  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script src="./listar_tarjeta.js"></script>
-</body>
-
-</html>
+    
+        <!-- Footer -->
+        <footer>
+          <p>San José, Costa Rica.</p>
+          <p>&reg;Todos los derechos reservados</p>
+      </footer>
+      </body>
+    </html>
