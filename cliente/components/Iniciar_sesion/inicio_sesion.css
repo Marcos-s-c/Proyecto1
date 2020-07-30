@@ -47,18 +47,4 @@
   padding-left: 20%;
 }
 
-.black-button {
-  background-color: black;
-  color: white;
-  border: none;
-  border-width: 0px;
 
-}
-
-.black-button:focus {
-  outline: 0;
-}
-
-button{
-  width: 100%;
-}
