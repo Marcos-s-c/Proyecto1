@@ -1,0 +1,227 @@
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+  * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  a{
+    color: white;
+  }
+  a, p, input{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  h1, h2, h3{
+    font-family: 'Quicksand', sans-serif;
+    padding: 2% 0%;
+    font-weight: 500;
+  }
+  button{
+    border-radius: 3px;
+    border-style: none;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 2% 3%;
+}
+
+  /**** HEADER *******/
+  .user-page-header {
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    top: 0;
+    width: 100%;
+    background-color: #234f58;
+    z-index: 999;
+    box-sizing: border-box;
+    padding: 1% 2%;
+  }
+  .user-page-header .logo {
+    width: 50%;
+  }
+  .user-page-header .logo img {
+    height: 50px;
+  }
+  .user-page-header .sub-menu{
+    width: 50%;
+  }
+  .user-page-header .dropdown .fa-user-circle{
+    font-size: 50px;
+    color: white;
+    width: 20%;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+    float: right;
+
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: fixed;
+    right: 0;
+    background-color: #4f8a7d;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 15px 25px;
+    z-index: 1;
+  }
+  .dropdown-content li{
+    padding: 10%;
+  }
+  .dropdown-content a{
+    color: white;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content li:hover, .dropdown-content li:hover a{
+    background-color: whitesmoke;
+    color: #234f58;
+  }
+
+/************  MAIN SECTION ***********/
+/* .row = SIDE + MAIN CONTAINER */
+  .row {                  
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .side {
+    flex: 13%;
+    padding: 2% 0%;
+    background-color: #f8f8f8;
+  }
+  .side-menu {
+    width: 100%;
+    height: 100%;
+    padding-top: 30%;
+    padding-left: 5%;
+    transition: all 0.5s ease;
+  }
+  .side-menu ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 85px;
+    font-size: 20px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.4s;
+    color: #585858;
+  }
+  .side-menu li:hover a {
+    padding-left: 50px;
+  }
+  .side-menu ul a i {
+    margin-right: 16px;
+  }
+
+  #check:checked ~ section {
+    margin-left: 250px;
+  } 
+  .side-menu li:hover a{
+
+    background-color: #82B0B0;
+    color: white;
+  } 
+  
+  /* MAIN CONTENT SECTION*/
+  .main {
+    flex: 70%;
+    background-color: white;
+    padding: 5% 0%;
+  }
+  .user-info-container{
+    width: 60%;
+    padding-left: 10%;
+  }
+  .second-row, third-row{
+    padding: 3% 0%;
+  }
+  .first-row{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 90%;
+    padding: 2% 0%;
+  }
+  .first-row .user-photo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .user-photo img{
+    width: 100px;
+    height: 100px;
+  }
+  .first-row h2{
+    padding-left: 10%;
+  }
+  .add-email{
+    overflow: auto;
+    padding: 2% 0%;
+  }
+  .add-email .fa-plus, .add-email a{
+    float: left;
+    margin: 0% 1%;
+    color: #929191;
+  }
+  .add-email a{
+    font-size: 12px;
+  }
+  .add-email a:hover, .add-email .fa-plus:hover{
+    color: #234f58;
+  }
+  .user-info-container form{
+    padding: 5% 0%;
+    width: 90%;
+  }
+  .user-info-container .form-field{
+    display: inline;
+    width: 70%;
+    padding: 2% 0%;
+    margin-top: 1%;
+    border-style: none;
+    background-color: #F1F3F4;
+  }
+  .form .birth-date{
+    color: #929191;
+  }
+  .user-info-container button{
+    float: right;
+    margin-top: 20%;
+    background-color: #82B0B0;
+    margin-right: 30%;
+  }
+  .user-info-container button:hover{
+    background-color: #234f58;
+  }
+  .user-info-container form .fa-pencil-alt{
+    font-size: 10px;
+    color: #595959;
+  }
+
+
+
+  /* footer */
+
+  footer {
+    background-color: #595959;
+    padding-top: 5%;
+    padding-bottom: 1%;
+    text-align: center;
+  }
+  footer p {
+    color: white;
+    margin: 0;
+  }
+
