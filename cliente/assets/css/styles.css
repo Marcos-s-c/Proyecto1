@@ -169,6 +169,12 @@ button {
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   padding: 2% 3%;
+  background-color: #82b0b0;
+  outline: none;
+}
+
+button:hover {
+  background-color: #234f58;
 }
 
 /* LAYOUT GRID */
@@ -348,7 +354,6 @@ td i {
   padding-top: 3%;
   padding-bottom: 3%;
   font-size: 18px;
-  background-color: black;
   color: white;
   border: none;
   border-width: 0px;
