@@ -28,7 +28,10 @@
       integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
       crossorigin="anonymous"
     />
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="inicio_sesion.js"></script>
+    
   </head>
   <body>
     <header>
@@ -82,12 +85,13 @@
             id="loginPassword"
             name="password"
             placeholder="Contraseña"
+
             class="input-bottom-border-only"
           />
           <br />
           <br />
         </div>
-        <button type="button" >
+        <button type="button" onclick="validar()" >
           SIGUIENTE <span id="right"><i class="fas fa-arrow-right"></span></i>
         </button>
         <div class="access-container">
