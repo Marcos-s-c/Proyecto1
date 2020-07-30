@@ -462,3 +462,9 @@ footer p {
   margin: 0;
 }
 /* FOOTER END */
+
+/*Padding for add and edit pages*/
+
+.padding-top {
+  padding-top: 14%;
+}
