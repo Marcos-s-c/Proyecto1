@@ -5,14 +5,14 @@
 /*HEADER LANDING PAGE*/
 .header-top {
   position: fixed;
-    overflow: hidden;
-    display: flex;
-    top: 0;
-    width: 100%;
-    background-color: #234f58;
-    z-index: 999;
-    box-sizing: border-box;
-    padding: 1% 2%;
+  overflow: hidden;
+  display: flex;
+  top: 0;
+  width: 100%;
+  background-color: #234f58;
+  z-index: 999;
+  box-sizing: border-box;
+  padding: 1% 2%;
 }
 
 .header-top {
@@ -112,7 +112,8 @@
   display: block;
 }
 
-.dropdown-content li:hover, .dropdown-content li:hover a{
+.dropdown-content li:hover,
+.dropdown-content li:hover a {
   background-color: whitesmoke;
   color: #234f58;
 }
@@ -139,20 +140,22 @@ a {
 }
 
 /* font size */
-a, p, input{
-  font-family: 'Open Sans', sans-serif;
+a,
+p,
+input {
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
 
 /* font size */
-h1, h2, h3{
-  font-family: 'Quicksand', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Quicksand", sans-serif;
   padding: 2% 0%;
   font-weight: 500;
 }
-
-
 
 div {
   overflow: auto;
@@ -164,7 +167,7 @@ button {
   border-radius: 3px;
   border-style: none;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   padding: 2% 3%;
 }
 
@@ -222,7 +225,6 @@ button {
   box-sizing: border-box;
   transition: 0.4s;
   color: #595959;
-
 }
 /* menu hover movement */
 .side-menu ul li:hover a {
@@ -231,11 +233,10 @@ button {
 .side-menu ul a i {
   margin-right: 1%;
 }
-.side-menu li:hover a{
-
-  background-color: #82B0B0;
+.side-menu li:hover a {
+  background-color: #82b0b0;
   color: white;
-} 
+}
 
 /* SIDE MENU END */
 
@@ -366,78 +367,80 @@ td i {
   outline: none;
 }
 
-/* delete later */
-.user-info-container{
+/* delete later, plantilla main content, user profile:due;o */
+.user-info-container {
   width: 60%;
   padding-left: 10%;
 }
-.second-row, third-row{
+.second-row,
+third-row {
   padding: 3% 0%;
 }
-.first-row{
+.first-row {
   display: flex;
   align-items: center;
   text-align: left;
   width: 90%;
   padding: 2% 0%;
 }
-.first-row .user-photo{
+.first-row .user-photo {
   width: 20%;
   height: 20%;
 }
-.user-photo img{
+.user-photo img {
   width: 100%;
   height: auto;
 }
-.first-row h2{
+.first-row h2 {
   padding-left: 10%;
 }
-.add-email{
+.add-email {
   overflow: auto;
   padding: 2% 0%;
 }
-.add-email .fa-plus, .add-email a{
+.add-email .fa-plus,
+.add-email a {
   float: left;
   margin: 0% 1%;
   color: #929191;
 }
-.add-email a{
+.add-email a {
   font-size: 12px;
 }
-.add-email a:hover, .add-email .fa-plus:hover{
+.add-email a:hover,
+.add-email .fa-plus:hover {
   color: #234f58;
 }
-.user-info-container form{
+.user-info-container form {
   padding: 5% 0%;
   width: 90%;
 }
-.user-info-container .form-field{
+.user-info-container .form-field {
   display: inline;
   width: 70%;
   padding: 2% 0%;
   margin-top: 1%;
   border-style: none;
-  background-color: #F1F3F4;
+  background-color: #f1f3f4;
 }
-.form .birth-date{
+.form .birth-date {
   color: #929191;
 }
-.user-info-container button{
+.user-info-container button {
   float: right;
   margin-top: 20%;
-  background-color: #82B0B0;
+  background-color: #82b0b0;
   margin-right: 30%;
 }
-.user-info-container button:hover{
+.user-info-container button:hover {
   background-color: #234f58;
 }
-.user-info-container form .fa-pencil-alt{
+.user-info-container form .fa-pencil-alt {
   font-size: 10px;
   color: #595959;
 }
 
 /* delete later */
-
 
 /* end body */
 
