@@ -158,7 +158,7 @@ h3 {
 }
 
 div {
-  overflow: auto;
+  /* overflow: auto;*/
   box-sizing: border-box;
 }
 
@@ -319,6 +319,12 @@ td i {
   outline: none;
   background-color: transparent;
   color: #82b0b0;
+}
+
+/*Bloque de agregar*/
+.add-container {
+  float: right;
+  width: 50%;
 }
 /* TABLE SEARCH END */
 

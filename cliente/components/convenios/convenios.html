@@ -56,10 +56,27 @@
           <div class="title-table">
             <h1>Convenios</h1>
           </div>
-          <div class="search">
-            <div class="add-icon"><i class="fas fa-plus-circle"></i></div>
-            <input type="text" placeholder="Buscar..." />
-            <button type="submit"><i class="fas fa-search"></i></button>
+          <div class="table-header">
+            <div class="search">
+              <input type="text" placeholder="Buscar..." />
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="add-container">
+              <div class="add-icon"><i class="fas fa-plus-circle"></i></div>
+              <div class="add-inputs">
+                <input
+                  class="sub-inputs"
+                  type="text"
+                  placeholder="Nombre de la empresa"
+                />
+                <input
+                  class="sub-inputs"
+                  type="text"
+                  placeholder="Porcentaje de descuento"
+                />
+                <button type="submit">Agregar convenio</button>
+              </div>
+            </div>
           </div>
           <table class="table">
             <thead>

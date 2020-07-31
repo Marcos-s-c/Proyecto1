@@ -1,19 +1,17 @@
 .search input {
   margin-top: 8px;
   outline: none;
-  width: 10%;
+  width: 20%;
   padding-left: 3%;
 }
 
 .search {
   text-align: left;
-  width: 100%;
-  margin: 0 auto;
-  overflow: auto;
+  width: 50%;
 }
 
 .add-icon {
-  padding: 1%;
+  padding: -3%;
   float: right;
   font-size: 24px;
   color: #82b0b0;
@@ -78,4 +76,31 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.add-inputs button {
+  padding: 3px;
+  color: white;
+}
+
+.add-inputs {
+  background-color: #f1f3f4;
+  float: left;
+  padding: 1%;
+}
+
+.sub-inputs {
+  border: none;
+  border: solid;
+  border-width: thin;
+  border-color: #82b0b0;
+  background-color: #f1f3f4;
+}
+
+.sub-inputs:focus-within {
+  border-color: #82b0b0;
+}
+
+.table-header {
+  overflow: auto;
 }
