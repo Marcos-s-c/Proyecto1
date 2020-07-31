@@ -305,10 +305,11 @@ td i {
   font-size: 18px;
   border: none;
   outline: none;
+  float: left;
 }
 /* table search button */
 .search button {
-  float: right;
+  float: left;
   padding: 6px 10px;
   margin-top: 8px;
   margin-right: 16px;
