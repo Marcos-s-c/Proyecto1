@@ -18,6 +18,10 @@ Swal.fire({
     "</div>" +
     "</div>",
   showCloseButton: true,
-  confirmButtonText: '<i class="fa fa-thumbs-up"></i> Listo',
+  showCancelButton: true,
+  focusConfirm: false,
+  confirmButtonText: '<i class="fa fa-thumbs-up"></i> Listo!',
   confirmButtonAriaLabel: "Thumbs up, great!",
+  cancelButtonText: "Reportar parqueo",
+  cancelButtonAriaLabel: "Thumbs down",
 });
