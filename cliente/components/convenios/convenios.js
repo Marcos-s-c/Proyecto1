@@ -25,7 +25,7 @@ function showAndHideEdit() {
 
 //Validar espacios agregar
 function validateAddSpaces() {
-  var validateResult = validateCompany() && validateDiscount();
+  var validateResult = validateCompany() && validateDiscount("#discountAdd");
   if (validateResult == true) {
     Swal.fire({
       position: "center",
@@ -37,6 +37,21 @@ function validateAddSpaces() {
   }
 }
 
+//Validar editar general
+function validateEditInput() {
+  var validateResult = validateDiscount("#discountEdit");
+  if (validateResult == true) {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "El convenio se ha editado correctamente",
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  }
+}
+
+//Validar input nombre de la compañía
 function validateCompany() {
   var company = document.querySelector("#company");
   var firstError = "";
@@ -61,18 +76,22 @@ function validateCompany() {
   return result;
 }
 
-function validateDiscount() {
-  var discountAdd = document.querySelector("#discountAdd");
+//Validar input porcentaje de descuento
+function validateDiscount(elementId) {
+  var elementDiscount = document.querySelector(elementId);
   var discountRegex = /^([0-9])*$/;
   var firstError = "";
   var result = false;
 
-  discountAdd.classList.remove("error");
-  if (discountAdd.value == "" || !discountRegex.test(discountAdd.value)) {
+  elementDiscount.classList.remove("error");
+  if (
+    elementDiscount.value == "" ||
+    !discountRegex.test(elementDiscount.value)
+  ) {
     if (firstError == "") {
       firstError = "El monto de descuento no ha sido registrado";
     }
-    discountAdd.classList.add("error");
+    elementDiscount.classList.add("error");
   }
   if (firstError != "") {
     Swal.fire({
