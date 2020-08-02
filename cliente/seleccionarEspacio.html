@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="global.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="seleccionarEspacio.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/da33aea8dd.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Header -->
+      <header>
+        <div class="logo">
+          <img src="logo21.png" />
+        </div>
+        <div class="sub-menu" id="sub">
+          <div class="dropdown">
+            <i class="fas fa-user-circle dropbtn" onclick="displayDropMenu()"></i>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+        </div> 
+      </header>
+      <div class="topHeaderFill">relleno</div>
+    <!-- The flexible grid (content) -->
+    <div class="row">
+      <div class="side">
+        <div class="reservation-form">
+            <h3>Reserva tu espacio</h3>
+            <label>Espacio N°</label>
+            <label id="spot-number" class="form-digit">#</label>
+            <select class="reservation-select" id="time-select">
+                <option>Hora de ingreso</option>
+                <option>6:00</option>
+                <option>7:00</option>
+                <option>8:00</option>
+                <option>9:00</option>
+            </select>
+            <select class="reservation-select" id="vehicle-select">
+                <option>Tipo de vehículo</option>
+                <option>Vehículo</option>
+                <option>Motocicleta</option>
+            </select>
+            <label>Tarifa por hora:</label>
+            <label id="monto-tarifa" class="form-digit">#</label>
+            <button type="button" id="reservation-button"><a href="misReservas.html">Reservar</a></button>
+            <div class="spot-status">
+                <div class="red-spot"><div>o</div><p>Ocuapado</p></div>
+                <div class="green-spot"><div>d</div><p>Disponible</p></div>
+            </div>
+        </div>
+        <a href="buscarParqueo.html" class="back-link"><i class="fas fa-arrow-left"></i>Back</a> 
+      </div>
+      <div class="main content">
+        <br/>
+        <div class="parking-spots-container">
+            <h3>Seleccione un espacio</h3>
+            <table class="spots-table" id="spots-table">
+                <tr class="first-row rows">
+                    <td><div class="spot-item" id="spot-01"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>01</p></div></td>
+                    <td><div class="spot-item" id="spot-02"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>02</p></div></td>
+                    <td><div class="spot-item" id="spot-03"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>03</p></div></td>
+                    <td><div class="spot-item" id="spot-04"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>04</P></div></td>
+                    <td><div class="spot-item" id="spot-05"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>05</p></div></td>
+                    <td><div class="spot-item" id="spot-06"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>06</p></div></td>
+                    <td><div class="spot-item" id="spot-07"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>07</p></div></td>
+                    <td><div class="spot-item" id="spot-08"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>08</p></div></td>
+                    <td><div class="spot-item" id="spot-09"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>09</p></div></td>
+                    <td><div class="spot-item" id="spot-10"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>10</p></div></td>
+                </tr>
+                <tr class="second-row rows">
+                    <td><div class="spot-item" id="spot-11"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>11</p></div></td>
+                    <td><div class="spot-item" id="spot-12"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>12</p></div></td>
+                    <td><div class="spot-item" id="spot-13"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>13</p></div></td>
+                    <td><div class="spot-item" id="spot-14"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>14</p></div></td>
+                    <td><div class="spot-item" id="spot-15"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>15</p></div></td>
+                    <td><div class="spot-item" id="spot-16"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>16</p></div></td>
+                    <td><div class="spot-item" id="spot-17"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>17</p></div></td>
+                    <td><div class="spot-item" id="spot-18"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>18</p></div></td>
+                    <td><div class="spot-item" id="spot-19"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>19</p></div></td>
+                    <td><div class="spot-item" id="spot-20"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>20</p></div></td>
+                </tr>
+                <tr class="third-row rows">
+                    <td><div class="spot-item" id="spot-21"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>21</p></div></td>
+                    <td><div class="spot-item" id="spot-22"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>22</p></div></td>
+                    <td><div class="spot-item" id="spot-23"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>23</p></div></td>
+                    <td><div class="spot-item" id="spot-24"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>24</p></div></td>
+                    <td><div class="spot-item" id="spot-25"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>25</p></div></td>
+                    <td><div class="spot-item" id="spot-26"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>26</div></td>
+                    <td><div class="spot-item" id="spot-27"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>27</p></div></td>
+                    <td><div class="spot-item" id="spot-28"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>28</p></div></td>
+                    <td><div class="spot-item" id="spot-29"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>29</p></div></td>
+                    <td><div class="spot-item" id="spot-30"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>30</p></div></td>
+                </tr>
+                <tr class="fourth-row rows">
+                    <td><div class="spot-item" id="spot-31"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>31</p></div></td>
+                    <td><div class="spot-item" id="spot-32"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>32</p></div></td>
+                    <td><div class="spot-item" id="spot-33"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>33</p></div></td>
+                    <td><div class="spot-item" id="spot-34"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>34</p></div></td>
+                    <td><div class="spot-item" id="spot-35"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>35</p></div></td>
+                    <td><div class="spot-item" id="spot-36"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>36</p></div></td>
+                    <td><div class="spot-item" id="spot-37"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>37</p></div></td>
+                    <td><div class="spot-item" id="spot-38"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>38</p></div></td>
+                    <td><div class="spot-item" id="spot-39"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>39</p></div></td>
+                    <td><div class="spot-item" id="spot-40"><img src="imgs/car.png"><div class="spot-cover hidden"></div><p>40</p></div></td>
+                </tr>
+            </table>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <p>San José, Costa Rica.</p>
+      <p>&reg;Todos los derechos reservados</p>
+  </footer>
+  <script src="seleccionarEspacio.js"></script>
+  </body>
+</html>
