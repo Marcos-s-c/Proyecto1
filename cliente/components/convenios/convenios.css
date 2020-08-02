@@ -91,6 +91,9 @@ input:checked + .slider:before {
   padding: 1%;
   display: none;
 }
+.edit-wraper {
+  margin-left: 50%;
+}
 
 .sub-inputs {
   border: none;

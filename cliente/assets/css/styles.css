@@ -529,3 +529,7 @@ input:checked + .slider:before {
 .login-button {
   color: white;
 }
+
+input.error {
+  border: solid red;
+}
