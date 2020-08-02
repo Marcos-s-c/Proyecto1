@@ -21,7 +21,7 @@ boton.addEventListener("click", () => {
 
       /*cancel.classList.toggle('active');*/
 
-      Swal.fire("Eliminada", "!Su reserva ha sido eliminada!", "success");
+      Swal.fire("Eliminado", "!Su reserva ha sido eliminada!", "success");
     }
   });
 });
