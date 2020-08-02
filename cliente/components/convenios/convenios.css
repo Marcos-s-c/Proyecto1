@@ -78,16 +78,21 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.add-inputs button {
+.add-inputs button,
+.edit-wraper button {
   padding: 3px;
   color: white;
 }
 
-.add-inputs {
+.add-inputs,
+.edit-wraper {
   background-color: #f1f3f4;
   float: left;
   padding: 1%;
   display: none;
+}
+.edit-wraper {
+  margin-left: 50%;
 }
 
 .sub-inputs {
@@ -100,4 +105,8 @@ input:checked + .slider:before {
 
 .table-header {
   overflow: auto;
+}
+
+.edit-wraper {
+  display: none;
 }

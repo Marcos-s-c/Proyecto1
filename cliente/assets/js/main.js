@@ -1,5 +1,4 @@
-
-// valida los espacios en blanco de los elementos ingresados en el parametro
+// valida los espacios en blanco de los elementos ingresados en el parametro 
 function valiteBlanks(elements) {
   console.log("entra");
   for (var key in elements) {
@@ -20,5 +19,36 @@ function validateEmail(email) {
   } else {
     Swal.fire("Formato del correo no es correcto");
     return false;
+  }
+}
+
+// MENU INICIAR SESION  Y CERRAR SESION
+function displayDropMenu() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+
+
+/*Función para mostrar y ocultar los inputs de agregar*/
+function showAddSpaces() {
+  var add = document.getElementById("add");
+
+  if (add.offsetWidth > 0 && add.offsetHeight > 0) {
+    add.style.display = "none";
+  } else {
+    add.style.display = "block";
   }
 }

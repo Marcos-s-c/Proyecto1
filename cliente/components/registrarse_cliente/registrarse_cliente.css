@@ -3,8 +3,8 @@
     padding-left: 35%;
     padding-right: 35%;
   }
-  .login-container h1 {
-    text-align: center;
+  .login-container h1, p {
+    text-align: left;
     font-weight: normal;
   }
   
@@ -44,11 +44,9 @@
   
 
   
- 
-  
-  .black-button:focus {
-    outline: 0;
-  }
+.login-button{
+  color: white;
+}
   
   .form input{
     padding-top: 2%;

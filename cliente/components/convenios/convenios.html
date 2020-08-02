@@ -29,7 +29,6 @@
       <div class="row">
         <div class="side">
           <div class="side-menu">
-            <header></header>
             <ul>
               <li>
                 <a href="#"><i class="fas fa-qrcode"></i>Mi Parqueo</a>
@@ -63,22 +62,33 @@
             </div>
             <div class="add-container">
               <div class="add-icon">
-                <span onclick="showAddSpaces()">
+                <span onclick="showAndHideAdd()">
                   <i class="fas fa-plus-circle"></i
                 ></span>
               </div>
               <div id="add" class="add-inputs">
                 <input
+                  id="company"
                   class="sub-inputs"
                   type="text"
                   placeholder="Nombre de la empresa"
                 />
                 <input
+                  id="discountAdd"
                   class="sub-inputs"
                   type="text"
                   placeholder="Porcentaje de descuento"
                 />
-                <button type="submit">Agregar convenio</button>
+                <button id="addButton" type="submit">Agregar convenio</button>
+              </div>
+              <div id="edit" class="edit-wraper">
+                <input
+                  id="discount2"
+                  class="sub-inputs"
+                  type="text"
+                  placeholder="Porcentaje de descuento"
+                />
+                <button id="editButton" type="submit">Editar</button>
               </div>
             </div>
           </div>
@@ -104,7 +114,8 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="edit(event)"><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -118,7 +129,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -132,7 +145,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -146,7 +161,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -160,7 +177,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -174,7 +193,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -188,7 +209,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -202,7 +225,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
             </tbody>
@@ -215,5 +240,6 @@
       <p>&reg;Todos los derechos reservados</p>
     </footer>
     <script src="convenios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </body>
 </html>

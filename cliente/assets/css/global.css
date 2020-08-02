@@ -1,19 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
-* {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-decoration: none;
-}
+
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     padding: 0;
     margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.outer-container{
+  flex-grow: 1;
 }
 h1, h2, h3{
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
 }
-p, a, input{
+p, a, input, label{
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -27,6 +30,10 @@ h2{
 h3{
     font-size: 1.5rem;
 }
+p, input, label{
+  font-size: 16px;
+}
+
 ul{
     list-style-type: none;
     margin: 0;
@@ -43,7 +50,7 @@ button{
 button a{
     color: white;
   }
-.hide{
+.hidden{
     visibility: hidden;
 }
 .visible{
@@ -78,7 +85,38 @@ header .logo img{
     margin: 0;
 }
 /****** HEADER MENU ************/
+header .menu{
+  width: 80%;
+  display: flex;
+  padding-top: 1%;
+  box-sizing: border-box;
+}
+header ul{
+  width: 100%;
+  text-align: end;
+}
+header .menu .leftOptions{
+  width: 75%;
+}
+header .menu .rightOptions{
+  width: 25%;
+  padding-right: 5%;
+}
+header .leftOptions li{
+  border-right: 1px solid #f2f2f2;
+  display: inline;
+  padding: 0% 1%
+}
+header .rightOptions li{
+  display: inline;
+  padding: 0% 5% ;
+}
+header .menu a{
+  color: white;
+  font-size: 16px;
+}
 
+/****** HEADER SUB-MENU***********/
 
 header .sub-menu{
   width: 80%;
@@ -128,10 +166,10 @@ header .sub-menu{
 .row {                  
     display: flex;
     flex-wrap: wrap;
+    padding: 1%;
   }
   .side {
-    flex: 13%;
-    padding: 2% 0%;
+    flex: 10%;
     background-color: white;
   }
   .side-menu {
@@ -161,18 +199,14 @@ header .sub-menu{
   #check:checked ~ section {
     margin-left: 250px;
   } 
-  .side-menu li:hover a{
-
-    background-color: #82B0B0;
-    color: white;
+  .side-menu li:hover{
+    border-bottom: 5px sollid #82B0B0;
   }
   .active{
-    background-color: #82B0B0;
-    color: white;
+    border-bottom: 3px sollid #82B0B0;
   } 
   .main {
     flex: 70%;
-    background-color: white;
     padding: 5% 0%;
   }
 

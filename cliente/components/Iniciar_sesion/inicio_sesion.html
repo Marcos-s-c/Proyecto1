@@ -34,42 +34,16 @@
     
   </head>
   <body>
-    <header>
-      <div class="header-top">
-          <div class="logo">
-              <img src="../../assets/img/logo.png"/>
-          </div>
-          <div class="menu">
-              <div class="leftOptions">
-                  <ul>
-                      <li><a href="registrarParqueo.html">Sobre nosotros</a></li>
-                      <li><a href="modificarPerfil.html">Cómo funciona?</a></li>
-                      <li><a href="#">Contáctenos</a></li>
-                      <li><a href="#">Ayuda</a></li>
-                  </ul>
-              </div>
-              <div class="rightOptions">
-                  <ul> 
-                      <li><a href="#">Iniciar sesión</a></li>
-                      <li><a href="#">Registrarse</a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-      <div class="topHeaderFill">relleno</div>
-      <div class="header-middle">
-          <h1>Tu parqueo al alcance de la mano</h1>
-      </div>
-  </header>
+    <!-- main -->
     <div class="login-container">
       <br />
       <br />
       <br />
-      <div class="logo">
+      <div class="logo-login">
         <img src="../../assets/img/logo.png" alt="Logo" />
       </div>
       <form id="login-form" action="#">
-        <h1>Iniciar Sessión</h1>
+        <h1>Iniciar Sesión</h1>
         <div class="email-input">
           <input
             type="text"
@@ -85,13 +59,12 @@
             id="loginPassword"
             name="password"
             placeholder="Contraseña"
-
             class="input-bottom-border-only"
           />
           <br />
           <br />
         </div>
-        <button type="button" onclick="validar()" >
+        <button type="button" onclick="validar()" class="login-button" >
           SIGUIENTE <span id="right"><i class="fas fa-arrow-right"></span></i>
         </button>
         <div class="access-container">
@@ -106,5 +79,7 @@
         </div>
       </form>
     </div>
+        </div>
+      </div>
   </body>
 </html>

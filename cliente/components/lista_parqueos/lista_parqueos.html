@@ -1,166 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <!-- global css -->
+    <title>Parqueos</title>
+    <script
+      src="https://kit.fontawesome.com/2ed94c37e4.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
       href="../../../cliente/assets/css/styles.css"
     />
-    <!-- fontawesome -->
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
-      crossorigin="anonymous"
+      type="text/css"
+      media="screen"
+      href="lista_parqueos.css"
     />
-    <link rel="stylesheet" href="lista_parqueos.css">
   </head>
   <body>
-    <!-- Header -->
-    <div class="header">
-      <header>
-        <div class="header-top">
-          <!-- Header Logo -->
-          <div class="logo">
-            <img src="../../assets/img/logo.png" />
+    <header>
+      <div>
+        <i class="fas fa-user-circle fa-2x"></i>
+      </div>
+    </header>
+    <main>
+      <!-- The flexible grid (content) -->
+      <div class="row">
+        <div class="side">
+          <div class="side-menu">
+            <ul>
+              <li>
+                <a href="#"><i class="fas fa-qrcode"></i>Parqueos</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-link"></i>Mi Perfil</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-stream"></i>Tarifas</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-calendar-week"></i>Reportes</a>
+              </li>
+              <li>
+                <a href="#"><i class="far fa-question-circle"></i>Convenios</a>
+              </li>
+              <li>
+                <a href="#"><i class="far fa-question-circle"></i>Clientes</a>
+              </li>
+            </ul>
           </div>
-          <!-- Header Menu -->
-          <div class="menu">
-            <div class="leftOptions">
-              <ul>
-                <li><a href="#">Sobre nosotros</a></li>
-                <li><a href="#">Cómo funciona?</a></li>
-                <li><a href="#">Contáctenos</a></li>
-                <li><a href="#">Ayuda</a></li>
-                
-              </ul>
-            </div>
-            <div class="rightOptions">
-              <ul>
-                <li><a href="#"><i class="fas fa-sign-in-alt"></i></i></a></li>
-                <li><a href="#">Iniciar sesión</a></li>
-                <li><a href="#">Registrarse</a></li>
-                
-              </ul>
-            </div>
-          </div>
-          <!-- Header Menu end -->
         </div>
-      </header>
-      <br />
-      <br />
-      <br />
-    </div>
-    <!-- Header end -->
-
-    <!-- //////content////// -->
-    <div class="row">
-      <div class="side">
-        <div class="sidebar">
-          <ul>
-            <li>
-              <a href="#"><i class="fas fa-qrcode"></i>Mi Parqueo</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-link"></i>Mi Perfil</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-stream"></i>Tarifas</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-calendar-week"></i>Reportes</a>
-            </li>
-            <li>
-              <a href="#"><i class="far fa-question-circle"></i>Convenios</a>
-            </li>
-            <li>
-              <a href="#"><i class="far fa-question-circle"></i>Clientes</a>
-            </li>
-          </ul>
+        <div class="main">
+          <div class="title-table">
+            <h1>Lista de Parqueos</h1>
+          </div>
+          <div class="table-header">
+            <div class="search">
+              <input type="text" placeholder="Buscar..." />
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="select">
+              <select class="search" name="filter" id="filter-select">
+                <option value="todos">Todos</option>
+                <option value="reportados">Reportados</option>
+                <option value="activos">Activos</option>
+                <option value="innactivos">Innactivos</option>
+              </select>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th><h1>Parqueo</h1></th>
+                <th><h1>Dueño</h1></th>
+                <th><h1>Activar/Desactivar</h1></th>
+                <th><h1></h1></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Parqueo 1</td>
+                <td>Dueño 1</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+                <td>
+                  <i class="far fa-edit">
+                    <i class="far fa-trash-alt"></i>
+                  </i>
+                </td>
+              </tr>
+              <tr>
+                <td>Parqueo 2</td>
+                <td>Dueño 2</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+                <td>
+                  <i class="far fa-edit">
+                    <i class="far fa-trash-alt"></i>
+                  </i>
+                </td>
+              </tr>
+              <tr>
+                <td>Parqueo 3</td>
+                <td>Dueño 3</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+                <td>
+                  <i class="far fa-edit">
+                    <i class="far fa-trash-alt"></i>
+                  </i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      <div class="main">
-        <div class="title-table">
-          <h1>Lista de Parqueos</h1>
-        </div>
-        <div class="search">
-          <input type="text" placeholder="Buscar..." />
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </div>
-        <!-- table start -->
-        <table class="table" style="text-align: center;">
-          <thead>
-            <tr>
-              <th><h1>Parqueos</h1></th>
-              <th><h1>Dueño</h1></th>
-              <th><h1>Editar/Eliminar</h1></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Parqueo 1</td>
-              <td>Dueño 1</td>
-              <td>
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label>
-                <i class="far fa-edit fa-1x"></i>
-                <i class="far fa-trash-alt fa-1x"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>Parqueo 2</td>
-              <td>Dueño 2</td>
-              <td>
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label>
-                <i class="far fa-edit fa-1x"></i>
-                <i class="far fa-trash-alt fa-1x"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>Parqueo 3</td>
-              <td>Dueño 3</td>
-              <td>
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label>
-                <i class="far fa-edit fa-1x"></i>
-                <i class="far fa-trash-alt fa-1x"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>Parqueo 4</td>
-              <td>Dueño 4</td>
-              <td>
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label>
-                <i class="far fa-edit fa-1x"></i>
-                <i class="far fa-trash-alt fa-1x"></i>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
+    </main>
     <footer>
-      <div class="footer-logo">
-        <img src="../../assets/img/logo.png" alt="">
-      </div>
       <p>San José, Costa Rica.</p>
       <p>&reg;Todos los derechos reservados</p>
     </footer>
