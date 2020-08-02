@@ -25,28 +25,64 @@ function showAndHideEdit() {
 
 //Validar espacios agregar
 function validateAddSpaces() {
+  var validateResult = validateCompany() && validateDiscount();
+  if (validateResult == true) {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "El convenio se ha agregado correctamente",
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  }
+}
+
+function validateCompany() {
   var company = document.querySelector("#company");
-  var discountAdd = document.querySelector("#discountAdd");
-  var discountRegex = /^([0-9])*$/;
+  var firstError = "";
+  var result = false;
   company.classList.remove("error");
   if (company.value == "") {
+    if (firstError == "") {
+      firstError = "La empresa no ha sido registrado";
+    }
+    company.classList.add("error");
+  }
+  if (firstError != "") {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "La empresa no ha sido registrado",
+      text: firstError,
       footer: "<a href>Why do I have this issue?</a>",
     });
-    company.classList.add("error");
+  } else {
+    result = true;
   }
+  return result;
+}
+
+function validateDiscount() {
+  var discountAdd = document.querySelector("#discountAdd");
+  var discountRegex = /^([0-9])*$/;
+  var firstError = "";
+  var result = false;
 
   discountAdd.classList.remove("error");
   if (discountAdd.value == "" || !discountRegex.test(discountAdd.value)) {
+    if (firstError == "") {
+      firstError = "El monto de descuento no ha sido registrado";
+    }
+    discountAdd.classList.add("error");
+  }
+  if (firstError != "") {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "El monto de descuento no ha sido registrado",
+      text: firstError,
       footer: "<a href>Why do I have this issue?</a>",
     });
-    discountAdd.classList.add("error");
+  } else {
+    result = true;
   }
+  return result;
 }
