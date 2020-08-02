@@ -79,7 +79,13 @@
                   type="text"
                   placeholder="Porcentaje de descuento"
                 />
-                <button id="addButton" type="submit">Agregar convenio</button>
+                <button
+                  onclick="validateAddSpaces()"
+                  id="addButton"
+                  type="submit"
+                >
+                  Agregar convenio
+                </button>
               </div>
               <div id="edit" class="edit-wraper">
                 <input
@@ -114,7 +120,8 @@
                   </label>
                 </td>
                 <td>
-                  <span onclick="edit(event)"><i class="far fa-edit"></i></span
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
                   ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
