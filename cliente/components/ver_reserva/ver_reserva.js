@@ -40,4 +40,4 @@ botonDos.addEventListener('click', () => {
 
 });
 
-
+var alink = document.createElement("a"); alink.href = "http://www.google.com"; alink.text = "Test Link"; document.getElementsByTagName("body")[0].appendChild(alink) 
