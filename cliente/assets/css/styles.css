@@ -210,6 +210,11 @@ button:hover {
   text-align: center;
   color: #82b0b0;
 }
+
+.title-report {
+  text-align: center;
+  color: #82b0b0;
+}
 .table th h1 {
   font-weight: bold;
   font-size: 20px;
@@ -506,7 +511,7 @@ input:checked + .slider:before {
 }
 
 .add-inputs {
-  background-color: #f1f3f4;
+  background-color: transparent;
   float: left;
   padding: 1%;
   display: none;
