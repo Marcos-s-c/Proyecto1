@@ -4,10 +4,6 @@
 	box-sizing: border-box;
 }
 
-body {
-	background: #ddeefc;
-	font-family: 'Lato', sans-serif;
-}
 
 .contenedor{
     width: 90%;
@@ -17,6 +13,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.contenedor.active{
+    visibility: hidden;
 }
 
 /*-----------   Estilos de la tarjeta ------------*/
@@ -37,6 +37,7 @@ body {
 
 .tarjeta.active {
     transform: rotateY(180deg);
+    
 }
 
 /*--- Parte al frente de la tarjeta -----*/
@@ -260,6 +261,7 @@ body {
 .formulario-tarjeta .flexbox {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 20px;
 }
 
 .formulario-tarjeta .expira {
@@ -302,6 +304,19 @@ body {
     cursor: pointer;
 }
 
+
 .formulario-tarjeta .btn-enviar:hover {
     background: #1850b1;
+}
+
+/*Fin tarjeta y formulario*/
+
+.botonn{
+    visibility: hidden;
+}
+
+.botonn.active{
+    visibility: visible;
+    background-color: white;
+    text-align: center;
 }
