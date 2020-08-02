@@ -287,6 +287,7 @@ td i {
 .add-container {
   float: right;
   width: 50%;
+  margin-top: 12px;
 }
 /* TABLE SEARCH END */
 
@@ -533,4 +534,8 @@ input:checked + .slider:before {
 
 .login-button {
   color: white;
+}
+
+input.error {
+  border: solid red;
 }

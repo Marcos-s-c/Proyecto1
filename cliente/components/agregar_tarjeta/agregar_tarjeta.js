@@ -1,3 +1,5 @@
+const botonn = document.querySelector('#botonn');
+const contenedor = document.querySelector('#contenedor');
 const tarjeta = document.querySelector('#tarjeta'),
       btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'),
       formulario = document.querySelector('#formulario-tarjeta'),
@@ -8,7 +10,7 @@ const tarjeta = document.querySelector('#tarjeta'),
       mesExpiracion = document.querySelector('#tarjeta .mes'),
       yearExpiracion = document.querySelector('#tarjeta .year'),
       ccv = document.querySelector('#tarjeta .ccv');
-    
+
       
 
 // Para voltear la tarjeta para mostrar el frente
@@ -125,6 +127,24 @@ formulario.inputCCV.addEventListener('keyup', () => {
     
     ccv.textContent = formulario.inputCCV.value;
 });
+
+
+function sendForm(){
+
+      
+        Swal.fire({
+            icon: 'success',
+            title: 'Tarjeta Agregada',
+            footer: '<a href>Why do I have this issue?</a>'
+            
+            
+        })
+        document.getElementById("contenedor").innerHTML="";
+        botonn.classList.toggle('active');
+        
+        
+}
+
 
 
 

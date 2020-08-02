@@ -74,21 +74,33 @@
                   placeholder="Nombre de la empresa"
                 />
                 <input
-                  id="discount"
+                  id="discountAdd"
                   class="sub-inputs"
                   type="text"
                   placeholder="Porcentaje de descuento"
                 />
-                <button id="addButton" type="submit">Agregar convenio</button>
+                <button
+                  onclick="validateAddSpaces()"
+                  id="addButton"
+                  type="submit"
+                >
+                  Agregar convenio
+                </button>
               </div>
               <div id="edit" class="edit-wraper">
                 <input
-                  id="discount"
+                  id="discountEdit"
                   class="sub-inputs"
                   type="text"
                   placeholder="Porcentaje de descuento"
                 />
-                <button id="editButton" type="submit">Editar</button>
+                <button
+                  onclick="validateEditInput()"
+                  id="editButton"
+                  type="submit"
+                >
+                  Editar
+                </button>
               </div>
             </div>
           </div>
@@ -114,7 +126,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -144,7 +158,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -158,7 +174,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -172,7 +190,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -186,7 +206,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -200,7 +222,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
               <tr>
@@ -214,7 +238,9 @@
                   </label>
                 </td>
                 <td>
-                  <i class="far fa-edit"><i class="far fa-trash-alt"></i></i>
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
+                  ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
             </tbody>
@@ -227,5 +253,6 @@
       <p>&reg;Todos los derechos reservados</p>
     </footer>
     <script src="convenios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </body>
 </html>

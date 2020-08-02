@@ -25,3 +25,11 @@ Swal.fire({
   cancelButtonText: "Reportar parqueo",
   cancelButtonAriaLabel: "Thumbs down",
 });
+
+var parkingReportButton = document.querySelector(".swal2-cancel");
+parkingReportButton.onclick = function () {
+  window.open(
+    "/cliente/components/reportar_problema_parqueo/reportar_problema_parqueo.html",
+    "_blank"
+  );
+};

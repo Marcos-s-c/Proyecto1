@@ -27,6 +27,7 @@
       integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </head>
   <body>
  <!-- Header -->
@@ -86,6 +87,7 @@
                   type="text"
                   class="input-bottom-border-only"
                   id="username"
+                  required
                 />
               </label>
               <label
@@ -94,6 +96,7 @@
                   id="avatar"
                   name="input"
                   accept="image/*"
+                  required
                 /><br />
                 <span class="file-custom"></span>
               </label>
@@ -105,25 +108,21 @@
                   type="date"
                   class="input-bottom-border-only"
                   id="birthdate"
+                  value=""
+                  required
                 /> </label
               ><br />
               <label
-                >Edad <br /><input
-                  type="text"
-                  class="input-bottom-border-only"
-                  id="age"
-                />
+                >Edad <br /><p id="edad">34</p>
               </label>
             </div>
-            <br />
-            <br />
             <label><h2>Fotos del Parqueo</h2></label>
-            <input type="file" id="fotosparqueo" name="input" accept="image/*" />
+            <input type="file" id="fotosparqueo" name="input" accept="image/*" required/>
 
             <div class="button-siguiente">
               <br />
               <br />
-              <button type="button" class="black-button">Siguiente</button>
+              <button type="submit" onclick="validar()">Siguiente</button>
             </div>
             <br />
             <br />
@@ -137,6 +136,7 @@
     <p>San José, Costa Rica.</p>
     <p>&reg;Todos los derechos reservados</p>
 </footer>
-<script src="script.js"></script>
+<script src="informacion_adicional.js"></script>
+<script src="../../assets/js/main.js"></script>
   </body>
 </html>
