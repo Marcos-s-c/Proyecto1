@@ -1,13 +1,3 @@
-//Función agregar
-function add() {
-  showAndHideAdd();
-  validateEmptySpaces();
-}
-
-function edit() {
-  showAndHideEdit();
-  validateEmptySpaces();
-}
 //Función para mostrar y ocultar los inputs de agregar
 function showAndHideAdd() {
   var add = document.getElementById("add");
@@ -33,17 +23,25 @@ function showAndHideEdit() {
   }
 }
 
-//Validar espacios
-function validateEmptySpaces() {
-  var email = document.querySelector("#email");
-  regexCorreo = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-  if (email.value == "" || !regexCorreo.test(email.value)) {
+//Validar espacios agregar
+function validateAddSpaces() {
+  var company = document.querySelector("#company");
+  var discountAdd = document.querySelector("#discountAdd");
+  if (company.value == "") {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "El correo no ha sido registrado",
+      text: "La empresa no ha sido registrado",
       footer: "<a href>Why do I have this issue?</a>",
     });
   }
-  email.classList.add("error");
+  company.classList.add("error");
+  if (discountAdd.value == "") {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "El monto de descuento no ha sido registrado",
+      footer: "<a href>Why do I have this issue?</a>",
+    });
+  }
 }

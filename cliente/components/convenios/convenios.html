@@ -62,7 +62,9 @@
             </div>
             <div class="add-container">
               <div class="add-icon">
-                <span onclick="add()"> <i class="fas fa-plus-circle"></i></span>
+                <span onclick="showAndHideAdd()">
+                  <i class="fas fa-plus-circle"></i
+                ></span>
               </div>
               <div id="add" class="add-inputs">
                 <input
@@ -72,6 +74,7 @@
                   placeholder="Nombre de la empresa"
                 />
                 <input
+                  id="discountAdd"
                   class="sub-inputs"
                   type="text"
                   placeholder="Porcentaje de descuento"
@@ -80,6 +83,7 @@
               </div>
               <div id="edit" class="edit-wraper">
                 <input
+                  id="discount2"
                   class="sub-inputs"
                   type="text"
                   placeholder="Porcentaje de descuento"
@@ -125,7 +129,8 @@
                   </label>
                 </td>
                 <td>
-                  <span onclick="edit(event)"><i class="far fa-edit"></i></span
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
                   ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
@@ -140,7 +145,8 @@
                   </label>
                 </td>
                 <td>
-                  <span onclick="edit(event)"><i class="far fa-edit"></i></span
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
                   ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
@@ -155,7 +161,8 @@
                   </label>
                 </td>
                 <td>
-                  <span onclick="edit(event)"><i class="far fa-edit"></i></span
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
                   ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
@@ -170,7 +177,8 @@
                   </label>
                 </td>
                 <td>
-                  <span onclick="edit(event)"><i class="far fa-edit"></i></span
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
                   ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
@@ -185,7 +193,8 @@
                   </label>
                 </td>
                 <td>
-                  <span onclick="edit(event)"><i class="far fa-edit"></i></span
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
                   ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
@@ -200,7 +209,8 @@
                   </label>
                 </td>
                 <td>
-                  <span onclick="edit(event)"><i class="far fa-edit"></i></span
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
                   ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
@@ -215,7 +225,8 @@
                   </label>
                 </td>
                 <td>
-                  <span onclick="edit(event)"><i class="far fa-edit"></i></span
+                  <span onclick="showAndHideEdit(event)"
+                    ><i class="far fa-edit"></i></span
                   ><i class="far fa-trash-alt"></i>
                 </td>
               </tr>
