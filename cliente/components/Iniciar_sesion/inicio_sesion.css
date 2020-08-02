@@ -1,3 +1,7 @@
+a{
+  color: #82B0B0;
+}
+
 .login-container {
   text-align: center;
   padding-left: 35%;
@@ -8,9 +12,7 @@
   font-weight: normal;
 }
 
-
-
-.access-container{
+.access-container {
   width: 100%;
 }
 .fa-arrow-right {
@@ -35,7 +37,7 @@
   display: flex;
 }
 
-.logo img {
+.logo-login img {
   width: 30%;
 }
 
@@ -47,4 +49,11 @@
   padding-left: 20%;
 }
 
+button {
+  width: 100%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  font-size: 16px;
+  display: inline-block;
 
+}
