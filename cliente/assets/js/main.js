@@ -1,4 +1,3 @@
-
 // valida los espacios en blanco de los elementos ingresados en el parametro
 function valiteBlanks(elements) {
   console.log("entra");
@@ -22,3 +21,22 @@ function validateEmail(email) {
     return false;
   }
 }
+
+// MENU INICIAR SESION  Y CERRAR SESION
+function displayDropMenu() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};

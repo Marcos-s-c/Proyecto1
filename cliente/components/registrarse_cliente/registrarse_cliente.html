@@ -39,37 +39,28 @@
       <br />
       <br />
       <div class="logo">
-        <img src="../../assets/img/test-logo.png" alt="Logo" />
+        <img src="../../assets/img/logo.png" alt="Logo" />
       </div>
       <div class="form">
       <form id="login-form" action="#">
-        <h1>Registrate</h1>
+        <h1>Registrar cuenta cliente</h1>
+        
         <div class="name-input">
           <input
             type="text"
             id="name"
             name="register"
-            placeholder="Introduce tu nombre"
+            placeholder="Nombre completo"
             class="input-bottom-border-only"
           /><br /><br />
-        </div>
-        <div class="apellido-input">
-          <input
-            type="text"
-            id="apellido"
-            name="register"
-            placeholder="Introduce tu apellido"
-            class="input-bottom-border-only"
-          />
-          <br />
-          <br />
+      
         </div>
         <div class="cedula-input">
           <input
           type="text"
           id="cedula"
           name="register"
-          placeholder="Introduce tu cedula"
+          placeholder="Cedula"
           class="input-bottom-border-only"
         /><br /><br />
         </div>
@@ -78,7 +69,7 @@
           type="date"
           id="fecha-nacimiento"
           name="register"
-          placeholder="Introduce tu fecha de nacimiento"
+          placeholder="Fecha de nacimiento"
           class="input-bottom-border-only"
         /><br /><br />
         </div>
@@ -87,7 +78,7 @@
           type="tel"
           id="numero"
           name="register"
-          placeholder="Introduce tu numero de telefono"
+          placeholder="Numero de telefono"
           class="input-bottom-border-only"
         /><br /><br />
         </div>
@@ -96,13 +87,13 @@
           type="email"
           id="email-register"
           name="register"
-          placeholder="Introduce tu correo electronico"
+          placeholder="Correo electronico"
           class="input-bottom-border-only"
         /><br /><br />
         </div>
 
         <div class="button-container">
-          <button type="button" class="black-button" onclick="validar()">
+          <button type="button" onclick="validar()" class="login-button">
             REGISTRATE <span id="right"></span></i>
           </button>
         </div>

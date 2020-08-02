@@ -1,0 +1,113 @@
+.content {
+    flex: 70%;
+    padding-top: 1%;
+    padding-bottom: 10%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+.parking-spots-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    padding-right: 5%;
+}
+.parking-spots-container h3{
+padding-bottom: 5%;
+margin: auto; 
+}
+.spot-item img{
+    width: 70%;
+}
+.rows .spot-item{
+    width: 100%;
+    margin: auto;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 20%;
+}
+.rows .spot-item p{
+    display: block;
+    border-bottom: 1px solid #216c7a;
+}
+.rows .spot-item:hover .spot-cover{
+    background-color: black;
+    visibility: visible;
+}
+.home-buttons{
+    overflow: auto;
+}
+.home-buttons .fas{
+    font-size: 20px;
+    color: black;
+}
+.side{
+    padding-top: 3%;
+    padding-left: 3%;
+}
+.reservation-form{
+    background-color: #f7f7f7;
+    width: 100%;
+    margin: auto;
+    padding: 10% 8% 3% 8%;
+}
+.reservation-form h3{
+    padding-bottom: 20%;
+}
+
+.reservation-form label{
+    display: inline-block;
+    padding-bottom: 10%;
+}
+.reservation-form select{
+    display: block;
+    padding: 3% 1% ;
+    width: 100%;
+    margin-bottom: 10%;
+    border-style: none;
+}
+.side .fa-arrow-left{
+    padding: 5% 3%;
+    color: black;
+}
+.back-link, .back-link .fa-arrow-left{
+    color: #216c7a;
+}
+.back-link:hover , .back-link .fa-arrow-left:hover{
+    color: #0db1b1;
+}
+.reservation-form button{
+    display: block;
+    background-color: #216c7a;
+    padding: 5%;
+    color: whitesmoke;
+    margin-top: 15%;
+}
+
+.spot-status{
+    overflow: auto;
+    width: 100%;
+    padding-top: 15%;
+}
+.red-spot, .green-spot{
+    float: right;
+    margin: 2%;
+}
+.red-spot div{
+    background-color: red;
+    color: red;
+    width: 45%;
+    margin: auto;
+}
+.green-spot div{
+    background-color: green;
+    color: green;
+    margin: auto;
+    width: 45%;
+}
+.red-spot p, .green-spot p{
+    font-size: 12px;
+    padding: 1%;
+}

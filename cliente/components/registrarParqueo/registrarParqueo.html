@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="global.css" />
+    <link type="text/css" rel="stylesheet" href="registrarParqueo.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="logo21.png" />
+      </div>
+      <div class="menu">
+        <div class="leftOptions">
+          <ul>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Porqué MySpot?</a></li>
+            <li><a href="#">Contáctenos</a></li>
+            <li><a href="#">Ayuda</a></li>
+          </ul>
+        </div>
+        <div class="rightOptions">
+          <ul>
+            <li><a href="#">Iniciar sesión</a></li>
+            <li><a href="#">Registrarse</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="topHeaderFill">relleno</div>
+    <h1 class="page-heading">Potencializa tu parqueo con MySpot</h1>
+    <div class="main">
+      <div class="first form" id="first-Form">
+        <h3>Solicitud de registro</h3>
+        <input
+          type="text"
+          id="name"
+          class="form-input"
+          placeholder="Nombre físico o jurídico"
+        />
+        <input
+          type="number"
+          id="user-id"
+          class="form-input"
+          placeholder="Cédula física o jurídica"
+        />
+        <input
+          type="email"
+          id="email"
+          class="form-input"
+          placeholder="Correo electrónico"
+        />
+        <div class="birth-date-box">
+          <input
+            type="date"
+            id="birth-date"
+            class="form-input"
+            placeholder="Fecha de nacimiento"
+          />
+          <p>*Opcional</p>
+        </div>
+        <button type="button" id="next-button" onclick="replaceInputFields()">
+          <a href="#">Siguiente</a>
+        </button>
+
+        <!--<div class="second Form">    
+                  <input type="text" id="parking-name" class="form-input" placeholder="Nombre del parqueo">
+                  <div class="address-box">
+                    <select id="provincias">
+                      <option>Provincias</option>
+                    </select>
+                    <select id="cantones">
+                      <option>Cantones</option>
+                    </select>
+                    <select id="distritos">
+                      <option>Distritos</option>
+                    </select>
+                  </div>
+                  <input type="text" id="complete-address" class="form-input" placeholder="Dirección exacta">
+                  <div class="mall-box">
+                    <input type="text" id="mall-name" class="form-input" placeholder="Centro comercial">
+                    <p>*Opcional</p>
+                  </div> 
+                </div>-->
+      </div>
+    </div>
+    <footer>
+      <p>San José, Costa Rica.</p>
+      <p>&reg;Todos los derechos reservados</p>
+    </footer>
+    <script src="presentationLayer.js"></script>
+    <script src="businessLogicLayer.js"></script>
+  </body>
+</html>

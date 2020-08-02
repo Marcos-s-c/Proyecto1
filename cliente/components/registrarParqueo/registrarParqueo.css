@@ -1,0 +1,67 @@
+/******** MAIN CONTAINER & CONTENT***************/
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(imgs/parqueo8.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 20% 0%;
+}
+.form{
+    width: 25%;
+    position: absolute;
+    float: right;
+    right: 7%;
+    top: 30%;
+    box-shadow: 1px 1px 5px black;
+    padding: 1% 2% 5% 2%;
+    background-color: white;
+
+}
+.form h3{
+    width: 80%;
+    padding: 3% 0%;
+    font-size: 20px;
+}
+.birth-date-box{
+    overflow: auto;
+    width: 100%;
+    margin: auto;
+    padding-top: 3%;
+}
+.birth-date-box input, .birth-date-box p{
+    position: left;
+    display: inline;
+    color: #8c8c8c;
+}
+#birth-date {
+    width: 60%;
+    float: left;
+    padding: 2%;
+}
+.birth-date-box p{
+    font-size: 10px;
+    float: right;
+}
+.page-heading{
+    width: 50%;
+    margin: 0;
+    padding: 4% 0%;
+}
+
+.form-input{
+    display: block;
+    padding: 5% 0%;
+    width: 100%;
+    margin: 2% 0%;
+    border-style: none;
+    border-bottom: 1px solid #8c8c8c;
+}
+
+.form button{
+    margin-top: 30%;
+    float: right;
+    background-color: #82B0B0;
+    color: white;
+}
