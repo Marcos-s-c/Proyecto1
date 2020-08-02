@@ -27,6 +27,8 @@ function showAndHideEdit() {
 function validateAddSpaces() {
   var company = document.querySelector("#company");
   var discountAdd = document.querySelector("#discountAdd");
+  var discountRegex = /^([0-9])*$/;
+  company.classList.remove("error");
   if (company.value == "") {
     Swal.fire({
       icon: "error",
@@ -34,14 +36,17 @@ function validateAddSpaces() {
       text: "La empresa no ha sido registrado",
       footer: "<a href>Why do I have this issue?</a>",
     });
+    company.classList.add("error");
   }
-  company.classList.add("error");
-  if (discountAdd.value == "") {
+
+  discountAdd.classList.remove("error");
+  if (discountAdd.value == "" || !discountRegex.test(discountAdd.value)) {
     Swal.fire({
       icon: "error",
       title: "Oops...",
       text: "El monto de descuento no ha sido registrado",
       footer: "<a href>Why do I have this issue?</a>",
     });
+    discountAdd.classList.add("error");
   }
 }
