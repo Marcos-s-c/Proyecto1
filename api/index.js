@@ -11,9 +11,7 @@ mongoose
   )
   .then((db) => console.log("Base de datos conectada"))
   .catch((err) => console.log(err));
-  app.use(express.static("../cliente"));
-  app.use(express.json());
-
+app.use(express.json());
 
 //ejecutamos el servicios
 app.use("/guardar", require("./servicio/guardar_usuarios"));
