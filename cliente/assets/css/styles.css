@@ -288,6 +288,8 @@ td i {
   float: right;
   width: 50%;
   margin-top: 12px;
+  padding-right: 1%;
+}
 }
 /* TABLE SEARCH END */
 
