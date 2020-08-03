@@ -1,0 +1,81 @@
+/****** USER INFO SECTION ***********/
+  .user-info-container{
+    width: 60%;
+    padding-left: 10%;
+  }
+  .second-row, .third-row{
+    padding: 3% 0%;
+  }
+  .second-row h3, .third-row h3{
+    padding: 2% 0%;
+  }
+  .second-row p, .third-row p{
+    color: #595959;
+    border-bottom: 1px solid #cecece ;
+    width: 62%;
+  }
+  .first-row{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 90%;
+    padding: 2% 0%;
+  }
+  .first-row .user-photo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .user-photo img{
+    width: 100px;
+    height: 100px;
+  }
+  .first-row h2{
+    padding-left: 10%;
+  }
+  .add-email{
+    overflow: auto;
+    padding: 2% 0%;
+  }
+  .add-email .fa-plus, .add-email a{
+    float: left;
+    margin: 0% 1%;
+    color: #929191;
+  }
+  .add-email a{
+    font-size: 12px;
+  }
+  .add-email a:hover, .add-email .fa-plus:hover{
+    color: #234f58;
+  }
+  .user-info-container form{
+    padding: 5% 0%;
+    width: 90%;
+  }
+  .user-info-container .form-field{
+    display: inline;
+    width: 70%;
+    padding: 2% 0%;
+    margin-top: 1%;
+    border-style: none;
+    background-color: #F1F3F4;
+  }
+  .form .birth-date{
+    color: #929191;
+  }
+  .user-info-container button{
+    float: right;
+    margin-top: 20%;
+    background-color: #82B0B0;
+    margin-right: 30%;
+  }
+  .user-info-container button:hover{
+    background-color: #234f58;
+  }
+  .user-info-container form .fa-pencil-alt{
+    font-size: 10px;
+    color: #595959;
+  }
+
+
+
