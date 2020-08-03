@@ -1,132 +1,134 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../../global.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="listar_tarjeta.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous"/>
-    
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="../../assets/css/styles.css"
-    />
-    <script src="https://kit.fontawesome.com/da33aea8dd.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <!-- Header -->
-      <header>
-        <div class="logo">
-          <img src="/cliente/assets/img/logo.png" />
-        </div>
-        <div class="sub-menu" id="sub">
-          <div class="dropdown">
-            <i class="fas fa-user-circle dropbtn" onclick="displayDropMenu()"></i>
-            <div id="myDropdown" class="dropdown-content">
-              <a href="#home">Home</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
-            </div>
-          </div>
-        </div> 
-      </header>
-      <div class="topHeaderFill">relleno</div>
-    <!-- The flexible grid (content) -->
-    <div class="row">
-      <div class="side">
-        <div class="side-menu">
-          <ul>
-            <li class="active">
-              <a href="#"><i class="fas fa-car"></i>Buscar parqueo</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-history"></i>Historial de pagos</a>
-            </li>
-            <li>
-              <a href="../ver_reserva/ver_reserva.html"><i class="fas fa-bookmark"></i>Mis reservas</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-wallet"></i>Métodos de pago</a>
-            </li>
-            <li>
-              <a href="../listar_tarjetas/listar_tarjeta.html"><i class="far fa-credit-card"></i>Tarjetas</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-gift"></i>Promociones</a>
-            </li>
-            <li>
-              <a href="#"><i class="far fa-user"></i>Cuenta</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="main">
-        <!-- MAIN CONTENT -->
-        
-        <div class="main">
-          <div class="title">
-            <h1>Tarjetas</h1>
-          </div>
-          <div class="button-container">
-              <button type="button" class="black-button">
-                <i class="fas fa-plus-circle"></i><a href="../agregar_tarjeta/agregar_tarjeta.html">Agregar Tarjeta</a> <span id="right"></span>
-              </button>
-          </div>
-          <table class="container">
-            <thead>
-              <tr>
-                <th><h1>Mis Tarjetas</h1></th>
-                
-                <th><h1>Eliminar</h1></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="icon" ><i class="far fa-credit-card"></i></span>*****    8364</td>
-               
-                <td>
-                  <i class="far fa-trash-alt"  ></></i>
-                </td>
-              </tr>
-              <tr>
-                <td><span class="icon" ><i class="far fa-credit-card"></i></span>***** 3852</td>
-               
-                <td>
-                  <i class="far fa-trash-alt"></></i>
-                </td>
-              </tr>
-              <tr>
-                <td><span class="icon" ><i class="far fa-credit-card"></i></span>***** 0233</td>
-               
-                <td>
-                  <i class="far fa-trash-alt"></></i>
-                </td>
-              </tr>
-              <tr>
-                <td><span class="icon" ><i class="far fa-credit-card"></i></span>***** 3442</td>
-                
-                <td>
-                  <i class="far fa-trash-alt"></></i>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
 
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../global.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="listar_tarjeta.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous" />
+
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styles.css" />
+  <script src="https://kit.fontawesome.com/da33aea8dd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="/cliente/assets/img/logo.png" />
+    </div>
+    <div class="sub-menu" id="sub">
+      <div class="dropdown">
+        <i class="fas fa-user-circle dropbtn" onclick="displayDropMenu()"></i>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
       </div>
     </div>
-    <!-- Footer -->
-    <footer>
-      <p>San José, Costa Rica.</p>
-      <p>&reg;Todos los derechos reservados</p>
+  </header>
+  <div class="topHeaderFill">relleno</div>
+  <!-- The flexible grid (content) -->
+  <div class="row">
+    <div class="side">
+      <div class="side-menu">
+        <ul>
+          <li class="active">
+            <a href="#"><i class="fas fa-car"></i>Buscar parqueo</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-history"></i>Historial de pagos</a>
+          </li>
+          <li>
+            <a href="../ver_reserva/ver_reserva.html"><i class="fas fa-bookmark"></i>Mis reservas</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-wallet"></i>Métodos de pago</a>
+          </li>
+          <li>
+            <a href="../listar_tarjetas/listar_tarjeta.html"><i class="far fa-credit-card"></i>Tarjetas</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-gift"></i>Promociones</a>
+          </li>
+          <li>
+            <a href="#"><i class="far fa-user"></i>Cuenta</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main">
+      <!-- MAIN CONTENT -->
+
+      <div class="main">
+        <div class="title">
+          <h1>Tarjetas</h1>
+        </div>
+        <div class="button-container">
+          <button type="button" class="black-button">
+            <a href="../agregar_tarjeta/agregar_tarjeta.html"><i class="fas fa-plus-circle">Agregar Tarjeta</i></a>
+            <span id="right"></span>
+          </button>
+        </div>
+        <table class="container">
+          <thead>
+            <tr>
+              <th>
+                <h1>Mis Tarjetas</h1>
+              </th>
+
+              <th>
+                <h1>Eliminar</h1>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="icon"><i class="far fa-credit-card"></i></span>***** 8364</td>
+
+              <td>
+                <span class="hvr-icon-bounce"><i class="far fa-trash-alt hvr-icon"></span></i></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="icon"><i class="far fa-credit-card"></i></span>***** 3852</td>
+
+              <td>
+                <span class="hvr-icon-bounce"><i class="far fa-trash-alt hvr-icon"></></i></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="icon"><i class="far fa-credit-card"></i></span>***** 0233</td>
+
+              <td>
+                <span class="hvr-icon-bounce"><i class="far fa-trash-alt hvr-icon"></></i></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="icon"><i class="far fa-credit-card"></i></span>***** 3442</td>
+
+              <td>
+                <span class="hvr-icon-bounce"><i class="far fa-trash-alt hvr-icon"></></i></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <p>San José, Costa Rica.</p>
+    <p>&reg;Todos los derechos reservados</p>
   </footer>
   <script src="script.js"></script>
-  </body>
-</html>
+</body>
 
+</html>
