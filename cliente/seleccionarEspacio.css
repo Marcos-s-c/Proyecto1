@@ -5,8 +5,7 @@
     align-items: center;
     justify-content: center;
     display: flex;
-  }
-
+}
 .parking-spots-container{
     display: flex;
     flex-wrap: wrap;
@@ -16,6 +15,7 @@
 .parking-spots-container h3{
 padding-bottom: 5%;
 margin: auto; 
+text-transform: uppercase;
 }
 .spot-item img{
     width: 70%;
@@ -26,11 +26,9 @@ margin: auto;
     border: 1px solid black;
     text-align: center;
     padding-top: 10%;
-    padding-bottom: 20%;
 }
 .rows .spot-item p{
     display: block;
-    border-bottom: 1px solid #216c7a;
 }
 .rows .spot-item:hover .spot-cover{
     background-color: black;
@@ -51,7 +49,7 @@ margin: auto;
     background-color: #f7f7f7;
     width: 100%;
     margin: auto;
-    padding: 10% 8% 3% 8%;
+    padding: 10% 8% 10% 8%;
 }
 .reservation-form h3{
     padding-bottom: 20%;
@@ -86,28 +84,4 @@ margin: auto;
     margin-top: 15%;
 }
 
-.spot-status{
-    overflow: auto;
-    width: 100%;
-    padding-top: 15%;
-}
-.red-spot, .green-spot{
-    float: right;
-    margin: 2%;
-}
-.red-spot div{
-    background-color: red;
-    color: red;
-    width: 45%;
-    margin: auto;
-}
-.green-spot div{
-    background-color: green;
-    color: green;
-    margin: auto;
-    width: 45%;
-}
-.red-spot p, .green-spot p{
-    font-size: 12px;
-    padding: 1%;
-}
+
