@@ -129,20 +129,6 @@ formulario.inputCCV.addEventListener('keyup', () => {
 });
 
 
-function validar(){
-    if (
-        valiteBlanks([
-          nombreTarjeta,
-          numeroTarjeta,
-          ccv,
-          
-        ])
-      ) {
-        
-      } else {
-        return false;
-      
-}
 
 function sendForm(){
     
