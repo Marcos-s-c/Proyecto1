@@ -12,7 +12,7 @@ function validar() {
     var avatar = document.getElementById("avatar");
     var fotosParqueo = document.getElementById("fotosparqueo")
     if (valiteBlanks([birthdate,edad,username,avatar,fotosParqueo])) {
-      return valiteBlanks;
+      window.location.href = '/cliente/components/buscarParqueo/buscarParqueo.html';
     } else {
       return false;
     }
