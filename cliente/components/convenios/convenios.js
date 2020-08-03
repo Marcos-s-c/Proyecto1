@@ -105,3 +105,20 @@ function validateDiscount(elementId) {
   }
   return result;
 }
+
+//Función Eliminar
+
+function deleteIcon() {
+  Swal.fire({
+    title: "¿Está seguro de que desea eliminar?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Eliminar",
+  }).then((result) => {
+    if (result.value) {
+      Swal.fire("Eliminado", "El convenio ha sido eliminado.", "success");
+    }
+  });
+}
