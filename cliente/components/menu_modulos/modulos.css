@@ -1,0 +1,14 @@
+.logo img {
+  width: 30%;
+}
+.access-container {
+  padding-bottom: 22%;
+}
+header {
+  height: 60px;
+}
+
+p a {
+  color: black !important;
+  font-weight: bold;
+}
