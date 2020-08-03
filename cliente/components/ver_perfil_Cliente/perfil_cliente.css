@@ -1,6 +1,50 @@
 
     
-
-a{
-  font-size: 500px;
+h3{
+    font-size: 20px;
 }
+  
+.main p{
+    border-bottom: 1px solid #cecece ;
+    width: 50%;
+    
+    
+}
+
+.right{
+    padding-left: 1%;
+}
+
+button{
+    width: 30%;
+}
+
+.add-email{
+    margin-left: -1%;
+}
+
+.add-email p{
+    width: 100%;
+    border-bottom: 0px solid #cecece ;
+    color:  black;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #595959;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    /* footer size here */
+    padding-top: 5%;
+  }
+  
+  footer p {
+    color: white;
+    margin: 0;
+  }
+  /* FOOTER END */
+  
