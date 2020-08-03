@@ -77,3 +77,10 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.add-icon {
+  padding: -3%;
+  float: right;
+  font-size: 24px;
+  color: #82b0b0;
+}
