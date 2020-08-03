@@ -129,9 +129,25 @@ formulario.inputCCV.addEventListener('keyup', () => {
 });
 
 
-function sendForm(){
-
+function validar(){
+    if (
+        valiteBlanks([
+          nombreTarjeta,
+          numeroTarjeta,
+          ccv,
+          
+        ])
+      ) {
+        
+      } else {
+        return false;
       
+}
+
+function sendForm(){
+    
+
+  
         Swal.fire({
             icon: 'success',
             title: 'Tarjeta Agregada',
