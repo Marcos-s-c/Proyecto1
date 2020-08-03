@@ -1,0 +1,155 @@
+*{
+    box-sizing: border-box;
+}
+.row{
+    min-height: 100%;
+    padding: 0%;
+    border: 1px solid greenyellow;
+}
+.side{
+    background-color: #f1f1f1;
+    flex: 30%;
+    padding-bottom: 5%;
+}
+.main{
+    padding: 0%;
+}
+.map-box{
+    width: 100%;
+    overflow:hidden;
+    position: relative;
+    top: 0%;
+    height:0;
+    padding-top: 33.5%;
+    padding-bottom: 33.5%;
+}
+.map-box iframe{
+    right:0;
+    top:0;
+    height:100%;
+    width: 100%;
+    position:absolute;
+}
+.search-box{
+    padding: 5% 3%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 999;
+}
+.search-input{
+    width: 99%;
+    display: flex;
+}
+.search-bar{
+    width: 75%;
+    padding: 1%;
+    border-style: none;
+    font-size: 15px;
+    margin-right: 1%;
+}
+.fa-search{
+    display: inline;
+    color: white;
+}
+.search-button{
+    background-color: #216c7a;
+    width: 25%;
+    margin-left: 1%;
+}
+.search-button:hover{
+    background-color: #0db1b1;
+}
+.scroll-style{
+    overflow-y: scroll;
+    max-height: 600px;
+}
+.resultsList-box{
+    box-sizing: inherit;
+    width: 100%;
+}
+
+.item-content{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    min-height: 109px;
+    padding: 5%;
+    background-color: white;
+    width: 100%;
+    margin: auto;
+    box-shadow: 1px 1px 3px gray;
+}
+.items-content-wraper{
+    margin: 2%;
+}
+.image{
+    width: 100px;
+    height: 100px;
+}
+.image img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+.details{
+    flex-grow: 1;
+    min-width: 0;
+    color: #404040;
+    padding: 0% 4%;
+}
+.details h3{
+    margin: 0;
+
+}
+.star-rating{
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+}
+.checked {
+    color: #ffe066;
+  }
+.price{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 4% 5%;
+    text-align: end;
+    font-size: 18px;
+}
+
+.price span{
+    display: block;
+}
+.controls{
+    display: flex;
+    position: absolute;
+    right: 4%;
+    bottom: 5%;
+    width: 50%;
+    justify-content: end;
+}
+.more-details , .book-parking{
+    margin: 2%;
+}
+.controls .more-details a{
+    color: #0db1b1;
+}
+.controls .book-parking a{
+    color: white;
+}
+.more-details{
+    background-color: white;
+}
+.book-parking{
+    background-color: #0db1b1;
+}
+.more-details:hover , .more-details:hover a{
+    color: #216c7a;
+}
+.book-parking:hover{
+    background-color: #216c7a;
+}
+
+
