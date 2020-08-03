@@ -539,3 +539,15 @@ input:checked + .slider:before {
 input.error {
   border: solid red;
 }
+
+footer {
+  background-color: #404040;
+  padding-top: 4%;
+  padding-bottom: 1%;
+  text-align: center;
+}
+footer p {
+  color: white;
+  margin: 0;
+  font-size: 15px;
+}
