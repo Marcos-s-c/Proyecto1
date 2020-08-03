@@ -9,7 +9,7 @@ function changePassword() {
 
 //Validar espacios vacíos
 function validateEmptySpaces() {
-  var inputs = document.querySelectorAll("input[type='text']");
+  var inputs = document.querySelectorAll("input[type='password']");
   regexCorreo = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
   var primerError = "";
   var resultado = false;
@@ -38,7 +38,7 @@ function validateEmptySpaces() {
 
 //Validar igualdad de correos
 function validateEmailEquality() {
-  var inputs = document.querySelectorAll("input[type='text']");
+  var inputs = document.querySelectorAll("input[type='password']");
   var resultado = false;
 
   if (inputs[0].value != inputs[1].value) {

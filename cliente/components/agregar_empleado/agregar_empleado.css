@@ -1,5 +1,7 @@
+#label-fecha-contratacion{
+    text-align: left;
+}
 .login-container {
-
     padding-left: 35%;
     padding-right: 35%;
   }
@@ -42,7 +44,7 @@
   }
   
   .logo{
-    text-align: center;
+      text-align: center;
   }
   
 
@@ -54,3 +56,5 @@
   .form input{
     padding-top: 2%;
   }
+
+ 

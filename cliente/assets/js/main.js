@@ -1,9 +1,11 @@
-// valida los espacios en blanco de los elementos ingresados en el parametro 
+// valida los espacios en blanco de los elementos ingresados en el parametro
 function valiteBlanks(elements) {
   console.log("entra");
   for (var key in elements) {
     var element = elements[key];
+    element.classList.remove("error");
     if (element.value === "") {
+      element.classList.add("error");
       Swal.fire("Hay espacios en blanco sin completar");
       return false;
     }
@@ -40,7 +42,6 @@ window.onclick = function (event) {
     }
   }
 };
-
 
 /*Función para mostrar y ocultar los inputs de agregar*/
 function showAddSpaces() {

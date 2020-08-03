@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styles.css"/>
+    
     <link rel="stylesheet" type="text/css" media="screen" href="perfil_cliente.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/global.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../../../cliente/assets/css/styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous"/>
     <script src="https://kit.fontawesome.com/da33aea8dd.js" crossorigin="anonymous"></script>
@@ -37,22 +39,22 @@
         <div class="side-menu">
           <ul>
             <li class="active">
-              <a href="#"><i class="fas fa-car"></i>Buscar parqueo</a>
+              <a href="../buscarParqueo/buscarParqueo.html"><i class="fas fa-car"></i>Buscar parqueo</a>
             </li>
             <li>
-              <a href="#"><i class="fas fa-dollar-sign"></i>Historial de pagos</a>
+              <a href=""><i class="fas fa-dollar-sign"></i>Historial de pagos</a>
             </li>
             <li>
-              <a href="#"><i class="fas fa-chart-bar"></i>Mis reservas</a>
+              <a href="../ver_reserva/ver_reserva.html"><i class="fas fa-chart-bar"></i>Mis reservas</a>
             </li>
             <li>
-              <a href="#"><i class="fas fa-building"></i>Metodo de pago</a>
+              <a href="../listar_tarjetas/listar_tarjeta.html"><i class="fas fa-building"></i>Metodo de pago</a>
             </li>
             <li>
               <a href="#"><i class="fas fa-users"></i>Promociones</a>
             </li>
             <li>
-              <a href="#"><i class="fas fa-users"></i>Cuenta</a>
+              <a href="../ver_perfil_Cliente/perfil_cliente.html"><i class="fas fa-users"></i>Cuenta</a>
             </li>
           </ul>
         </div>
@@ -65,31 +67,31 @@
           </div>
           <div class="second-row">
             <h3>Cedula física o jurídica</h3>
-            <p>1234-5678</p>
-            <h3>Telefono</h3>
-            <p>8386-3870</p>
+            <p class="right"><i class="fas fa-pencil-alt" onclick="edit()"></i> 1234-5678</p>
+            
+            <h3>Teléfono</h3>
+            <p class="right"><i class="fas fa-pencil-alt"></i> 8386-3870</p>
             <h3>Edad</h3>
-            <p>34</p>
+            <p class="right"><i class="fas fa-pencil-alt"></i> 34</p>
             <h3>Correo electrónico</h3>
-            <p>usermail@gmail.com</p>
+            <p class="right"><i class="fas fa-pencil-alt"></i> usermail@gmail.com</p>
+            <br>
             <div class="add-email">
-              <a href=""><i class="fas fa-unlock-alt"></i></a>
-              <a href="/cliente/components/modificar_password/modificar_password.html" target="_blank">Cambiar Contraseña</a>
-              <a href=""><i class="far fa-envelope"></i></a>
-              <a href="#">Cambiar Correo</a>
-              <button >Guardar cambios</button>
+              <a href="/cliente/components/modificar_password/modificar_password.html" target="_blank"><p><i class="fas fa-unlock-alt fa-2x"></i> Cambiar contraseña</p></a>
+              <a href="#"><p><i class="far fa-envelope fa-2x"></i> Cambiar Correo</p></a>
             </div>
+              <button >Guardar cambios</button>
           </div>
           </div>    
         </div>
         </div>
       </div>
     </div>
-    <!-- Footer -->
-    <footer>
-      <p>San José, Costa Rica.</p>
-      <p>&reg;Todos los derechos reservados</p>
-  </footer>
+   <!-- Footer -->
+   <footer>
+    <p>San José, Costa Rica.</p>
+    <p>&reg;Todos los derechos reservados</p>
+</footer>
   <script src="../../assets/js/main.js"></script>
   </body>
 </html>

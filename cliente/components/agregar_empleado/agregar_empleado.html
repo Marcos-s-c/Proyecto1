@@ -16,7 +16,7 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="registrarse_cliente.css"
+      href="agregar_empleado.css"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
@@ -43,7 +43,7 @@
       </div>
       <div class="form">
       <form id="login-form" action="#">
-        <h1>Registrar cuenta</h1>
+        <h1>Registrar empleado</h1>
         
         <div class="name-input">
           <input
@@ -64,8 +64,9 @@
           class="input-bottom-border-only"
         /><br /><br />
         </div>
+        <label for="fecha-de-contratacion" id="label-fecha-contratacion">Fecha de nacimiento</label>
         <div class="fecha-nacimiento-input">
-          <labe">Fecha de nacimiento</label><input
+          <input
           type="date"
           id="fecha-nacimiento"
           name="register"
@@ -73,9 +74,9 @@
           class="input-bottom-border-only"
         /><br /><br />
         </div>
-        <div class="numero-de-telefono">
+        <div class="numero-de-teléfono">
           <input
-          type="number"
+          type="tel"
           id="numero"
           name="register"
           placeholder="Numero de teléfono"
@@ -84,26 +85,47 @@
         </div>
         <div class="email">
           <input
-          type="email"
+          type="text"
           id="email-register"
           name="register"
           placeholder="Correo electrónico"
           class="input-bottom-border-only"
         /><br /><br />
         </div>
+        <div class="puesto">
+          <input
+          type="text"
+          id="puesto-empleado"
+          name="register"
+          placeholder="Puesto Laboral"
+          class="input-bottom-border-only"
+        /><br /><br />
+        </div>
+        <label for="fecha-de-contratacion" id="label-fecha-contratacion">Fecha de contratación</label>
+        <div class="fecha-contratacion">
+          <input
+          type="date"
+          id="fecha-de-contratacion"
+          name="register"
+          placeholder="Fecha de contratación"
+          class="input-bottom-border-only"
+        /><br /><br />
+        </div>
 
         <div class="button-container">
           <button type="button" onclick="validar()" class="login-button">
-            Registrarse <span id="right"></span></i>
+            Registrar empleado <span id="right"></span></i>
           </button>
         </div>
         <div class="login-flex-container">
           <div class="register">
-            <p>Al hacer clic en "Regístrate", aceptas las condiciones de uso de (nombre de empresa) y reconoces haber leído la política de privacidad.</p>
+          
           </div>
         </div>
       </form>
     </div>
   </div>
+
+<script src="agregar_empleado.js"></script>
   </body>
 </html>
