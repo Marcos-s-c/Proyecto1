@@ -59,6 +59,9 @@ button a{
 .remove{
     display: none;
 }
+.show{
+  display: block;
+}
 
 /***** GENERAL HEADER ***********/
 header{
