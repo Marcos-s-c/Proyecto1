@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" media="screen" href="modalBox.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Aqui va el contenido</h2>
+      </div>
+    </div>
+    <script>
+      // trae el contenedor 'myModal'
+      var modal = document.getElementById("myModal");
+
+      //elemento 'x' de la ventana
+      var span = document.getElementsByClassName("close")[0];
+
+      // llamar esta funcion on click event
+      function displayModalBox() {
+        modal.style.display = "block";
+      }
+
+      //cuando se hace click en la x se cierra la ventana
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      //Cuando se hace click fuera de la ventana se cierra la ventana
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+    </script>
+  </body>
+</html>

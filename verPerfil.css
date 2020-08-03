@@ -1,0 +1,27 @@
+.hidden{
+    display: none;
+}
+.parking-info-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.image{
+    width: 100%;
+}
+.image img{
+    width: 100%;
+}
+.main-heading{
+    text-align: left;
+    width: 90%;
+}
+.star-rating{
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+}
+.checked {
+    color: #ffe066;
+  }
+

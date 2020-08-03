@@ -1,0 +1,64 @@
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 10%; /* Location of the box */
+  top: 0;
+  right: 0;
+  width: 80%; 
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #0db1b1;
+  margin: auto;
+  padding: 0% 1% 5% 1%;
+  width: 40%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: white;
+}
+.heading-box{
+  background-image: url(imgs/turquesa.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 5% 0%;
+}
+.info-box{
+  display: flex;
+  justify-content: center;
+}
+.left-box, .right-box{
+  width: 45%;
+}
+.modal-content h2{
+    margin: 0;
+    padding: 3% 0% 8% 5%;
+}
+.info-box h4{
+    margin: 0;
+}
+.info-box p{
+    padding-bottom: 5%;
+}
+
+/* The Close Button */
+.close {
+  color: whitesmoke;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
