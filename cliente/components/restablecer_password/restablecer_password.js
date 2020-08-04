@@ -45,7 +45,7 @@ function validateEmailEquality() {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "Los correos no son iguales",
+      text: "Los valores no coinciden",
       footer: "<a href>Why do I have this issue?</a>",
     });
     inputs[0].classList.add("error");

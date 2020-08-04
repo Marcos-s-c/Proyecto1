@@ -79,6 +79,7 @@ function validateCompany() {
       title: "Oops...",
       text: firstError,
       footer: "<a href>Why do I have this issue?</a>",
+      cancelButtonText: "dasdad, dsadasda",
     });
   } else {
     result = true;
