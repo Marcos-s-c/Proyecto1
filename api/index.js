@@ -13,6 +13,7 @@ mongoose
   .catch((err) => console.log(err));
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, "../cliente")));
 //ejecutamos el servicios
 app.use("/guardar", require("./servicio/guardar_usuarios"));
 

@@ -118,7 +118,7 @@ button {
 
 /*Middle*/
 .header-middle {
-  background-image: url(../assets/img/parqueo-cel.jpg);
+  background-image: url(assets/img/parqueo-cel.jpg);
   background-size: cover;
   background-position: center;
   padding-top: 15%;
@@ -183,12 +183,12 @@ button {
   border-style: none;
 }
 .mission .leftBox {
-  background-image: url(../assets/img/parqueo-noche.jpg);
+  background-image: url(assets/img/parqueo-noche.jpg);
   background-size: contain;
 }
 
 .mission .rightBox {
-  background-image: url(../assets/img/parqueo-dia.jpg);
+  background-image: url(assets/img/parqueo-dia.jpg);
   background-size: contain;
 }
 .mission .leftBox p,
