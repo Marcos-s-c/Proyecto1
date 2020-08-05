@@ -3,6 +3,8 @@ function validar() {
   var loginPassword = document.getElementById("loginPassword");
 
   if (valiteBlanks([loginEmail, loginPassword])) {
+
+
     // fetch POST va aqui comprobar
     let datos = {
       correo: loginEmail,
@@ -12,11 +14,10 @@ function validar() {
     // nos devuelve un tipo de usuario
     // guardamos el tipo de usuario en el localhost
 
-    var usuario = "empresa";
-    // localStorage.getItem(tipo)
+    var usuario =  localStorage.getItem(tipo);
 
     if (usuario == "cliente") {
-      window.location.href = "/components/buscarParqueo/buscarParqueo.html";
+      window.location.href = "components/buscar_parqueobuscarParqueo.html";
     } else if (usuario == "empresa") {
       window.location.href =
         "/components/asociar_empleados_convenios/asociar_empleados_convenios.html";
