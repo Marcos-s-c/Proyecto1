@@ -37,10 +37,10 @@ function displayDropMenu() {
   }
  // FUNCIONES PARA CAMBIAR EL COLOR DE LOS SPOT IMGS
   function displayRedSpot(element){
-    document.getElementById(element.firstChild.id).firstChild.src = '../img/red-car.png';
+    document.getElementById(element.firstChild.id).firstChild.src = '../../assets/img/red-car.png';
   }
   function displayGreenSpot(element){
-    document.getElementById(element.firstChild.id).firstChild.src = '../img/green-car.png';
+    document.getElementById(element.firstChild.id).firstChild.src = '../../assets/img/green-car.png';
   }
 
   changeColorBox();
