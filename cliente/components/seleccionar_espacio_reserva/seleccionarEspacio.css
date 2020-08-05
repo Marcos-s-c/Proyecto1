@@ -23,7 +23,7 @@ text-transform: uppercase;
 .rows .spot-item{
     width: 100%;
     margin: auto;
-    border: 1px solid black;
+    box-shadow: 1px 1px 3px gray;
     text-align: center;
     padding-top: 10%;
 }

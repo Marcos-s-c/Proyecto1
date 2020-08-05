@@ -10,7 +10,7 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="../../../cliente/assets/css/styles.css"
+      href="../../assets/css/styles.css"
     />
     <link
       rel="stylesheet"
@@ -20,64 +20,65 @@
     />
   </head>
   <body>
-    <header>
-      <div>
-        <i class="fas fa-user-circle fa-2x"></i>
-      </div>
-    </header>
-    <main>
-      <!-- The flexible grid (content) -->
-      <div class="row">
-        <div class="side">
-          <div class="side-menu">
-            <ul>
-              <li>
-                <a href="#"><i class="fas fa-parking"></i>Mi Parqueo</a>
-              </li>
-              <li>
-                <a href="#"><i class="fas fa-wallet"></i>Reportes</a>
-              </li>
-              <li>
-                <a href="#"><i class="far fa-handshake"></i>Convenios</a>
-              </li>
-              <li>
-                <a href="#"><i class="fas fa-dollar-sign"></i>Tarifas</a>
-              </li>
-              <li>
-                <a href="#"><i class="far fa-user"></i>Cuenta</a>
-              </li>
-            </ul>
-          </div>
+    <div class="outer-container">
+      <header>
+        <div>
+          <i class="fas fa-user-circle fa-2x"></i>
         </div>
-        <div class="main">
-          <div class="title-report">
-            <h1>Reportar cliente</h1>
+      </header>
+      <main>
+        <!-- The flexible grid (content) --> 
+          <div class="row">
+            <div class="side">
+              <div class="side-menu">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fas fa-parking"></i>Mi Parqueo</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fas fa-wallet"></i>Reportes</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-handshake"></i>Convenios</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fas fa-dollar-sign"></i>Tarifas</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-user"></i>Cuenta</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="main">
+              <div class="title-report">
+                <h1>Reportar cliente</h1>
+              </div>
+    
+              <div class="form">
+                
+                <form>
+                  <h2>Motivo</h2>
+                  <input type="radio" name="problem" id="problem-one" required>
+                  <label for="problem-one">Ocasionó un choque no reportado</label> <br>
+                  
+                  <input type="radio" name="problem" id="problem-two" required>
+                  <label for="problem-one">Estacionó en un espacio reservado</label> <br>
+                  
+                  <input type="radio" name="problem" id="problem-tree" required>
+                  <label for="problem-one">Dejó el vehículo mal estacionado</label> <br>
+                  
+                  <input type="radio" name="problem" id="problem-other" required>
+                  <label for="problem-one">Otro</label> <br> <br>
+    
+                  <input type="text" name="more-info" id="more-info" placeholder="Descripción del problema.." required> <br> <br>
+    
+                  <button class="submit" onclick="alertSended()">Enviar</button>
+                </form>
+              </div>   
           </div>
-
-          <div class="form">
-            
-            <form>
-              <h2>Motivo</h2>
-              <input type="radio" name="problem" id="problem-one" required>
-              <label for="problem-one">Ocasionó un choque no reportado</label> <br>
-              
-              <input type="radio" name="problem" id="problem-two" required>
-              <label for="problem-one">Estacionó en un espacio reservado</label> <br>
-              
-              <input type="radio" name="problem" id="problem-tree" required>
-              <label for="problem-one">Dejó el vehículo mal estacionado</label> <br>
-              
-              <input type="radio" name="problem" id="problem-other" required>
-              <label for="problem-one">Otro</label> <br> <br>
-
-              <input type="text" name="more-info" id="more-info" placeholder="Descripción del problema.." required> <br> <br>
-
-              <button class="submit" onclick="alertSended()">Enviar</button>
-            </form>
-          </div>
-          
-      </div>
-    </main>
+        </main>
+    </div>
     <footer>
       <p>San José, Costa Rica.</p>
       <p>&reg;Todos los derechos reservados</p>

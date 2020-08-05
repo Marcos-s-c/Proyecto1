@@ -26,6 +26,9 @@ header .logo img {
   height: 85px;
   margin: 0;
 }
+.outer-container{
+  flex-grow: 1;
+}
 /****** HEADER MENU ************/
 
 header .sub-menu {
@@ -80,6 +83,11 @@ header .sub-menu {
 
 /* font */
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
   padding: 0%;
   font-family: "Open Sans", sans-serif;
   margin: 0px;

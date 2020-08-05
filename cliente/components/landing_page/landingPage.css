@@ -113,7 +113,7 @@ button{
 
 /*Middle*/
 .header-middle{
-    background-image: url(../img/parqueo-cel.jpg);
+    background-image: url(../../assets/img/parqueo-cel.jpg);
     background-size: cover;
     background-position: center;
     padding-top: 15%;
