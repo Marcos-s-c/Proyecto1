@@ -13,34 +13,35 @@
   <body>
 
 
-    <!-- The flexible grid (content) -->
+
+    <div class="outer-container">
+      <header>
+        <div class="logo">
+          <a href="index.html"><img src="../../assets/img/logo.png" /></a>      
+        </div>
+        <div class="sub-menu" id="sub">
+          <div class="dropdown">
+            <i class="fas fa-user-circle dropbtn" onclick="displayDropDownMenu()"></i>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="">Perfil</a>
+              <a href="http://localhost:4040/">Cerrar sesión</a>     <!--cambiar url-->
+            </div>
+          </div>
+        </div> 
+      </header>
+    
+
+
     <div class="row">
       <div class="side">
         <div class="side-menu">
-          <ul>
-            <li class="active">
-              <a href="#"><i class="fas fa-car"></i>Mi Parqueo</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-dollar-sign"></i>Tarifas</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-chart-bar"></i>Reportes</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-building"></i>Convenios</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-users"></i>Clientes</a>
-            </li>
-          </ul>
+         <!-- aqui va el menu, copiar de la carpeta de menus -->
         </div>
       </div>
       <div class="main">
-        <!-- CONTENIDO -->
+        <!-- aqui va el CONTENIDO -->
       </div>
       </div>
-    </div>
     </div>
   <script src="../../assets/js/dropdown_menu.js"></script>
 
