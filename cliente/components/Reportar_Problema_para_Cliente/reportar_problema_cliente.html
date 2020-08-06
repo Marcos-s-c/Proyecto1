@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Reportar Parqueo</title>
+    <script
+      src="https://kit.fontawesome.com/2ed94c37e4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../../../cliente/assets/css/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="reportar_problema_cliente.css"
+    />
+
+    <script src="reportar_problema_cliente.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <i class="fas fa-user-circle fa-2x"></i>
+      </div>
+    </header>
+    <main>
+      <!-- The flexible grid (content) -->
+      <div class="row">
+        <div class="side">
+          <div class="side-menu">
+            <ul>
+              <li>
+                <a href="#"><i class="fas fa-search"></i>Buscar Parqueo</a>
+              </li>
+              <li>
+                <a href="#"><i class="far fa-clock"></i>Historial de Pagos</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-stream"></i>Mis reservas</a>
+              </li>
+              <li>
+                <a href="#"><i class="far fa-credit-card"></i>Metodos de pago</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-tags"></i>Promociones</a>
+              </li>
+              <li>
+                <a href="#"><i class="far fa-user"></i>Cuenta</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="main">
+          <div class="title-report">
+            <h1>Reportar parqueo</h1>
+          </div>
+
+          <div class="form">
+            
+            <form>
+              <h2>Motivo</h2>
+              <input type="radio" name="problem" id="problem-one" required>
+              <label for="problem-one">Chocaron mi vehículo</label> <br>
+              
+              <input type="radio" name="problem" id="problem-two" required>
+              <label for="problem-one">No encontré vigilancia en el parueo</label> <br>
+              
+              <input type="radio" name="problem" id="problem-tree" required>
+              <label for="problem-one">El campo que reserve estaba ocupado</label> <br>
+              
+              <input type="radio" name="problem" id="problem-tree" required>
+              <label for="problem-one">El parqueo no coincide con las fotos</label> <br>
+
+              <input type="radio" name="problem" id="problem-tree" required>
+              <label for="problem-one">La dirección del parqueo no es correcta</label> <br>
+
+              <input type="radio" name="problem" id="problem-tree" required>
+              <label for="problem-one">El parqueo no tiene espacios especiales</label> <br>
+
+              <input type="radio" name="problem" id="problem-other" required>
+              <label for="problem-one">Otro</label> <br> <br>
+
+              <input type="text" name="more-info" id="more-info" placeholder="Descripción del problema..." required> <br> <br>
+
+              <input type="submit" class="submit">
+            </form>
+          </div>
+          
+      </div>
+    </main>
+    <footer>
+      <p>San José, Costa Rica.</p>
+      <p>&reg;Todos los derechos reservados</p>
+    </footer>
+  </body>
+</html>
