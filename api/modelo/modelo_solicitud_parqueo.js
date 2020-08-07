@@ -1,2 +1,4 @@
 "use strict";
-let mongoose = require();
+let mongoose = require("mongoose");
+
+let solicitudSchema = new mongoose.Schema({});

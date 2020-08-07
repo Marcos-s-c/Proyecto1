@@ -1,3 +1,4 @@
+"use strict";
 var mongoose = require("mongoose");
 
 var modeloParqueo = mongoose.Schema({
@@ -7,6 +8,7 @@ var modeloParqueo = mongoose.Schema({
   ubicacion: Number,
   campos: Array,
   tarifas: Array,
+  convenios: Array,
 });
 
 module.exports = mongoose.model("Parqueo", modeloParqueo, "Parqueos");
