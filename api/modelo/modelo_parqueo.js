@@ -9,6 +9,9 @@ var modeloParqueo = mongoose.Schema({
   campos: Array,
   tarifas: Array,
   convenios: Array,
+  fechaDeApertura: Date,
+  horaDeApertura: Number,
+  horaDeCierre: Number,
 });
 
 module.exports = mongoose.model("Parqueo", modeloParqueo, "Parqueos");
