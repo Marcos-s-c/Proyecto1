@@ -2,6 +2,8 @@
 body{
     padding: 0;
     margin: 0;
+    list-style-type: none;
+    text-decoration: none;
 }
 .topHeaderFill{
     width: 100%;
@@ -19,7 +21,7 @@ h3{
     font-size: 1em;
 }
 p{
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /*************************************/
@@ -29,7 +31,6 @@ h1{
 h1, h2, h3{
     padding: 4% 0%;
     font-family: 'Quicksand', sans-serif;
-    text-transform: uppercase;
     font-weight: 400;
 }
 p, a, input{
@@ -70,12 +71,11 @@ button{
     width: 100%;
     background-color: #234f58;
     z-index: 999;
-}
-.header-top{
-    padding: 1% 2%;
+    padding: 0% 2%;
 }
 .header-top .logo{
     width: 20%;
+    padding: 1% 0%;
 }
 .header-top .logo img{
     height: 50px;
@@ -86,30 +86,49 @@ button{
     padding-top: 1%;
     box-sizing: border-box;
 }
-.header-top ul{
+
+.menu .leftOptions{
+    width: 70%;
+}
+.menu .rightOptions{
+    width: 30%;
+    margin-right: 5%;
+}
+.menu ul{
+    margin-top: 10px;
     width: 100%;
-    text-align: end;
+    display: flex;
+    justify-content: end;
+    align-content: center;
 }
-.header-top .menu .leftOptions{
-    width: 75%;
+.menu .leftOptions li,
+.menu .rightOptions li {
+    display: inline-block;
+    margin-left: 3%;
+    padding: 8px 0px;
+
 }
-.header-top .menu .rightOptions{
-    width: 25%;
-    padding-right: 5%;
+.menu .rightOptions li{
+    width: 40%;
+    background-color: #337380;
+    border-radius: 10px;
+    text-align: center;
 }
-.header-top .leftOptions li{
-    border-right: 1px solid #f2f2f2;
-    display: inline;
-    padding: 0% 1%
+
+/*genera padding entre el enlace y el icono*/
+.menu .rightOptions a{  
+    padding-left: 5%;
 }
-.header-top .rightOptions li{
-    display: inline;
-    padding: 0% 5% ;
+.menu a, .menu .fa-sign-in-alt, .menu .fa-user-plus{
+    color: #eeeded;
 }
-.header-top .menu a{
+.grow { 
+    transition: all .2s ease-in-out; }
+.grow:hover, .grow:hover a{ 
+    transform: scale(1.1); 
     color: white;
-    font-size: 16px;
 }
+
 
 /*Middle*/
 .header-middle{
@@ -179,20 +198,42 @@ button{
 
 /******* BENEFITS SECTION ****************/
 
-.rentingService, searchingService{
+.first-row, .second-row{
     overflow: auto;
     width: 100%;
     box-sizing: border-box;
+    text-align: center;
 }
-.rentingService .leftSection, .rentingService .rightSection,
-.searchingService .leftSection, .searchingService .rightSection{
+.first-row .text-box, .first-row .image-box,
+.second-row .text-box, .second-row .image-box{
     float: left;
     width: 50%;
 }
-.rentingService img, .searchingService img{
+.first-row img, .second-row img{
     width: 100%;
 }
-
+.list{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+.list img{
+    width: 50%;
+}
+.list-item{
+    width: 30%;
+    margin: 1%;
+}
+.first-row h2, .second-row h2{
+    width: 70%;
+    margin: auto;
+}
+.first-row .text-box,
+.second-row .text-box{
+    padding-top: 5%;
+}
 /************* REVIEWS SECTION ***********************/
 
 .reviewsSection{
@@ -204,18 +245,52 @@ button{
 .reviewsContainer{
     display: flex;
     justify-content: center;
-    width: 100%;
-
+    width: 80%;
+    margin: auto;
 }
 .reviewItem{
+    background-color: #216c7a;
     padding: 2%;
-    border: 1px solid black;
-    margin: 3%;
+    margin: 2%;
     width: 25%;
+    box-shadow: 1px 1px 4px gray;
+    border-radius: 10px;
 }
-.reviewItem img{
-    width: 25%;
+.reviewItem .comment{
+    display: flex;
 }
+.reviewItem .comment img{
+    width: 40px;
+    height: 40px;
+}
+.reviewItem p, .reviewItem h2, .reviewItem h3{
+    color: white;
+}
+.reviewItem h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+.user-image img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.reviewItem h2, .reviewItem h3{
+    padding: 0;
+    margin: 0;
+}
+.reviewItem p{
+    width: 90%;
+    margin: auto;
+    padding-top: 10%;
+}
+.star-rating{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.checked {
+    color: #ffe066;
+  }
 
 /*************** CONTACT INFO *******************/
 
@@ -247,7 +322,6 @@ button{
     background-color: #F1F3F4;
     margin: 3%;
     font-size: 15px;
-
 }
 .contactInfo .container .leftSection button{
     float: right;

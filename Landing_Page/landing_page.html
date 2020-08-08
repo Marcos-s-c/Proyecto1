@@ -19,16 +19,16 @@
             <div class="menu">
                 <div class="leftOptions">
                     <ul>
-                        <li><a href="#aboutUs">Sobre nosotros</a></li>
-                        <li><a href="#benefits">Beneficios</a></li>
-                        <li><a href="#contactInfo">Contáctenos</a></li>
-                        <li><a href="ayuda.html">Ayuda</a></li>
+                        <li class="grow"><a href="#aboutUs">Sobre nosotros</a></li>
+                        <li class="grow"><a href="#benefits">Beneficios</a></li>
+                        <li class="grow"><a href="#contactInfo">Contáctenos</a></li>
+                        <li class="grow"><a href="ayuda.html">Ayuda</a></li>
                     </ul>
                 </div>
                 <div class="rightOptions">
                     <ul> 
-                        <li><a href="http://localhost:4040/">Iniciar sesión</a></li>
-                        <li><a href="">Registrarse</a></li>
+                        <li class="grow"><i class="fas fa-sign-in-alt"></i><a href="http://localhost:4040/">Iniciar sesión</a></li>
+                        <li class="grow"><i class="fas fa-user-plus"></i><a href="">Registrarse</a></li>
                         <!-- falta menu dropdown aqui para diferentes tipos de usuarios y linkearlos -->
                     </ul>
                 </div>
@@ -63,31 +63,30 @@
     <!-- BENEFITS SECTION -->
     <div class="benefits" id="benefits">
 
-        <div class="rentingService">
-            <div class="leftSection">
+        <div class="first-row">
+            <div class="text-box">
                 <h2>Administrar tu parqueo nunca habia sido tan fácil</h2>
-                <div class="listBox">
-                    <div class="item"><i class="fas fa-laptop"></i>Lleva el control del parqueo desde tu computador</div>
-                    <div class="item"><i class="fas fa-dollar-sign"></i>Administra tus ingresos desde la aplicacion</div>
-                    <div class="item"><i class="fas fa-user-plus"></i>Potencializa la cantidad de visitas a tu parqueo</div>
+                <div class="list">
+                    <div class="list-item"><img src="../cliente/assets/img/dashboard.png"><p>Lleva el control del parqueo desde tu computador</p></div>
+                    <div class="list-item"><img src="../cliente/assets/img/money.png"><p>Administra tus ingresos desde la aplicacion</p></div>
+                    <div class="list-item"><img src="../cliente/assets/img/network.png"><p>Potencializa la cantidad de visitas a tu parqueo</p></div>
                 </div> 
             </div>
-            <div class="rightSection">
+            <div class="image-box">
                 <img src="../cliente/assets/img/parqueo1.jpg">   
             </div>
         </div>
 
-        <div class="searchingService">
-            <div class="leftSection">
-                <img src="../../assets/img/celular2.jpg">
+        <div class="second-row">
+            <div class="image-box">
+                <img src="../cliente/assets/img/celular2.jpg">
             </div>
-            <div class="rightSection">
-                <h2>No más timepo perdido en carretera</h2>
-                <h4>buscando parqueos</h4>
-                <div class="listBox">
-                    <div class="item"><i class="fas fa-map-marked-alt"></i></i>Encuentra parqueos al instante en cualquie parte del país</div>
-                    <div class="item"><i class="fas fa-check"></i>Reserva tu espacio sin importar donde estés</div>
-                    <div class="item"><i class="fas fa-credit-card"></i>Realiza el pago del parqueo desde tu dispositivo</div>
+            <div class="text-box">
+                <h2>No más tiempo perdido en carretera buscando parqueos</h2>
+                <div class="list">
+                    <div class="list-item"><img src="../cliente/assets/img/map.png"><p>Encuentra parqueos al instante en cualquie parte del país</p></div>
+                    <div class="list-item"><img src="../cliente/assets/img/booking.png"><p>Reserva tu espacio sin importar donde estés</p></div>
+                    <div class="list-item"><img src="../cliente/assets/img/pay.png"><p>Realiza el pago del parqueo desde tu dispositivo</p></div>
                 </div> 
             </div>
         </div>
@@ -99,19 +98,62 @@
         <h1>Lo que los usuarios dicen de <span class="emphasize">MySpot</span></h1>
         <div class="reviewsContainer">
             <div class="reviewItem">
-                <img src="#">
-                <h3>Nombre1</h3>
-                <p>Comentario</p>
+                <div class="user-image">
+                    <img src="../cliente/assets/img/face1.jpg">
+                </div>
+                <div class="star-rating">                    
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
+                <h2>Rebeca Gómez</h2>
+                <div class="comment">
+                    <img src="../cliente/assets/img/quote.png">
+                    <h3>Me encanta!</h3>
+                    <img src="../cliente/assets/img/quote(1).png">
+                </div>
+                <p>Ya no me atraso llegando a mi trabajo buscando parqueos</p>
+
             </div>
             <div class="reviewItem">
-                <img src="#">
-                <h3>Nombre1</h3>
-                <p>Comentario</p>
+                <div class="user-image">
+                    <img src="../cliente/assets/img/face2.jpg">
+                </div>
+                <div class="star-rating">                    
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
+                <h2>Jorge Salazar</h2>
+                <div class="comment">
+                    <img src="../cliente/assets/img/quote.png">
+                    <h3>Excelente aplicación</h3>
+                    <img src="../cliente/assets/img/quote(1).png">
+                </div>
+                <p>Me ha ayudado a administrar mejor mi parqueo</p>
             </div>
             <div class="reviewItem">
-                <img src="#">
-                <h3>Nombre1</h3>
-                <p>Comentario</p>
+                <div class="user-image">
+                    <img src="../cliente/assets/img/face3.jpg">
+                </div>
+                <div class="star-rating">                    
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
+                <h2>Katherine Vargas</h2>
+                <div class="comment">
+                    <img src="../cliente/assets/img/quote.png">
+                    <h3>Recomendadísima</h3>
+                    <img src="../cliente/assets/img/quote(1).png">
+                </div>
+                <p>Las visitas a mi parqueo han aumentado desde que uso MySpot</p>
             </div>
         </div>
     </div>
