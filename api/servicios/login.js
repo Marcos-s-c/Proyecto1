@@ -3,20 +3,20 @@ var router = express.Router();
 
 const Usuario = require('../modelo/modelo_usuario');
 
-router.post('/persona', function (req, res) {
-    
-    var correo = req.body.correo;
+router.post('/personas/login', async function (req, res) {
 
-    Usuario.find({correo: correo}).exec()
-    .then(function (resultado) {
-        res.json(resultado);
-    })
-    .catch(function (error) {
-        console.log(error)
-    })
+    const correo = req.body.correo
+    const password = req.body.password
+    const user = await Usuario.findOne({ correo, password })
+
+    try {
+         await user.generarTokenDeAutenticacion()
+        return res.send(user)
+    } catch (e) {
+        return res.status(400).send("Credenciales invalidos")
+
+    }
 })
-
-
 
 
 module.exports = router;

@@ -293,80 +293,24 @@ button{
   }
 
 /*************** CONTACT INFO *******************/
-
-.contactInfo{
-    padding: 0% 5%;
-    background-image: url(../cliente/assets/img/autopista1.jpg);
-    background-size: cover;
-    background-position: center;
-    padding-top: 10%;
-    padding-bottom: 10%;
+.contact-info {
+    background:url(../cliente/assets/img/autopista1.jpg);
     position: relative;
 }
-.contactInfo .container{
-    overflow: auto;
-}
-.contactInfo .leftSection, .contactInfo .rightSection{
-    margin: 2%;
-}
-.contactInfo .container .leftSection{
-    float: left;
-    width: 40%;
-    border: 1px solid;
-}
-.contactInfo .container .rightSection{
-    float: left;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    border: 1px solid;
-}
-.contactInfo .container .leftSection input{
-    width: 90%;
-    padding: 2%;
-    border-style: none;
-    background-color: #F1F3F4;
-    margin: 3%;
-    font-size: 15px;
-}
-.contactInfo .container .leftSection button{
-    float: right;
-    margin-right: 3%;
-}
 
-.contactInfo .infoBox{
-    float: left;
-    width: 70%;
-    padding-left: 5%;
+.dark-layer {
+    background-color: rgba(248, 247, 216, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
-.contactInfo .infoBox .fas{
-    padding: 1%;
-}
-.contactInfo .infoBox li{
-    padding-bottom: 2%;
-}
-.contactInfo .infoBox p{
-    display: inline;
-}
-.contactInfo .socialMedia{
-    float: right;
-    width: 30%;
-    border: 1px solid;
-}
-.contactInfo .socialMedia .fa-facebook-f,
-.contactInfo .socialMedia .fa-twitter,
-.contactInfo .socialMedia .fa-instagram{
-    display: block;
-    font-size: 40px;
-    color: black;
-    padding: 2%;
-}
-
 
 /************ FOOTER ************************/
 
 footer{
-    background-color: #404040;
+    background-color: #3b3b3b;
     padding-top: 2%;
     padding-bottom: 1%;
     text-align: center;

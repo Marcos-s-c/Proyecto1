@@ -4,6 +4,8 @@ var router = express.Router();
 var Usuario = require('../modelo/modelo_usuario');
 
 router.get("/personas", function (req, res) {
+
+    console.log(req.user)
     
     Usuario.find().exec()
     .then(function (resultado) {
@@ -14,7 +16,6 @@ router.get("/personas", function (req, res) {
     })
 
 });
-
 
 router.post("/persona", function (req, res) {
     
