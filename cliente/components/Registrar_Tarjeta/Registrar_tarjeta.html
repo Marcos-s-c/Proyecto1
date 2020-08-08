@@ -46,33 +46,36 @@
     <div class="row">
       <div class="side">
         <div class="side-menu">
-          <ul>
-            <li class="active">
-              <a href="#"><i class="fas fa-car"></i>Buscar parqueo</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-history"></i>Historial de pagos</a>
-            </li>
-            <li>
-              <a href="../ver_reserva/ver_reserva.html"
-                ><i class="fas fa-bookmark"></i>Mis reservas</a
-              >
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-wallet"></i>Métodos de pago</a>
-            </li>
-            <li>
-              <a href="../listar_tarjetas/listar_tarjeta.html"
-                ><i class="far fa-credit-card"></i>Tarjetas</a
-              >
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-gift"></i>Promociones</a>
-            </li>
-            <li>
-              <a href="#"><i class="far fa-user"></i>Cuenta</a>
-            </li>
-          </ul>
+          
+    <ul>
+      <li class="active">
+        <a
+          href="../../Buscar_Parqueo/buscar_parqueo.html"
+          ><i class="far fa-user"></i>Buscar parqueo</a
+        >
+      </li>
+      <li>
+        <a href="../lista_parqueos/lista_parqueos.html"
+          ><i class="fas fa-parking"></i>Historial de pagos</a
+        >
+      </li>
+      <li>
+        <a href="../lista_clientes/lista_clientes.html"
+          ><i class="fas fa-users"></i>Mi reserva</a
+        >
+      </li>
+      <li>
+        <a href="../solicitud_pendiente/solicitud_pendiente.html"
+          ><i class="fas fa-link"></i>Descuentos</a
+        >
+      </li>
+      <li>
+        <a href="../solicitud_pendiente/solicitud_pendiente.html"
+          ><i class="fas fa-link"></i>Metodo de pago</a
+        >
+      </li>
+    </ul>
+
         </div>
       </div>
       <!-- MAIN CONTENT -->
@@ -130,26 +133,31 @@
           <!-- Formulario --->
           <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
             <div class="grupo">
-              <label for="inputNumero">Número Tarjeta</label>
+              
+              
               <input
                 type="text"
                 id="inputNumero"
+                placeholder="Número de la tarjeta"
                 maxlength="19"
                 autocomplete="off"
+                class="input-bottom-border-only"
               />
+            
             </div>
             <div class="grupo">
-              <label for="inputNombre">Nombre Tarjeta</label>
+              
               <input
                 type="text"
                 id="inputNombre"
+                placeholder="Nombre de la tarjeta"
                 maxlength="19"
                 autocomplete="off"
               />
             </div>
             <div class="flexbox">
               <div class="grupo expira">
-                <label for="selectMes">Expiracion</label>
+                <label for="selectMes">Expiración</label>
                 <div class="flexbox">
                   <div class="grupo-select">
                     <select name="mes" id="selectMes">
