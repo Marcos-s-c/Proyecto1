@@ -1,5 +1,7 @@
+#label-fecha-contratacion{
+    text-align: left;
+}
 .login-container {
-
     padding-left: 35%;
     padding-right: 35%;
   }
@@ -42,7 +44,7 @@
   }
   
   .logo{
-    text-align: center;
+      text-align: center;
   }
   
 
@@ -55,21 +57,4 @@
     padding-top: 2%;
   }
 
-  /*---- LINK REGISTRAR EMPRESA */
-  a {
-    text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 2px;
-    transition: background-size .3s;
-}
-
-a:hover, a:focus {
-    background-size: 100% 2px;
-    color: #234f58 ;
-}
-
-.register a{
-  color: #82b0b0;
-}
+ 
