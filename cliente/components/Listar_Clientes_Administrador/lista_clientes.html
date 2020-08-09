@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Clientes</title>
+    <script
+      src="https://kit.fontawesome.com/2ed94c37e4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../../../cliente/assets/css/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="lista_clientes.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div>
+        <i class="fas fa-user-circle fa-2x"></i>
+      </div>
+    </header>
+    <main>
+      <!-- The flexible grid (content) -->
+      <div class="row">
+        <div class="side">
+          <div class="side-menu">
+            <ul>
+              <li class="active">
+                <a
+                  href="../ver_perfil_administrador/ver_perfil_administrador.html"
+                  ><i class="far fa-user"></i>Mi Perfil</a
+                >
+              </li>
+              <li>
+                <a href="../lista_parqueos/lista_parqueos.html"
+                  ><i class="fas fa-parking"></i>Parqueos</a
+                >
+              </li>
+              <li>
+                <a href="../lista_clientes/lista_clientes.html"
+                  ><i class="fas fa-users"></i>Clientes</a
+                >
+              </li>
+              <li>
+                <a href="../solicitud_pendiente/solicitud_pendiente.html"
+                  ><i class="fas fa-link"></i>Solicitudes</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="main">
+          <div class="title-table">
+            <h1>Lista de Clientes</h1>
+          </div>
+          <div class="table-header">
+            <div class="search">
+              <input type="text" placeholder="Buscar..." />
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="select">
+              <select class="search" name="filter" id="filter-select">
+                <option value="todos">Todos</option>
+                <option value="reportados">Reportados</option>
+                <option value="activos">Activos</option>
+                <option value="innactivos">Innactivos</option>
+              </select>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th><h1>Cliente</h1></th>
+                <th><h1>Activar/Innactivar</h1></th>
+                <th><h1></h1></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cliente 1</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+                <td>
+                  <i class="far fa-edit">
+                    <i class="far fa-trash-alt"></i>
+                  </i>
+                </td>
+              </tr>
+              <tr>
+                <td>Cliente 2</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+                <td>
+                  <i class="far fa-edit">
+                    <i class="far fa-trash-alt"></i>
+                  </i>
+                </td>
+              </tr>
+              <tr>
+                <td>Cliente 3</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+                <td>
+                  <i class="far fa-edit">
+                    <i class="far fa-trash-alt"></i>
+                  </i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>San José, Costa Rica.</p>
+      <p>&reg;Todos los derechos reservados</p>
+    </footer>
+    <script src="../../assets/js/dropdown_menu.js"></script>
+  </body>
+</html>

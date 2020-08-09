@@ -1,97 +1,79 @@
-  .cancel{
-    padding-left: 14%;
-  }
-  .card {
-    width: 600px;
-    box-shadow: 0 0 15px rgba(0,0,0,.20);
-    display: flex;
-    padding-left: 60px;
-    
-  }
+.center-content-container {
+  box-shadow: 0 0 13px rgba(0, 0, 0, 1.2);
   
-  .card + .card {
-    margin-left: 50px;
-  }
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+  margin: auto;
+  font-size: 20px;
+  width: 80%;
+  height: 100%;
+  padding-bottom: 12%;
+}
+
+.dropdown{
+  position: absolute !important;
+  right: 5%;
+}
+
+.box-image {
+  background-image: url(https://picsum.photos/id/212/800/400);
+  background-color: darksalmon;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80%;
+}
+
+.box-info {
   
-  .card__img-container {
-    overflow: hidden;
-    flex: 1;
-  }
-  
-  .card__img {
-    min-height: 100%;
-  }
-  
-  
-  .card__content {
-    flex: 2;
-    padding: 100px 40px;
-  }
-  
-  .card__title {
-    font-weight: 800;
-    color: #444;
-    font-size: 35px;
-    margin-bottom: 5px;
-  }
-  
-  
-  
-  .card__desc {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #777;
-    margin-bottom: 50px;
-  }
-  
-  .card__price {
-    font-size: 25px;
-    font-weight: 800;
-    color: #444;
-    margin-bottom: 25px;
-  }
-  
+  text-align: justify;
+  padding: 0 4% 0 4%;
+  width: 100%;
+  height: 20%;
+}
+
+.text h1 {
+  margin: 0 !important;
+  padding-right: 5%;
+}
+
+.button {
+  color: white;
+  background-color: #0db1b1;
+  padding: 1%;
+  margin: 2% 0 2% 0;
+  margin-right: 1%;
+}
+
+.button:hover {
+  background-color: #216c7a;
+}
+
+.controls {
+  display: flex;
+}
+
+.block {
+  background-color: #216c7a;
+  width: 100%;
+  height: 20%;
+  padding: 138px 60px 15px 60px;
+  border-radius: 10px;
+  position: relative;
+  top: -80px;
   
 
- 
-  
-  .cancel.active{
-    visibility: hidden;
-  }
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: clip-path 0.3s ease-out;
+}
 
-  .botonDos{
-    background-color: white;
-   
+.block.active{
+  clip-path: polygon(0 0,  100% 0, 100% 100%, 0 100%);
+}
 
-    
-  }
-
-  .botonTres{
-    visibility: hidden;
-  }
-
-  .botonTres.active{
-    visibility: visible;
-  }
-
-  .boton{
-    background-color: #82B0B0;
-    color: white;
-  }
-
-
-  .info{
-    visibility: hidden;
-  }
-
-  .info.active{
-    visibility: visible;
-    background-color: white;
-    text-align: center;
-    padding-top: 100px;
-  }
-
-
-  .botonDos .dos{
-    color: black;  
-  }
+.block-info{
+  position: absolute;
+  top: 16%;
+}

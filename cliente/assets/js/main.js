@@ -1,6 +1,5 @@
 // valida los espacios en blanco de los elementos ingresados en el parametro
 function valiteBlanks(elements) {
-  console.log("entra");
   for (var key in elements) {
     var element = elements[key];
     element.classList.remove("error");
