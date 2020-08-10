@@ -7,13 +7,12 @@ router.post('/personas/login', async function (req, res) {
 
     const correo = req.body.correo
     const password = req.body.password
-    const user = await Usuario.findOne({ correo, password })
-
     try {
-         await user.generarTokenDeAutenticacion()
-        return res.send(user)
+        const user = await Usuario.findByCredentials(correo, password)
+        const token = await user.generarTokenDeAutenticacion()
+        return res.send({ user, token })
     } catch (e) {
-        return res.status(400).send("Credenciales invalidos")
+        return res.status(400).send("Credenciales incorrectos")
 
     }
 })

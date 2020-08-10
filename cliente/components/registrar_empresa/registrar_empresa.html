@@ -16,7 +16,7 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="registrarse_cliente.css"
+      href="registrar_empresa.css"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
@@ -28,18 +28,13 @@
       integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
       crossorigin="anonymous"
     />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="../../assets/js/main.js"></script>
-    <script src="registrarse_cliente.js"></script>
-    <script src="../../assets/js/dropdown_menu.js"></script>
   </head>
   <body>
     <header>
       <div class="sub-menu" id="sub">
         <div class="dropdown">
           <div id="myDropdown" class="dropdown-content">
-            <a href="#home">Inicio</a>
-            <a href="#about">Mi perfil</a>
+            <a href="#">Mi perfil</a>
             <a href="#">Cerrar sesión</a>
           </div>
         </div>
@@ -55,14 +50,14 @@
       </div>
       <div class="form">
       <form id="login-form" action="#">
-        <h1>Registrar cuenta</h1>
+        <h1>Registrar empresa</h1>
         
         <div class="name-input">
           <input
             type="text"
             id="name"
             name="register"
-            placeholder="Nombre completo"
+            placeholder="Nombre Jurídico"
             class="input-bottom-border-only"
           /><br /><br />
       
@@ -72,12 +67,13 @@
           type="text"
           id="cedula"
           name="register"
-          placeholder="Cédula"
+          placeholder="Cédula Jurídica"
           class="input-bottom-border-only"
         /><br /><br />
         </div>
+        <label for="fecha-de-contratacion" id="label-fecha-contratacion">Fecha de nacimiento</label>
         <div class="fecha-nacimiento-input">
-          <labe">Fecha de nacimiento</label><input
+          <input
           type="date"
           id="fecha-nacimiento"
           name="register"
@@ -85,9 +81,9 @@
           class="input-bottom-border-only"
         /><br /><br />
         </div>
-        <div class="numero-de-telefono">
+        <div class="numero-de-teléfono">
           <input
-          type="number"
+          type="tel"
           id="numero"
           name="register"
           placeholder="Numero de teléfono"
@@ -96,27 +92,49 @@
         </div>
         <div class="email">
           <input
-          type="email"
+          type="text"
           id="email-register"
           name="register"
           placeholder="Correo electrónico"
           class="input-bottom-border-only"
         /><br /><br />
         </div>
+        <div class="puesto">
+          <input
+          type="text"
+          id="puesto-empleado"
+          name="register"
+          placeholder="Puesto Laboral"
+          class="input-bottom-border-only"
+        /><br /><br />
+        </div>
+        <label for="fecha-de-contratacion" id="label-fecha-contratacion">Fecha de contratación</label>
+        <div class="fecha-contratacion">
+          <input
+          type="date"
+          id="fecha-de-contratacion"
+          name="register"
+          placeholder="Fecha de contratación"
+          class="input-bottom-border-only"
+        /><br /><br />
+        </div>
 
         <div class="button-container">
           <button type="button" onclick="validar()" class="login-button">
-            Registrarse <span id="right"></span></i>
+            Registrar empresa <span id="right"></span></i>
           </button>
         </div>
         <div class="login-flex-container">
           <div class="register">
-            <p>Al hacer clic en "Registrarse", aceptas las condiciones de uso de (nombre de empresa) y reconoces haber leído la política de privacidad.</p>
-            <p><a href="../registrar_empresa/registrar_empresa.html">Registrar empresa</a></p>
+          
           </div>
         </div>
       </form>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script src="registrar_empresa.js"></script>
+  <script src="registrar_empleado.css"></script>
   </body>
 </html>

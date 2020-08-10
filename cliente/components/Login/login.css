@@ -1,0 +1,60 @@
+a{
+  color: #82B0B0;
+}
+
+.login-container {
+  text-align: center;
+  padding-left: 35%;
+  padding-right: 35%;
+}
+.login-container h1 {
+  text-align: left;
+  font-weight: normal;
+}
+
+.access-container {
+  width: 100%;
+}
+.fa-arrow-right {
+  color: white !important;
+  padding-left: 75%;
+}
+
+.login-container input {
+  padding-bottom: 1%;
+  width: 99%;
+  box-sizing: border-box;
+  font-size: 15px;
+  outline: none;
+}
+
+.email-input,
+.password-input {
+  padding-top: 2%;
+}
+
+.login-flex-container {
+  display: flex;
+}
+
+.logo-login img {
+  width: 30%;
+}
+
+.register {
+  width: 50%;
+  text-align: left;
+}
+.lost-password {
+  padding-left: 20%;
+}
+
+button {
+  width: 100%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  font-size: 16px;
+  display: inline-block;
+
+}
+

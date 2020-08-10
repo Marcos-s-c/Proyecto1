@@ -1,6 +1,8 @@
+
 var mongoose = require('mongoose');
 const validator = require('validator')
 const jwt = require('jsonwebtoken')
+const bcrypt = require('bcryptjs')
 
 const esquemaUsuario = mongoose.Schema({
     nombre: {
@@ -25,14 +27,14 @@ const esquemaUsuario = mongoose.Schema({
         lowercase: true,
         validate(value) {
             if (validator.isEmail(value) == false) {
-                throw new Error ("El correo ingresado no es valido")
-            }            
+                throw new Error("El correo ingresado no es valido")
+            }
         }
     },
     nivel: String,
     nombreParqueo: String,
     ubicacionParqueo: String,
-    password:{
+    password: {
         type: String,
         required: true,
         minLength: 4,
@@ -53,18 +55,44 @@ const esquemaUsuario = mongoose.Schema({
 
 esquemaUsuario.methods.generarTokenDeAutenticacion = async function () {
     const usuario = this
-    const token = jwt.sign({ _id: usuario._id.toString()}, 'proyectonuevo')
+    const token = jwt.sign({ _id: usuario._id.toString() }, 'proyectonuevo')
 
-    console.log("generando token ", token)
-
-    usuario.tokens = usuario.tokens.concat({token})
+    usuario.tokens = usuario.tokens.concat({ token })
 
     await usuario.save()
     return token
 }
 
 
-const Usuario = mongoose.model("Usuario", esquemaUsuario, "Usuarios" )
+esquemaUsuario.pre('save', async function (next) {
 
+    const user = this
+
+    if (user.isModified('password')) {
+        user.password = await bcrypt.hash(user.password, 8)
+    }
+    next()
+})
+
+
+
+/* Cree  una funcion que reciba el email y el password del usuario.
+*Valide si el password es el correcto, en el caso de que sea correcto devuelva el objeto usuario.
+*/
+
+esquemaUsuario.statics.findByCredentials = async (email, password) => {
+
+    const usuario = await Usuario.findOne({ correo: email })
+    const esValido = await bcrypt.compare(password, usuario.password);
+
+    if (esValido == false) {
+        throw new Error("Crendeciales incorrectos, por favor intente de nuevo.")
+    }
+
+    return usuario;
+}
+
+
+const Usuario = mongoose.model("Usuario", esquemaUsuario, "Usuarios")
 
 module.exports = Usuario;

@@ -4,22 +4,21 @@ var mongoose = require("mongoose");
 
 var Usuario = require("../modelo/modelo_usuario");
 
-router.post("/persona", async  (req, res) => {
+router.post("/personas", async (req, res) => {
 
   const usuario = new Usuario(req.body)
   try {
-
     await usuario.save()
     const token = await usuario.generarTokenDeAutenticacion()
-    res.status(201).send({usuario, token})
+    res.status(201).send({ usuario, token })
   } catch (error) {
     res.status(400).send(error)
-  } 
+  }
 
 });
 
 router.post("/especializado", function (req, res) {
-    
+
   let GuardarUsuario = new Usuario({
     _id: new mongoose.Types.ObjectId(),
     nombre: req.body.nombre,
@@ -28,20 +27,20 @@ router.post("/especializado", function (req, res) {
     correo: req.body.correo,
     nombreParqueo: req.body.nombreParqueo,
     ubicacionParqueo: req.body.ubicacionParqueo,
-    nivel: 2  
+    nivel: 2
   });
- 
+
   GuardarUsuario.save()
-  .then(function (resultado) {
+    .then(function (resultado) {
       res.json(resultado)
-  })
-  .catch(function (error) {
+    })
+    .catch(function (error) {
       console.log(error)
-  })
+    })
 
 });
 router.post("/tradicional", function (req, res) {
-    
+
   let GuardarUsuario = new Usuario({
     _id: new mongoose.Types.ObjectId(),
     nombre: req.body.nombre,
@@ -53,12 +52,12 @@ router.post("/tradicional", function (req, res) {
 
 
   GuardarUsuario.save()
-  .then(function (resultado) {
+    .then(function (resultado) {
       res.json(resultado)
-  })
-  .catch(function (error) {
+    })
+    .catch(function (error) {
       console.log(error)
-  })
+    })
 
 });
 
@@ -73,7 +72,7 @@ module.exports = router;
 
 
 // router.post("/persona", function (req, res) {
-    
+
 //   let GuardarUsuario = new Usuario({
 //     _id: new mongoose.Types.ObjectId(),
 //     nombre: req.body.nombre,
