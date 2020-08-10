@@ -13,7 +13,7 @@ function validar() {
       email_register
     ]))
   {
-      return window.location.href = "/cliente/components/iniciar_sesion/inicio_sesion.html";
+      return window.location.href = "../iniciar_sesion/inicio_sesion.html";
     } else {
       return false;
     }

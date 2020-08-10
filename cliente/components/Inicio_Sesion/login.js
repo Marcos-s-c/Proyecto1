@@ -10,14 +10,14 @@ function logInValidation() {
     method: 'POST',
     body: JSON.stringify(data),
     headers:{'Content-Type': 'application/json'}
-  })
+  })/*
   .then(function(response){
     
     if(response.status == 200){
       console.log(localStorage.)
       
     }
-  })
+  })*/
 
 }
 
