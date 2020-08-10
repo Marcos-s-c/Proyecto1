@@ -1,3 +1,4 @@
+
 var express = require("express");
 var path = require("path");
 var app = express();
@@ -6,7 +7,6 @@ var listarUsuarios = require("./servicios/listar_usuarios")
 var guardarUsuarios = require("./servicios/guardar_usuarios")
 var logIn = require("./servicios/login")
 var logOut = require("./servicios/logout");
-const authentication = require("./middleware/authentication");
 const public_dir = express.static(path.join(__dirname, "../cliente"))
 
 //coneccion de base de datos
@@ -23,11 +23,10 @@ mongoose.connect(
 app.use(express.json());
 app.use(public_dir);
 
-app.use(guardarUsuarios);
-app.use(listarUsuarios);
-app.use(logIn);
-app.use(logOut);
-
+app.use(logIn);           // router
+app.use(logOut);          // router
+app.use(guardarUsuarios); // router
+app.use(listarUsuarios);  // router
 
 app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
