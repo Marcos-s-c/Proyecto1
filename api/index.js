@@ -5,6 +5,9 @@ var mongoose = require("mongoose");
 var listarUsuarios = require("./servicios/listar_usuarios")
 var guardarUsuarios = require("./servicios/guardar_usuarios")
 var logIn = require("./servicios/login")
+var logOut = require("./servicios/logout");
+const authentication = require("./middleware/authentication");
+const public_dir = express.static(path.join(__dirname, "../cliente"))
 
 //coneccion de base de datos
 mongoose.connect(
@@ -18,21 +21,14 @@ mongoose.connect(
 
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../cliente")));
-
+app.use(public_dir);
 
 app.use(guardarUsuarios);
-app.use( listarUsuarios);
+app.use(listarUsuarios);
 app.use(logIn);
+app.use(logOut);
+
 
 app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
 });
-
-
-// const jwt = require('jsonwebtoken')
-
-
-// const token = jwt.sign({ _id: user._id.toString()}, 'proyectonuevo')
-
-//   console.log(token)

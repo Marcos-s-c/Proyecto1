@@ -1,47 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <!-- falta definir la navegacion -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Inicio de Sesion</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=;, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="index.css" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
       rel="stylesheet"
       type="text/css"
       media="screen"
       href="assets/css/styles.css"
     />
     <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="index.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+    <script
+      src="https://kit.fontawesome.com/da33aea8dd.js"
       crossorigin="anonymous"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="index.js"></script>
-    
+    ></script>
+    <title>Document</title>
   </head>
   <body>
-    <div class="outer-container">
-      <header>
-        <div class="sub-menu" id="sub">
-          <div class="dropdown">
-            <div id="myDropdown" class="dropdown-content">
-              <a href="#home">Inicio</a>
-              <a href="#about">Mi perfil</a>
-              <a href="#">Cerrar sesión</a>
+    <header>
+      <div class="header-top">
+        <div class="logo">
+          <img src="./assets/img/logo.png" />
+        </div>
+        <div class="menu">
+          <div class="leftOptions">
+            <ul>
+              <li class="grow"><a href="#aboutUs">Sobre nosotros</a></li>
+              <li class="grow"><a href="#benefits">Beneficios</a></li>
+              <li class="grow"><a href="#contactInfo">Contáctenos</a></li>
+              <li class="grow"><a href="ayuda.html">Ayuda</a></li>
+            </ul>
+          </div>
+          <div class="rightOptions">
+            <ul>
+              <li class="grow">
+                <i class="fas fa-sign-in-alt"></i
+                ><a href="./components/Login/login.html">Iniciar sesión</a>
+              </li>
+              <li class="grow">
+                <i class="fas fa-user-plus"></i><a href="">Registrarse</a>
+              </li>
+              <!-- falta menu dropdown aqui para diferentes tipos de usuarios y linkearlos -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="topHeaderFill">relleno</div>
+      <div class="header-middle">
+        <h1>Tu parqueo al alcance de la mano</h1>
+      </div>
+    </header>
+    <!-- ABOUT US SECTION-->
+    <div class="aboutUs" id="aboutUs">
+      <h1>Sobre nosotros</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+        convallis sollicitudin molestie. Cras et convallis diam. Nam ullamcorper
+        justo sapien. Donec vehicula pellentesque turpis, nec placerat metus
+        aliquam tincidunt. Duis laoreet, ligula sit amet mattis semper, turpis
+        lectus imperdiet felis, nec pharetra lacus arcu vitae tortor. Donec
+        pellentesque hendrerit dui at aliquet. Phasellus luctus cursus arcu, sed
+        maximus libero blandit vel. Aliquam erat volutpat.
+      </p>
+    </div>
+    <div class="mission">
+      <div class="leftBox">
+        <h3>Misión</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          convallis sollicitudin molestie.
+        </p>
+      </div>
+      <div class="rightBox">
+        <h3>Visión</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          convallis sollicitudin molestie.
+        </p>
+      </div>
+    </div>
+
+    <!-- BENEFITS SECTION -->
+    <div class="benefits" id="benefits">
+      <div class="first-row">
+        <div class="text-box">
+          <h2>Administrar tu parqueo nunca habia sido tan fácil</h2>
+          <div class="list">
+            <div class="list-item">
+              <img src="./assets/img/dashboard.png" />
+              <p>Lleva el control del parqueo desde tu computador</p>
+            </div>
+            <div class="list-item">
+              <img src="./assets/img/money.png" />
+              <p>Administra tus ingresos desde la aplicacion</p>
+            </div>
+            <div class="list-item">
+              <img src="./assets/img/network.png" />
+              <p>Potencializa la cantidad de visitas a tu parqueo</p>
             </div>
           </div>
         </div> 
@@ -65,16 +125,22 @@
             class="input-bottom-border-only"
           /><br /><br />
         </div>
-        <div class="password-input">
-          <input
-            type="password"
-            id="loginPassword"
-            name="password"
-            placeholder="Contraseña"
-            class="input-bottom-border-only"
-          />
-          <br />
-          <br />
+        <div class="text-box">
+          <h2>No más tiempo perdido en carretera buscando parqueos</h2>
+          <div class="list">
+            <div class="list-item">
+              <img src="./assets/img/map.png" />
+              <p>Encuentra parqueos al instante en cualquie parte del país</p>
+            </div>
+            <div class="list-item">
+              <img src="./assets/img/booking.png" />
+              <p>Reserva tu espacio sin importar donde estés</p>
+            </div>
+            <div class="list-item">
+              <img src="./assets/img/pay.png" />
+              <p>Realiza el pago del parqueo desde tu dispositivo</p>
+            </div>
+          </div>
         </div>
         <button type="button" onclick="validar()" class="login-button" >
           <span id="right">SIGUIENTE <i class="fas fa-arrow-right"></i></span>
@@ -91,6 +157,23 @@
     </div>
         </div>
       </div>
-      <!-- Footer -->
+    </div>
+
+    <!-- FOOTER -->
+    <div class="contact-info">
+        <div class="dark-layer">
+            <form>
+                <h1>Contáctanos</h1>
+                <h2>Haznos llegar tu consulta</h2>
+                <input type="text" id="mail-field" placeholder="Ingresa tu correo electrónico">
+                <input type="text" id="qstion-field" placeholder="Escribe tu consulta">
+                <button type="button">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+      <p>San José, Costa Rica.</p>
+      <p>&reg;Todos los derechos reservados</p>
+    </footer>
   </body>
 </html>

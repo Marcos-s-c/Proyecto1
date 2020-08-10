@@ -5,35 +5,64 @@ a{
   color: #82B0B0;
 }
 
-.login-container {
-  text-align: center;
-  padding-left: 35%;
-  padding-right: 35%;
+.menu .leftOptions{
+    width: 70%;
 }
 .login-container h1 {
   text-align: center;
   font-weight: normal;
 }
+.menu ul{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-content: center;
+}
+.menu .leftOptions li,
+.menu .rightOptions li {
+    display: inline-block;
+    margin-left: 3%;
+    padding: 8px 0px;
 
-.access-container {
-  width: 100%;
 }
 .fa-arrow-right {
   color: white !important;
 }
 
-.login-container input {
-  padding-bottom: 1%;
-  width: 99%;
-  box-sizing: border-box;
-  font-size: 15px;
-  outline: none;
+/*genera padding entre el enlace y el icono*/
+.menu .rightOptions a{  
+    padding-left: 5%;
+}
+.menu a, .menu .fa-sign-in-alt, .menu .fa-user-plus{
+    color: #eeeded;
+}
+.grow { 
+    transition: all .2s ease-in-out; }
+.grow:hover, .grow:hover a{ 
+    transform: scale(1.1); 
+    color: white;
 }
 
-.email-input,
-.password-input {
-  padding-top: 2%;
+
+/*Middle*/
+.header-middle{
+    background-image: url(./assets/img/parqueo-cel.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 15%;
+    padding-bottom: 15%;
 }
+.header-middle h1{
+    color: white;
+    font-size: 70px;
+    width: 30%;
+    text-align: center;
+    margin-left: 5%;
+    text-shadow: 1px 1px 1px black;
+}
+
+/************ ABOUT SECTION ***************/
 
 .logo-login img {
   width: 30%;
@@ -47,6 +76,18 @@ a{
   text-align: center;
   padding: 20px;
 }
+.mission .leftBox{
+    background-image: url(./assets/img/parqueo-noche.jpg);
+    background-size: contain;
+}
+
+.mission .rightBox{
+    background-image: url(./assets/img/parqueo-dia.jpg);
+    background-size: contain;
+}
+.mission .leftBox p, .mission .rightBox p,
+.mission .leftBox h3, .mission .rightBox h3{
+    color: white;
 
 
 button {
@@ -56,5 +97,143 @@ button {
   font-size: 16px;
   display: inline-block;
 
+/******* BENEFITS SECTION ****************/
+
+.first-row, .second-row{
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.first-row .text-box, .first-row .image-box,
+.second-row .text-box, .second-row .image-box{
+    float: left;
+    width: 50%;
+}
+.first-row img, .second-row img{
+    width: 100%;
+}
+.list{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+.list img{
+    width: 50%;
+}
+.list-item{
+    width: 30%;
+    margin: 1%;
+}
+.first-row h2, .second-row h2{
+    width: 70%;
+    margin: auto;
+}
+.first-row .text-box,
+.second-row .text-box{
+    padding-top: 5%;
+}
+/************* REVIEWS SECTION ***********************/
+
+.reviewsSection{
+    clear: both;
+    padding: 10% 5%;
+    text-align: center;
+
+}
+.reviewsContainer{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+.reviewItem{
+    background-color: #216c7a;
+    padding: 2%;
+    margin: 2%;
+    width: 25%;
+    box-shadow: 1px 1px 4px gray;
+    border-radius: 10px;
+}
+.reviewItem .comment{
+    display: flex;
+}
+.reviewItem .comment img{
+    width: 40px;
+    height: 40px;
+}
+.reviewItem p, .reviewItem h2, .reviewItem h3{
+    color: white;
+}
+.reviewItem h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+.user-image img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.reviewItem h2, .reviewItem h3{
+    padding: 0;
+    margin: 0;
+}
+.reviewItem p{
+    width: 90%;
+    margin: auto;
+    padding-top: 10%;
+}
+.star-rating{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.checked {
+    color: #ffe066;
+  }
+
+/*************** CONTACT INFO *******************/
+.contact-info {
+    background:url(./assets/img/autopista1.jpg);
+    position: relative;
+}
+
+.dark-layer {
+    background-color: rgba(248, 247, 216, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/************ FOOTER ************************/
+
+footer{
+    background-color: #3b3b3b;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    text-align: center;
+}
+footer p{
+    color: white;
+    margin: 0;
+    font-size: 15px;
+}
+.main-heading{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    text-align: center;
+    background: #000;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.main-heading h1{
+    color: white;
+    margin: auto;
+    text-align: center;
 }
 
