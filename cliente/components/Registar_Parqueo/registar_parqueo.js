@@ -28,7 +28,5 @@ function saveRequest() {
 
   valores = {
     nombreDelPropietario: nombreDelPropietario.value,
-    cedula: cedula.value,
-    correo: correo.value,
   };
 }
