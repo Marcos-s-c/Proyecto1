@@ -1,6 +1,6 @@
 
-
 function logInValidation() {
+
   var data = {
     email: document.getElementById('email').value,
     password: document.getElementById('password').value
@@ -10,16 +10,30 @@ function logInValidation() {
     method: 'POST',
     body: JSON.stringify(data),
     headers:{'Content-Type': 'application/json'}
-  })/*
+  })
   .then(function(response){
-    
-    if(response.status == 200){
-      console.log(localStorage.)
+    response.json()
+    .then(function(response) {
+      window.localStorage.setItem("token", response.token)
+      window.localStorage.setItem("level", response.user.level)
+
+      var level = window.localStorage.getItem("level")
+      if(level == "cliente"){
+        //window.location.href = "localHost:4040/components/Perfil_Cliente/perfil_cliente.html"
+        
+      }
+    })
+    .catch(function(e){
+      console.log(e)
+    })
       
-    }
-  })*/
+  })
 
 }
+
+  
+
+
 
 
 
