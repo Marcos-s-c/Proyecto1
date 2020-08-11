@@ -1,7 +1,43 @@
-function validar() {
-  var loginEmail = document.getElementById("loginEmail");
-  var loginPassword = document.getElementById("loginPassword");
 
+
+function logInValidation() {
+  var data = {
+    email: document.getElementById('email').value,
+    password: document.getElementById('password').value
+  };
+  
+  fetch('/personas/login', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers:{'Content-Type': 'application/json'}
+  })/*
+  .then(function(response){
+    
+    if(response.status == 200){
+      console.log(localStorage.)
+      
+    }
+  })*/
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
   if (valiteBlanks([loginEmail, loginPassword])) {
 
 
@@ -33,3 +69,4 @@ function validar() {
     return false;
   }
 }
+*/

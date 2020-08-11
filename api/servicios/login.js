@@ -1,21 +1,21 @@
 var express = require("express");
 var router = express.Router();
 
-const Usuario = require('../modelo/modelo_usuario');
+const User = require('../modelo/modelo_usuario');
 
 router.post('/personas/login', async function (req, res) {
 
-    const correo = req.body.correo
+    const email = req.body.email
     const password = req.body.password
+    console.log(email, password)
     try {
-        const user = await Usuario.findByCredentials(correo, password)
+        const user = await User.findByCredentials(email, password)
         const token = await user.generarTokenDeAutenticacion()
         return res.send({ user, token })
-    } catch (e) {
+    } catch (error) {
         return res.status(400).send("Credenciales incorrectos")
 
     }
 })
-
 
 module.exports = router;

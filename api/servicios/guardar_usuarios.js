@@ -1,12 +1,14 @@
+
 var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
+var User = require("../modelo/modelo_usuario");
 
-var Usuario = require("../modelo/modelo_usuario");
 
+//guarda usuarios
 router.post("/personas", async (req, res) => {
 
-  const usuario = new Usuario(req.body)
+  const usuario = new User(req.body)
   try {
     await usuario.save()
     const token = await usuario.generarTokenDeAutenticacion()
@@ -19,7 +21,7 @@ router.post("/personas", async (req, res) => {
 
 router.post("/especializado", function (req, res) {
 
-  let GuardarUsuario = new Usuario({
+  let GuardarUsuario = new User({
     _id: new mongoose.Types.ObjectId(),
     nombre: req.body.nombre,
     apellido: req.body.apellido,
@@ -41,7 +43,7 @@ router.post("/especializado", function (req, res) {
 });
 router.post("/tradicional", function (req, res) {
 
-  let GuardarUsuario = new Usuario({
+  let GuardarUsuario = new User({
     _id: new mongoose.Types.ObjectId(),
     nombre: req.body.nombre,
     apellido: req.body.apellido,
