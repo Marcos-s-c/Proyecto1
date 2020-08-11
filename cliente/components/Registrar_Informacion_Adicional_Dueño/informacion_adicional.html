@@ -5,53 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="informacion_adicional.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="../../assets/css/styles.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
-      crossorigin="anonymous"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="informacion_adicional.css" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/da33aea8dd.js" crossorigin="anonymous"></script>
+    
   </head>
   <body>
- <!-- Header -->
- <header>
-  <div class="logo">
-    <img src="../../assets/img/logo.png" />
-  </div>
-  <div class="sub-menu" id="sub">
-    <div class="dropdown">
-      <i class="fas fa-user-circle dropbtn" onclick="displayDropMenu()"></i>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </div> 
-</header>
-<div class="topHeaderFill">relleno</div>
-<div class="page-container">
-  <div class="content-wrap">
 
-
-   
+    
+    <div class="outer-container"> 
+      <header>
+        <div class="logo">
+          <a href="index.html"><img src="../../assets/img/logo.png" /></a>      
+        </div>
+        <div class="sub-menu" id="sub">
+          <div class="dropdown">
+            <i class="fas fa-user-circle dropbtn" onclick="displayDropDownMenu()"></i>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="">Perfil</a>
+              <a href="http://localhost:4040/">Cerrar sesión</a>     <!--cambiar url-->
+            </div>
+          </div>
+        </div> 
+      </header>   
 
     <div class="row">
       <div class="side">
@@ -118,10 +96,31 @@
             <label>Fotos del Parqueo <br></label>
             <input type="file" id="fotosparqueo" name="input" accept="image/*"/>
 
+            <br>
+            <br>
+
+            <label><strong>Cantidad de espacios del parqueo</strong></label>
+            <br>
+            <label>Bicicletas</label>
+            <input type="number"  name="cantidad" id="bicicletas" value="0">
+            <br>
+            <label>Motocicletas</label>
+            <input type="number" name="cantidad" id="motocicletas" value="0">
+            <br>
+            <label>Automoviles</label>
+            <input type="number" name="cantidad" id="automoviles" value="0">
+            <br>
+            <label>Carga pesada</label>
+            <input type="number" name="cantidad" id="pesado" value="0">
+            <br>
+            
+
+
+
             <div class="button-siguiente">
               <br />
               <br />
-              <button type="button" onclick="validar()">Siguiente</button>
+              <button type="button" onclick="GuardarEspacio()">Siguiente</button>
             </div>
             <br />
             <br />
@@ -138,5 +137,6 @@
 <script src="informacion_adicional.js"></script>
 <script src="../../assets/js/main.js"></script>
 <script src="../../assets/js/dropdown_menu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </body>
 </html>

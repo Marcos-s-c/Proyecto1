@@ -1,7 +1,57 @@
-function validar() {
-  var loginEmail = document.getElementById("loginEmail");
-  var loginPassword = document.getElementById("loginPassword");
 
+function logInValidation() {
+
+  var data = {
+    email: document.getElementById('email').value,
+    password: document.getElementById('password').value
+  };
+  
+  fetch('/personas/login', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers:{'Content-Type': 'application/json'}
+  })
+  .then(function(response){
+    response.json()
+    .then(function(response) {
+      window.localStorage.setItem("token", response.token)
+      window.localStorage.setItem("level", response.user.level)
+
+      var level = window.localStorage.getItem("level")
+      if(level == "cliente"){
+        //window.location.href = "localHost:4040/components/Perfil_Cliente/perfil_cliente.html"
+        
+      }
+    })
+    .catch(function(e){
+      console.log(e)
+    })
+      
+  })
+
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
   if (valiteBlanks([loginEmail, loginPassword])) {
 
 
@@ -33,3 +83,4 @@ function validar() {
     return false;
   }
 }
+*/

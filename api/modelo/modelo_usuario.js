@@ -4,22 +4,22 @@ const validator = require('validator')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
-const esquemaUsuario = mongoose.Schema({
-    nombre: {
+const userSchema = mongoose.Schema({
+    name: {
         type: String,
         required: true,
         trim: true
     },
-    apellido: {
+    lastName: {
         type: String,
         trim: true
     },
-    cedula: {
+    userID: {
         type: Number,
         required: true,
         unique: true
     },
-    correo: {
+    email: {
         type: String,
         required: true,
         unique: true,
@@ -27,23 +27,19 @@ const esquemaUsuario = mongoose.Schema({
         lowercase: true,
         validate(value) {
             if (validator.isEmail(value) == false) {
-                throw new Error("El correo ingresado no es valido")
+                throw new Error("El email ingresado no es valido")
             }
         }
     },
-    nivel: String,
-    nombreParqueo: String,
-    ubicacionParqueo: String,
+    level: String,
+    parkingName: String,
+    parkingLocation: String,
     password: {
         type: String,
         required: true,
         minLength: 4,
-        validate(value) {
-            if (value.includes("123")) {
-                throw new Error('El password no puede contener 123')
-            }
-        }
     },
+    //arreglo de tokens para cada sesion que mantenga abierta
     tokens: [{
         token: {
             type: String,
@@ -53,7 +49,8 @@ const esquemaUsuario = mongoose.Schema({
 });
 
 
-esquemaUsuario.methods.generarTokenDeAutenticacion = async function () {
+// el token de autenticacion se utiliza para iniciar y cerrar sesion
+userSchema.methods.generarTokenDeAutenticacion = async function () {
     const usuario = this
     const token = jwt.sign({ _id: usuario._id.toString() }, 'proyectonuevo')
 
@@ -63,8 +60,8 @@ esquemaUsuario.methods.generarTokenDeAutenticacion = async function () {
     return token
 }
 
-
-esquemaUsuario.pre('save', async function (next) {
+//esta funcion encripta la clave del usuario antes de ser guardada en la base de datos
+userSchema.pre('save', async function (next) {
 
     const user = this
 
@@ -74,15 +71,10 @@ esquemaUsuario.pre('save', async function (next) {
     next()
 })
 
+//esta funcion busca el usuario segun el email y password recibido por parametros
+userSchema.statics.findByCredentials = async (email, password) => {
 
-
-/* Cree  una funcion que reciba el email y el password del usuario.
-*Valide si el password es el correcto, en el caso de que sea correcto devuelva el objeto usuario.
-*/
-
-esquemaUsuario.statics.findByCredentials = async (email, password) => {
-
-    const usuario = await Usuario.findOne({ correo: email })
+    const usuario = await Usuario.findOne({ email: email })
     const esValido = await bcrypt.compare(password, usuario.password);
 
     if (esValido == false) {
@@ -93,6 +85,6 @@ esquemaUsuario.statics.findByCredentials = async (email, password) => {
 }
 
 
-const Usuario = mongoose.model("Usuario", esquemaUsuario, "Usuarios")
+const Usuario = mongoose.model("Usuario", userSchema, "Usuarios")
 
 module.exports = Usuario;
