@@ -29,7 +29,6 @@ function replaceForm() {
 }
 
 function saveRequest() {
-  console.log("enviando datos");
   var parkingName = document.querySelector("#parking-name");
   var address = document.querySelector("#complete-address");
   var shoppingCenter = document.querySelector("#mall-name");
@@ -52,7 +51,7 @@ function saveRequest() {
     },
   };
 
-  fetch("http://127.0.0.1:4040/solicitud_parqueo/guardar", request)
+  fetch("/solicitud_parqueo/guardar", request)
     .then(function (data) {
       console.log(data);
     })
