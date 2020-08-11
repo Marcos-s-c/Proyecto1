@@ -1,7 +1,5 @@
-
 var express = require("express");
 var path = require("path");
-var express = require("express");
 var app = express();
 var mongoose = require("mongoose");
 var listarUsuarios = require("./servicios/listar_usuarios");
@@ -23,7 +21,6 @@ mongoose
   });
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../cliente")));
 app.use(public_dir);
 
 app.use(guardarUsuarios);
