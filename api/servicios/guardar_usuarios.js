@@ -1,26 +1,21 @@
-
 var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 var User = require("../modelo/modelo_usuario");
 
-
 //guarda usuarios
 router.post("/personas", async (req, res) => {
-
-  const usuario = new User(req.body)
+  const usuario = new User(req.body);
   try {
-    await usuario.save()
-    const token = await usuario.generarTokenDeAutenticacion()
-    res.status(201).send({ usuario, token })
+    await usuario.save();
+    const token = await usuario.generarTokenDeAutenticacion();
+    res.status(201).send({ usuario, token });
   } catch (error) {
-    res.status(400).send(error)
+    res.status(400).send(error);
   }
-
 });
 
 router.post("/especializado", function (req, res) {
-
   let GuardarUsuario = new User({
     _id: new mongoose.Types.ObjectId(),
     nombre: req.body.nombre,
@@ -29,49 +24,37 @@ router.post("/especializado", function (req, res) {
     correo: req.body.correo,
     nombreParqueo: req.body.nombreParqueo,
     ubicacionParqueo: req.body.ubicacionParqueo,
-    nivel: 2
+    nivel: 2,
   });
 
   GuardarUsuario.save()
     .then(function (resultado) {
-      res.json(resultado)
+      res.json(resultado);
     })
     .catch(function (error) {
-      console.log(error)
-    })
-
+      console.log(error);
+    });
 });
 router.post("/tradicional", function (req, res) {
-
   let GuardarUsuario = new User({
     _id: new mongoose.Types.ObjectId(),
     nombre: req.body.nombre,
     apellido: req.body.apellido,
     cedula: req.body.cedula,
     correo: req.body.correo,
-    nivel: 1
+    nivel: 1,
   });
-
 
   GuardarUsuario.save()
     .then(function (resultado) {
-      res.json(resultado)
+      res.json(resultado);
     })
     .catch(function (error) {
-      console.log(error)
-    })
-
+      console.log(error);
+    });
 });
 
-
-
-
 module.exports = router;
-
-
-
-
-
 
 // router.post("/persona", function (req, res) {
 
