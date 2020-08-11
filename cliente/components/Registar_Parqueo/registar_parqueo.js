@@ -17,4 +17,18 @@ function replaceForm() {
 
 function saveRequest() {
   console.log("enviando datos");
+
+  name = document.querySelector("#name");
+  userId = document.querySelector("#user-id");
+  email = document.querySelector("#email");
+  dateOfBirth = document.querySelector("#birth-date");
+  parkingName = document.querySelector("#parking-name");
+  adress = document.querySelector("#complete-address");
+  shoppingCenter = document.querySelector("#mall-name");
+
+  valores = {
+    nombreDelPropietario: nombreDelPropietario.value,
+    cedula: cedula.value,
+    correo: correo.value,
+  };
 }
