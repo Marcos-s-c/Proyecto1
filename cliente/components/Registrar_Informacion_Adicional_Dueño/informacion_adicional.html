@@ -5,71 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styles.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="informacion_adicional.css" /> 
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous"/>
-    <script src="https://kit.fontawesome.com/da33aea8dd.js" crossorigin="anonymous"></script>
-    
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../../assets/css/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="informacion_adicional.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/da33aea8dd.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-
-    
-    <div class="outer-container"> 
+    <div class="outer-container">
       <header>
         <div class="logo">
-          <a href="index.html"><img src="../../assets/img/logo.png" /></a>      
+          <a href="index.html"><img src="../../assets/img/logo.png" /></a>
         </div>
         <div class="sub-menu" id="sub">
           <div class="dropdown">
-            <i class="fas fa-user-circle dropbtn" onclick="displayDropDownMenu()"></i>
+            <i
+              class="fas fa-user-circle dropbtn"
+              onclick="displayDropDownMenu()"
+            ></i>
             <div id="myDropdown" class="dropdown-content">
               <a href="">Perfil</a>
-              <a href="http://localhost:4040/">Cerrar sesión</a>     <!--cambiar url-->
+              <a href="http://localhost:4040/">Cerrar sesión</a>
+              <!--cambiar url-->
             </div>
           </div>
-        </div> 
-      </header>   
-
-    <div class="row">
-      <div class="side">
-        <div class="side-menu">
-          <ul>
-            <li>
-              <a href="../modificarPerfil/modificarPerfil.html"><i class="fas fa-qrcode"></i>Mi Parqueo</a>
-            </li>
-            <li>
-              <a href="../tarifas/tarifas.html"><i class="fas fa-stream"></i>Tarifas</a>
-            </li>
-            <li>
-              <a href="../reportes_parqueos/reportes_ingresos.html"><i class="fas fa-calendar-week"></i>Reportes</a>
-            </li>
-            <li>
-              <a href="../convenios/convenios.html"><i class="far fa-question-circle"></i>Convenios</a>
-            </li>
-            <li>
-              <a href="../clientes_diarios/clientes_diarios.html"><i class="far fa-question-circle"></i>Clientes</a>
-            </li>
-          </ul>
         </div>
-      </div>
-      <div class="main">
-        <div class="center-content-container">
-          <form id="login-form" action="#">
-            <h1>Información Adicional</h1>
-            <br />
-            <br />
+      </header>
+
+      <div class="row">
+        <div class="side">
+          <div class="side-menu">
+            <ul>
+              <li>
+                <a href="../modificarPerfil/modificarPerfil.html"
+                  ><i class="fas fa-qrcode"></i>Mi Parqueo</a
+                >
+              </li>
+              <li>
+                <a href="../tarifas/tarifas.html"
+                  ><i class="fas fa-stream"></i>Tarifas</a
+                >
+              </li>
+              <li>
+                <a href="../reportes_parqueos/reportes_ingresos.html"
+                  ><i class="fas fa-calendar-week"></i>Reportes</a
+                >
+              </li>
+              <li>
+                <a href="../convenios/convenios.html"
+                  ><i class="far fa-question-circle"></i>Convenios</a
+                >
+              </li>
+              <li>
+                <a href="../clientes_diarios/clientes_diarios.html"
+                  ><i class="far fa-question-circle"></i>Clientes</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="main">
+          <div class="center-content-container">
+            <form id="login-form" action="#">
+              <h1>Información Adicional</h1>
+              <br />
+              <br />
               <label
                 >Nombre de Usuario <br /><input
                   type="text"
                   class="input-bottom-border-only"
                   id="username"
-                  
                 />
-                <br>
-                <br>
+                <br />
+                <br />
               </label>
-              <br>
+              <br />
               <label
                 >Avatar: <br /><input
                   type="file"
@@ -80,63 +110,71 @@
                 <span class="file-custom"></span>
               </label>
 
-            <br />
-            <br>
-           
+              <br />
+              <br />
+
               <label
                 >Fecha de nacimiento <br /><input
                   type="date"
                   class="input-bottom-border-only"
-                  id="birthdate"
-                 
-                  
-                /> <br></label
+                  id="birthdate" />
+                <br /></label
+
               ><br />
-              <br>
-            <label>Fotos del Parqueo <br></label>
-            <input type="file" id="fotosparqueo" name="input" accept="image/*"/>
+              <br />
+              <label>Fotos del Parqueo <br /></label>
+              <input
+                type="file"
+                id="fotosparqueo"
+                name="input"
+                accept="image/*"
+              />
 
-            <br>
-            <br>
-
-            <label><strong>Cantidad de espacios del parqueo</strong></label>
-            <br>
-            <label>Bicicletas</label>
-            <input type="number"  name="cantidad" id="bicicletas" value="0">
-            <br>
-            <label>Motocicletas</label>
-            <input type="number" name="cantidad" id="motocicletas" value="0">
-            <br>
-            <label>Automoviles</label>
-            <input type="number" name="cantidad" id="automoviles" value="0">
-            <br>
-            <label>Carga pesada</label>
-            <input type="number" name="cantidad" id="pesado" value="0">
-            <br>
-            
-
-
-
-            <div class="button-siguiente">
               <br />
               <br />
-              <button type="button" onclick="GuardarEspacio()">Siguiente</button>
-            </div>
-            <br />
-            <br />
-          </form>
+
+              <label><strong>Cantidad de espacios del parqueo</strong></label>
+              <br />
+              <label>Bicicletas</label>
+              <input type="number" name="cantidad" id="bicicletas" value="0" />
+              <br />
+              <label>Motocicletas</label>
+              <input
+                type="number"
+                name="cantidad"
+                id="motocicletas"
+                value="0"
+              />
+              <br />
+              <label>Automoviles</label>
+              <input type="number" name="cantidad" id="automoviles" value="0" />
+              <br />
+              <label>Carga pesada</label>
+              <input type="number" name="cantidad" id="pesado" value="0" />
+              <br />
+
+              <div class="button-siguiente">
+                <br />
+                <br />
+                <button type="button" onclick="GuardarInfoExtraParqueo()">
+                  Siguiente
+                </button>
+              </div>
+              <br />
+              <br />
+            </form>
+          </div>
         </div>
       </div>
+      <!-- Footer -->
     </div>
-    <!-- Footer -->
-  </div>
-  <footer>
-    <p>San José, Costa Rica.</p>
-    <p>&reg;Todos los derechos reservados</p>
-</footer>
-<script src="informacion_adicional.js"></script>
-<script src="../../assets/js/main.js"></script>
-<script src="../../assets/js/dropdown_menu.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <footer>
+      <p>San José, Costa Rica.</p>
+      <p>&reg;Todos los derechos reservados</p>
+    </footer>
+    <script src="informacion_adicional.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/dropdown_menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </body>
 </html>

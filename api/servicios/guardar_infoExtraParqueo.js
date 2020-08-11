@@ -2,11 +2,10 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 
-var espacio = require("../modelo/modelo_espacios");
+var parqueo = require("../modelo/modelo_parqueo");
 
-router.post("/espacio", function (req, res) {
-    
-  let GuardarEspacio = new espacio({
+router.post("/infoExtraParqueo", function (req, res) {
+  let GuardarInfoExtraParqueo = new parqueo({
     _id: new mongoose.Types.ObjectId(),
     bicicletas: req.body.bicicletas,
     motocicletas: req.body.motocicletas,
@@ -14,14 +13,13 @@ router.post("/espacio", function (req, res) {
     pesado: req.body.pesado,
   });
 
-  GuardarEspacio.save()
-  .then(function (resultado) {
-      res.json(resultado)
-  })
-  .catch(function (error) {
-      console.log(error)
-  })
-
+  GuardarInfoExtraParqueo.save()
+    .then(function (resultado) {
+      res.json(resultado);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 });
 
 module.exports = router;

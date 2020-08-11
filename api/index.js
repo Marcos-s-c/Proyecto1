@@ -7,6 +7,7 @@ var logIn = require("./servicios/login");
 var guardarSolicitudes = require("./servicios/guardar_solicitudes");
 var guardarUsuarios = require("./servicios/guardar_usuarios");
 var logOut = require("./servicios/logout");
+var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
 const authentication = require("./middleware/authentication");
 const public_dir = express.static(path.join(__dirname, "../cliente"));
 
@@ -28,7 +29,7 @@ app.use(listarUsuarios);
 app.use(logIn);
 app.use(guardarSolicitudes);
 app.use(logOut);
-
+app.use(guardarInfoExtraParqueos);
 
 app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
