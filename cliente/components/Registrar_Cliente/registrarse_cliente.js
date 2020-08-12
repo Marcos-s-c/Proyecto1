@@ -22,7 +22,6 @@ function sendUserInfo(){
   }
 }
 
-
 function verifyAge(){
   if((data.birthDate - date.getDate) >=18 ){
     return true

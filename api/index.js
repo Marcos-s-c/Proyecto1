@@ -6,7 +6,10 @@ var logIn = require("./servicios/login");
 var logOut = require("./servicios/logout");
 var listarUsuarios = require("./servicios/listar_usuarios");
 var guardarSolicitudes = require("./servicios/guardar_solicitudes");
+var listarSolicitudes = require("./servicios/listar_solicitudes");
 var guardarUsuarios = require("./servicios/guardar_usuarios");
+var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
+var guardarTarjeta = require("./servicios/registrar_tarjeta")
 const authentication = require("./middleware/authentication");
 const enviarCorreo = require("./servicios/enviar_correo");
 const public_dir = express.static(path.join(__dirname, "../cliente"));
@@ -32,8 +35,11 @@ app.use(guardarUsuarios);
 app.use(listarUsuarios);
 app.use(logIn);
 app.use(guardarSolicitudes);
+app.use(listarSolicitudes);
 app.use(logOut);
 app.use(enviarCorreo)
+app.use(guardarInfoExtraParqueos);
+app.use(guardarTarjeta);
 
 
 app.listen(4040, function () {
