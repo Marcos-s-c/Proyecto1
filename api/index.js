@@ -2,13 +2,18 @@ var express = require("express");
 var path = require("path");
 var app = express();
 var mongoose = require("mongoose");
-var listarUsuarios = require("./servicios/listar_usuarios");
 var logIn = require("./servicios/login");
+var logOut = require("./servicios/logout");
+var listarUsuarios = require("./servicios/listar_usuarios");
 var guardarSolicitudes = require("./servicios/guardar_solicitudes");
 var guardarUsuarios = require("./servicios/guardar_usuarios");
-var logOut = require("./servicios/logout");
 const authentication = require("./middleware/authentication");
+const enviarCorreo = require("./servicios/enviar_correo");
 const public_dir = express.static(path.join(__dirname, "../cliente"));
+
+const nodeCron = require('node-cron')
+ 
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
 //coneccion de base de datos
 mongoose
@@ -28,14 +33,13 @@ app.use(listarUsuarios);
 app.use(logIn);
 app.use(guardarSolicitudes);
 app.use(logOut);
+app.use(enviarCorreo)
 
 
 app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
 });
 
-// const jwt = require('jsonwebtoken')
-
-// const token = jwt.sign({ _id: user._id.toString()}, 'proyectonuevo')
-
-//   console.log(token)
+/*nodeCron.schedule('* * * * *', () => {
+  console.log('running a task every minute');
+});*/

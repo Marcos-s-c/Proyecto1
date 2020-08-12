@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    text-decoration: none;
+    width: 60%;
+}
+
+table{
+    width: 90%;
+    border: 1px solid black;
+    margin: auto;
+}
+tr{
+    border-collapse: collapse;
+    border: 1px solid green;
+}
+
+.logo img{
+    width: 200px;
+    margin: auto;
+}
+
+.body-mail{
+    width: 20%;
+}
+
