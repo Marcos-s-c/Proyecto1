@@ -33,6 +33,7 @@ app.use(guardarSolicitudes);
 app.use(listarSolicitudes);
 app.use(logOut);
 app.use(guardarInfoExtraParqueos);
+app.use(guardarTarjeta);
 
 
 app.listen(4040, function () {
