@@ -3,7 +3,6 @@ var router = express.Router();
 var mongoose = require("mongoose");
 
 var ParkingRequest = require("../modelo/modelo_solicitud_parqueo");
-const { request } = require("express");
 
 router.post("/solicitud_parqueo/guardar", function (req, res) {
   console.log("llegó");
@@ -13,9 +12,9 @@ router.post("/solicitud_parqueo/guardar", function (req, res) {
     email: req.body.email,
     dateOfBirth: req.body.dateOfBirth,
     parkingName: req.body.parkingName,
-    provincia: req.body.provincia,
-    canton: req.body.canton,
-    distrito: req.body.distrito,
+    provincia: "San José",
+    canton: "Pérez Zeledón",
+    distrito: "San Isidro",
     shoppingCenter: req.body.shoppingCenter,
     address: req.body.address,
   });

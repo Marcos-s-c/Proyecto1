@@ -5,6 +5,7 @@ var mongoose = require("mongoose");
 var listarUsuarios = require("./servicios/listar_usuarios");
 var logIn = require("./servicios/login");
 var guardarSolicitudes = require("./servicios/guardar_solicitudes");
+var listarSolicitudes = require("./servicios/listar_solicitudes");
 var guardarUsuarios = require("./servicios/guardar_usuarios");
 var logOut = require("./servicios/logout");
 var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
@@ -28,6 +29,7 @@ app.use(guardarUsuarios);
 app.use(listarUsuarios);
 app.use(logIn);
 app.use(guardarSolicitudes);
+app.use(listarSolicitudes);
 app.use(logOut);
 app.use(guardarInfoExtraParqueos);
 
