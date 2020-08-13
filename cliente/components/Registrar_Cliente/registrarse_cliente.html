@@ -29,21 +29,11 @@
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="../../assets/js/main.js"></script>
-    <script src="registrarse_cliente.js"></script>
-    <script src="../../assets/js/dropdown_menu.js"></script>
+
   </head>
   <body>
     <header>
-      <div class="sub-menu" id="sub">
-        <div class="dropdown">
-          <div id="myDropdown" class="dropdown-content">
-            <a href="#home">Inicio</a>
-            <a href="#about">Mi perfil</a>
-            <a href="#">Cerrar sesión</a>
-          </div>
-        </div>
-      </div> 
+
     </header>
     <div class="login-container">
       <!-- aqui va el header  -->
@@ -60,7 +50,7 @@
         <div class="name-input">
           <input
             type="text"
-            id="name"
+            id="userName"
             name="register"
             placeholder="Nombre completo"
             class="input-bottom-border-only"
@@ -70,7 +60,7 @@
         <div class="cedula-input">
           <input
           type="text"
-          id="cedula"
+          id="userID"
           name="register"
           placeholder="Cédula"
           class="input-bottom-border-only"
@@ -79,7 +69,7 @@
         <div class="fecha-nacimiento-input">
           <labe">Fecha de nacimiento</label><input
           type="date"
-          id="fecha-nacimiento"
+          id="birthDate"
           name="register"
           placeholder="Fecha de nacimiento"
           class="input-bottom-border-only"
@@ -88,7 +78,7 @@
         <div class="numero-de-telefono">
           <input
           type="number"
-          id="numero"
+          id="phoneNumber"
           name="register"
           placeholder="Numero de teléfono"
           class="input-bottom-border-only"
@@ -97,7 +87,7 @@
         <div class="email">
           <input
           type="email"
-          id="email-register"
+          id="email"
           name="register"
           placeholder="Correo electrónico"
           class="input-bottom-border-only"
@@ -105,7 +95,7 @@
         </div>
 
         <div class="button-container">
-          <button type="button" onclick="validar()" class="login-button">
+          <button type="submit" onclick="sendUserInfo()" class="login-button">
             Registrarse <span id="right"></span></i>
           </button>
         </div>
@@ -118,5 +108,8 @@
       </form>
     </div>
   </div>
+
+  <script src="registrarse_cliente.js"></script>
+  <script src="../../assets/js/main.js"></script>
   </body>
 </html>

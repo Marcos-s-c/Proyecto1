@@ -3,13 +3,14 @@ var router = express.Router();
 var mongoose = require("mongoose");
 var User = require("../modelo/modelo_usuario");
 
+
 //guarda usuarios
 router.post("/personas", async (req, res) => {
   const usuario = new User(req.body);
   try {
     await usuario.save();
-    const token = await usuario.generarTokenDeAutenticacion();
-    res.status(201).send({ usuario, token });
+    //const token = await usuario.generarTokenDeAutenticacion();
+    res.status(201).send({ usuario });
   } catch (error) {
     res.status(400).send(error);
   }
@@ -55,25 +56,3 @@ router.post("/tradicional", function (req, res) {
 });
 
 module.exports = router;
-
-// router.post("/persona", function (req, res) {
-
-//   let GuardarUsuario = new Usuario({
-//     _id: new mongoose.Types.ObjectId(),
-//     nombre: req.body.nombre,
-//     apellido: req.body.apellido,
-//     cedula: req.body.cedula,
-//     correo: req.body.correo,
-//     nivel: req.body.nivel,
-//     password:req.body.password
-//   });
-
-//   GuardarUsuario.save()
-//   .then(function (resultado) {
-//       res.json(resultado)
-//   })
-//   .catch(function (error) {
-//       console.log(error)
-//   })
-
-// });

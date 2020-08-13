@@ -7,6 +7,7 @@ var ParkingRequest = require("../modelo/modelo_solicitud_parqueo");
 router.post("/solicitud_parqueo/guardar", function (req, res) {
   console.log("llegó");
   var SaveRequests = new ParkingRequest({
+    state: "Pendiente",
     ownersName: req.body.ownersName,
     usersId: req.body.usersId,
     email: req.body.email,

@@ -2,6 +2,7 @@
 let mongoose = require("mongoose");
 
 let solicitudSchema = new mongoose.Schema({
+  state: { type: String, required: true },
   ownersName: { type: String, required: true },
   usersId: { type: String, unique: true, required: true },
   email: { type: String, unique: true, required: true },

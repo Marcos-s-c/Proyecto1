@@ -24,9 +24,7 @@ a {
 }
 
 /* font size */
-a,
-p,
-input {
+a, p, input {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   text-decoration: none;
@@ -620,6 +618,6 @@ input:checked + .slider:before {
   color: white;
 }
 
-input.error {
-  border: solid red;
+input .error {
+  border: 1px solid #b30000;
 }
