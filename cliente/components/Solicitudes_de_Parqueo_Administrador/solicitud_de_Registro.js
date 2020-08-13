@@ -1,5 +1,3 @@
-const { get } = require("../../../api/servicios/guardar_solicitudes");
-
 window.onload = function () {
   //Este evento se dispara cuando la pantalla está cargada y ejecuta las funciones determinadas
   cargarDatos();
