@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 const validator = require("validator");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const { text } = require("express");
 
 const userSchema = mongoose.Schema({
   name: {
@@ -30,12 +31,16 @@ const userSchema = mongoose.Schema({
       }
     },
   },
-  level: String,
+  phoneNumber: Number,
+  level:{
+  type:String,
+  require: true,
+  }, 
   parkingName: String,
   parkingLocation: String,
   password: {
     type: String,
-    required: true,
+    required: false,
     minLength: 4,
   },
   //arreglo de tokens para cada sesion que mantenga abierta

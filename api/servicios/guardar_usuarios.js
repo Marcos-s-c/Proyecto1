@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 var User = require("../modelo/modelo_usuario");
-
+var empleado = require("../modelo/modelo_empleado");
 
 //guarda usuarios
 router.post("/personas", async (req, res) => {
@@ -16,34 +16,12 @@ router.post("/personas", async (req, res) => {
   }
 });
 
-router.post("/especializado", function (req, res) {
-  let GuardarUsuario = new User({
+router.post("/empleados", function (req, res) {
+  let GuardarUsuario = new empleado({
     _id: new mongoose.Types.ObjectId(),
-    nombre: req.body.nombre,
-    apellido: req.body.apellido,
-    cedula: req.body.cedula,
-    correo: req.body.correo,
-    nombreParqueo: req.body.nombreParqueo,
-    ubicacionParqueo: req.body.ubicacionParqueo,
-    nivel: 2,
-  });
-
-  GuardarUsuario.save()
-    .then(function (resultado) {
-      res.json(resultado);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-});
-router.post("/tradicional", function (req, res) {
-  let GuardarUsuario = new User({
-    _id: new mongoose.Types.ObjectId(),
-    nombre: req.body.nombre,
-    apellido: req.body.apellido,
-    cedula: req.body.cedula,
-    correo: req.body.correo,
-    nivel: 1,
+    userID: req.body.userID,
+    puestoLaboral: req.body.puestoLaboral,
+    fechaContratacion: req.body.fechaContratacion,
   });
 
   GuardarUsuario.save()
