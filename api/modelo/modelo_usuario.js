@@ -30,7 +30,6 @@ const userSchema = mongoose.Schema({
       }
     },
   },
-
   level: String,
   parkingName: String,
   parkingLocation: String,
@@ -74,7 +73,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-//esta funcion busca el usuario segun el email y password recibido por parametros
+//esta función busca el usuario segun el email y password recibido por parametros
 userSchema.statics.findByCredentials = async (email, password) => {
   const usuario = await Usuario.findOne({ email: email });
   const esValido = await bcrypt.compare(password, usuario.password);
