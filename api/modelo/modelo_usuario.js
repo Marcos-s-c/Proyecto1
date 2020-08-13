@@ -1,90 +1,87 @@
- 
-var mongoose = require('mongoose');
-const validator = require('validator')
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcryptjs')
+var mongoose = require("mongoose");
+const validator = require("validator");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
 const userSchema = mongoose.Schema({
-    name: {
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  lastName: {
+    type: String,
+    trim: true,
+  },
+  userID: {
+    type: Number,
+    required: true,
+    unique: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true,
+    lowercase: true,
+    validate(value) {
+      if (validator.isEmail(value) == false) {
+        throw new Error("El email ingresado no es valido");
+      }
+    },
+  },
+  level: String,
+  parkingName: String,
+  parkingLocation: String,
+  password: {
+    type: String,
+    required: true,
+    minLength: 4,
+  },
+  //arreglo de tokens para cada sesion que mantenga abierta
+  tokens: [
+    {
+      token: {
         type: String,
         required: true,
-        trim: true
+      },
     },
-    lastName: {
-        type: String,
-        trim: true
-    },
-    userID: {
-        type: Number,
-        required: true,
-        unique: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-        lowercase: true,
-        validate(value) {
-            if (validator.isEmail(value) == false) {
-                throw new Error("El email ingresado no es valido")
-            }
-        }
-    },
-    level: String,
-    parkingName: String,
-    parkingLocation: String,
-    password: {
-        type: String,
-        required: true,
-        minLength: 4,
-    },
-    //arreglo de tokens para cada sesion que mantenga abierta
-    tokens: [{
-        token: {
-            type: String,
-            required: true
-        }
-    }]
+  ],
 });
-
 
 // el token de autenticacion se utiliza para iniciar y cerrar sesion
 userSchema.methods.generarTokenDeAutenticacion = async function () {
-    const usuario = this
-    const token = jwt.sign({ _id: usuario._id.toString() }, 'proyectonuevo')
+  const usuario = this;
+  const token = jwt.sign({ _id: usuario._id.toString() }, "proyectonuevo");
 
-    usuario.tokens = usuario.tokens.concat({ token })
+  usuario.tokens = usuario.tokens.concat({ token });
 
-    await usuario.save()
-    return token
-}
+  await usuario.save();
+  return token;
+};
 
 //esta funcion encripta la clave del usuario antes de ser guardada en la base de datos
-userSchema.pre('save', async function (next) {
+userSchema.pre("save", async function (next) {
+  const user = this;
 
-    const user = this
+  if (user.isModified("password")) {
+    user.password = await bcrypt.hash(user.password, 8);
+  }
+  next();
+});
 
-    if (user.isModified('password')) {
-        user.password = await bcrypt.hash(user.password, 8)
-    }
-    next()
-})
-
-//esta funcion busca el usuario segun el email y password recibido por parametros
+//esta función busca el usuario segun el email y password recibido por parametros
 userSchema.statics.findByCredentials = async (email, password) => {
+  const usuario = await Usuario.findOne({ email: email });
+  const esValido = await bcrypt.compare(password, usuario.password);
 
-    const usuario = await Usuario.findOne({ email: email })
-    const esValido = await bcrypt.compare(password, usuario.password);
+  if (esValido == false) {
+    throw new Error("Crendeciales incorrectos, por favor intente de nuevo.");
+  }
 
-    if (esValido == false) {
-        throw new Error("Crendeciales incorrectos, por favor intente de nuevo.")
-    }
+  return usuario;
+};
 
-    return usuario;
-}
-
-
-const Usuario = mongoose.model("Usuario", userSchema, "Usuarios")
+const Usuario = mongoose.model("Usuario", userSchema, "Usuarios");
 
 module.exports = Usuario;
