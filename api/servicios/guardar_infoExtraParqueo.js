@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 
-var usuario = require("../modelo/modelo_parqueo");
+var parqueo = require("../modelo/modelo_parqueo");
 
 router.post("/infoExtraParqueo", function (req, res) {
   console.log("666");
@@ -11,9 +11,9 @@ router.post("/infoExtraParqueo", function (req, res) {
     motocicletas: req.body.motocicletas,
     automoviles: req.body.automoviles,
     pesado: req.body.pesado,
-    userId: req.body.userId,
+    email: req.body.email,
   };
-  usuario.findById(req.body.userId).then(function (data) {
+  parqueo.findOne({ email: req.body.email }).then(function (data) {
     data.bicicletas = req.body.bicicletas;
     data.motocicletas = req.body.motocicletas;
     data.automoviles = req.body.automoviles;

@@ -24,14 +24,14 @@ const GuardarInfoExtraParqueo = () => {
   if (valiteBlanks([username])) {
     console.log("enviando datos");
     var token = window.localStorage.getItem("token");
-    var userId = parseJwt(token).id;
-    console.log(userId);
+    var email = parseJwt(token).email;
+    console.log(email);
     valores = {
       bicicletas: bicicletas.value,
       motocicletas: motocicletas.value,
       automoviles: automoviles.value,
       pesado: pesado.value,
-      userId: userId,
+      email: email,
     };
     console.log(JSON.stringify(valores));
     fetch("/infoExtraParqueo", {
@@ -42,7 +42,7 @@ const GuardarInfoExtraParqueo = () => {
       },
     })
       .then(function (data) {
-        return data.json();
+        return data.json(data);
       })
       .then(function (res) {
         console.log(res);

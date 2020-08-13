@@ -16,6 +16,7 @@ var modeloParqueo = mongoose.Schema({
   motocicletas: Number,
   automoviles: Number,
   pesado: Number,
+  email: String,
 });
 
 module.exports = mongoose.model("Parqueo", modeloParqueo, "Parqueos");

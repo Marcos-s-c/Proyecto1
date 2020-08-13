@@ -31,7 +31,6 @@ const userSchema = mongoose.Schema({
     },
   },
 
-
   level: String,
   parkingName: String,
   parkingLocation: String,
