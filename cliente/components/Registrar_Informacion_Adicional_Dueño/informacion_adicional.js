@@ -1,3 +1,17 @@
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
+
+  return JSON.parse(jsonPayload);
+}
 const GuardarInfoExtraParqueo = () => {
   var username = document.getElementById("username");
   var birthday = document.getElementById("birthdate");
@@ -9,12 +23,17 @@ const GuardarInfoExtraParqueo = () => {
 
   if (valiteBlanks([username])) {
     console.log("enviando datos");
+    var token = window.localStorage.getItem("token");
+    var userId = parseJwt(token).id;
+    console.log(userId);
     valores = {
       bicicletas: bicicletas.value,
       motocicletas: motocicletas.value,
       automoviles: automoviles.value,
       pesado: pesado.value,
+      userId: userId,
     };
+    console.log(JSON.stringify(valores));
     fetch("/infoExtraParqueo", {
       method: "POST",
       body: JSON.stringify(valores),

@@ -1,54 +1,52 @@
-
 function logInValidation() {
-
   var data = {
-    email: document.getElementById('email').value,
-    password: document.getElementById('password').value
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value,
   };
-  
-  fetch('/personas/login', {
-    method: 'POST',
-    body: JSON.stringify(data), 
-    headers:{'Content-Type': 'application/json'}
+
+  fetch("/personas/login", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" },
   })
-  .then(function(response){
-    console.log(response)
-    return response.json()
-  })
-  .then(function(response) {
-    console.log(response)
-    window.localStorage.setItem("token", JSON.stringify(response.token))
-    window.localStorage.setItem("level", response.user.level)
-    sendReq();
-  })
-  .catch(function(e){
-      console.log(e)
-  })
-      
+    .then(function (response) {
+      console.log(response);
+      console.log(1);
+      return response.json();
+    })
+    .then(function (response) {
+      console.log(response);
+      console.log(2);
+      window.localStorage.setItem("token", JSON.stringify(response.token));
+      window.localStorage.setItem("level", response.user.level);
+      //sendReq();
+      window.location.href =
+        "components/Registrar_Informacion_Adicional_Dueño/informacion_adicional.html";
+    })
+    .catch(function (e) {
+      console.log(e);
+    });
 }
 
+function sendReq() {
+  let url =
+    "components/Registrar_Informacion_Adicional_Dueño/informacion_adicional.html";
+  let header = new Headers();
+  let token = JSON.parse(localStorage.getItem("token"));
+  header.append("Authenticaction", `Bearer ${token}`);
 
-  function sendReq(){
-    let url = "../Buscar_Parqueo/buscar_parqueo.html";
-    let header = new Headers();
-    let token = JSON.parse(localStorage.getItem("token"));
-    header.append('Authenticaction', `Bearer ${token}`);
+  let req = new Request(url, {
+    method: "GET",
+    Mmode: "cors",
+    headers: header,
+  });
+  fetch(req)
+    .then((resp) => resp.json())
 
-    let req = new Request(url, {
-      method: "GET",
-      Mmode: "cors",
-      headers: header
-    });
-    fetch(req)
-    .then(resp => resp.json())
-    
-    .catch(err => {
+    .catch((err) => {
       console.log(err.message);
-    })
-  }
-
-
-
+    });
+}
 
 /*
 request.get('http://localhost:4040/Buscar_Parqueo/buscar_parqueo.html', {
@@ -71,25 +69,7 @@ request.get('http://some.server.com/').auth(null, null, true, 'bearerToken');
 // or
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*
+/*
   if (valiteBlanks([loginEmail, loginPassword])) {
 
 
