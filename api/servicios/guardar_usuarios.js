@@ -6,53 +6,17 @@ var User = require("../modelo/modelo_usuario");
 
 //guarda usuarios
 router.post("/personas", async (req, res) => {
+
+  console.log(req.body)
   const usuario = new User(req.body);
   try {
     await usuario.save();
     //const token = await usuario.generarTokenDeAutenticacion();
     res.status(201).send({ usuario });
   } catch (error) {
+    console.log(error)
     res.status(400).send(error);
   }
-});
-
-router.post("/especializado", function (req, res) {
-  let GuardarUsuario = new User({
-    _id: new mongoose.Types.ObjectId(),
-    nombre: req.body.nombre,
-    apellido: req.body.apellido,
-    cedula: req.body.cedula,
-    correo: req.body.correo,
-    nombreParqueo: req.body.nombreParqueo,
-    ubicacionParqueo: req.body.ubicacionParqueo,
-    nivel: 2,
-  });
-
-  GuardarUsuario.save()
-    .then(function (resultado) {
-      res.json(resultado);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-});
-router.post("/tradicional", function (req, res) {
-  let GuardarUsuario = new User({
-    _id: new mongoose.Types.ObjectId(),
-    nombre: req.body.nombre,
-    apellido: req.body.apellido,
-    cedula: req.body.cedula,
-    correo: req.body.correo,
-    nivel: 1,
-  });
-
-  GuardarUsuario.save()
-    .then(function (resultado) {
-      res.json(resultado);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
 });
 
 module.exports = router;

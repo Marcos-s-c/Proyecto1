@@ -15,7 +15,6 @@
     padding-top: 3%;
     padding-bottom: 3%;
     font-size: 18px;
-  
   }
   
   .fa-arrow-right {
@@ -31,8 +30,6 @@
     outline: none;
   }
 
-
- 
   .login-flex-container {
     display: flex;
   }
@@ -44,9 +41,6 @@
   .logo{
     text-align: center;
   }
-  
-
-  
 .login-button{
   color: white;
 }
@@ -72,4 +66,30 @@ a:hover, a:focus {
 
 .register a{
   color: #82b0b0;
+}
+
+form{
+  margin: auto;
+}
+
+.birthDate-box{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+}
+.birthDate-box input{
+  width: 30%;
+  border-style: none;
+}
+.birthDate-box p{
+  color: red;
+  font-size: 12px;
+}
+.hidden{
+  visibility: hidden;
+}
+.visible{
+  visibility: visible;
 }

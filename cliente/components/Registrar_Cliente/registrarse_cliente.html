@@ -35,81 +35,62 @@
     <header>
 
     </header>
-    <div class="login-container">
-      <!-- aqui va el header  -->
-      <br />
-      <br />
-      <br />
       <div class="logo">
         <img src="../../assets/img/logo.png" alt="Logo" />
       </div>
-      <div class="form">
       <form id="login-form" action="#">
         <h1>Registrar cuenta</h1>
-        
-        <div class="name-input">
           <input
             type="text"
             id="userName"
             name="register"
             placeholder="Nombre completo"
-            class="input-bottom-border-only"
-          /><br /><br />
-      
-        </div>
-        <div class="cedula-input">
+            class="regular-input"
+          />
           <input
           type="text"
           id="userID"
           name="register"
           placeholder="Cédula"
-          class="input-bottom-border-only"
+          class="regular-input"
         /><br /><br />
-        </div>
-        <div class="fecha-nacimiento-input">
-          <labe">Fecha de nacimiento</label><input
+        <div class="birthDate-box">
+          <label>Fecha de nacimiento</label>
+          <input
           type="date"
           id="birthDate"
           name="register"
           placeholder="Fecha de nacimiento"
-          class="input-bottom-border-only"
-        /><br /><br />
+          class="regular-input"
+          />
+          <div class="error-msg hidden" id="error-msg">
+            <p>Debe ser mayor de edad</p>
+          </div>
         </div>
-        <div class="numero-de-telefono">
           <input
           type="number"
           id="phoneNumber"
           name="register"
           placeholder="Numero de teléfono"
-          class="input-bottom-border-only"
-        /><br /><br />
-        </div>
-        <div class="email">
+          class="regular-input"
+          />
           <input
           type="email"
           id="email"
           name="register"
           placeholder="Correo electrónico"
-          class="input-bottom-border-only"
-        /><br /><br />
-        </div>
-
-        <div class="button-container">
-          <button type="submit" onclick="sendUserInfo()" class="login-button">
+          class="regular-input"
+        />
+        <button type="button" onclick="sendUserInfo()" class="login-button">
             Registrarse <span id="right"></span></i>
-          </button>
-        </div>
-        <div class="login-flex-container">
-          <div class="register">
-            <p>Al hacer clic en "Registrarse", aceptas las condiciones de uso de (nombre de empresa) y reconoces haber leído la política de privacidad.</p>
-            <p><a href="../registrar_empresa/registrar_empresa.html">Registrar empresa</a></p>
-          </div>
+        </button>
+          <p class="termsNcond">Al hacer clic en "Registrarse", aceptas las condiciones de uso de (nombre de empresa) y reconoces haber leído la política de privacidad.</p>
+          <!--<p><a href="../registrar_empresa/registrar_empresa.html">Registrar empresa</a></p>-->
         </div>
       </form>
-    </div>
-  </div>
 
   <script src="registrarse_cliente.js"></script>
-  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/enviar_correo.js"></script>
+  <!--<script src="../../assets/js/main.js"></script>-->
   </body>
 </html>

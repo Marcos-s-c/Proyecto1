@@ -30,9 +30,13 @@ const userSchema = mongoose.Schema({
       }
     },
   },
-  level: String,
-  parkingName: String,
-  parkingLocation: String,
+  birthDate:{
+    type: Date,
+    required: true
+  },
+  phoneNumber:{
+    type: Number
+  },
   password: {
     type: String,
     required: true,

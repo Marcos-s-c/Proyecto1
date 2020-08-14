@@ -1,40 +1,60 @@
 
 var date = new Date();
 
-var data = {
-  name : document.getElementById('userName').value,
-  userID : document.getElementById('userID').value,
-  birthDate : document.getElementById('birthDate').value,
-  phoneNumber : document.getElementById('phoneNumber').value,
-  email : document.getElementById('email').value
-};
+const html = '<img src="/cliente/assets/img/logo.png>'
 
-function sendUserInfo(){
-  if(valiteBlanks(data) == true & verifyAge() == true){
-    fetch('/personas', {
-      method: 'POST',
-      body: JSON.stringify(data), 
-      headers:{'Content-Type': 'application/json'}
-    })
-    .then(function(req, res){
-      console.log(req.body)
-    })
+
+async function sendUserInfo() {
+
+  const html = '<img src="/cliente/assets/img/logo.png>'
+  var data = {
+    name: document.getElementById('userName').value,
+    userID: document.getElementById('userID').value,
+    birthDate: document.getElementById('birthDate').value,
+    phoneNumber: document.getElementById('phoneNumber').value,
+    password: Math.random().toString(36).slice(-8),
+    email: document.getElementById('email').value
+  };
+  try {
+    fetch('/personas', 
+    { method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' } })
+    //alert(result + "")
+    sendEmail(data.email, "Confirmación de correo", html);
+    window.location.href = "/"
+
+  } catch (e) {
+    console.log(e + "")
   }
+
 }
 
-function verifyAge(){
-  if((data.birthDate - date.getDate) >=18 ){
+///////////////////////////////////////////////////////////////////////
+function verifyAge() {
+  if ((data.birthDate - date.getDate) >= 18) {
     return true
-  }else{
+  } else {
     return false
   }
 }
 
-function clearInputFields(){
-  document.getElementById("login-form").reset(); 
+function validateBlanks(obj) {
+  var completed = true;
+  for (var key in obj) {
+    if (obj[key] === "") {
+      console.log(key);
+      document.getElementById(key).classList.remove('regular-input');
+      document.getElementById(key).classList.add('red-input');
+      completed = false;
+    }
+  }
+  return completed;
 }
 
-function init(){
+function clearInputFields() {
+  document.getElementById("login-form").reset();
+}
+
+function init() {
   clearInputFields();
 }
 
@@ -43,4 +63,14 @@ init();
 
 
 
+  /*let fieldsCompleted = await validateBlanks(data);
+  let adult = await verifyAge();
 
+  if(fieldsCompleted == false){
+    Swal.fire("Hay espacios en blanco sin completar");
+  }else if(adult == false){
+    console.log("no es mayor de edad");
+    /*
+    document.getElementById('error-msg').classList.remove('hidden');
+    document.getElementById('error-msg').classList.add('visible');
+  }else{*/
