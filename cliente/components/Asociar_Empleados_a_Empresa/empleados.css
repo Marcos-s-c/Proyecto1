@@ -1,0 +1,25 @@
+.search input {
+  margin-top: 8px;
+  outline: none;
+  width: 30%;
+  padding-left: 3%;
+}
+
+.search {
+  text-align: left;
+  width: 50%;
+}
+
+.add-icon {
+  padding: -3%;
+  float: left;
+  font-size: 24px;
+  color: #82b0b0;
+}
+
+.listado_usuarios {
+  width: 100%;
+}
+.table {
+  padding: 0 0 0 0 !important;
+}

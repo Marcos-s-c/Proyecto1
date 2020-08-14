@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 var User = require("../modelo/modelo_usuario");
-
+var empleado = require("../modelo/modelo_empleado");
 
 //guarda usuarios
 router.post("/personas", async (req, res) => {
@@ -18,5 +18,6 @@ router.post("/personas", async (req, res) => {
     res.status(400).send(error);
   }
 });
+
 
 module.exports = router;

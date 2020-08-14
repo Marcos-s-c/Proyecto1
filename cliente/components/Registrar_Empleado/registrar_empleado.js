@@ -1,4 +1,4 @@
-//Validar correo
+//Validar email
 function changePassword() {
   var validateResult = validateEmptySpaces() && validateEmailEquality();
   if (validateResult == true) {
@@ -8,37 +8,54 @@ function changePassword() {
 }
 
 function validar() {
-  var nombre = document.getElementById("nombre");
-  var cedula = document.getElementById("cedula");
-  var fecha_nacimiento = document.getElementById("fecha-nacimiento");
-  var telefono = document.getElementById("telefono");
-  var correo = document.getElementById("email-register");
+  var name = document.getElementById("name");
+  var userID = document.getElementById("userID");
+  var birthDate = document.getElementById("fecha-nacimiento");
+  var phoneNumber = document.getElementById("phoneNumber");
+  var email = document.getElementById("email");
   var puestoLaboral = document.getElementById("puesto-empleado");
-  var fechaContratacion = document.getElementById("fecha-de-contratacion");
-
+  var fechaContratacion = document.getElementById("fechaContratacion");
+  console.log("prueba");
   if (
     valiteBlanks([
-      nombre,
-      cedula,
-      fecha_nacimiento,
-      telefono,
-      correo,
+      name,
+      userID,
+      birthDate,
+      phoneNumber,
+      email,
       puestoLaboral,
       fechaContratacion,
     ])
   ) {
-    if (validateEmail(correo.value)) {
+    console.log("prueba2");
+    if (validateEmail(email.value)) {
       console.log("enviando datos");
       valores = {
-        nombre : nombre.value,
-        cedula: cedula.value,
-        fecha_nacimiento: fecha_nacimiento.value,
-        telefono: telefono.value,
-        correo: correo.value,
+        name: name.value,
+        userID: userID.value,
+        birthDate: birthDate.value,
+        phoneNumber: phoneNumber.value,
+        email: email.value,
         puestoLaboral: puestoLaboral.value,
         fechaContratacion: fechaContratacion.value,
+        level: "empleado",
       };
-      fetch("/empleado", {
+      console.log(JSON.stringify(valores));
+
+      fetch("/personas", {
+        method: "POST",
+        body: JSON.stringify(valores),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then(function (res) {
+          console.log(res);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+      console.log("info usuario creado");
+      fetch("/empleados", {
         method: "POST",
         body: JSON.stringify(valores),
         headers: {
@@ -54,12 +71,7 @@ function validar() {
         .catch(function (error) {
           console.log(error);
         });
-      swal({
-        title: "info extra guarda con exito",
-        icon: "success",
-        button: "Aceptar",
-      });
-      console.log("info extra creada");
+      console.log("info empleado creada");
     } else {
       return false;
     }

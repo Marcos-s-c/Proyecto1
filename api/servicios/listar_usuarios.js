@@ -31,4 +31,19 @@ router.post("/persona", function (req, res) {
 
 });
 
+
+router.get("/listar/empleados", function (req, res) {
+
+    console.log(req.user)
+    
+    Usuario.find().exec()
+    .then(function (resultado) {
+        res.json(resultado);
+    })
+    .catch(function (err) {
+        console.log(err);
+    })
+
+});
+
 module.exports = router;

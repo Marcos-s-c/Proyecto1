@@ -21,7 +21,7 @@ function logInValidation() {
       window.localStorage.setItem("level", response.user.level);
       //sendReq();
       window.location.href =
-        "components/Registrar_Informacion_Adicional_Dueño/informacion_adicional.html";
+        "components/Registrar_Empleado/registrar_empleado.html";
     })
     .catch(function (e) {
       console.log(e);
