@@ -1,3 +1,4 @@
+var requestsList = [];
 window.onload = function () {
   //Este evento se dispara cuando la pantalla está cargada y ejecuta las funciones determinadas
   cargarDatos();
@@ -9,9 +10,9 @@ function cargarDatos() {
       return response.json();
     })
     .then(function (json) {
-      console.log(json);
       var requestsTable = document.querySelector("#requestsTable tbody");
       requestsTable.innerHTML = "";
+      requestsList = json;
       for (var i = 0; i < json.length; i++) {
         var row = document.createElement("tr");
 
@@ -51,55 +52,96 @@ function cargarDatos() {
     });
 }
 
-function deny(correo) {
-  var value = {
-    email: correo,
-  };
-
-  var request = {
-    method: "POST",
-    body: JSON.stringify(value),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-
-  fetch("/solicitud_parqueo/denegar", request)
-    .then(function (result) {
-      return result.json();
-    })
-    .then(function (result) {
-      cargarDatos();
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-  /*Swal.fire({
-    title: "¿Está seguro de que desea denegar la solicitud?",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Denegar",
-  }).then((result) => {
-    if (result.value) {
-      Swal.fire("Denegada", "La solicitud ha sido denegada.", "success");
+/*Función para conocer el estado del atributo donde está la solicitud seleccionada por 
+medio del identificador único "correo".
+*/
+function getRequestState(email) {
+  var stateRequestSelected;
+  for (var i = 0; i < requestsList.length; i++) {
+    if (requestsList[i].email == email) {
+      stateRequestSelected = requestsList[i].state;
+      break;
     }
-  });*/
+  }
+  return stateRequestSelected;
 }
 
-function approve() {
-  /*Swal.fire({
-    title: "¿Deseas aceptar la solicitud?",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Aceptar",
-  }).then((result) => {
-    if (result.value) {
-      Swal.fire("La solicitud ha sido aceptada.", "success");
-    }
-  });*/
+function deny(emailRequest) {
+  var stateRequestSelected = getRequestState(emailRequest);
+  if (stateRequestSelected != "Pendiente") {
+    Swal.fire({
+      icon: "error",
+      title: "La solicitud debe de estar en estado 'Pendiente'!",
+    });
+  } else {
+    var value = {
+      email: emailRequest,
+    };
+
+    var request = {
+      method: "POST",
+      body: JSON.stringify(value),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    fetch("/solicitud_parqueo/denegar", request)
+      .then(function (result) {
+        return result.json();
+      })
+      .then(function (result) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "La solicitud ha sido denegada",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        cargarDatos();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+}
+
+function approve(email) {
+  var stateRequestSelected = getRequestState(email);
+  if (stateRequestSelected != "Pendiente") {
+    Swal.fire({
+      icon: "error",
+      title: "La solicitud debe de estar en estado 'Pendiente'!",
+    });
+  } else {
+    var value = {
+      email: email,
+    };
+
+    var request = {
+      method: "POST",
+      body: JSON.stringify(value),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    fetch("/solicitud_parqueo/aprobar", request)
+      .then(function (result) {
+        return result.json();
+      })
+      .then(function (result) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "La solicitud ha sido aprobada",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        cargarDatos();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 }
