@@ -1,4 +1,4 @@
-//Validar correo
+//Validar email
 function changePassword() {
   var validateResult = validateEmptySpaces() && validateEmailEquality();
   if (validateResult == true) {
@@ -9,27 +9,69 @@ function changePassword() {
 
 function validar() {
   var name = document.getElementById("name");
-  var cedula = document.getElementById("cedula");
-  var fecha_nacimiento = document.getElementById("fecha-nacimiento");
-  var numero = document.getElementById("numero");
-  var email_register = document.getElementById("email-register");
-  var puestoEmpleado = document.getElementById("puesto-empleado");
-  var fechaContratacion = document.getElementById("fecha-de-contratacion");
-
+  var userID = document.getElementById("userID");
+  var birthDate = document.getElementById("fecha-nacimiento");
+  var phoneNumber = document.getElementById("phoneNumber");
+  var email = document.getElementById("email");
+  var puestoLaboral = document.getElementById("puesto-empleado");
+  var fechaContratacion = document.getElementById("fechaContratacion");
+  console.log("prueba");
   if (
     valiteBlanks([
       name,
-      cedula,
-      fecha_nacimiento,
-      numero,
-      email_register,
-      puestoEmpleado,
+      userID,
+      birthDate,
+      phoneNumber,
+      email,
+      puestoLaboral,
       fechaContratacion,
     ])
   ) {
-    if (validateEmail(email_register.value)) {
-      return (window.location.href =
-        "/cliente/components/convenios/convenios.html");
+    console.log("prueba2");
+    if (validateEmail(email.value)) {
+      console.log("enviando datos");
+      valores = {
+        name: name.value,
+        userID: userID.value,
+        birthDate: birthDate.value,
+        phoneNumber: phoneNumber.value,
+        email: email.value,
+        puestoLaboral: puestoLaboral.value,
+        fechaContratacion: fechaContratacion.value,
+        level: "empleado",
+      };
+      console.log(JSON.stringify(valores));
+
+      fetch("/personas", {
+        method: "POST",
+        body: JSON.stringify(valores),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then(function (res) {
+          console.log(res);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+      console.log("info usuario creado");
+      fetch("/empleados", {
+        method: "POST",
+        body: JSON.stringify(valores),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then(function (data) {
+          return data.json();
+        })
+        .then(function (res) {
+          console.log(res);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      console.log("info empleado creada");
     } else {
       return false;
     }

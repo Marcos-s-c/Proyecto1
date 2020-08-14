@@ -4,7 +4,7 @@ function valiteBlanks(elements) {
   console.log(element);
   for (var key in elements) {
     var element = elements[key];
-   // element.classList.remove("error");
+    // element.classList.remove("error");
     if (element.value === "") {
       element.classList.add("error");
       Swal.fire("Hay espacios en blanco sin completar");

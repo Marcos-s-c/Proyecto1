@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 const validator = require("validator");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const { text } = require("express");
 
 const userSchema = mongoose.Schema({
   name: {
@@ -30,12 +31,16 @@ const userSchema = mongoose.Schema({
       }
     },
   },
-  level: String,
+  phoneNumber: Number,
+  level:{
+  type:String,
+  require: true,
+  }, 
   parkingName: String,
   parkingLocation: String,
   password: {
     type: String,
-    required: true,
+    required: false,
     minLength: 4,
   },
   //arreglo de tokens para cada sesion que mantenga abierta
@@ -52,7 +57,10 @@ const userSchema = mongoose.Schema({
 // el token de autenticacion se utiliza para iniciar y cerrar sesion
 userSchema.methods.generarTokenDeAutenticacion = async function () {
   const usuario = this;
-  const token = jwt.sign({ _id: usuario._id.toString() }, "proyectonuevo");
+  const token = jwt.sign(
+    { id: usuario._id.toString(), email: usuario.email },
+    "proyectonuevo"
+  );
 
   usuario.tokens = usuario.tokens.concat({ token });
 
