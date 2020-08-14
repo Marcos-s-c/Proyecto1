@@ -1,0 +1,120 @@
+.image {
+  max-width: 25%;
+  height: auto;
+  padding-bottom: 5%;
+}
+
+p {
+  line-height: 2;
+  text-indent: 10px;
+  font-size: 14px;
+}
+
+.container h3 {
+  text-align: center;
+}
+
+.container p {
+  padding-bottom: 4%;
+  margin-top: -1%;
+}
+
+.content h3 {
+  text-align: left;
+}
+
+.content li {
+  list-style: none;
+}
+
+.list {
+  overflow: auto;
+}
+
+.listLeft {
+  float: left;
+  width: 50%;
+}
+
+.textCenter {
+  text-align: center;
+  font-weight: lighter;
+}
+
+.content h3 {
+  text-align: center;
+}
+
+.content h3 b {
+  margin-bottom: -50%;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#dark {
+  padding-bottom: 5%;
+}
+
+.center {
+  padding-bottom: 15%;
+}
+
+li {
+  font-weight: lighter;
+}
+
+.underline-all {
+  text-decoration: underline;
+  width: 100%;
+}
+
+.underline {
+  display: inline-block;
+  line-height: 0.85;
+  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+.left {
+  width: 5%;
+  float: left;
+}
+
+.right {
+  width: 10%;
+  float: left;
+}
+
+#verMas {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.centerbutton {
+  text-align: center;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  margin: 20px 0;
+}
+#dark {
+  border-top: 1px solid black;
+}
+
+#fortaleza {
+  text-align: center;
+}
+
+.listLeft li {
+  text-align: left;
+}

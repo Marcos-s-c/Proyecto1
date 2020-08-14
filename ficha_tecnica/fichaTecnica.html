@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="EXTRA.CSS" />
+  <!-- EXTRA CSS CONTIENE TODO EL CSS DE LA PLANTILLA -->
+  <link rel="stylesheet" href="fichaTecnica.css" />
+  <!-- FICHATECNICA CONTIENE TODO MI CSS QUE CUSTOMIZE Y QUE SE PUEDE CAMBIAR -->
+  <!-- https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_portfolio2&stacked=h -->
+  <!-- link de la plantilla -->
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Raleway"
@@ -17,51 +22,52 @@
     h5 {
       font-family: "Raleway", sans-serif;
     }
-    .w3-third img {
+    .third img {
       margin-bottom: -6px;
       opacity: 0.8;
       cursor: pointer;
     }
-    .w3-third img:hover {
+    .third img:hover {
       opacity: 1;
     }
   </style>
-  <body class="w3-light-grey w3-content" style="max-width: 1600px;">
+  <body class="light-grey content" style="max-width: 1600px;">
     <!-- Sidebar/menu -->
     <nav
-      class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center"
+      class="sidebar bar-block white animate-left text-grey collapse top center"
       style="z-index: 3; width: 300px; font-weight: bold;"
       id="mySidebar"
     >
       <br />
-      <h3 class="w3-padding-64 w3-center">
-        <b>SOME<br />NAME</b>
+      <h3 class="padding-64 center">
+        <b>&lt;ProCode/><br />s2do</b>
       </h3>
       <a
         href="javascript:void(0)"
         onclick="w3_close()"
-        class="w3-bar-item w3-button w3-padding w3-hide-large"
+        class="bar-item button padding hide-large"
         >CLOSE</a
       >
-      <a href="#" onclick="w3_close()" class="w3-bar-item w3-button"
-        >PORTFOLIO</a
+      <a href="#" onclick="w3_close()" class="bar-item button"
+        >Acerca de nosotros</a
       >
-      <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"
-        >ABOUT ME</a
+      <a href="#about" onclick="w3_close()" class="bar-item button"
+        >Nuestro equipo</a
       >
-      <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button"
-        >CONTACT</a
+      <a href="#about" onclick="w3_close()" class="bar-item button"
+        >Arquitectura</a
+      >
+      <a href="#contact" onclick="w3_close()" class="bar-item button"
+        >Contactenos</a
       >
     </nav>
 
     <!-- Top menu on small screens -->
-    <header
-      class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16"
-    >
-      <span class="w3-left w3-padding">SOME NAME</span>
+    <header class="container top hide-large white xlarge padding-16">
+      <span class="left padding">&lt;ProCode/>s2do</span>
       <a
         href="javascript:void(0)"
-        class="w3-right w3-button w3-white"
+        class="right button white"
         onclick="w3_open()"
         >☰</a
       >
@@ -69,7 +75,7 @@
 
     <!-- Overlay effect when opening sidebar on small screens -->
     <div
-      class="w3-overlay w3-hide-large w3-animate-opacity"
+      class="overlay hide-large animate-opacity"
       onclick="w3_close()"
       style="cursor: pointer;"
       title="close side menu"
@@ -77,361 +83,494 @@
     ></div>
 
     <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-left: 300px;">
+    <div class="main" style="margin-left: 300px;">
       <!-- Push down content on small screens -->
-      <div class="w3-hide-large" style="margin-top: 83px;"></div>
-
-      <!-- Photo grid -->
-      <div class="w3-row">
-        <div class="w3-third">
-          <img
-            src="/w3images/natureboy.jpg"
-            style="width: 100%;"
-            onclick="onClick(this)"
-            alt="A boy surrounded by beautiful nature"
-          />
-          <img
-            src="/w3images/girl_mountain.jpg"
-            style="width: 100%;"
-            onclick="onClick(this)"
-            alt="What a beautiful scenery this sunset"
-          />
-          <img
-            src="/w3images/girl.jpg"
-            style="width: 100%;"
-            onclick="onClick(this)"
-            alt="The Beach. Me. Alone. Beautiful"
-          />
-        </div>
-
-        <div class="w3-third">
-          <img
-            src="/w3images/boy.jpg"
-            style="width: 100%;"
-            onclick="onClick(this)"
-            alt="Quiet day at the beach. Cold, but beautiful"
-          />
-          <img
-            src="/w3images/man_bench.jpg"
-            style="width: 100%;"
-            onclick="onClick(this)"
-            alt="Waiting for the bus in the desert"
-          />
-          <img
-            src="/w3images/natureboy.jpg"
-            style="width: 100%;"
-            onclick="onClick(this)"
-            alt="Nature again.. At its finest!"
-          />
-        </div>
-
-        <div class="w3-third">
-          <img
-            src="/w3images/girl.jpg"
-            style="width: 100%;"
-            onclick="onClick(this)"
-            alt="Canoeing again"
-          />
-          <img
-            src="/w3images/girl_train.jpg"
-            style="width: 100%;"
-            onclick="onClick(this)"
-            alt="A girl, and a train passing"
-          />
-          <img
-            src="/w3images/closegirl.jpg"
-            style="width: 100%;"
-            onclick="onClick(this)"
-            alt="What a beautiful day!"
-          />
-        </div>
-      </div>
-
-      <!-- Pagination -->
-      <div class="w3-center w3-padding-32">
-        <div class="w3-bar">
-          <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-          <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-          <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-          <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-          <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-          <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-        </div>
-      </div>
+      <div class="hide-large" style="margin-top: 83px;"></div>
 
       <!-- Modal for full size images on click-->
       <div
         id="modal01"
-        class="w3-modal w3-black"
+        class="modal black"
         style="padding-top: 0;"
         onclick="this.style.display='none'"
       >
-        <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
-        <div
-          class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64"
-        >
-          <img id="img01" class="w3-image" />
+        <span class="button black xlarge display-topright">×</span>
+        <div class="modal-content animate-zoom center transparent padding-64">
+          <img id="img01" class="image" />
           <p id="caption"></p>
         </div>
       </div>
 
       <!-- About section -->
       <div
-        class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32"
+        class="container dark-grey center text-light-grey padding-32"
         id="about"
       >
-        <h4><b>About Me</b></h4>
         <img
-          src="/w3images/avatar_hat.jpg"
+          src="/cliente/assets/img/logoprocode.png"
           alt="Me"
-          class="w3-image w3-padding-32"
+          class="image"
           width="600"
           height="650"
         />
-        <div class="w3-content w3-justify" style="max-width: 600px;">
-          <h4>My Name</h4>
-          <p>
-            Some text about me. I love taking photos of PEOPLE. I am lorem ipsum
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
-          </p>
-          <p>mail: example@example.com</p>
-          <p>tel: 5353 35531</p>
-          <hr class="w3-opacity" />
-          <h4 class="w3-padding-16">Technical Skills</h4>
-          <p class="w3-wide">Photography</p>
-          <div class="w3-white">
-            <div
-              class="w3-container w3-padding-small w3-center w3-grey"
-              style="width: 95%;"
-            >
-              95%
+        <div class="content justify" style="max-width: 600px;">
+          <div class="wrap">
+            <div class="left">
+              <h1>
+                <b>Misión</b>
+              </h1>
             </div>
-          </div>
-          <p class="w3-wide">Web Design</p>
-          <div class="w3-white">
-            <div
-              class="w3-container w3-padding-small w3-center w3-grey"
-              style="width: 85%;"
-            >
-              85%
-            </div>
-          </div>
-          <p class="w3-wide">Photoshop</p>
-          <div class="w3-white">
-            <div
-              class="w3-container w3-padding-small w3-center w3-grey"
-              style="width: 80%;"
-            >
-              80%
+            <div class="right">
+              <img
+                src="/cliente/assets/img/mision.png"
+                style="width: 100%;"
+                alt=""
+              />
             </div>
           </div>
           <p>
-            <button
-              class="w3-button w3-light-grey w3-padding-large w3-margin-top w3-margin-bottom"
-            >
-              Download Resume
-            </button>
+            Somos una empresa dedicada al desarrollo y diseño web, trabajamos en
+            conjunto para posicionar a nuestros clientes en el mundo digital,
+            así como brindar soluciones que ayuden a potenciar los servicios
+            digitales a quienes ya los ofrecen. Nuestra pasión por lo que
+            hacemos nos llena de motivación para lograr la completa satisfacción
+            de aquellos que han puesto en nosotros su confianza.
           </p>
-          <hr class="w3-opacity" />
-
-          <h4 class="w3-padding-16">How much I charge</h4>
-          <div class="w3-row-padding" style="margin: 0 -16px;">
-            <div class="w3-half w3-margin-bottom">
-              <ul
-                class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off"
-              >
-                <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
-                <li class="w3-padding-16">Web Design</li>
-                <li class="w3-padding-16">Photography</li>
-                <li class="w3-padding-16">5GB Storage</li>
-                <li class="w3-padding-16">Mail Support</li>
-                <li class="w3-padding-16">
-                  <h2>$ 10</h2>
-                  <span class="w3-opacity">per month</span>
-                </li>
-                <li class="w3-light-grey w3-padding-24">
-                  <button class="w3-button w3-white w3-padding-large">
-                    Sign Up
-                  </button>
-                </li>
-              </ul>
+          <div class="wrap">
+            <div class="left">
+              <h1>
+                <b>Visión</b>
+              </h1>
             </div>
-
-            <div class="w3-half">
-              <ul
-                class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off"
-              >
-                <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
-                <li class="w3-padding-16">Web Design</li>
-                <li class="w3-padding-16">Photography</li>
-                <li class="w3-padding-16">50GB Storage</li>
-                <li class="w3-padding-16">Endless Support</li>
-                <li class="w3-padding-16">
-                  <h2>$ 25</h2>
-                  <span class="w3-opacity">per month</span>
-                </li>
-                <li class="w3-light-grey w3-padding-24">
-                  <button class="w3-button w3-white w3-padding-large">
-                    Sign Up
-                  </button>
-                </li>
-              </ul>
+            <div class="right">
+              <img
+                src="/cliente/assets/img/vision.png"
+                style="width: 100%;"
+                alt=""
+              />
             </div>
           </div>
+          <p>
+            Ser una empresa de referencia en el mercado nacional e
+            internacional, trabajando de la mano con el avance tecnológico,
+            adaptándonos al cambio constante de nuestra sociedad y las
+            exigencias del mercado.
+          </p>
+          <div class="wrap">
+            <div class="left">
+              <h1>
+                <b>Valores</b>
+              </h1>
+            </div>
+            <div class="right">
+              <img
+                src="/cliente/assets/img/valores.png"
+                style="width: 100%;"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <h3><b>Pasión</b></h3>
+          <p>
+            La pasión en el trabajo, invita a la creación de nuevas ideas y
+            permite mejorar el clima organizacional. La pasión es considerada
+            como el punto más alto de la realización de un profesional,
+            reflejada en la conducta y el equilibrio emocional de la persona.
+          </p>
+
+          <h3><b>Integridad</b></h3>
+          <p>
+            Una empresa es íntegra cuando se presenta ante sí misma y ante los
+            demás tal como es. No es más ni menos de lo que ya es. Y, encima,
+            tiene claro que cada una de sus actuaciones debe estar regulada por
+            la moral.
+          </p>
+          <h3><b>Confianza</b></h3>
+          <p>
+            Cada miembro debe ser capaz de confiar totalmente en las otras
+            personas con las que trabaja, manifestando los problemas que pueden
+            surgir y que afectan al ambiente del equipo y avanzando todos juntos
+            hacia la consecución de unos objetivos. Se debe de confiar en la
+            fluidez y eficiencia, entre los miembros del equipo para alcanzar
+            las metas establecidas.
+          </p>
+
+          <h3><b>Compromiso</b></h3>
+          <p>
+            Asumir el rol asignado y conocer el rol de cada miembro, para que se
+            tenga muy claro qué va a hacer y qué sepa con quien contar. Los
+            trabajadores comprometidos se sienten motivados por perseguir el
+            bien común para su empresa y se identifican con los retos y
+            objetivos de la misma.
+          </p>
+          <h3><b>Responsabilidad</b></h3>
+          <p>
+            Ser responsable es adquirir conciencia de las decisiones que se
+            toman durante la gestión empresarial. Esta responsabilidad es tanto
+            interna como externa: hacia los propios trabajadores y hacia los
+            clientes y el entorno en general. Además, supone el respeto de
+            ciertas normas y leyes. Se debe de ser responsable con el reglamento
+            del equipo y con los mismos compañeros, de esa forma hacer
+            conciencia de las decisiones que se tomen durante la gestión del
+            proyecto.
+          </p>
+
+          <hr class="opacity" />
         </div>
       </div>
 
       <!-- Contact section -->
+      <div class="container light-grey padding-32 padding-large" id="contact">
+        <div class="content" style="max-width: 600px;">
+          <h1 class="center"><b>Miembros del Equipo</b></h1>
+          <div class="underline">
+            <h2>
+              <img
+                src="/cliente/assets/img/cordinadora.png"
+                style="width: 6%;"
+                alt=""
+              /><b> Silvia Elena Zúñiga Fonseca</b>
+            </h2>
+          </div>
+          <h4>
+            <b> Coordinadora</b>
+          </h4>
+          <div class="list">
+            <div class="listLeft">
+              <ul>
+                <li id="fortaleza">
+                  <img
+                    src="/cliente/assets/img/positive.png"
+                    style="width: 15%;"
+                    alt=""
+                  />
+                  <h3>
+                    Fortalezas
+                  </h3>
+                </li>
+                <li>~ Comunicación</li>
+                <li>~ Atención a los detalles</li>
+                <li>~ Responsabilidad</li>
+              </ul>
+            </div>
+            <div class="listLeft">
+              <ul>
+                <li id="fortaleza">
+                  <img
+                    src="/cliente/assets/img/negative.png"
+                    style="width: 15%;"
+                    alt=""
+                  />
+                  <h3>
+                    Debilidades
+                  </h3>
+                </li>
+                <li>~ Impaciencia</li>
+                <li>~ Perfeccionismo</li>
+                <li>~ Desorden</li>
+              </ul>
+            </div>
+          </div>
+
+          <hr class="opacity" id="dark" />
+          <div class="underline">
+            <h2>
+              <b
+                ><img
+                  src="/cliente/assets/img/desarrolladora.png"
+                  style="width: 6%;"
+                  alt=""
+                />
+                Dayana Elizabeth Loaiza Rivera</b
+              >
+            </h2>
+          </div>
+          <h4>
+            <b> Desarrolladora</b>
+          </h4>
+          <div class="list">
+            <div class="listLeft">
+              <ul>
+                <li id="fortaleza">
+                  <img
+                    src="/cliente/assets/img/positive.png"
+                    style="width: 15%;"
+                    alt=""
+                  />
+                  <h3>
+                    Fortalezas
+                  </h3>
+                </li>
+                <li>~ Comunicación</li>
+                <li>~ Atención a los detalles</li>
+                <li>~ Adaptabilidad</li>
+              </ul>
+            </div>
+            <div class="listLeft">
+              <ul>
+                <li id="fortaleza">
+                  <img
+                    src="/cliente/assets/img/negative.png"
+                    style="width: 15%;"
+                    alt=""
+                  />
+                  <h3>
+                    Debilidades
+                  </h3>
+                </li>
+                <li>~ Organización del tiempo</li>
+                <li>~ Dispersión</li>
+                <li>~ Perfeccionismo</li>
+              </ul>
+            </div>
+          </div>
+
+          <hr class="opacity" id="dark" />
+          <div class="underline">
+            <h2>
+              <img
+                src="/cliente/assets/img/soporte.png"
+                style="width: 6%;"
+                alt=""
+              />
+              <b>José Ahmed Cascante Atencio</b>
+            </h2>
+          </div>
+          <h4>
+            <b>Encargado del Soporte Técnico</b>
+          </h4>
+          <div class="list">
+            <div class="listLeft">
+              <ul>
+                <li id="fortaleza">
+                  <img
+                    src="/cliente/assets/img/positive.png"
+                    style="width: 15%;"
+                    alt=""
+                  />
+                  <h3>
+                    Fortalezas
+                  </h3>
+                </li>
+                <li>~ Autoestima</li>
+                <li>~ Tenacidad</li>
+                <li>~ Creatividad</li>
+              </ul>
+            </div>
+            <div class="listLeft">
+              <ul>
+                <li id="fortaleza">
+                  <img
+                    src="/cliente/assets/img/negative.png"
+                    style="width: 15%;"
+                    alt=""
+                  />
+                  <h3>
+                    Debilidades
+                  </h3>
+                </li>
+                <li>~ Desorden</li>
+                <li>~ Dispersión</li>
+              </ul>
+            </div>
+          </div>
+
+          <hr class="opacity" id="dark" />
+          <div class="underline">
+            <h2>
+              <b
+                ><img
+                  src="/cliente/assets/img/calidad.png"
+                  style="width: 6%;"
+                  alt=""
+                />
+                Darren Andrey Jiménez Segura</b
+              >
+            </h2>
+          </div>
+          <h4>
+            <b>Encargado del área de Calidad</b>
+          </h4>
+          <div class="list">
+            <div class="listLeft">
+              <ul>
+                <li id="fortaleza">
+                  <img
+                    src="/cliente/assets/img/positive.png"
+                    style="width: 15%;"
+                    alt=""
+                  />
+                  <h3>
+                    Fortalezas
+                  </h3>
+                </li>
+                <li>~ Perfección</li>
+                <li>~ Detallismo</li>
+                <li>~ Dedicación</li>
+              </ul>
+            </div>
+            <div class="listLeft">
+              <ul>
+                <li id="fortaleza">
+                  <img
+                    src="/cliente/assets/img/negative.png"
+                    style="width: 15%;"
+                    alt=""
+                  />
+                  <h3>
+                    Debilidades
+                  </h3>
+                </li>
+                <li>~ Premura</li>
+                <li>~ Desorden</li>
+                <li>~ Pensamiento llano</li>
+              </ul>
+            </div>
+          </div>
+
+          <hr class="opacity" id="dark" />
+          <div class="underline">
+            <h2>
+              <b
+                ><img
+                  src="/cliente/assets/img/calidad.png"
+                  style="width: 6%;"
+                  alt=""
+                />
+                Marcos Sáenz Cantillano</b
+              >
+            </h2>
+          </div>
+          <h4>
+            <b>Encargado del área de Calidad</b>
+          </h4>
+          <div class="list">
+            <div class="listLeft">
+              <ul>
+                <li id="fortaleza">
+                  <img
+                    src="/cliente/assets/img/positive.png"
+                    style="width: 15%;"
+                    alt=""
+                  />
+                  <h3>
+                    Fortalezas
+                  </h3>
+                </li>
+                <li>~ Paciencia</li>
+                <li>~ Compromiso</li>
+                <li>~ Destreza</li>
+                <li>~ Detalles y cautela</li>
+              </ul>
+            </div>
+            <div class="listLeft">
+              <ul>
+                <li id="fortaleza">
+                  <img
+                    src="/cliente/assets/img/negative.png"
+                    style="width: 15%;"
+                    alt=""
+                  />
+                  <h3>
+                    Debilidades
+                  </h3>
+                </li>
+                <li>~ Dispersión</li>
+                <li>~ Procrastinación</li>
+                <li>~ Perfeccionismo</li>
+                <li>~ Poca creatividad en áreas de diseño</li>
+              </ul>
+            </div>
+          </div>
+          <hr class="opacity" id="dark" />
+        </div>
+      </div>
+
       <div
-        class="w3-container w3-light-grey w3-padding-32 w3-padding-large"
-        id="contact"
+        class="container dark-grey center text-light-grey padding-32"
+        id="about"
       >
-        <div class="w3-content" style="max-width: 600px;">
-          <h4 class="w3-center"><b>Contact Me</b></h4>
-          <p>
-            Do you want me to photograph you? Fill out the form and fill me in
-            with the details :) I love meeting new people!
+        <div class="content justify" style="max-width: 600px;">
+          <div class="row">
+            <div class="half">
+              <img
+                src="/cliente/assets/img/node.png"
+                alt=""
+                style="width: 100%;"
+              />
+            </div>
+            <div class="half">
+              <img
+                src="/cliente/assets/img/mongo.png"
+                alt=""
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+          <div class="centerbutton">
+            <h3>Arquitectura física</h3>
+            <p>
+              La arquitectura física a utilizar es parcialmente distribuida, en
+              la cual el cliente es el navegador web instalado en nuestro
+              computador. Además, empleando el servidor Node que va a ejecutar
+              código JavaScript del servidor en el computador y la base de datos
+              que corresponde a Mongo DB, la cual está en la nube.
+            </p>
+          </div>
+          <div class="centerbutton">
+            <h3>Arquitectura Lógica</h3>
+            <p>
+              La arquitectura lógica a emplear es multicapa, se separa la
+              interfaz del procesamiento de datos, se hace uso de una capa de
+              presentación donde se da la interacción entre el cliente y
+              aplicación en la cual hay una solicitud y entrega de información.
+              Luego, está la capa de la lógica de negocio que contiene el
+              trabajo o las tareas por las cuales el sistema está hecho y la
+              capa de acceso de datos en donde se comunica con la base datos
+              para obtener o guardar información.
+            </p>
+          </div>
+          <hr class="opacity" />
+        </div>
+      </div>
+
+      <!-- Contact section -->
+      <div class="container light-grey padding-32 padding-large" id="contact">
+        <div class="content" style="max-width: 600px;">
+          <h1 class=""><b>Contactenos</b></h1>
+          <br />
+          <p class="center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis, dolor?
           </p>
           <form action="/action_page.php" target="_blank">
-            <div class="w3-section">
+            <div class="section">
               <label>Name</label>
-              <input
-                class="w3-input w3-border"
-                type="text"
-                name="Name"
-                required
-              />
+              <input class="input border" type="text" name="Name" required />
             </div>
-            <div class="w3-section">
+            <div class="section">
               <label>Email</label>
-              <input
-                class="w3-input w3-border"
-                type="text"
-                name="Email"
-                required
-              />
+              <input class="input border" type="text" name="Email" required />
             </div>
-            <div class="w3-section">
+            <div class="section">
               <label>Message</label>
-              <input
-                class="w3-input w3-border"
-                type="text"
-                name="Message"
-                required
-              />
+              <input class="input border" type="text" name="Message" required />
             </div>
-            <button
-              type="submit"
-              class="w3-button w3-block w3-black w3-margin-bottom"
-            >
-              Send Message
+            <button type="submit" class="button block black margin-bottom">
+              Enviar Mensaje
             </button>
           </form>
         </div>
       </div>
 
       <!-- Footer -->
-      <footer class="w3-container w3-padding-32 w3-grey">
-        <div class="w3-row-padding">
-          <div class="w3-third">
-            <h3>INFO</h3>
-            <p>
-              Praesent tincidunt sed tellus ut rutrum. Sed vitae justo
-              condimentum, porta lectus vitae, ultricies congue gravida diam non
-              fringilla.
-            </p>
-          </div>
-
-          <div class="w3-third">
-            <h3>BLOG POSTS</h3>
-            <ul class="w3-ul">
-              <li class="w3-padding-16 w3-hover-black">
-                <img
-                  src="/w3images/workshop.jpg"
-                  class="w3-left w3-margin-right"
-                  style="width: 50px;"
-                />
-                <span class="w3-large">Lorem</span><br />
-                <span>Sed mattis nunc</span>
-              </li>
-              <li class="w3-padding-16 w3-hover-black">
-                <img
-                  src="/w3images/gondol.jpg"
-                  class="w3-left w3-margin-right"
-                  style="width: 50px;"
-                />
-                <span class="w3-large">Ipsum</span><br />
-                <span>Praes tinci sed</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="w3-third">
-            <h3>POPULAR TAGS</h3>
-            <p>
-              <span class="w3-tag w3-black w3-margin-bottom">Travel</span>
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >New York</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >London</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >IKEA</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >NORWAY</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >DIY</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >Ideas</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >Baby</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >Family</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >News</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >Clothing</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >Shopping</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >Sports</span
-              >
-              <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"
-                >Games</span
-              >
-            </p>
-          </div>
-        </div>
+      <footer class="container padding-32 grey">
+        <div class="row-padding"></div>
       </footer>
 
-      <div class="w3-black w3-center w3-padding-24">
-        Powered by
-        <a
-          href="https://www.w3schools.com/w3css/default.asp"
-          title="W3.CSS"
-          target="_blank"
-          class="w3-hover-opacity"
-          >w3.css</a
-        >
+      <div class="black center padding-24">
+        <b>&lt;ProCode/><br />s2do</b>
       </div>
 
       <!-- End page content -->
