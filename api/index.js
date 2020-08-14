@@ -14,7 +14,9 @@ const authentication = require("./middleware/authentication");
 const enviarCorreo = require("./servicios/enviar_correo");
 const public_dir = express.static(path.join(__dirname, "../cliente"));
 
-const nodeCron = require('node-cron')
+const nodeCron = require('node-cron');
+const multer = require("multer");
+const { MulterError } = require("multer");
  
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
@@ -41,6 +43,16 @@ app.use(enviarCorreo)
 app.use(guardarInfoExtraParqueos);
 app.use(guardarTarjeta);
 
+const storage = multer.diskStorage({
+destination:path.join((__dirname,"../cliente/assets/imgs")),
+filename(req,file,cb){
+cb(null,file.originalname); // newdate().getTime()  + path.extname
+}
+})
+
+
+app.use(multer({storage}).single('image'))
+app.use(express.urlencoded({extended:false}))
 
 app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
