@@ -125,7 +125,7 @@ BODY {
 }
 
 .container {
-  background-color: rgba(61, 61, 61, 0.72);
+  background-color: rgba(61, 61, 61, 0.7);
 }
 
 #equipo {
@@ -136,6 +136,10 @@ BODY {
   background-color: rgba(61, 61, 61, 0.72);
 }
 
-#contact{
+#contact {
   background-color: rgba(255, 255, 255, 0.81);
+}
+
+.sidebar {
+  background-color: rgba(255, 255, 255, 0.79);
 }

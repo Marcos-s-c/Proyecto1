@@ -31,57 +31,58 @@
       opacity: 1;
     }
   </style>
-  <body class="light-grey content" style="max-width: 1600px;">
+  <body class="content light-grey" style="max-width: 1600px;">
     <!-- Sidebar/menu -->
-    <nav
-      class="sidebar bar-block white animate-left text-grey collapse top center"
-      style="z-index: 3; width: 300px; font-weight: bold;"
-      id="mySidebar"
-    >
-      <br />
-      <h3 class="padding-64 center">
-        <b>&lt;ProCode/><br />s2do</b>
-      </h3>
-      <a
-        href="javascript:void(0)"
+    <div class="sidemenu">
+      <nav
+        class="sidebar bar-block animate-left text-grey collapse top center"
+        style="z-index: 3; width: 300px; font-weight: bold;"
+        id="mySidebar"
+      >
+        <br />
+        <h3 class="padding-64 center text-black">
+          <b>&lt;ProCode/><br />s2do</b>
+        </h3>
+        <a
+          href="javascript:void(0)"
+          onclick="w3_close()"
+          class="bar-item button padding hide-large"
+          >CLOSE</a
+        >
+        <a href="#" onclick="w3_close()" class="bar-item button"
+          >Acerca de nosotros</a
+        >
+        <a href="#about" onclick="w3_close()" class="bar-item button"
+          >Nuestro equipo</a
+        >
+        <a href="#about" onclick="w3_close()" class="bar-item button"
+          >Arquitectura</a
+        >
+        <a href="#contact" onclick="w3_close()" class="bar-item button"
+          >Contactenos</a
+        >
+      </nav>
+
+      <!-- Top menu on small screens -->
+      <header class="container top hide-large white xlarge padding-16">
+        <span class="left padding">&lt;ProCode/>s2do</span>
+        <a
+          href="javascript:void(0)"
+          class="right button white"
+          onclick="w3_open()"
+          >☰</a
+        >
+      </header>
+
+      <!-- Overlay effect when opening sidebar on small screens -->
+      <div
+        class="overlay hide-large animate-opacity"
         onclick="w3_close()"
-        class="bar-item button padding hide-large"
-        >CLOSE</a
-      >
-      <a href="#" onclick="w3_close()" class="bar-item button"
-        >Acerca de nosotros</a
-      >
-      <a href="#about" onclick="w3_close()" class="bar-item button"
-        >Nuestro equipo</a
-      >
-      <a href="#about" onclick="w3_close()" class="bar-item button"
-        >Arquitectura</a
-      >
-      <a href="#contact" onclick="w3_close()" class="bar-item button"
-        >Contactenos</a
-      >
-    </nav>
-
-    <!-- Top menu on small screens -->
-    <header class="container top hide-large white xlarge padding-16">
-      <span class="left padding">&lt;ProCode/>s2do</span>
-      <a
-        href="javascript:void(0)"
-        class="right button white"
-        onclick="w3_open()"
-        >☰</a
-      >
-    </header>
-
-    <!-- Overlay effect when opening sidebar on small screens -->
-    <div
-      class="overlay hide-large animate-opacity"
-      onclick="w3_close()"
-      style="cursor: pointer;"
-      title="close side menu"
-      id="myOverlay"
-    ></div>
-
+        style="cursor: pointer;"
+        title="close side menu"
+        id="myOverlay"
+      ></div>
+    </div>
     <!-- !PAGE CONTENT! -->
     <div class="main" style="margin-left: 300px;">
       <!-- Push down content on small screens -->
@@ -530,7 +531,7 @@
       </div>
 
       <!-- Contact section -->
-      <div class="container  padding-32 padding-large" id="contact">
+      <div class="container padding-32 padding-large" id="contact">
         <div class="content" style="max-width: 600px;">
           <h1 class=""><b>Contactenos</b></h1>
           <br />
@@ -557,7 +558,6 @@
           </form>
         </div>
       </div>
-
 
       <div class="black center padding-24">
         <b>&lt;ProCode/><br />s2do</b>
