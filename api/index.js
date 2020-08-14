@@ -10,6 +10,7 @@ var listarSolicitudes = require("./servicios/listar_solicitudes");
 var denegarSolicitud = require("./servicios/denegar_solicitud_de_parqueo");
 var guardarUsuarios = require("./servicios/guardar_usuarios");
 var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
+var guardarEmpresa = require("./servicios/guardar_empresa");
 var guardarTarjeta = require("./servicios/registrar_tarjeta");
 const authentication = require("./middleware/authentication");
 const enviarCorreo = require("./servicios/enviar_correo");
@@ -41,6 +42,7 @@ app.use(denegarSolicitud);
 app.use(logOut);
 app.use(enviarCorreo);
 app.use(guardarInfoExtraParqueos);
+app.use(guardarEmpresa);
 app.use(guardarTarjeta);
 
 app.listen(4040, function () {
