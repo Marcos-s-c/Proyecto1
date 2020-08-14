@@ -51,7 +51,7 @@ function cargarDatos() {
 }
 
 function deny() {
-  Swal.fire({
+  /*Swal.fire({
     title: "¿Está seguro de que desea denegar la solicitud?",
     icon: "warning",
     showCancelButton: true,
@@ -62,11 +62,11 @@ function deny() {
     if (result.value) {
       Swal.fire("Denegada", "La solicitud ha sido denegada.", "success");
     }
-  });
+  });*/
 }
 
 function approve() {
-  Swal.fire({
+  /*Swal.fire({
     title: "¿Deseas aceptar la solicitud?",
     icon: "warning",
     showCancelButton: true,
@@ -77,5 +77,5 @@ function approve() {
     if (result.value) {
       Swal.fire("La solicitud ha sido aceptada.", "success");
     }
-  });
+  });*/
 }
