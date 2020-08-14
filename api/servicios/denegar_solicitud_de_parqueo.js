@@ -15,6 +15,8 @@ router.post("/solicitud_parqueo/denegar", function (req, res) {
   ).then(function () {
     console.log("Actualización realizada");
   });
+
+  res.json({ message: "Solicitud denegada" });
 });
 
 module.exports = router;

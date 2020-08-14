@@ -10,8 +10,9 @@ function cargarDatos() {
     })
     .then(function (json) {
       console.log(json);
+      var requestsTable = document.querySelector("#requestsTable tbody");
+      requestsTable.innerHTML = "";
       for (var i = 0; i < json.length; i++) {
-        var requestsTable = document.querySelector("#requestsTable tbody");
         var row = document.createElement("tr");
 
         var tableData1 = document.createElement("td");
@@ -65,8 +66,10 @@ function deny(correo) {
 
   fetch("/solicitud_parqueo/denegar", request)
     .then(function (result) {
-      console.log(result);
-      window.location.reload();
+      return result.json();
+    })
+    .then(function (result) {
+      cargarDatos();
     })
     .catch(function (error) {
       console.log(error);
