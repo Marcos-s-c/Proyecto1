@@ -49,3 +49,33 @@ function cargarDatos() {
       }
     });
 }
+
+function deny() {
+  Swal.fire({
+    title: "¿Está seguro de que desea denegar la solicitud?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Denegar",
+  }).then((result) => {
+    if (result.value) {
+      Swal.fire("Denegada", "La solicitud ha sido denegada.", "success");
+    }
+  });
+}
+
+function approve() {
+  Swal.fire({
+    title: "¿Deseas aceptar la solicitud?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Aceptar",
+  }).then((result) => {
+    if (result.value) {
+      Swal.fire("La solicitud ha sido aceptada.", "success");
+    }
+  });
+}
