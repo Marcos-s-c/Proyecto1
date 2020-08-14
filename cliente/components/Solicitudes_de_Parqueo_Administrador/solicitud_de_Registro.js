@@ -50,7 +50,28 @@ function cargarDatos() {
     });
 }
 
-function deny() {
+function deny(correo) {
+  var value = {
+    email: correo,
+  };
+
+  var request = {
+    method: "POST",
+    body: JSON.stringify(value),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch("/solicitud_parqueo/denegar", request)
+    .then(function (result) {
+      console.log(result);
+      window.location.reload();
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
   /*Swal.fire({
     title: "¿Está seguro de que desea denegar la solicitud?",
     icon: "warning",

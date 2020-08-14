@@ -5,5 +5,16 @@ var mongoose = require("mongoose");
 var ParkingRequest = require("../modelo/modelo_solicitud_parqueo");
 
 router.post("/solicitud_parqueo/denegar", function (req, res) {
-  console.log(req.body);
+  //Update
+
+  ParkingRequest.updateOne(
+    { email: req.body.email },
+    {
+      $set: { state: "Denegada" },
+    }
+  ).then(function () {
+    console.log("Actualización realizada");
+  });
 });
+
+module.exports = router;
