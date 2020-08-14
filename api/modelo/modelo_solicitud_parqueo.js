@@ -11,7 +11,7 @@ let solicitudSchema = new mongoose.Schema({
   provincia: { type: String, required: true },
   canton: { type: String, required: true },
   distrito: { type: String, required: true },
-  shoppingCenter: { type: String, required: true },
+  shoppingCenter: { type: String, required: false },
   address: { type: String, unique: false, required: false },
 });
 
