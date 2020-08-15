@@ -6,21 +6,20 @@ const html = '<img src="/cliente/assets/img/logo.png>'
 
 async function sendUserInfo() {
 
-  const html = '<img src="/cliente/assets/img/logo.png>'
+  const html = '<img src="/cliente/assets/img/logo.png>"'
   var data = {
     name: document.getElementById('userName').value,
     userID: document.getElementById('userID').value,
     birthDate: document.getElementById('birthDate').value,
     phoneNumber: document.getElementById('phoneNumber').value,
     password: Math.random().toString(36).slice(-8),
-    email: document.getElementById('email').value
+    email: document.getElementById('email').value,
+    rol: "cliente"
   };
   try {
-    fetch('/personas', 
-    { method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' } })
-    //alert(result + "")
-    sendEmail(data.email, "Confirmación de correo", html);
-    window.location.href = "/"
+    await fetch('/personas', { method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' } })
+    await sendEmail(data, "Confirmación de correo");
+    //window.location.href = "/"
 
   } catch (e) {
     console.log(e + "")
@@ -51,7 +50,7 @@ function validateBlanks(obj) {
 }
 
 function clearInputFields() {
-  document.getElementById("login-form").reset();
+  document.getElementById("register-form").reset();
 }
 
 function init() {

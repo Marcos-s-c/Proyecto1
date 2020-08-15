@@ -1,6 +1,34 @@
 <html>
     <head>
-        <link type="text/css" rel="stylesheet" href="estilo.css">
+        <style>
+            body{
+    margin: 0;
+    text-decoration: none;
+    width: 60%;
+}
+
+table{
+    width: 90%;
+    border: 1px solid black;
+    margin: auto;
+}
+tr{
+    border-collapse: collapse;
+    border: 1px solid green;
+}
+
+.logo img{
+    width: 200px;
+    margin: auto;
+}
+
+.body-mail{
+    width: 20%;
+	background-color: red;
+}
+
+
+        </style>
     </head>
     <body>
         <table>
@@ -20,11 +48,21 @@
             </tr>
             <tr>
                 <td>
-                    <p>Hola <spam id="nombre">nombre</spam>, 
+                    <p>Hola <spam id="nombre">{{name}}</spam>, 
                     <br/>
-                    Gracias por registrarte a MySpot. Estas a un solo paso de abrir tu cuenta, solo haz click en el siguiente enlace para confirmar tu correo electrónico.
-                 </p>
-                 <br/>
+                    Gracias por registrarte a MySpot. Estas a un solo paso de abrir tu cuenta.
+                    <br/>
+                    Estos son tus credenciales para iniciar sesión:
+                    <br/>
+                    Correo: {{email}}
+                    <br/>
+                    Contraseña: {{password}} 
+                    <br/>
+                    La contraseña es temporal, por lo que la deberás cambiar en el momento de iniciar sesión.
+                    <br/>
+                    Haz click en el siguiente enlace para confirmar tu correo electrónico.
+                    </p>
+                    <br/>
                  <button type="button"><a href="localhost:4040/cliente/index.html"></a>Confirmar correo</button>
                 </td>
             </tr>

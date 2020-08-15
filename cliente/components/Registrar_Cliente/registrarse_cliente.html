@@ -32,62 +32,61 @@
 
   </head>
   <body>
-    <header>
-
-    </header>
+    <div class="form-header">
       <div class="logo">
         <img src="../../assets/img/logo.png" alt="Logo" />
       </div>
-      <form id="login-form" action="#">
-        <h1>Registrar cuenta</h1>
-          <input
-            type="text"
-            id="userName"
-            name="register"
-            placeholder="Nombre completo"
-            class="regular-input"
-          />
-          <input
+    </div>
+    <form id="register-form" action="#">
+      <h1>Registrar cuenta</h1>
+        <input
           type="text"
-          id="userID"
+          id="userName"
           name="register"
-          placeholder="Cédula"
-          class="regular-input"
-        /><br /><br />
-        <div class="birthDate-box">
-          <label>Fecha de nacimiento</label>
-          <input
-          type="date"
-          id="birthDate"
-          name="register"
-          placeholder="Fecha de nacimiento"
-          class="regular-input"
-          />
-          <div class="error-msg hidden" id="error-msg">
-            <p>Debe ser mayor de edad</p>
-          </div>
-        </div>
-          <input
-          type="number"
-          id="phoneNumber"
-          name="register"
-          placeholder="Numero de teléfono"
-          class="regular-input"
-          />
-          <input
-          type="email"
-          id="email"
-          name="register"
-          placeholder="Correo electrónico"
+          placeholder="Nombre completo"
           class="regular-input"
         />
-        <button type="button" onclick="sendUserInfo()" class="login-button">
-            Registrarse <span id="right"></span></i>
-        </button>
-          <p class="termsNcond">Al hacer clic en "Registrarse", aceptas las condiciones de uso de (nombre de empresa) y reconoces haber leído la política de privacidad.</p>
-          <!--<p><a href="../registrar_empresa/registrar_empresa.html">Registrar empresa</a></p>-->
+        <input
+        type="text"
+        id="userID"
+        name="register"
+        placeholder="Cédula"
+        class="regular-input"
+      /><br /><br />
+      <div class="birthDate-box">
+        <label>Fecha de nacimiento</label>
+        <input
+        type="date"
+        id="birthDate"
+        name="register"
+        placeholder="Fecha de nacimiento"
+        class="regular-input"
+        />
+        <div class="error-msg hidden" id="error-msg">
+          <p>Debe ser mayor de edad</p>
         </div>
-      </form>
+      </div>
+        <input
+        type="number"
+        id="phoneNumber"
+        name="register"
+        placeholder="Numero de teléfono"
+        class="regular-input"
+        />
+        <input
+        type="email"
+        id="email"
+        name="register"
+        placeholder="Correo electrónico"
+        class="regular-input"
+      />
+      <button type="button" onclick="sendUserInfo()" class="login-button">
+          Registrarse <span id="right"></span></i>
+      </button>
+        <p class="termsNcond">Al hacer clic en "Registrarse", aceptas las condiciones de uso de (nombre de empresa) y reconoces haber leído la política de privacidad.</p>
+        <!--<p><a href="../registrar_empresa/registrar_empresa.html">Registrar empresa</a></p>-->
+      </div>
+    </form>
 
   <script src="registrarse_cliente.js"></script>
   <script src="../../assets/js/enviar_correo.js"></script>

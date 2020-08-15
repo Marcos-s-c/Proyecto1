@@ -43,6 +43,9 @@ const userSchema = mongoose.Schema({
     required: false,
     minLength: 4,
   },
+  rol:  {
+    type: String, 
+  },
   //arreglo de tokens para cada sesion que mantenga abierta
   tokens: [
     {

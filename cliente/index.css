@@ -1,60 +1,30 @@
+a, p{
+  margin: 0;
+}
 a{
-  color: #82B0B0;
+  color: black
 }
 
-.login-container {
-  text-align: center;
-  padding-left: 35%;
-  padding-right: 35%;
-}
-.login-container h1 {
-  text-align: left;
-  font-weight: normal;
-}
-
-.access-container {
-  width: 100%;
-}
 .fa-arrow-right {
   color: white !important;
   padding-left: 75%;
 }
-
-.login-container input {
-  padding-bottom: 1%;
-  width: 99%;
-  box-sizing: border-box;
-  font-size: 15px;
-  outline: none;
+.bottom-text{
+  overflow: auto;
+  color: gray;
 }
-
-.email-input,
-.password-input {
-  padding-top: 2%;
+.bottom-text a{
+  color: #216c7a;
 }
-
-.login-flex-container {
-  display: flex;
+.bottom-text a:hover{
+  color: #0db1b1;
 }
-
-.logo-login img {
-  width: 30%;
-}
-
-.register {
+.sign-up{
+  float: left;
   width: 50%;
-  text-align: left;
 }
-.lost-password {
-  padding-left: 20%;
+.lost-password{
+  float: left;
+  width: 50%;
+  text-align: end;
 }
-
-button {
-  width: 100%;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  font-size: 16px;
-  display: inline-block;
-
-}
-

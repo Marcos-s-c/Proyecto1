@@ -15,6 +15,7 @@ var guardarTarjeta = require("./servicios/registrar_tarjeta");
 const authentication = require("./middleware/authentication");
 const enviarCorreo = require("./servicios/enviar_correo");
 const public_dir = express.static(path.join(__dirname, "../cliente"));
+const cookieParser = require("cookie-parser");
 
 const nodeCron = require("node-cron");
 
@@ -31,11 +32,14 @@ mongoose
   });
 
 app.use(express.json());
-app.use(public_dir);
+
+
+app.use(logIn);
+
 
 app.use(guardarUsuarios);
 app.use(listarUsuarios);
-app.use(logIn);
+
 app.use(guardarSolicitudes);
 app.use(listarSolicitudes);
 app.use(denegarSolicitud);
@@ -44,6 +48,10 @@ app.use(enviarCorreo);
 app.use(guardarInfoExtraParqueos);
 app.use(guardarEmpresa);
 app.use(guardarTarjeta);
+
+//app.use(cookieParser);
+app.use(public_dir);
+
 
 app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
