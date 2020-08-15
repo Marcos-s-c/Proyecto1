@@ -1,20 +1,24 @@
-
-function sendEmail(userEmail, subj, htmlDir){
+async function sendEmail(user, subj){
 
     var body = {
         from: "myspotcr@gmail.com",
-        to: userEmail,
+        to: user.email,
+        email : user.email,
         subject: subj,
-        html : htmlDir
+        name: user.name,
+        password: user.password
     }
-    fetch("/enviarCorreo" ,{
-        method: 'POST',
-        body: JSON.stringify(body), 
-        headers:{'Content-Type': 'application/json'}
-    })
-    .then(function(req, res){
-        console.log(req);
-        console.log(res);
-    })
+    try{
+        const response = await fetch("/enviarCorreo" ,{
+            method: 'POST',
+            body: JSON.stringify(body), 
+            headers:{'Content-Type': 'application/json'}
+        })
+        console.log(response)
+    }
+    catch(error){
+        console.log(error + "" )
+    }
+
 }
 

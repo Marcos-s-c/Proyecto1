@@ -27,7 +27,7 @@ a, p, input {
 
 /* font size */
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 h2 {
   font-size: 2rem;
@@ -81,6 +81,8 @@ div {
 
 form{
   width: 30%;
+  margin: auto;
+  padding: 3% 0%;
 }
 input{
   width: 100%;
@@ -96,7 +98,7 @@ button {
   background-color: #216c7a;
   outline: none;
   text-align: center;
-  margin: 5% 0%;
+  margin: 5% 0% 0% 0%;
 }
 
 button a {
@@ -111,8 +113,12 @@ button:hover {
   font-size: 12px;
 }
 .logo{
-  width: 50%;
-  margin: auto;
+  width: 100%;
+  text-align: center;
+  padding: 1% 0%;
+}
+.logo img{
+  width: 10%;
 }
 
 /*HEADER*/
@@ -180,6 +186,13 @@ header .menu a {
 header .sub- {
   width: 80%;
 }
+/****** FORM HEADER **********/
+.form-header{
+  width: 100%;
+  background-color: #216c7a;
+}
+
+/***** DROPDOWN MENU **********/
 .dropbtn {
   color: whitesmoke;
   padding: 1%;

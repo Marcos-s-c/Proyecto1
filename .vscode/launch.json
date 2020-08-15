@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:4040/components/Registrar_Cliente/registrarse_cliente.html",
+            "url": "http://localhost:4040",
             "webRoot": "${workspaceFolder}"
         }
     ]
