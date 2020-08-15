@@ -30,7 +30,7 @@ function validar() {
         fechaContratacion: document.getElementById("fecha-de-contratacion")
           .value,
       };
-      fetch("/empresa", {
+      fetch("/empresas", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
