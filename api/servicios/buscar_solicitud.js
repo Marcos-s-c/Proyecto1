@@ -4,6 +4,8 @@ var mongoose = require("mongoose");
 
 var ParkingRequest = require("../modelo/modelo_solicitud_parqueo");
 
-router.get("/solicitud_parqueo/buscar", function (req, res) {});
+router.get("/solicitud_parqueo/buscar/", function (req, res) {
+  res.json("Cualquier cosa");
+});
 
 module.exports = router;
