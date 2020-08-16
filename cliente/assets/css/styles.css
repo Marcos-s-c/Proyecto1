@@ -383,6 +383,10 @@ td i {
   color: #216c7a;
 }
 
+.search select:focus {
+  outline: none !important;
+}
+
 .search {
   text-align: left;
   width: 50%;
