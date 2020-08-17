@@ -31,17 +31,20 @@ const userSchema = mongoose.Schema({
       }
     },
   },
-  phoneNumber: Number,
-  level:{
-  type:String,
-  require: true,
-  }, 
-  parkingName: String,
-  parkingLocation: String,
+  birthDate:{
+    type: Date,
+    required: true
+  },
+  phoneNumber:{
+    type: Number
+  },
   password: {
     type: String,
     required: false,
     minLength: 4,
+  },
+  rol:  {
+    type: String, 
   },
   //arreglo de tokens para cada sesion que mantenga abierta
   tokens: [

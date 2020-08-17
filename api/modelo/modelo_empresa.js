@@ -8,7 +8,7 @@ var modeloEmpresa = mongoose.Schema({
     telefono: Number,
     correo: String,
     puestoLaboral: String,
-    fechaContrata: Date,
+    fechaContratacion: Date,
 });
 
 

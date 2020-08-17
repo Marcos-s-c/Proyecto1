@@ -13,18 +13,15 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-/* font button */
-body button {
-  font-family: "Open Sans", sans-serif;
-}
-
 /* revisar y borrar si es necesario */
 a {
   color: white;
 }
 
 /* font size */
-a, p, input {
+a,
+p,
+input {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   text-decoration: none;
@@ -32,7 +29,7 @@ a, p, input {
 
 /* font size */
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 h2 {
   font-size: 2rem;
@@ -65,25 +62,6 @@ div {
   box-sizing: border-box;
 }
 
-/* button color */
-button {
-  border-radius: 3px;
-  border-style: none;
-  font-size: 16px;
-  font-family: "Open Sans", sans-serif;
-  padding: 3%;
-  background-color: #82b0b0;
-  outline: none;
-}
-
-button a {
-  color: white;
-}
-
-button:hover {
-  background-color: #234f58;
-}
-
 .hidden {
   visibility: hidden;
 }
@@ -99,6 +77,50 @@ button:hover {
 
 .outer-container {
   flex-grow: 1;
+}
+
+/** FORMS **/
+
+form {
+  width: 30%;
+  margin: auto;
+  padding: 3% 0%;
+}
+input {
+  width: 100%;
+  padding: 2.5% 0%;
+  margin: 1% 0%;
+}
+button {
+  border-radius: 3px;
+  border-style: none;
+  font-size: 16px;
+  width: 100%;
+  padding: 3% 0%;
+  background-color: #216c7a;
+  outline: none;
+  text-align: center;
+  margin: 5% 0% 0% 0%;
+}
+
+button a {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+button:hover {
+  background-color: #0db1b1;
+}
+.termsNcond {
+  font-size: 12px;
+}
+.logo {
+  width: 100%;
+  text-align: center;
+  padding: 1% 0%;
+}
+.logo img {
+  width: 10%;
 }
 
 /*HEADER*/
@@ -166,6 +188,13 @@ header .menu a {
 header .sub- {
   width: 80%;
 }
+/****** FORM HEADER **********/
+.form-header {
+  width: 100%;
+  background-color: #216c7a;
+}
+
+/***** DROPDOWN MENU **********/
 .dropbtn {
   color: whitesmoke;
   padding: 1%;
@@ -273,15 +302,11 @@ header .sub- {
 }
 
 .side-menu li:hover a {
-  border-bottom: 5px sollid #82b0b0;
+  border-bottom: 5px sollid #216c7a;
 }
 
 #check:checked ~ section {
   margin-left: 250px;
-}
-
-.active {
-  border-bottom: 3px sollid #82b0b0;
 }
 
 /* SIDE MENU END */
@@ -291,12 +316,13 @@ header .sub- {
 /* table head h1 */
 .title-table {
   text-align: center;
-  color: #82b0b0;
+  color: #216c7a;
+  padding-top: 12px;
 }
 
 .title-report {
   text-align: center;
-  color: #82b0b0;
+  color: #216c7a;
 }
 .table th h1 {
   font-weight: bold;
@@ -323,7 +349,7 @@ header .sub- {
 }
 /* table head color */
 .table th {
-  background-color: #82b0b0;
+  background-color: #216c7a;
 }
 /* table content color */
 .table td {
@@ -346,24 +372,48 @@ td i {
 /* table search input */
 
 .search input {
-  padding: 1%;
+  padding: 1% !important;
   font-size: 16px;
   border: none;
   outline: none;
-  float: left;
+  margin-top: 8px;
+  outline: none;
+  width: 18%;
+  padding-left: 3%;
+  color: #216c7a;
 }
+
+.search select:focus {
+  outline: none !important;
+}
+
+.search {
+  text-align: left;
+  width: 50%;
+}
+
 /* table search button */
 .search button {
-  float: left;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 24px;
+  padding: 6px 10px !important;
+  margin-top: 8px !important;
+  margin-right: 16px !important;
   border: none;
   cursor: pointer;
   outline: none;
   background-color: transparent;
-  color: #82b0b0;
+  color: #216c7a;
+  width: min-content !important;
+}
+
+.search p {
+  color: #216c7a !important;
+}
+
+.searchSelect {
+  border-color: #7db3bd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #216c7a !important;
 }
 
 /*Bloque de agregar*/
@@ -385,7 +435,18 @@ td i {
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
+}
+.regular-input {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
   border-bottom: 1px solid grey;
+}
+.red-input {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid #b30000;
 }
 
 /* Contenedor páginas de acceso*/
@@ -469,7 +530,7 @@ third-row {
 }
 .add-email a:hover,
 .add-email .fa-plus:hover {
-  color: #234f58;
+  color: #0db1b1;
 }
 .user-info-container form {
   padding: 5% 0%;
@@ -489,11 +550,11 @@ third-row {
 .user-info-container button {
   float: right;
   margin-top: 20%;
-  background-color: #82b0b0;
+  background-color: #216c7a;
   margin-right: 30%;
 }
 .user-info-container button:hover {
-  background-color: #234f58;
+  background-color: #0db1b1;
 }
 .user-info-container form .fa-pencil-alt {
   font-size: 10px;
@@ -565,11 +626,11 @@ footer p {
 }
 
 input:checked + .slider {
-  background-color: #82b0b0;
+  background-color: #216c7a;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #82b0b0;
+  box-shadow: 0 0 1px #216c7a;
 }
 
 input:checked + .slider:before {
@@ -603,7 +664,7 @@ input:checked + .slider:before {
   border: none;
   border: solid;
   border-width: thin;
-  border-color: #82b0b0;
+  border-color: #216c7a;
   background-color: #f1f3f4;
 }
 

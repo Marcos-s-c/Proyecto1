@@ -1,75 +1,28 @@
-.login-container {
 
-    padding-left: 35%;
-    padding-right: 35%;
-  }
-  .login-container h1, p {
-    text-align: left;
-    font-weight: normal;
-  }
-  
-  .login-container button {
-    width: 100%;
-    text-align: center;
-    padding-left: 3%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    font-size: 18px;
-  
-  }
-  
   .fa-arrow-right {
     color: white !important;
     padding-left: 75%;
   }
-  
-  .login-container input {
-    padding-bottom: 1%;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 15px;
-    outline: none;
-  }
-
-
- 
-  .login-flex-container {
-    display: flex;
-  }
-  
-  .logo img {
-    width: 30%;
-  }
-  
-  .logo{
-    text-align: center;
-  }
-  
-
-  
-.login-button{
-  color: white;
-}
-  
-  .form input{
-    padding-top: 2%;
-  }
-
   /*---- LINK REGISTRAR EMPRESA */
-  a {
-    text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 2px;
-    transition: background-size .3s;
-}
 
-a:hover, a:focus {
-    background-size: 100% 2px;
-    color: #234f58 ;
+.birthDate-box{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
 }
-
-.register a{
-  color: #82b0b0;
+.birthDate-box input{
+  width: 30%;
+  border-style: none;
+}
+.birthDate-box p{
+  color: red;
+  font-size: 12px;
+}
+.hidden{
+  visibility: hidden;
+}
+.visible{
+  visibility: visible;
 }

@@ -6,31 +6,18 @@ var empleado = require("../modelo/modelo_empleado");
 
 //guarda usuarios
 router.post("/personas", async (req, res) => {
+
+  console.log(req.body)
   const usuario = new User(req.body);
   try {
     await usuario.save();
     //const token = await usuario.generarTokenDeAutenticacion();
     res.status(201).send({ usuario });
   } catch (error) {
+    console.log(error)
     res.status(400).send(error);
   }
 });
 
-router.post("/empleados", function (req, res) {
-  let GuardarUsuario = new empleado({
-    _id: new mongoose.Types.ObjectId(),
-    userID: req.body.userID,
-    puestoLaboral: req.body.puestoLaboral,
-    fechaContratacion: req.body.fechaContratacion,
-  });
-
-  GuardarUsuario.save()
-    .then(function (resultado) {
-      res.json(resultado);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-});
 
 module.exports = router;
