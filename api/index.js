@@ -14,6 +14,7 @@ var guardarUsuarios = require("./servicios/guardar_usuarios");
 var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
 var guardarEmpresa = require("./servicios/guardar_empresa");
 var guardarTarjeta = require("./servicios/registrar_tarjeta");
+var listarTarjetas = require("./servicios/listar_tarjetas")
 const authentication = require("./middleware/authentication");
 const enviarCorreo = require("./servicios/enviar_correo");
 const public_dir = express.static(path.join(__dirname, "../cliente"));
@@ -52,6 +53,8 @@ app.use(enviarCorreo);
 app.use(guardarInfoExtraParqueos);
 app.use(guardarEmpresa);
 app.use(guardarTarjeta);
+app.use(listarTarjetas);
+
 
 //app.use(cookieParser);
 app.use(public_dir);

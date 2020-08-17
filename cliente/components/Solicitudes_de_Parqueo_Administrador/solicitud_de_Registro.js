@@ -18,9 +18,10 @@ function cargarDatos() {
 
         var tableData1 = document.createElement("td");
         tableData1.innerHTML = json[i].state;
-        var tableData2 = document.createElement("td");
 
+        var tableData2 = document.createElement("td");
         tableData2.innerHTML = json[i].parkingName;
+
         var tableData3 = document.createElement("td");
         tableData3.innerHTML =
           '<i onclick="approve(' +

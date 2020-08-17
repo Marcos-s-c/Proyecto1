@@ -19,7 +19,9 @@ a {
 }
 
 /* font size */
-a, p, input {
+a,
+p,
+input {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   text-decoration: none;
@@ -79,12 +81,12 @@ div {
 
 /** FORMS **/
 
-form{
+form {
   width: 30%;
   margin: auto;
   padding: 3% 0%;
 }
-input{
+input {
   width: 100%;
   padding: 2.5% 0%;
   margin: 1% 0%;
@@ -112,12 +114,12 @@ button:hover {
 .termsNcond {
   font-size: 12px;
 }
-.logo{
+.logo {
   width: 100%;
   text-align: center;
   padding: 1% 0%;
 }
-.logo img{
+.logo img {
   width: 10%;
 }
 
@@ -188,7 +190,7 @@ header .sub- {
   width: 80%;
 }
 /****** FORM HEADER **********/
-.form-header{
+.form-header {
   width: 100%;
   background-color: #216c7a;
 }
@@ -316,6 +318,7 @@ header .sub- {
 .title-table {
   text-align: center;
   color: #216c7a;
+  padding-top: 12px;
 }
 
 .title-report {
@@ -370,24 +373,48 @@ td i {
 /* table search input */
 
 .search input {
-  padding: 1%;
+  padding: 1% !important;
   font-size: 16px;
   border: none;
   outline: none;
-  float: left;
+  margin-top: 8px;
+  outline: none;
+  width: 18%;
+  padding-left: 3%;
+  color: #216c7a;
 }
+
+.search select:focus {
+  outline: none !important;
+}
+
+.search {
+  text-align: left;
+  width: 50%;
+}
+
 /* table search button */
 .search button {
-  float: left;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 24px;
+  padding: 6px 10px !important;
+  margin-top: 8px !important;
+  margin-right: 16px !important;
   border: none;
   cursor: pointer;
   outline: none;
   background-color: transparent;
   color: #216c7a;
+  width: min-content !important;
+}
+
+.search p {
+  color: #216c7a !important;
+}
+
+.searchSelect {
+  border-color: #7db3bd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #216c7a !important;
 }
 
 /*Bloque de agregar*/
@@ -410,13 +437,13 @@ td i {
   border-left: 0px;
   border-right: 0px;
 }
-.regular-input{
+.regular-input {
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
   border-bottom: 1px solid grey;
 }
-.red-input{
+.red-input {
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;

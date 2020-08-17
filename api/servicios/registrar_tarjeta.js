@@ -4,10 +4,9 @@ var mongoose = require("mongoose");
 
 var tarjeta = require("../modelo/modelo_tarjeta");
 
-router.post("/guardar_tarjeta/guardar", function (req, res) {
+router.post("/tarjetas", function (req, res) {
   console.log("llegó");
   var saveTarjeta = new tarjeta({
-    id: req.body.id,
     numberCard: req.body.numberCard,
     nameCard: req.body.nameCard,
     monthExpiration: req.body.monthExpiration,
@@ -15,7 +14,7 @@ router.post("/guardar_tarjeta/guardar", function (req, res) {
     ccv: req.body.ccv,
   });
 
-  SaveRequests.save()
+  saveTarjeta.save()
     .then(function (result) {
       res.json(result);
       console.log("Datos guardados");
