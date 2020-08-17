@@ -11,6 +11,7 @@ var denegarSolicitud = require("./servicios/denegar_solicitud_de_parqueo");
 var guardarUsuarios = require("./servicios/guardar_usuarios");
 var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
 var guardarTarjeta = require("./servicios/registrar_tarjeta");
+var listarTarjetas = require("./servicios/listar_tarjetas")
 const authentication = require("./middleware/authentication");
 const enviarCorreo = require("./servicios/enviar_correo");
 const public_dir = express.static(path.join(__dirname, "../cliente"));
@@ -44,6 +45,8 @@ app.use(logOut);
 app.use(enviarCorreo);
 app.use(guardarInfoExtraParqueos);
 app.use(guardarTarjeta);
+app.use(listarTarjetas);
+
 
 const storage = multer.diskStorage({
 destination:path.join((__dirname,"../cliente/assets/imgs")),
