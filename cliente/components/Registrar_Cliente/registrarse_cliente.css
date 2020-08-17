@@ -26,3 +26,8 @@
 .visible{
   visibility: visible;
 }
+.userId-type{
+  width: 100%;
+  padding: 2.5% 0%;
+  margin: 1% 0%;
+}

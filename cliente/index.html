@@ -33,45 +33,51 @@
     
   </head>
   <body">
-
-    <!-- main -->
     <div class="form-header">
       <div class="logo">
         <img src="../../assets/img/logo.png" alt="Logo" />
       </div>
     </div>
-    <form id="login-form" action="#">
+    <main>
       <h1>Iniciar Sesión</h1>
-        <input
-          type="text"
-          id="email"
-          name="login"
-          placeholder="Email"
-          class="input-bottom-border-only"
-        />
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Contraseña"
-          class="input-bottom-border-only"
-        />
-      <button type="button" class="login-button" id="login-button" onclick="logInValidation()">
-        SIGUIENTE <span id="right"><i class="fas fa-arrow-right"></span></i>
-      </button>
-      <a href="components/prueba/prueba.html">htmls</a>
-      <div class="access-container">
-      </div>
-      <div class="bottom-text">
-        <div class="sign-up">
-          <p>¿No tienes una cuenta?</p> 
-          <a href="components/seleccion_usuarios/seleccion_usuarios.html">Regístrate</a>
-        </div>
-          <div class="lost-password">
-            <p><a href="../olvido_password/olvido_password.html">Olvide mi contraseña</a></p>
+      <select class="userType-list" id="userType-list">
+        <option disabled>Tipo de cuenta</option>
+        <option value="parqueo">Parqueo</option>
+        <option value="cliente">Cliente</option>
+        <option value="empresa">Empresa</option>
+      </select>
+      <form id="login-form" action="#">
+          <input
+            type="text"
+            id="email"
+            name="login"
+            placeholder="Email"
+            class="input-bottom-border-only"
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Contraseña"
+            class="input-bottom-border-only"
+          />
+        <button type="button" class="login-button" id="login-button" onclick="logInValidation()">
+          Siguiente <span id="right"><i class="fas fa-arrow-right"></span></i>
+        </button>
+        <div class="bottom-text">
+          <div class="sign-up">
+            <p>¿No tienes una cuenta?</p> 
+            <a href="components/seleccion_usuarios/seleccion_usuarios.html">Regístrate</a>
           </div>
-      </div>
-  </form>
+            <div class="lost-password">
+              <p><a href="../olvido_password/olvido_password.html">Olvide mi contraseña</a></p>
+            </div>
+        </div>
+    </form>
+
+    <a href="components/prueba/prueba.html">htmls</a>
+    </main>
+    
 
       <!-- Footer -->
     <script src="index.js"></script>

@@ -28,3 +28,24 @@ a{
   width: 50%;
   text-align: end;
 }
+main{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.userType-list{
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid lightgray;
+  padding: 1% 0%;
+  margin: 1% 0%;
+  width: 30%;
+
+}
+.userType-list option{
+  padding: 1% 0%;
+}
+.userType-list option:hover{
+  background-color: #0db1b1;
+}

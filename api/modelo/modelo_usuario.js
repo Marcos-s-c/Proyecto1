@@ -10,10 +10,6 @@ const userSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
-  lastName: {
-    type: String,
-    trim: true,
-  },
   userID: {
     type: Number,
     required: true,
@@ -41,7 +37,6 @@ const userSchema = mongoose.Schema({
   password: {
     type: String,
     required: false,
-    minLength: 4,
   },
   rol:  {
     type: String, 
