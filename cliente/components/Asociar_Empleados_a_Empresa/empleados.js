@@ -7,6 +7,8 @@ const ListarUsuarios = () => {
       "content-type": "application/json",
     },
   })
+
+  
     .then(function (data) {
       return data.json();
     })
