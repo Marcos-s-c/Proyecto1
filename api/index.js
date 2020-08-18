@@ -62,11 +62,8 @@ app.use(express.json());
   console.log("Servidor corriendo en el puerto:4040");
 });
 
-
-
 // problem aqui con el servidor
 // app.use(listarTarjetas);
-
 
 /*app.get('/',function(req,res){
 

@@ -141,8 +141,32 @@ function sendForm(){
         })
         document.getElementById("contenedor").innerHTML="";
         botonn.classList.toggle('active');
+
+    
+
+        var data = {
+            
+            numeroTarjeta:      document.getElementById('inputNumero'),
+            nombreTarjeta:      document.getElementById('inputNombre'),
+            mesSeleccionado:    document.getElementById('selectMes'),
+            yearSeleccionado:   document.getElementById('selectYear'),
+            firmaCCV:           document.getElementById('inputCCV')
+        }
+
+        console.log(data);
+
+        try{
+        fetch('/tarjetas/guardar',{
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {'Content-Type': 'aplication/json'}
+        })
+    }catch(error){
+        console.log(error)
+    }
               
 }
+
 
 
 
