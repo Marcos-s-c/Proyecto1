@@ -18,6 +18,8 @@ async function logInValidation() {
         return 'personas/login';
       case 'empresa':
         return 'empresas/login';
+      case 'admin':
+        return 'admin/login';
       default:
         return 'none'
     }
@@ -28,21 +30,22 @@ async function logInValidation() {
     if(response.status == 400){
       alert("credenciales incorrectos")
     }else{
-      
+      console.log(response);
       const jsonResp = await response.json();
-      console.log(jsonResp);
       localStorage.setItem("token",  jsonResp.token)
       document.cookie = 'token=' +  jsonResp.token
-  
-      if (jsonResp.empresa.rol === "cliente") {
+      console.log(jsonResp);
+      if (jsonResp.user.rol === "cliente") {
         console.log("cliente")
         window.location.href = './components/Buscar_Parqueo/buscar_parqueo.html';
-      } else if (jsonResp.empresa.rol === "empresa") {
+      } else if (jsonResp.user.rol === "empresa") {
         console.log("empresa")
         window.location.href = "./components/Listar_Empleados_de_Empresa/empleados.html";
-      } else if (jsonResp.empresa.rol === "parqueo") {
+      } else if (jsonResp.user.rol === "parqueo") {
         console.log("parqueo")
         window.location.href = "./components/Listar_Espacios_Parqueo/listarEspacios.html";
+      } else if(jsonResp.user.rol === "admin"){
+        window.location.href = "./components/Perfl_Administrador/ver_perfil_administrador.html";
       }
     }
   }

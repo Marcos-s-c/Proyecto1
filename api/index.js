@@ -68,18 +68,19 @@ app.use(express.json());
   console.log("Servidor corriendo en el puerto:4040");
 });
 
-nodeCron.schedule('* * * * *', async () => {
+/*nodeCron.schedule('* * * * *', async () => {
   console.log('running a task every minute');
   const resp = await fetch('http://localhost:4040/reservas/listar')
   const reservas = await resp.json();
-  for(var reserva in reservas){
+  console.log(new Date())
+  /*for(var reserva in reservas){
     let horaActual = date.toISOString();
     let horaReserva = reservas[reserva].date;
     console.log("1: " + horaActual);
     console.log("2: " + horaReserva);
-    /*if(horaActual == horaReserva){
+    if(horaActual == horaReserva){
       console.log("enviar correo")
-    }*/
+    }
   }
 
-});
+});*/

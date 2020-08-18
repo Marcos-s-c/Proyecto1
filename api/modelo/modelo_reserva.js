@@ -30,7 +30,6 @@ const reservation_schema  = mongoose.Schema({
     reservation_status: {
         type: Boolean
     }
-
 })
 
 const Reserva = mongoose.model("Reserva", reservation_schema, "Reservas");
