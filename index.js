@@ -8,13 +8,10 @@ var listarUsuarios = require("./servicios/listar_usuarios");
 var guardarSolicitudes = require("./servicios/guardar_solicitudes");
 var listarSolicitudes = require("./servicios/listar_solicitudes");
 var denegarSolicitud = require("./servicios/denegar_solicitud_de_parqueo");
-var aprobarSolicitud = require("./servicios/aprobar_solicitud");
-var buscarSolicitud = require("./servicios/buscar_solicitud");
 var guardarUsuarios = require("./servicios/guardar_usuarios");
 var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
 var guardarEmpresa = require("./servicios/guardar_empresa");
 var guardarTarjeta = require("./servicios/registrar_tarjeta");
-var listarTarjetas = require("./servicios/listar_tarjetas");
 const authentication = require("./middleware/authentication");
 const enviarCorreo = require("./servicios/enviar_correo");
 const public_dir = express.static(path.join(__dirname, "../cliente"));
@@ -36,7 +33,9 @@ mongoose
 
 app.use(express.json());
 
+
 app.use(logIn);
+
 
 app.use(guardarUsuarios);
 app.use(listarUsuarios);
@@ -44,19 +43,15 @@ app.use(listarUsuarios);
 app.use(guardarSolicitudes);
 app.use(listarSolicitudes);
 app.use(denegarSolicitud);
-app.use(aprobarSolicitud);
-app.use(buscarSolicitud);
 app.use(logOut);
 app.use(enviarCorreo);
 app.use(guardarInfoExtraParqueos);
 app.use(guardarEmpresa);
 app.use(guardarTarjeta);
 
-// problem aqui con el servidor
-// app.use(listarTarjetas);
-
 //app.use(cookieParser);
 app.use(public_dir);
+
 
 app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
