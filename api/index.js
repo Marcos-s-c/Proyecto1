@@ -5,6 +5,7 @@ var mongoose = require("mongoose");
 var logIn = require("./servicios/login");
 var logOut = require("./servicios/logout");
 var listarUsuarios = require("./servicios/listar_usuarios");
+var listarEmpresas = require("./servicios/listar_empresas");
 var guardarSolicitudes = require("./servicios/guardar_solicitudes");
 var listarSolicitudes = require("./servicios/listar_solicitudes");
 var denegarSolicitud = require("./servicios/denegar_solicitud_de_parqueo");
@@ -43,6 +44,7 @@ app.use(listarUsuarios);
 
 app.use(guardarSolicitudes);
 app.use(listarSolicitudes);
+app.use(listarEmpresas);
 app.use(denegarSolicitud);
 app.use(aprobarSolicitud);
 app.use(buscarSolicitud);
