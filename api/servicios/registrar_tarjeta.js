@@ -5,6 +5,7 @@ var mongoose = require("mongoose");
 var Tarjeta = require("../modelo/modelo_tarjeta");
 
 router.post("/tarjetas/guardar", function (req, res) {
+  console.log("alert");
   var guardarTarjeta = new Tarjeta({
     numeroTarjeta: req.body.numeroTarjeta,
     nombreTarjeta: req.body.nombreTarjeta,
@@ -12,6 +13,7 @@ router.post("/tarjetas/guardar", function (req, res) {
     yearSeleccionado: req.body.yearSeleccionado,
     firmaCCV: req.body.firmaCCV,
   });
+ 
 
   guardarTarjeta
     .save()

@@ -1,12 +1,12 @@
 "use strict";
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 
 var modeloTarjeta = mongoose.Schema({
-    inputNumero:    {type: String, required: true, unique: true},
-    inputNombre:    {type: String, required: true, unique: true},
-    selectMes:      {type: String, required: true, unique: true},
-    selectYear:     {type: String, required: true, unique: true},
-    inputCCV:       {type: String, required: true, unique: true}
+  numeroTarjeta: { type: String, required: true, unique: true },
+  nombreTarjeta: { type: String, required: true },
+  mesSeleccionado: { type: String, required: true },
+  yearSeleccionado: { type: String, required: true },
+  firmaCCV: { type: String, required: true },
 });
 
-module.exports = mongoose.model("Tarjeta", modeloTarjeta, "Tarjetas" );
+module.exports = mongoose.model("Tarjeta", modeloTarjeta, "Tarjetas");

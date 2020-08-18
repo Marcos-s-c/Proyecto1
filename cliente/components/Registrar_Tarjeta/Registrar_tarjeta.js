@@ -151,13 +151,19 @@ function sendForm() {
 
   console.log(data);
 
-  try {
-    fetch("/tarjetas/guardar", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "aplication/json" },
+  var request = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch("/tarjetas/guardar", request)
+    .then(function (data) {
+      console.log(data);
+    })
+    .catch(function (error) {
+      console.log(error);
     });
-  } catch (error) {
-    console.log(error);
-  }
 }

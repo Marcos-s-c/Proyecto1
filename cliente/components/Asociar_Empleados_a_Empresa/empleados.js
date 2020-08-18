@@ -12,7 +12,7 @@ const ListarUsuarios = () => {
     })
     .then(function (usuarios) {
       for (const usuario of usuarios) {
-        const { name, userID, email} = usuario;
+        const { name, userID, email } = usuario;
 
         tabla_empleados.innerHTML += `
                     <tr>
@@ -34,6 +34,9 @@ const ListarUsuarios = () => {
                       ></span>
                     </td>
                     </tr>
+
+
+                    
                     `;
       }
     })
@@ -99,6 +102,3 @@ function deleteIcon() {
     }
   });
 }
-
-
-
