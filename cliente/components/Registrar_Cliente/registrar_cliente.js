@@ -1,30 +1,40 @@
 
 var date = new Date();
 
-const html = '<img src="/cliente/assets/img/logo.png>'
+async function registerUser() {
 
-
-async function sendUserInfo() {
-
-  const html = '<img src="/cliente/assets/img/logo.png>"'
   var data = {
     name: document.getElementById('userName').value,
+    idType : document.getElementById('userId-type').value,
     userID: document.getElementById('userID').value,
     birthDate: document.getElementById('birthDate').value,
     phoneNumber: document.getElementById('phoneNumber').value,
     password: Math.random().toString(36).slice(-8),
     email: document.getElementById('email').value,
-    rol: "cliente"
+    rol: document.getElementById('userId-type').value
   };
   try {
-    await fetch('/personas', { method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' } })
-    await sendEmail(data, "Confirmación de correo");
-    //window.location.href = "/"
+    if(data.idType == 'fisica'){
 
-  } catch (e) {
+      await fetch('/personas', { 
+        method: 'POST', 
+        body: JSON.stringify(data), 
+        headers: { 'Content-Type': 'application/json' } })     
+      await sendEmail(data, "Confirmación de correo");
+      window.location.href = "/";
+      
+    }else{
+      await fetch('/empresas', {
+        method: 'POST', 
+        body: JSON.stringify(data), 
+        headers: { 'Content-Type': 'application/json' } })     
+      await sendEmail(data, "Confirmación de correo");  
+      window.location.href = "/";
+    }
+
+  }catch (e) {
     console.log(e + "")
   }
-
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -52,7 +62,6 @@ function validateBlanks(obj) {
 function clearInputFields() {
   document.getElementById("register-form").reset();
 }
-
 function init() {
   clearInputFields();
 }

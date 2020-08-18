@@ -16,3 +16,5 @@ router.get("/tarjetas", function (req, res) {
     })
 
 }); 
+
+module.exports = router;

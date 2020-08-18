@@ -3,26 +3,18 @@ var router = express.Router();
 var mongoose = require("mongoose");
 var Empresa = require("../modelo/modelo_empresa");
 
-router.post("/empresas", function (req, res) {
-  var post_nombre = req.body.nombre;
-  var post_carrera = req.body.carrera;
-  var post_edad = req.body.edad;
+router.post("/empresas", async (req, res) => {
 
-  var empresaGuardar = new Empresa({
-    _id: new mongoose.Types.ObjectId(),
-    nombre: post_nombre,
-    carrera: post_carrera,
-    edad: post_edad,
-  });
-
-  empresaGuardar.save()
-    .then(function (result) {
-      console.log("Empresa Guardada");
-      res.json(result);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
+  console.log(req.body)
+  const empresa = new Empresa(req.body);
+  try {
+    await empresa.save();
+    res.status(201).send({ empresa });
+  } catch (error) {
+    console.log(error)
+    res.status(400).send(error);
+  }
 });
+
 
 module.exports = router;

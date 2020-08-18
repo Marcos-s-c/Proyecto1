@@ -84,14 +84,13 @@ div {
 form {
   width: 30%;
   margin: auto;
-  padding: 3% 0%;
 }
-input {
+form input {
   width: 100%;
   padding: 2.5% 0%;
   margin: 1% 0%;
 }
-button {
+form button {
   border-radius: 3px;
   border-style: none;
   font-size: 16px;
@@ -103,12 +102,12 @@ button {
   margin: 5% 0% 0% 0%;
 }
 
-button a {
+form button a {
   color: white;
   font-family: "Open Sans", sans-serif;
 }
 
-button:hover {
+form button:hover {
   background-color: #0db1b1;
 }
 .termsNcond {
