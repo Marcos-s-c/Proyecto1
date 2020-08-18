@@ -74,8 +74,6 @@ app.use(express.json());
   
 });*/
 
-
-
 /*nodeCron.schedule('* * * * *', () => {
   console.log('running a task every minute');
 });*/
