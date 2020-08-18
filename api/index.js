@@ -74,9 +74,6 @@ app.use(express.json());
   
 });*/
 
-app.listen(4040, function () {
-  console.log("Servidor corriendo en el puerto:4040");
-});
 
 /*nodeCron.schedule('* * * * *', () => {
   console.log('running a task every minute');
