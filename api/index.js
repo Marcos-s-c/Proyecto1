@@ -15,12 +15,13 @@ var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
 var guardarEmpresa = require("./servicios/guardar_empresa");
 var guardarTarjeta = require("./servicios/registrar_tarjeta");
 var listarTarjetas = require("./servicios/listar_tarjetas")
-const authentication = require("./middleware/authentication");
+var loginEmpresa = require('./servicios/login_empresa');
 const enviarCorreo = require("./servicios/enviar_correo");
-const public_dir = express.static(path.join(__dirname, "../cliente"));
 const cookieParser = require("cookie-parser");
-
 const nodeCron = require("node-cron");
+const authentication = require("./middleware/authentication");
+
+const public_dir = express.static(path.join(__dirname, "../cliente"));
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
@@ -37,32 +38,40 @@ mongoose
 app.use(express.json());
 
 
-app.use(logIn);
+ app.use(logIn);
+ app.use(guardarUsuarios);
+ app.use(listarUsuarios);
+ app.use(guardarSolicitudes);
+ app.use(listarSolicitudes);
+ app.use(denegarSolicitud);
+ app.use(aprobarSolicitud);
+ app.use(buscarSolicitud);
+ app.use(logOut);
+ app.use(enviarCorreo);
+ app.use(guardarInfoExtraParqueos);
+ app.use(guardarEmpresa);
+ app.use(guardarTarjeta);
+ app.use(listarTarjetas);
+ app.use(loginEmpresa);
+ //app.use(authentication);
+ app.use(public_dir);
+ //app.use(cookieParser);
 
-
-app.use(guardarUsuarios);
-app.use(listarUsuarios);
-
-app.use(guardarSolicitudes);
-app.use(listarSolicitudes);
-app.use(denegarSolicitud);
-app.use(aprobarSolicitud);
-app.use(buscarSolicitud);
-app.use(logOut);
-app.use(enviarCorreo);
-app.use(guardarInfoExtraParqueos);
-app.use(guardarEmpresa);
-app.use(guardarTarjeta);
-app.use(listarTarjetas);
-
-
-//app.use(cookieParser);
-app.use(public_dir);
-
-
-app.listen(4040, function () {
+ app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
 });
+
+
+
+
+
+/*app.get('/',function(req,res){
+
+      res.sendFile(path.join(__dirname, "../cliente/index.html"));
+  
+});*/
+
+
 
 /*nodeCron.schedule('* * * * *', () => {
   console.log('running a task every minute');

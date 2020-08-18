@@ -16,7 +16,7 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="registrarse_cliente.css"
+      href="registrar_cliente.css"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
@@ -45,8 +45,9 @@
           name="register"
           placeholder="Nombre completo"
           class="regular-input"
+          required
         />
-        <select class="userId-type regular-input" id="userId-type">
+        <select class="userId-type regular-input" id="userId-type" required>
           <option disabled>Tipo de cédula</option>
           <option value="fisica">Física</option>
           <option value="juridica">Jurídica</option>
@@ -57,6 +58,7 @@
         name="register"
         placeholder="Cédula"
         class="regular-input"
+        required
         />
       <div class="birthDate-box">
         <label>Fecha de nacimiento</label>
@@ -66,6 +68,7 @@
         name="register"
         placeholder="Fecha de nacimiento"
         class="regular-input"
+        required
         />
         <div class="error-msg hidden" id="error-msg">
           <p>Debe ser mayor de edad</p>
@@ -77,6 +80,7 @@
         name="register"
         placeholder="Numero de teléfono"
         class="regular-input"
+        required
         />
         <input
         type="email"
@@ -84,8 +88,9 @@
         name="register"
         placeholder="Correo electrónico"
         class="regular-input"
+        required
       />
-      <button type="button" onclick="sendUserInfo()" class="login-button">
+      <button type="button" onclick="registerUser()" class="login-button">
           Registrarse <span id="right"></span></i>
       </button>
         <p class="termsNcond">Al hacer clic en "Registrarse", aceptas las condiciones de uso de (nombre de empresa) y reconoces haber leído la política de privacidad.</p>
@@ -93,7 +98,7 @@
       </div>
     </form>
 
-  <script src="registrarse_cliente.js"></script>
+  <script src="registrar_cliente.js"></script>
   <script src="../../assets/js/enviar_correo.js"></script>
   <!--<script src="../../assets/js/main.js"></script>-->
   </body>

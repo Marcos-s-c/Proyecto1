@@ -2,7 +2,6 @@ var mongoose = require("mongoose");
 const validator = require("validator");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const { text } = require("express");
 
 var companieSchema = mongoose.Schema({
     name: {
@@ -71,13 +70,13 @@ companieSchema.methods.generarTokenDeAutenticacion = async function () {
   
   //esta función busca el usuario segun el email y password recibido por parametros
   companieSchema.statics.findByCredentials = async (email, password) => {
-    const usuario = await Usuario.findOne({ email: email });
+    const usuario = await Empresa.findOne({ email: email });
+    console.log(usuario);
     const esValido = await bcrypt.compare(password, usuario.password);
-  
+    console.log(esValido);
     if (esValido == false) {
-      throw new Error("Crendeciales incorrectos, por favor intente de nuevo.");
+      throw new Error();
     }
-  
     return usuario;
   };
   

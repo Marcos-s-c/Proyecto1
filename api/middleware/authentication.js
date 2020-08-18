@@ -37,8 +37,7 @@ const authentication = async (req, res, next) => {
             next()
 
         }catch (error) {
-        // res.status(401).redirect('/')
-        res.status(401).send({ error: 'Por favor inicie sesion' })
+            res.status(401).send({ error: 'Por favor inicie sesion' })
      }
 }
 
