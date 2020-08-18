@@ -132,8 +132,6 @@ formulario.inputCCV.addEventListener('keyup', () => {
 
 function sendForm(){
     
-
-  
         Swal.fire({
             icon: 'success',
             title: 'Tarjeta Agregada',
@@ -143,8 +141,7 @@ function sendForm(){
         })
         document.getElementById("contenedor").innerHTML="";
         botonn.classList.toggle('active');
-        
-        
+              
 }
 
 

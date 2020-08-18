@@ -70,7 +70,7 @@
         >
       </li>
       <li>
-        <a href="../solicitud_pendiente/solicitud_pendiente.html"
+        <a href="../Listar_Tarjetas_Cliente/listar_tarjeta.html"
           ><i class="fas fa-link"></i>Metodo de pago</a
         >
       </li>
@@ -131,13 +131,13 @@
           </div>
 
           <!-- Formulario --->
-          <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+          <form action="/tarjetas/guardar" id="formulario-tarjeta" name="formulario-tarjeta" class="formulario-tarjeta">
             <div class="grupo">
-              
               
               <input
                 type="text"
                 id="inputNumero"
+                name="inputNumero"
                 placeholder="Número de la tarjeta"
                 maxlength="19"
                 autocomplete="off"
@@ -150,6 +150,7 @@
               <input
                 type="text"
                 id="inputNombre"
+                name="inputNombre"
                 placeholder="Nombre de la tarjeta"
                 maxlength="19"
                 autocomplete="off"
@@ -178,17 +179,17 @@
                 <input type="text" id="inputCCV" maxlength="3" />
               </div>
             </div>
-            <button
+            <input
               type="submit"
               id="btn-enviar"
               class="btn-enviar"
               onclick="javascript:sendForm();"
+              value="Enviar"
             >
-              Enviar
-            </button>
           </form>
         </div>
         <!-- fin div contenedor-->
+        <!-- -->
 
         <div class="botonn" id="botonn">
           <div class="button-container">
