@@ -2,27 +2,24 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 
-var tarjeta = require("../modelo/modelo_tarjeta");
+var Tarjeta = require("../modelo/modelo_tarjeta");
 
-router.post("/tarjetas", function (req, res) {
-  console.log("llegó");
-  var saveTarjeta = new tarjeta({
-    numberCard: req.body.numberCard,
-    nameCard: req.body.nameCard,
-    monthExpiration: req.body.monthExpiration,
-    yearExpiration: req.body.yearExpiration,
-    ccv: req.body.ccv,
+router.post("/tarjetas/guardar", function (req, res) {
+  var guardarTarjeta = new Tarjeta({
+    numeroTarjeta: req.body.inputNumero,
+    nombreTarjeta: req.body.inputNombre,
+    mesSeleccionado: req.body.selectMes,
+    yearSeleccionado: req.body.selectYear,
+    firmaCCV: req.body.inputCCV
   });
 
-  saveTarjeta.save()
-    .then(function (result) {
-      res.json(result);
-      console.log("Datos guardados");
+  guardarTarjeta.save()
+    .then(function (resultado) {
+      res.json(resultado);
     })
     .catch(function (error) {
       console.log(error);
     });
-  console.log("save");
 });
 
 module.exports = router;
