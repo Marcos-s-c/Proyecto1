@@ -5,6 +5,9 @@ var path = require("path");
 var app = express();
 var mongoose = require("mongoose");
 var logIn = require("./servicios/login");
+var loginEmpresa = require('./servicios/login_empresa');
+var loginParqueo = require('./servicios/login_parqueo');
+var loginAdmin = require('./servicios/login_admin');
 var logOut = require("./servicios/logout");
 var listarUsuarios = require("./servicios/listar_usuarios");
 var listarEmpresas = require("./servicios/listar_empresas");
@@ -18,7 +21,7 @@ var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
 var guardarEmpresa = require("./servicios/guardar_empresa");
 var guardarTarjeta = require("./servicios/registrar_tarjeta");
 var listarTarjetas = require("./servicios/listar_tarjetas")
-var loginEmpresa = require('./servicios/login_empresa');
+
 var crearReserva = require('./servicios/crear_reserva');
 var listarReservas = require('./servicios/listar_reservas');
 const enviarCorreo = require("./servicios/enviar_correo");
@@ -44,6 +47,10 @@ app.use(express.json());
 
 
  app.use(logIn);
+ app.use(loginParqueo);
+ app.use(loginEmpresa);
+ app.use(loginAdmin);
+ app.use(logOut);
  app.use(guardarUsuarios);
  app.use(listarUsuarios);
  app.use(guardarSolicitudes);
@@ -51,13 +58,11 @@ app.use(express.json());
  app.use(denegarSolicitud);
  app.use(aprobarSolicitud);
  app.use(buscarSolicitud);
- app.use(logOut);
  app.use(enviarCorreo);
  app.use(guardarInfoExtraParqueos);
  app.use(guardarEmpresa);
  app.use(guardarTarjeta);
  app.use(listarTarjetas);
- app.use(loginEmpresa);
  app.use(crearReserva);
  app.use(listarReservas);
  //app.use(authentication);
