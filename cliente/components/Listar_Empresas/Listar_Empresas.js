@@ -3,10 +3,6 @@ window.onload = function () {
 };
 
 function cargarDatos() {
-  var tabla = document.getElementById("table");
-
-
-
   fetch("http://localhost:4040/empresas/listar")
       .then(function (response) {
           return response.json();
@@ -36,12 +32,12 @@ function cargarDatos() {
 
           var tableData5 = document.createElement("td");
           tableData5.innerHTML =
-            '<i onclick="deny(' +
+            '<i onclick="deleteIcon(' +
             "'" +
             json[i].email +
             "'" +
             ')" class="far fa-trash-alt"></i>';
-         
+          
   
           
             
@@ -51,12 +47,29 @@ function cargarDatos() {
           row.appendChild(tableData4);
           row.appendChild(tableData5);
           requestsTable.appendChild(row);
+          
         }
+        
       });
 
-
-
 }
+
+function deleteIcon() {
+  Swal.fire({
+    title: "¿Está seguro de que desea eliminar?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Eliminar",
+  }).then((result) => {
+    if (result.value) {
+      Swal.fire("Eliminado", "La empresa ha sido eliminado.", "success");
+    }
+  });
+}
+
+
 
 
 /*//Función para mostrar y ocultar los inputs de agregar
