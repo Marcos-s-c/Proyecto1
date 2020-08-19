@@ -5,7 +5,6 @@ async function logInValidation() {
     password: document.getElementById("password").value,
   };
 
-  console.log(data);
 
   //Este switch es para identificar el tipo de usario que intenta ingresar y asi saber en que coleccion buscar
 
@@ -30,10 +29,12 @@ async function logInValidation() {
       alert("credenciales incorrectos")
     }else{
       console.log(response);
+      
       const jsonResp = await response.json();
       localStorage.setItem("token",  jsonResp.token)
       document.cookie = 'token=' +  jsonResp.token
       console.log(jsonResp);
+
       if (jsonResp.user.rol === "cliente") {
         console.log("cliente")
         window.location.href = './components/Buscar_Parqueo/buscar_parqueo.html';
