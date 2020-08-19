@@ -21,6 +21,7 @@ var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
 var guardarEmpresa = require("./servicios/guardar_empresa");
 var guardarTarjeta = require("./servicios/registrar_tarjeta");
 var listarTarjetas = require("./servicios/listar_tarjetas");
+var listarParqueosAdministrador = require("./servicios/listar_parqueos_administrador");
 
 var crearReserva = require("./servicios/crear_reserva");
 var listarReservas = require("./servicios/listar_reservas");
@@ -64,6 +65,7 @@ app.use(guardarTarjeta);
 app.use(listarTarjetas);
 app.use(crearReserva);
 app.use(listarReservas);
+app.use(listarParqueosAdministrador);
 //app.use(authentication);
 app.use(public_dir);
 //app.use(cookieParser);
