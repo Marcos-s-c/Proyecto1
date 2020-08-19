@@ -1,4 +1,65 @@
-//Función para mostrar y ocultar los inputs de agregar
+window.onload = function () {
+  cargarDatos();
+};
+
+function cargarDatos() {
+  var tabla = document.getElementById("table");
+
+
+
+  fetch("http://localhost:4040/empresas/listar")
+      .then(function (response) {
+          return response.json();
+      })
+      .then(function (json) {
+        var requestsTable = document.querySelector("#requestsTable tbody");
+        requestsTable.innerHTML = "";
+        requestsList = json;
+        for (var i = 0; i < json.length; i++) {
+          var row = document.createElement("tr");
+  
+          var tableData1 = document.createElement("td");
+          tableData1.innerHTML = json[i].name;
+  
+          var tableData2 = document.createElement("td");
+          tableData2.innerHTML = json[i].userID;
+
+          var tableData3 = document.createElement("td");
+          tableData3.innerHTML = json[i].email;
+  
+          var tableData4 = document.createElement("td");
+          tableData4.innerHTML =
+            '<label class="switch">'+
+            '<input type="checkbox" checked />'+
+            '<span class="slider round"></span>' +
+            '</label>';
+
+          var tableData5 = document.createElement("td");
+          tableData5.innerHTML =
+            '<i onclick="deny(' +
+            "'" +
+            json[i].email +
+            "'" +
+            ')" class="far fa-trash-alt"></i>';
+         
+  
+          
+            
+          row.appendChild(tableData1);
+          row.appendChild(tableData2);
+          row.appendChild(tableData3);
+          row.appendChild(tableData4);
+          row.appendChild(tableData5);
+          requestsTable.appendChild(row);
+        }
+      });
+
+
+
+}
+
+
+/*//Función para mostrar y ocultar los inputs de agregar
 function showAndHideAdd() {
     var add = document.getElementById("add");
     var edit = document.getElementById("edit");
@@ -122,33 +183,33 @@ function showAndHideAdd() {
       }
     });
   }
+
+
+
+
+fetch("http://localhost:4040/empresas/listar")
+      .then(function (response) {
+          return response.json();
+      })
+      .then(function (json) {
+          console.log(json);
+          for (i = 0; i < json.length; i++) {
+              var row =
+                  "<tbody><tr><td>" +
+                  json[i].name +
+                  "</td><td>" +
+                  json[i].userID +
+                  "</td><td>" +
+                  json[i].email +
+                  
+                  "</td></tr></tbody>";
+              tabla.insertAdjacentHTML("beforeend", row);
+          }
+      });
+
+
+
   
-  window.onload = function () {
-    cargarDatos();
-};
+*/
 
-function cargarDatos() {
-    var tabla = document.getElementById("table");
-    while (tabla.rows.length > 1) {
-        tabla.deleteRow(1);
-    }
 
-    fetch("http://localhost:4040/Empresas/listar")
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (json) {
-            console.log(json);
-            for (i = 0; i < json.length; i++) {
-                var row =
-                    "<tbody><tr><td>" +
-                    json[i].name +
-                    "</td><td>" +
-                    json[i].userID +
-                    "</td><td>" +
-                    json[i].email +
-                    "</td></tr></tbody>";
-                tabla.insertAdjacentHTML("beforeend", row);
-            }
-        });
-}

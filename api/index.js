@@ -55,6 +55,7 @@ app.use(express.json());
  app.use(enviarCorreo);
  app.use(guardarInfoExtraParqueos);
  app.use(guardarEmpresa);
+ app.use(listarEmpresas);
  app.use(guardarTarjeta);
  app.use(listarTarjetas);
  app.use(loginEmpresa);
