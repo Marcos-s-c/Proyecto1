@@ -73,8 +73,11 @@
           </div>
           <div class="table-header">
             <div class="search">
-              <input type="text" placeholder="Buscar usuario para asociar..." />
-              <button type="submit"><i class="fas fa-search"></i></button>
+              <input type="text" placeholder="Buscar usuario para asociar..." /
+              id="buscadorUsuario">
+              <button type="button" onclick="buscarUsuario()">
+                <i class="fas fa-search"></i>
+              </button>
             </div>
             <table class="table" id="tabla_usuarios">
               <thead>

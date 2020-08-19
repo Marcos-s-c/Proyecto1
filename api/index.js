@@ -91,9 +91,7 @@ app.use(public_dir);
 //app.use(cookieParser);
 
 app.listen(4040, function () {
-  app.listen(4040, function () {
-    console.log("Servidor corriendo en el puerto:4040");
-  });
+  console.log("Servidor corriendo en el puerto:4040");
 });
 // problem aqui con el servidor
 // app.use(listarTarjetas);

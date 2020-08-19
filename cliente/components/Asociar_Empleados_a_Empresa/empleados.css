@@ -23,3 +23,8 @@
 .table {
   padding: 0 0 0 0 !important;
 }
+
+.asociar:hover {
+  color: rgb(34, 131, 34);
+  cursor: pointer;
+}

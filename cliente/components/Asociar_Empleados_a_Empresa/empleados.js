@@ -1,14 +1,16 @@
 tabla_empleados = document.getElementById("tabla_empleados");
 
+
 const ListarUsuarios = () => {
-  fetch("/personas", {
-    method: "GET",
+  fetch("/personas/empresa", {
+    method: "POST",
+    body: JSON.stringify({
+      empresa:"Toyota"
+    }),
     headers: {
       "content-type": "application/json",
     },
   })
-
-  
     .then(function (data) {
       return data.json();
     })
@@ -63,31 +65,6 @@ function validateEditInput() {
   }
 }
 
-//Validar input nombre de la compañía
-function validateCompany() {
-  var company = document.querySelector("#company");
-  var firstError = "";
-  var result = false;
-  company.classList.remove("error");
-  if (company.value == "") {
-    if (firstError == "") {
-      firstError = "La empresa no ha sido registrado";
-    }
-    company.classList.add("error");
-  }
-  if (firstError != "") {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: firstError,
-      footer: "<a href>Why do I have this issue?</a>",
-    });
-  } else {
-    result = true;
-  }
-  return result;
-}
-
 //Función Eliminar
 
 function deleteIcon() {
@@ -103,4 +80,52 @@ function deleteIcon() {
       Swal.fire("Eliminado", "El convenio ha sido eliminado.", "success");
     }
   });
+}
+
+function buscarUsuario() {
+  cedulaBuscadas = document.getElementById("buscadorUsuario");
+  tablaUsuarios = document.getElementById("tabla_usuarios");
+
+  cedula = {
+    cedulaBuscada: cedulaBuscadas.value,
+  };
+
+  fetch("/persona/buscar", {
+    method: "POST",
+    body: JSON.stringify(cedula),
+    headers: {
+      "content-type": "application/json",
+    },
+  })
+    .then(function (data) {
+      return data.json();
+    })
+    .then(function (usuarios) {
+      for (const usuario of usuarios) {
+        const { name, userID, email } = usuario;
+
+        tablaUsuarios.innerHTML += `
+                    <tr>
+                    <td id="">${name}</td>
+                    <td id="">${userID}</td>
+                    <td id="">${email}</td>
+                    <td>
+                    <span onclick="asociarEmpleado(${userID})">
+                    <i class="far fa-check-square asociar" ></i></span>
+                    </td>
+                    <td>
+                   
+          
+                    </td>
+                    </tr>
+                    `;
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+function asociarEmpleado(cedula) {
+  console.log(cedula);
 }
