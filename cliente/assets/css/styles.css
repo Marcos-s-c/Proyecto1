@@ -260,6 +260,7 @@ header .sub- {
   display: flex;
   flex-wrap: wrap;
   padding: 1%;
+  margin-top: 1%;
 }
 
 /* Create two unequal columns that sits next to each other */

@@ -32,92 +32,26 @@
     <!-- The flexible grid (content) -->
     <div class="row">
       <div class="side" id="side-section">
-        <div class="search-box">
-          <h3>Busca aquí tu parqueo</h3>
-          <div class="search-input">
-            <input type="text" class="search-bar" id="search-bar" placeholder="Zona de interés o nombre del parqueo"> 
-            <button type="button" onclick="getAllParkings()" class="search-button">
-              <i class="fas fa-search"></i>
-              <a href="#">Buscar</a></button>
-          </div>
-        </div>
         <div class="resultsList-box" id="resultsList-box">
           <div class="resultsList-items scroll-style">
-            <div class="items-content-wraper">
-              <div class="item-content">
-                <div class="image">
-                  <img src="../../assets/img/parqueos_usuarios/parqueo1.jpeg">
-                </div>
-                <div class="details">
-                  <h3 class="heading">Parking Name</h3>
-                  <div class="star-rating">                    
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                  </div>
-                  <div class="price">
-                    <span>&#8353 1000</span>
-                    <span>hora</span>
-                  </div>
-                </div>
-                <div class="controls">
-                  <button type="button" class="more-details" onclick="displayParkingProfile()">Detalles</button>
-                  <button type="button" class="book-parking"><a href="../seleccionar_espacio_reserva/seleccionarEspacio.html">Reservar</a></button>
-                </div>
-              </div>
+            <div class="search-form">
+              <h3>Selecciona la ubicación</h3>
+              <select id="provincias">
+                <option>Provincia</option>
+              </select>
+              <select id="cantones">
+                <option>Cantón</option>
+              </select>
+              <select id="distritos">
+                <option>Distrito</option>
+              </select>
             </div>
-            <div class="items-content-wraper">
-              <div class="item-content">
-                <div class="image">
-                  <img src="../../assets/img/parqueos_usuarios/parqueo1.jpeg">
-                </div>
-                <div class="details">
-                  <h3 class="heading">Parking Name</h3>
-                  <div class="star-rating">                    
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                  </div>
-                  <div class="price">
-                    <span>&#8353 1000</span>
-                    <span>hora</span>
-                  </div>
-                </div>
-                <div class="controls">
-                  <button type="button" class="more-details" onclick="displayParkingProfile()">Detalles</button>
-                  <button type="button" class="book-parking"><a href="../seleccionar_espacio_reserva/seleccionarEspacio.html">Reservar</a></button>
-                </div>
+              <div class="search-box">
+                <input type="text" class="search-bar" id="search-bar" placeholder="Nombre del parqueo"> 
+                <button type="button" onclick="getAllParkings()" class="search-button">
+                  <i class="fas fa-search"></i>
+                  <a href="#">Buscar</a></button>
               </div>
-            </div>
-            <div class="items-content-wraper">
-              <div class="item-content">
-                <div class="image">
-                  <img src="../../assets/img/parqueos_usuarios/parqueo1.jpeg">
-                </div>
-                <div class="details">
-                  <h3 class="heading">Parking Name</h3>
-                  <div class="star-rating">                    
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                  </div>
-                  <div class="price">
-                    <span>&#8353 1000</span>
-                    <span>hora</span>
-                  </div>
-                </div>
-                <div class="controls">
-                  <button type="button" class="more-details" onclick="displayParkingProfile()">Detalles</button>
-                  <button type="button" class="book-parking"><a href="../seleccionar_espacio_reserva/seleccionarEspacio.html">Reservar</a></button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -134,6 +68,7 @@
       <p>San José, Costa Rica.</p>
       <p>&reg;Todos los derechos reservados</p>
   </footer>
+  <script src="../../assets/js/traer_provincias.js"></script>
   <script src="../../assets/js/dropdown_menu.js"></script>
   <script src="buscar_parqueo.js"></script>
   </body>

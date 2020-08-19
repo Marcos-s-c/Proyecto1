@@ -8,7 +8,7 @@ const reservation_schema  = mongoose.Schema({
         required: true,
         unique: true
     },
-    reservation_date:{
+    creation_date:{
         type: Date,
         required: true,
     },
