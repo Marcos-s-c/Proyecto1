@@ -15,27 +15,56 @@ var parkingSchema = mongoose.Schema({
       if (validator.isEmail(value) == false) {
         throw new Error("El email ingresado no es valido");
       }
-    }
+    },
   },
   nombre: {
     type: String,
     required: true,
   },
+  nombreDelDueño: {
+    type: String,
+    required: true,
+  },
+  fechaDeNacimiento: {
+    type: Date,
+    required: true,
+  },
+  cedula: {
+    type: Number,
+    required: true,
+  },
+
+  provincia: {
+    type: String,
+    required: true,
+  },
+  canton: {
+    type: String,
+    required: true,
+  },
+  distrito: {
+    type: String,
+    required: true,
+  },
   direccion: {
     type: String,
-    required: true
+    required: false,
+  },
+  centroComercial: {
+    type: String,
+    required: false,
   },
   coordenadas: {
     type: Number,
-    required: true
+    required: true,
   },
   cantidadCampos: {
     type: Number,
-    required: true
+    required: true,
   },
   tarifas: {
     type: Array,
-    required: true
+    required: true,
   },
   convenios: Array,
   fechaDeInicio: Date,
@@ -43,10 +72,10 @@ var parkingSchema = mongoose.Schema({
   tipoVehiculos: Array,
   password: {
     required: true,
-    type: String
+    type: String,
   },
-  rol:  {
-    type: String, 
+  rol: {
+    type: String,
   },
   //arreglo de tokens para cada sesion que mantenga abierta
   tokens: [
@@ -57,7 +86,6 @@ var parkingSchema = mongoose.Schema({
       },
     },
   ],
-
 });
 
 parkingSchema.methods.generarTokenDeAutenticacion = async function () {
@@ -96,6 +124,5 @@ parkingSchema.statics.findByCredentials = async (email, password) => {
 };
 
 const Parqueo = mongoose.model("Parqueo", parkingSchema, "Parqueos");
-
 
 module.exports = Parqueo;

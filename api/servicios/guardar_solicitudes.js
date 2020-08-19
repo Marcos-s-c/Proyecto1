@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 var ParkingRequest = require("../modelo/modelo_solicitud_parqueo");
 
 router.post("/solicitud_parqueo/guardar", function (req, res) {
-  var saveRequests = new ParkingRequest({
+  var savedRequests = new ParkingRequest({
     state: "Pendiente",
     ownersName: req.body.ownersName,
     usersId: req.body.usersId,
@@ -19,7 +19,7 @@ router.post("/solicitud_parqueo/guardar", function (req, res) {
     address: req.body.address,
   });
 
-  saveRequests
+  savedRequests
     .save()
     .then(function (result) {
       res.json(result);
