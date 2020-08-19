@@ -47,7 +47,7 @@ app.use(express.json());
 
 app.use(logIn);
 app.use(loginParqueo);
-app.use(listarEmpresas);
+
 app.use(loginAdmin);
 app.use(logOut);
 app.use(guardarUsuarios);
