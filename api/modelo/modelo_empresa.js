@@ -35,6 +35,9 @@ var companieSchema = mongoose.Schema({
   rol: {
     type: String,
   },
+  estado: {
+    type: String,
+  },
   tokens: [
     {
       token: {
