@@ -1,11 +1,10 @@
 tabla_empleados = document.getElementById("tabla_empleados");
 
-
 const ListarUsuarios = () => {
   fetch("/personas/empresa", {
     method: "POST",
     body: JSON.stringify({
-      empresa:"Toyota"
+      empresa: "Toyota",
     }),
     headers: {
       "content-type": "application/json",
@@ -127,5 +126,23 @@ function buscarUsuario() {
 }
 
 function asociarEmpleado(cedula) {
-  console.log(cedula);
+  datos = {
+    empresa: "Apple",
+  };
+  fetch("/asociar/" + cedula, {
+    method: "PUT",
+    body: JSON.stringify(),
+    headers: {
+      "content-type": "application/json",
+    },
+  })
+    .then(function (data) {
+      return data.json();
+    })
+    .then(function (usuarios) {
+      location.reload();
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
