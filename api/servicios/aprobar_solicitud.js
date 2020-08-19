@@ -34,7 +34,6 @@ router.post("/solicitud_parqueo/aprobar", async function (req, res) {
       direccion: approvedRequest.address,
       password: "12345",
       cantidadCampos: 0,
-      coordenadas: 0,
     });
 
     newParking
