@@ -53,7 +53,11 @@ var parkingSchema = mongoose.Schema({
     type: String,
     required: false,
   },
-  coordenadas: {
+  latitud: {
+    type: Number,
+    required: true,
+  },
+  longitud: {
     type: Number,
     required: true,
   },
