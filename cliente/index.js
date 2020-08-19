@@ -34,10 +34,12 @@ async function logInValidation() {
       console.log(response);
 
       const jsonResp = await response.json();
-      localStorage.setItem("token", jsonResp.token);
-      localStorage.setItem("user", jsonResp.user);
-      document.cookie = "token=" + jsonResp.token;
-      document.cookie = "user=" + jsonResp.user;
+      localStorage.setItem("token",  jsonResp.token)
+      localStorage.setItem("user",  jsonResp.user)
+      document.cookie = 'token=' +  jsonResp.token
+      document.cookie = 'user=' +  jsonResp.user
+
+      console.log(jsonResp);
 
       if (jsonResp.user.rol === "cliente") {
         console.log("cliente");
