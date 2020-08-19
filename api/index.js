@@ -1,10 +1,13 @@
 var date = new Date();
-var fetch = require('node-fetch');
+var fetch = require("node-fetch");
 var express = require("express");
 var path = require("path");
 var app = express();
 var mongoose = require("mongoose");
 var logIn = require("./servicios/login");
+var loginEmpresa = require('./servicios/login_empresa');
+var loginParqueo = require('./servicios/login_parqueo');
+var loginAdmin = require('./servicios/login_admin');
 var logOut = require("./servicios/logout");
 var listarUsuarios = require("./servicios/listar_usuarios");
 var listarEmpresas = require("./servicios/listar_empresas");
@@ -18,7 +21,7 @@ var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
 var guardarEmpresa = require("./servicios/guardar_empresa");
 var guardarTarjeta = require("./servicios/registrar_tarjeta");
 var listarTarjetas = require("./servicios/listar_tarjetas")
-var loginEmpresa = require('./servicios/login_empresa');
+
 var crearReserva = require('./servicios/crear_reserva');
 var listarReservas = require('./servicios/listar_reservas');
 const enviarCorreo = require("./servicios/enviar_correo");
@@ -42,6 +45,28 @@ mongoose
 
 app.use(express.json());
 
+app.use(logIn);
+app.use(loginParqueo);
+app.use(listarEmpresas);
+app.use(loginAdmin);
+app.use(logOut);
+app.use(guardarUsuarios);
+app.use(listarUsuarios);
+app.use(guardarSolicitudes);
+app.use(listarSolicitudes);
+app.use(denegarSolicitud);
+app.use(aprobarSolicitud);
+app.use(buscarSolicitud);
+app.use(enviarCorreo);
+app.use(guardarInfoExtraParqueos);
+app.use(guardarEmpresa);
+app.use(guardarTarjeta);
+app.use(listarTarjetas);
+app.use(crearReserva);
+app.use(listarReservas);
+//app.use(authentication);
+app.use(public_dir);
+//app.use(cookieParser);
 
  app.use(logIn);
  app.use(guardarUsuarios);
@@ -66,6 +91,7 @@ app.use(express.json());
  //app.use(cookieParser);
 
  app.listen(4040, function () {
+app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
 });
 
@@ -81,18 +107,23 @@ app.use(express.json());
 /*nodeCron.schedule('* * * * *', () => {
   console.log('running a task every minute');
 });*/
+
+/*
 nodeCron.schedule('* * * * *', async () => {
   console.log('running a task every minute');
   const resp = await fetch('http://localhost:4040/reservas/listar')
   const reservas = await resp.json();
-  for(var reserva in reservas){
+  console.log(new Date())
+  /*for(var reserva in reservas){
     let horaActual = date.toISOString();
     let horaReserva = reservas[reserva].date;
     console.log("1: " + horaActual);
     console.log("2: " + horaReserva);
-    /*if(horaActual == horaReserva){
+    if(horaActual == horaReserva){
       console.log("enviar correo")
-    }*/
+    }
   }
 
 });
+
+*/
