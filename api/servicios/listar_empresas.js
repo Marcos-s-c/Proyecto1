@@ -18,4 +18,36 @@ router.get("/empresas/listar", function (req, res) {
 
 });
 
+router.post('/modificar-empresa', function(req, res) {
+    let body = req.body;
+    Empresa.updateOne({_id: body._id},{
+        $set: {
+            nombre: body.nombre,
+            estado: body.estado
+        }
+    },
+    function(error, info) {
+        if(error) {
+            res.json({
+                resultado: false,
+                msg: 'no se pudo modificar la Empresa',
+                err
+            });
+        } else {
+            res.json({
+                resultado: true,
+                info: info
+            })
+        }
+
+    }
+    )
+});
+
+
+
+
+
+
+
 module.exports = router;
