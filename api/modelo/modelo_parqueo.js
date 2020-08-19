@@ -33,7 +33,6 @@ var parkingSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-
   provincia: {
     type: String,
     required: true,
