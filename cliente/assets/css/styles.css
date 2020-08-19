@@ -135,7 +135,6 @@ form button:hover {
   font-size: 12px;
 }
 
-
 /*HEADER*/
 /***** GENERAL HEADER ***********/
 header {
@@ -203,17 +202,16 @@ header .sub- {
   width: 80%;
 }
 
-
 /***** HEADER SUBMENU **********/
 
-.sub-menu{
+.sub-menu {
   width: 80%;
   display: flex;
   align-items: center;
   justify-content: end;
 }
 
-.dropdown .fa-user-circle{
+.dropdown .fa-user-circle {
   color: whitesmoke;
   font-size: 50px;
 }
@@ -221,12 +219,10 @@ header .sub- {
 .dropdown .dropbtn:hover,
 .dropdown .dropbtn:focus {
   color: white;
-  
 }
 
 .dropdown {
   position: relative;
-
 }
 
 .dropdown-content {
@@ -236,7 +232,7 @@ header .sub- {
   background-color: #f1f1f1;
   min-width: 160px;
   overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -247,7 +243,9 @@ header .sub- {
   display: block;
 }
 
-.dropdown a:hover {background-color: #ddd;}
+.dropdown a:hover {
+  background-color: #ddd;
+}
 
 .show {
   display: block;
