@@ -5,17 +5,16 @@ async function registerUser() {
 
   var data = {
     name: document.getElementById('userName').value,
-    idType : document.getElementById('userId-type').value,
+    idType :  document.getElementById('userId-type').value,
     userID: document.getElementById('userID').value,
     birthDate: document.getElementById('birthDate').value,
     phoneNumber: document.getElementById('phoneNumber').value,
     password: Math.random().toString(36).slice(-8),
     email: document.getElementById('email').value,
-    rol: document.getElementById('userId-type').value
   };
   try {
     if(data.idType == 'fisica'){
-
+      data.rol = "cliente"
       await fetch('/personas', { 
         method: 'POST', 
         body: JSON.stringify(data), 
@@ -24,6 +23,7 @@ async function registerUser() {
       window.location.href = "/";
       
     }else{
+      data.rol = "empresa"
       await fetch('/empresas', {
         method: 'POST', 
         body: JSON.stringify(data), 
