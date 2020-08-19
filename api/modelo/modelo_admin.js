@@ -71,11 +71,11 @@ adminSchema.pre("save", async function (next) {
 //esta función busca el usuario segun el email y password recibido por parametros
 adminSchema.statics.findByCredentials = async (email, password) => {
   const usuario = await Admin.findOne({ email: email });
-  const esValido = await bcrypt.compare(password, usuario.password);
+  //const esValido = await bcrypt.compare(password, usuario.password);
 
-  if (esValido == false) {
+  /*if (esValido == false) {
     throw new Error("Crendeciales incorrectos, por favor intente de nuevo.");
-  }
+  }*/
 
   return usuario;
 };

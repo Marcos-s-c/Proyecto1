@@ -8,9 +8,10 @@ router.post('/admin/login', async function (req, res) {
     const email = req.body.email
     const password = req.body.password
     try {
-        const admin = await Admin.findByCredentials(email, password)
+        const user = await Admin.findByCredentials(email, password)
         //const token = await admin.generarTokenDeAutenticacion()
-        return res.send({ admin})
+        console.log(user)
+         res.send({user})
     } catch (error) {
         return res.status(400).send("Credenciales incorrectos")
 
