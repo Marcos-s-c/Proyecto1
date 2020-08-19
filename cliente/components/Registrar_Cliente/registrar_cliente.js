@@ -1,14 +1,12 @@
-
 var date = new Date();
 
 async function registerUser() {
-
   var data = {
-    name: document.getElementById('userName').value,
-    idType : document.getElementById('userId-type').value,
-    userID: document.getElementById('userID').value,
-    birthDate: document.getElementById('birthDate').value,
-    phoneNumber: document.getElementById('phoneNumber').value,
+    name: document.getElementById("userName").value,
+    idType: document.getElementById("userId-type").value,
+    userID: document.getElementById("userID").value,
+    birthDate: document.getElementById("birthDate").value,
+    phoneNumber: document.getElementById("phoneNumber").value,
     password: Math.random().toString(36).slice(-8),
     email: document.getElementById('email').value,
   };
@@ -31,18 +29,17 @@ async function registerUser() {
       await sendEmail(data, "Confirmación de correo");  
       window.location.href = "/";
     }
-
-  }catch (e) {
-    console.log(e + "")
+  } catch (e) {
+    console.log(e + "");
   }
 }
 
 ///////////////////////////////////////////////////////////////////////
 function verifyAge() {
-  if ((data.birthDate - date.getDate) >= 18) {
-    return true
+  if (data.birthDate - date.getDate >= 18) {
+    return true;
   } else {
-    return false
+    return false;
   }
 }
 
@@ -51,8 +48,8 @@ function validateBlanks(obj) {
   for (var key in obj) {
     if (obj[key] === "") {
       console.log(key);
-      document.getElementById(key).classList.remove('regular-input');
-      document.getElementById(key).classList.add('red-input');
+      document.getElementById(key).classList.remove("regular-input");
+      document.getElementById(key).classList.add("red-input");
       completed = false;
     }
   }
@@ -66,12 +63,9 @@ function init() {
   clearInputFields();
 }
 
-
 init();
 
-
-
-  /*let fieldsCompleted = await validateBlanks(data);
+/*let fieldsCompleted = await validateBlanks(data);
   let adult = await verifyAge();
 
   if(fieldsCompleted == false){

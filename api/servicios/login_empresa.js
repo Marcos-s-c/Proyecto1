@@ -10,9 +10,9 @@ router.post('/empresas/login', async function (req, res) {
     const password = req.body.password
 
     try {
-        const empresa = await Empresa.findByCredentials(email, password)
-        const token = await empresa.generarTokenDeAutenticacion()
-        res.send({ empresa, token })
+        const user = await Empresa.findByCredentials(email, password)
+        const token = await user.generarTokenDeAutenticacion()
+        res.send({ user, token })
     } catch (error) {
         console.log(error)
         res.status(400).send("Credenciales incorrectos")

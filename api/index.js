@@ -23,6 +23,7 @@ var guardarTarjeta = require("./servicios/registrar_tarjeta");
 var listarTarjetas = require("./servicios/listar_tarjetas");
 var editarUsuario = require("./servicios/editar_usuario");
 var listarParqueosAdministrador = require("./servicios/listar_parqueos_administrador");
+var buscarParqueosCliente = require('./servicios/buscar_parqueos_cliente')
 
 var crearReserva = require("./servicios/crear_reserva");
 var listarReservas = require("./servicios/listar_reservas");
@@ -90,6 +91,7 @@ app.use(loginEmpresa);
 app.use(crearReserva);
 app.use(editarUsuario);
 app.use(listarReservas);
+app.use(buscarParqueosCliente)
 //app.use(authentication);
 app.use(public_dir);
 //app.use(cookieParser);

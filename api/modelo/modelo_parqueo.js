@@ -33,7 +33,6 @@ var parkingSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-
   provincia: {
     type: String,
     required: true,
@@ -54,7 +53,11 @@ var parkingSchema = mongoose.Schema({
     type: String,
     required: false,
   },
-  coordenadas: {
+  latitud: {
+    type: Number,
+    required: true,
+  },
+  longitud: {
     type: Number,
     required: true,
   },
