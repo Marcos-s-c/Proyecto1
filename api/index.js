@@ -48,8 +48,8 @@ app.use(express.json());
 
 app.use(logIn);
 app.use(loginParqueo);
-
 app.use(loginAdmin);
+app.use(loginEmpresa);
 app.use(logOut);
 app.use(guardarUsuarios);
 app.use(listarUsuarios);
@@ -70,43 +70,10 @@ app.use(listarParqueosAdministrador);
 app.use(public_dir);
 //app.use(cookieParser);
 
-app.use(logIn);
-app.use(guardarUsuarios);
-app.use(listarUsuarios);
-app.use(guardarSolicitudes);
-app.use(listarSolicitudes);
-app.use(denegarSolicitud);
-app.use(aprobarSolicitud);
-app.use(buscarSolicitud);
-app.use(logOut);
-app.use(enviarCorreo);
-app.use(guardarInfoExtraParqueos);
-app.use(guardarEmpresa);
-app.use(listarEmpresas);
-app.use(guardarTarjeta);
-app.use(listarTarjetas);
-app.use(loginEmpresa);
-app.use(crearReserva);
-app.use(listarReservas);
-//app.use(authentication);
-app.use(public_dir);
-//app.use(cookieParser);
 
 app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
 });
-// problem aqui con el servidor
-// app.use(listarTarjetas);
-
-/*app.get('/',function(req,res){
-
-      res.sendFile(path.join(__dirname, "../cliente/index.html"));
-  
-});*/
-
-/*nodeCron.schedule('* * * * *', () => {
-  console.log('running a task every minute');
-});*/
 
 /*
 nodeCron.schedule('* * * * *', async () => {
