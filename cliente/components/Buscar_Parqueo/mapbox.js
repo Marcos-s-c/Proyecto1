@@ -31,17 +31,51 @@ const traerParqueos = async () => {
     //   [-84.100814, 9.932318]
     // ]);
 
+    console.log(arrayParqueos[0].longitud)
+    console.log(arrayParqueos[0].latitud)
+
+    // map.flyTo({
+    //   center: [
+
+    //     arrayParqueos[0].longitud,
+    //     arrayParqueos[0].latitud
+    //   ],
+    //   essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    // });
+
+
+
+    // map.fitBounds([
+    //   [arrayParqueos[0].longitud-2, arrayParqueos[0].latitud],
+    //   [arrayParqueos[0].longitud , arrayParqueos[0].latitud-2]
+    //   ]);
+    let markers = []
     arrayParqueos.forEach(parqueo => {
       const latitud = parqueo.latitud
       const longitud = parqueo.longitud
 
       if (latitud && longitud) {
-        new mapboxgl.Marker()
+        console.log(longitud + " " + latitud)
+        markers.push(new mapboxgl.Marker()
           .setLngLat([longitud, latitud])
-          .addTo(map);
+          .addTo(map))
       }
 
     });
+
+
+
+    //  map.fitBounds([
+    //   [arrayParqueos[0].longitud, arrayParqueos[0].latitud], // Southwest coordinates
+    //   [ arrayParqueos[1].longitud  , arrayParqueos[1].latitud] // Northeast coordinates
+    //   ]);
+
+    // map.flyTo({
+    //   center: [
+    //     arrayParqueos[0].longitud,
+    //     arrayParqueos[0].latitud
+    //   ]})
+
 
   } catch (e) {
     console.log(e);
@@ -50,11 +84,3 @@ const traerParqueos = async () => {
 
 traerParqueos()
 
-
-// new mapboxgl.Marker()
-//   .setLngLat([-84.100814, 9.932318])
-//   .addTo(map);
-
-// var marker2 = new mapboxgl.Marker()
-//   .setLngLat([-84.098574, 9.938277])
-//   .addTo(map);
