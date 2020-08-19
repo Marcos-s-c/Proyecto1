@@ -111,13 +111,15 @@
             <div class="search">
               <p>
                 Filtrar por
-                <select class="searchSelect" name="select">
+                <select class="searchSelect" id="criteria" name="select">
                   <option value="" selecte>Elije</option>
-                  <option value="value2">Nombre</option>
-                  <option value="value3">Estado</option>
+                  <option value="nombre">Nombre del parqueo</option>
+                  <option value="estado">Estado de la solicitud</option>
                 </select>
-                <input type="text" placeholder="Buscar..." />
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <input type="text" id="searchValue" placeholder="Buscar..." />
+                <button onclick="searchWithinTheTable()">
+                  <i class="fas fa-search"></i>
+                </button>
               </p>
             </div>
           </div>

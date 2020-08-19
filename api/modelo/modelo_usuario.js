@@ -27,19 +27,22 @@ const userSchema = mongoose.Schema({
       }
     },
   },
-  birthDate:{
+  birthDate: {
     type: Date,
-    required: true
+    required: true,
   },
-  phoneNumber:{
-    type: Number
+  phoneNumber: {
+    type: Number,
   },
   password: {
     type: String,
     required: false,
   },
-  rol:  {
-    type: String, 
+  rol: {
+    type: String,
+  },
+  empresa: {
+    type: String,
   },
   //arreglo de tokens para cada sesion que mantenga abierta
   tokens: [

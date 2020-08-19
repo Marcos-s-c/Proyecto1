@@ -1,49 +1,43 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 
-var Usuario = require('../modelo/modelo_usuario');
+var Usuario = require("../modelo/modelo_usuario");
 
 router.get("/personas", function (req, res) {
-
-    console.log(req.user)
-    
-    Usuario.find().exec()
+  Usuario.find()
+    .exec()
     .then(function (resultado) {
-        res.json(resultado);
+      res.json(resultado);
     })
     .catch(function (err) {
-        console.log(err);
-    })
-
+      console.log(err);
+    });
 });
 
-router.post("/persona", function (req, res) {
-    
-    id = req.body.id;
+router.post("/personas/empresa", function (req, res) {
+  empresa = req.body.empresa;
 
-    Usuario.find({_id:id}).exec()
+  Usuario.find({ empresa: empresa })
+    .exec()
     .then(function (resultado) {
-        res.json(resultado);
+      res.json(resultado);
     })
     .catch(function (err) {
-        console.log(err);
-    })
-
+      console.log(err);
+    });
 });
 
+router.post("/persona/buscar", function (req, res) {
+  userID = req.body.cedulaBuscada;
 
-router.get("/listar/empleados", function (req, res) {
-
-    console.log(req.user)
-    
-    Usuario.find().exec()
+  Usuario.find({ userID: userID })
+    .exec()
     .then(function (resultado) {
-        res.json(resultado);
+      res.json(resultado);
     })
     .catch(function (err) {
-        console.log(err);
-    })
-
+      console.log(err);
+    });
 });
 
 module.exports = router;

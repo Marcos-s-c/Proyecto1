@@ -5,9 +5,9 @@ var path = require("path");
 var app = express();
 var mongoose = require("mongoose");
 var logIn = require("./servicios/login");
-var loginEmpresa = require('./servicios/login_empresa');
-var loginParqueo = require('./servicios/login_parqueo');
-var loginAdmin = require('./servicios/login_admin');
+var loginEmpresa = require("./servicios/login_empresa");
+var loginParqueo = require("./servicios/login_parqueo");
+var loginAdmin = require("./servicios/login_admin");
 var logOut = require("./servicios/logout");
 var listarUsuarios = require("./servicios/listar_usuarios");
 var listarEmpresas = require("./servicios/listar_empresas");
@@ -20,10 +20,11 @@ var guardarUsuarios = require("./servicios/guardar_usuarios");
 var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
 var guardarEmpresa = require("./servicios/guardar_empresa");
 var guardarTarjeta = require("./servicios/registrar_tarjeta");
-var listarTarjetas = require("./servicios/listar_tarjetas")
+var listarTarjetas = require("./servicios/listar_tarjetas");
+var listarParqueosAdministrador = require("./servicios/listar_parqueos_administrador");
 
-var crearReserva = require('./servicios/crear_reserva');
-var listarReservas = require('./servicios/listar_reservas');
+var crearReserva = require("./servicios/crear_reserva");
+var listarReservas = require("./servicios/listar_reservas");
 const enviarCorreo = require("./servicios/enviar_correo");
 const cookieParser = require("cookie-parser");
 const nodeCron = require("node-cron");
@@ -47,7 +48,7 @@ app.use(express.json());
 
 app.use(logIn);
 app.use(loginParqueo);
-app.use(listarEmpresas);
+
 app.use(loginAdmin);
 app.use(logOut);
 app.use(guardarUsuarios);
@@ -64,6 +65,29 @@ app.use(guardarTarjeta);
 app.use(listarTarjetas);
 app.use(crearReserva);
 app.use(listarReservas);
+app.use(listarParqueosAdministrador);
+//app.use(authentication);
+app.use(public_dir);
+//app.use(cookieParser);
+
+app.use(logIn);
+app.use(guardarUsuarios);
+app.use(listarUsuarios);
+app.use(guardarSolicitudes);
+app.use(listarSolicitudes);
+app.use(denegarSolicitud);
+app.use(aprobarSolicitud);
+app.use(buscarSolicitud);
+app.use(logOut);
+app.use(enviarCorreo);
+app.use(guardarInfoExtraParqueos);
+app.use(guardarEmpresa);
+app.use(listarEmpresas);
+app.use(guardarTarjeta);
+app.use(listarTarjetas);
+app.use(loginEmpresa);
+app.use(crearReserva);
+app.use(listarReservas);
 //app.use(authentication);
 app.use(public_dir);
 //app.use(cookieParser);
@@ -71,7 +95,6 @@ app.use(public_dir);
 app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
 });
-
 // problem aqui con el servidor
 // app.use(listarTarjetas);
 

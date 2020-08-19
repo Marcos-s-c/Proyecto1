@@ -3,20 +3,49 @@ var router = express.Router();
 var mongoose = require("mongoose");
 
 var ParkingRequest = require("../modelo/modelo_solicitud_parqueo");
+var parking = require("../modelo/modelo_parqueo");
 
-router.post("/solicitud_parqueo/aprobar", function (req, res) {
+router.post("/solicitud_parqueo/aprobar", async function (req, res) {
   //Update
 
-  ParkingRequest.updateOne(
+  await ParkingRequest.updateOne(
     { email: req.body.email },
     {
       $set: { state: "Aprobada" },
     }
-  ).then(function () {
-    console.log("Actualización realizada");
-  });
+  );
 
-  res.json({ message: "Solicitud aprobada" });
+  //Parking registration
+
+  ParkingRequest.findOne({ email: req.body.email }, function (
+    err,
+    approvedRequest
+  ) {
+    let newParking = new parking({
+      nombre: approvedRequest.parkingName,
+      nombreDelDueño: approvedRequest.ownersName,
+      cedula: approvedRequest.usersId,
+      fechaDeNacimiento: approvedRequest.dateOfBirth,
+      provincia: approvedRequest.provincia,
+      canton: approvedRequest.canton,
+      distrito: approvedRequest.distrito,
+      email: approvedRequest.email,
+      centroComercial: approvedRequest.shoppingCenter,
+      direccion: approvedRequest.address,
+      password: "12345",
+      cantidadCampos: 0,
+      coordenadas: 0,
+    });
+
+    newParking
+      .save()
+      .then(function (result) {
+        res.json({ message: "Solicitud aprobada" });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  });
 });
 
 module.exports = router;
