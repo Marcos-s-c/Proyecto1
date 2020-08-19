@@ -45,27 +45,35 @@ text-transform: uppercase;
     padding-top: 3%;
     padding-left: 3%;
 }
+/**** FORM ***************/
 .reservation-form{
     background-color: #f7f7f7;
     width: 100%;
     margin: auto;
     padding: 10% 8% 10% 8%;
 }
+.reservation-form label,
+.reservation-form input, 
+.reservation-form select{
+    margin: 5% 0%;
+}
 .reservation-form h3{
     padding-bottom: 20%;
 }
-
 .reservation-form label{
     display: inline-block;
-    padding-bottom: 10%;
 }
 .reservation-form select{
     display: block;
     padding: 3% 1% ;
     width: 100%;
-    margin-bottom: 10%;
     border-style: none;
 }
+.reservation-form input{
+    border-style: none;
+    padding: 2% 0%;
+}
+/**********************/
 .side .fa-arrow-left{
     padding: 5% 3%;
     color: black;
@@ -83,5 +91,6 @@ text-transform: uppercase;
     color: whitesmoke;
     margin-top: 15%;
 }
+
 
 

@@ -26,6 +26,15 @@ input {
   font-weight: 400;
   text-decoration: none;
 }
+  
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 /* font size */
 h1 {
@@ -80,6 +89,18 @@ div {
 }
 
 /** FORMS **/
+.form-header {
+  width: 100%;
+  background-color: #216c7a;
+}
+.form-header .logo{
+  width: 100%;
+  text-align: center;
+  padding: 1% 0%;
+}
+.form-header img{
+  width: 15%;
+}
 
 form {
   width: 30%;
@@ -112,14 +133,6 @@ form button:hover {
 }
 .termsNcond {
   font-size: 12px;
-}
-form .logo {
-  width: 100%;
-  text-align: center;
-  padding: 1% 0%;
-}
-form .logo img {
-  width: 10%;
 }
 
 
@@ -239,14 +252,6 @@ header .sub- {
 .show {
   display: block;
 }
-
-/****** FORM HEADER **********/
-.form-header {
-  width: 100%;
-  background-color: #216c7a;
-}
-
-
 
 
 /* ///////MAIN SECTION //////*/

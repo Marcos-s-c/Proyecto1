@@ -1,4 +1,4 @@
-var date = new Date();
+var date = require("date-and-time");
 var fetch = require("node-fetch");
 var express = require("express");
 var path = require("path");
@@ -75,22 +75,9 @@ app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
 });
 
-/*
-nodeCron.schedule('* * * * *', async () => {
+/*nodeCron.schedule('* * * * *', async () => {
   console.log('running a task every minute');
   const resp = await fetch('http://localhost:4040/reservas/listar')
   const reservas = await resp.json();
-  console.log(new Date())
-  /*for(var reserva in reservas){
-    let horaActual = date.toISOString();
-    let horaReserva = reservas[reserva].date;
-    console.log("1: " + horaActual);
-    console.log("2: " + horaReserva);
-    if(horaActual == horaReserva){
-      console.log("enviar correo")
-    }
-  }
+});*/
 
-});
-
-*/

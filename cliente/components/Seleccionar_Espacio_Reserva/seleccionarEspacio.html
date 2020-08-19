@@ -38,29 +38,25 @@
             <label>Espacio N°</label>
             <label id="spot-number" class="form-digit">#</label>
             <select class="reservation-select" id="time-select">
-                <option>Hora de ingreso</option>
-                <option>6:00</option>
-                <option>7:00</option>
-                <option>8:00</option>
-                <option>9:00</option>
-                
+                <option disabled>Hora de ingreso</option>          
             </select>
             <select class="reservation-select" id="vehicle-select">
                 <option>Tipo de vehículo</option>
                 <option>Vehículo</option>
                 <option>Motocicleta</option>
             </select>
+            <input type="number" id="placa" placeholder="Numero de placa">
             <label>Tarifa por hora:</label>
             <label id="monto-tarifa" class="form-digit">#</label>
-            <button type="button" id="reservation-button"><a href="../Listar Reserva Cliente/ver_reserva.html">Reservar</a></button>
+            <button type="button" id="reservation-button" onclick="getFormData()"><a href="#">Reservar</a></button>
         </div>
         <a href="../buscar_parqueo/buscarParqueo.html" class="back-link"><i class="fas fa-arrow-left"></i>Back</a> 
       </div>
       <div class="main content">
-        <br/>
+    
         <div class="parking-spots-container">
             <h3>Seleccione un espacio</h3>
-            <table class="spots-table" id="spots-table">
+          <!--  <table class="spots-table" id="spots-table">
                 <tr class="first-row rows">
                     <td><div class="spot-item" id="spot-01"><img src="../../assets/img/car.png"><div class="spot-cover hidden"></div><p>01</p></div></td>
                     <td><div class="spot-item" id="spot-02"><img src="../../assets/img/car.png"><div class="spot-cover hidden"></div><p>02</p></div></td>
@@ -109,7 +105,7 @@
                     <td><div class="spot-item" id="spot-39"><img src="../../assets/img/car.png"><div class="spot-cover hidden"></div><p>39</p></div></td>
                     <td><div class="spot-item" id="spot-40"><img src="../../assets/img/car.png"><div class="spot-cover hidden"></div><p>40</p></div></td>
                 </tr>
-            </table>
+            </table> -->
         </div>
       </div>
       </div>

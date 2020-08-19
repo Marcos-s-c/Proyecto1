@@ -8,9 +8,17 @@ const reservation_schema  = mongoose.Schema({
         required: true,
         unique: true
     },
-    date:{
+    reservation_date:{
         type: Date,
         required: true,
+    },
+    time: {
+        type: Date,
+        required: true
+    },
+    spot_number: {
+        type: Number,
+        required: true
     },
     parking_id: {
         type: String,
