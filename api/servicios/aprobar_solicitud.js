@@ -36,6 +36,30 @@ router.post("/solicitud_parqueo/aprobar", async function (req, res) {
       cantidadCampos: 0,
       latitud: 9.938277,
       longitud: -84.098574,
+      estado: "Activo",
+
+      tarifas: [
+        {
+          nombreDelVehiculo: "Bicicleta",
+          tarifa: 0,
+          estado: "Activo",
+        },
+        {
+          nombreDelVehiculo: "Motocicleta",
+          tarifa: 0,
+          estado: "Activo",
+        },
+        {
+          nombreDelVehiculo: "Automóvil",
+          tarifa: 0,
+          estado: "Activo",
+        },
+        {
+          nombreDelVehiculo: "Furgón y furgoneta",
+          tarifa: 0,
+          estado: "Activo",
+        },
+      ],
     });
 
     newParking
@@ -47,6 +71,8 @@ router.post("/solicitud_parqueo/aprobar", async function (req, res) {
         console.log(error);
       });
   });
+
+  //rates registration
 });
 
 module.exports = router;

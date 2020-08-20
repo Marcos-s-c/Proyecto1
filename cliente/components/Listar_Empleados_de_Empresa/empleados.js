@@ -35,7 +35,7 @@ const ListarUsuarios = () => {
                         <i id="modify-employees" onClick=editEmployees(${userID}) class="far fa-edit"></i
                       ></span>
                       <span id="save-employee" style= "display:none" ">
-                      <i id="modify-employees" onClick=saveUpdatesForEmployee(${userID}) class="far fa-save"></i
+                      <i id="modify-employees" onClick=saveUpdatesForEmployee(${userID}) class="far fa-save" ></i
                     ></span>
                       <span onclick="eliminarEmpleado(${userID})"
                         ><i class="far fa-trash-alt desasociar"></i
@@ -48,27 +48,30 @@ const ListarUsuarios = () => {
           console.log(estadoUsuario);
         } else {
           tabla_empleados.innerHTML += `
-          <tr>
-          <td id="">${name}</td>
-          <td id="">${userID}</td>
-          <td id="">${email}</td>
-          <td>
-            <label class="switch">
-              <input type="checkbox" uncheck id="estadoUsuario" onclick="estado(${userID})"/>
-              <span class="slider round"></span>
-            </label>
-          </td>
-          <td>
-            <span onclick="showAndHideEdit(event)">
-              <i class="far fa-edit"></i
-            ></span>
-            <span onclick="eliminarEmpleado(${userID})"
-              ><i class="far fa-trash-alt desasociar"></i
-            ></span>
-          </td>
-          </tr>
+                    <tr id="${userID}">
+                    <td id=""><input disabled type="text" id="name" name="fname" value="${name}"></td>
+                    <td id=""><input disabled type="text" id="userID" name="fname" value="${userID}"></td>
+                    <td id=""><input disabled type="text" id="email" name="fname" value="${email}"></td>
+                    <td>
+                      <label class="switch">
+                        <input type="checkbox" unchecked id="estadoUsuario" onclick="estado(${userID})"/>
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <span id="edit-employee" ">
+                        <i id="modify-employees" onClick=editEmployees(${userID}) class="far fa-edit"></i
+                      ></span>
+                      <span id="save-employee" style= "display:none" ">
+                      <i id="modify-employees" onClick=saveUpdatesForEmployee(${userID}) class="far fa-save" ></i
+                    ></span>
+                      <span onclick="eliminarEmpleado(${userID})"
+                        ><i class="far fa-trash-alt desasociar"></i
+                      ></span>
+                    </td>
+                    </tr>
 
-          `;
+                    `;
         }
       }
     })
@@ -79,34 +82,32 @@ const ListarUsuarios = () => {
 
 ListarUsuarios();
 
-
-const modify_Employees_btn = document.getElementById("modify-employees")
+const modify_Employees_btn = document.getElementById("modify-employees");
 
 function editEmployees(cedula) {
-  var filaEmpleado = document.getElementById(cedula)
-  filaEmpleado.getElementsByTagName("span").item(1).style.display = "none"
-  filaEmpleado.getElementsByTagName("span").item(2).style.display = "block"
+  var filaEmpleado = document.getElementById(cedula);
+  filaEmpleado.getElementsByTagName("span").item(1).style.display = "none";
+  filaEmpleado.getElementsByTagName("span").item(2).style.display =
+    "inline-block";
 
-  var ejemplo = filaEmpleado.getElementsByTagName("input")
+  var ejemplo = filaEmpleado.getElementsByTagName("input");
   var ejemploArray = Array.from(ejemplo);
-  ejemploArray.forEach(element => {
-    element.removeAttribute('disabled');
-  })
+  ejemploArray.forEach((element) => {
+    element.removeAttribute("disabled");
+  });
 }
 
 function saveUpdatesForEmployee(cedula) {
-  var filaEmpleado = document.getElementById(cedula)
-  console.log(filaEmpleado.getElementsByTagName("input"))
+  var filaEmpleado = document.getElementById(cedula);
+  console.log(filaEmpleado.getElementsByTagName("input"));
 
   // LLamar al fetch
 
-  editarEmpleado(datos) 
+  editarEmpleado(datos);
 
-   filaEmpleado.getElementsByTagName("span").item(2).style.display = "none"
-   filaEmpleado.getElementsByTagName("span").item(1).style.display = "block"
-
+  filaEmpleado.getElementsByTagName("span").item(2).style.display = "none";
+  filaEmpleado.getElementsByTagName("span").item(1).style.display = "block";
 }
-
 
 async function editarEmpleado(datos) {
   try {
@@ -116,22 +117,13 @@ async function editarEmpleado(datos) {
       headers: {
         "content-type": "application/json",
       },
-    })
+    });
 
-    console.log("success: " +  response)
-
-
-
+    console.log("success: " + response);
   } catch (e) {
-    console.log(e)
+    console.log(e);
   }
 }
-
-
-
-
-
-
 
 //Validar editar general
 function validateEditInput() {
@@ -224,7 +216,7 @@ function estado(cedula) {
       .then(function (data) {
         return data.json();
       })
-      .then(function (usuarios) { })
+      .then(function (usuarios) {})
       .catch(function (error) {
         console.log(error);
       });
@@ -242,7 +234,7 @@ function estado(cedula) {
       .then(function (data) {
         return data.json();
       })
-      .then(function (usuarios) { })
+      .then(function (usuarios) {})
       .catch(function (error) {
         console.log(error);
       });

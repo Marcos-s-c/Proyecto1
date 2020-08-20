@@ -21,6 +21,10 @@ var parkingSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  estado: {
+    type: String,
+    required: true,
+  },
   nombreDelDueño: {
     type: String,
     required: true,
@@ -73,6 +77,7 @@ var parkingSchema = mongoose.Schema({
   fechaDeInicio: Date,
   horario: Array,
   tipoVehiculos: Array,
+
   password: {
     required: true,
     type: String,
@@ -80,6 +85,19 @@ var parkingSchema = mongoose.Schema({
   rol: {
     type: String,
   },
+  bicicletas: {
+    type: { Number },
+  },
+  motocicletas: {
+    type: { Number },
+  },
+  automoviles: {
+    type: { Number },
+  },
+  pesado: {
+    type: { Number },
+  },
+
   //arreglo de tokens para cada sesion que mantenga abierta
   tokens: [
     {

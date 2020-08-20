@@ -3,17 +3,21 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3p1bmlnYWYiLCJhIjoiY2tlMXBpd3lxMDFtazJ4cXBtb
 var map = new mapboxgl.Map({
   container: 'map', // map es el nombre del div donde se desea guardar el mapa                          
   style: 'mapbox://styles/mapbox/streets-v11',
-  center: [-84.100814, 9.932318], // AQUI PUEDEN UTILIZAR CUALQUIERA DE LAS COORDENADAS DEVUELTAS 
+  center: [-84.1165, 10.0024 ], // AQUI PUEDEN UTILIZAR CUALQUIERA DE LAS COORDENADAS DEVUELTAS 
   zoom: 8
 });
 
-let values = {
-  provincia: "San José",
-  canton: "Pérez Zeledón",
-  distrito: "San Isidro"
-}
-
 const traerParqueos = async () => {
+  if (provinciasSelect.value == "Provincia" || cantonesSelect.value == "Cantón" || cantonesSelect.value == "Distrito") {
+    return true;
+  }
+
+  let values = {
+    provincia: provinciasSelect.options[provinciasSelect.value].text,
+    canton: cantonesSelect.options[cantonesSelect.value].text,
+    distrito: distritosSelect.value
+  }
+
   var request = {
     method: "POST",
     body: JSON.stringify(values),
@@ -26,36 +30,12 @@ const traerParqueos = async () => {
     parqueos = await response.json()
     arrayParqueos = parqueos.parqueos
 
-    // map.fitBounds([
-    //   [-84.098574,9.938277],
-    //   [-84.100814, 9.932318]
-    // ]);
-
-    console.log(arrayParqueos[0].longitud)
-    console.log(arrayParqueos[0].latitud)
-
-    // map.flyTo({
-    //   center: [
-
-    //     arrayParqueos[0].longitud,
-    //     arrayParqueos[0].latitud
-    //   ],
-    //   essential: true // this animation is considered essential with respect to prefers-reduced-motion
-    // });
-
-
-
-    // map.fitBounds([
-    //   [arrayParqueos[0].longitud-2, arrayParqueos[0].latitud],
-    //   [arrayParqueos[0].longitud , arrayParqueos[0].latitud-2]
-    //   ]);
     let markers = []
     arrayParqueos.forEach(parqueo => {
       const latitud = parqueo.latitud
       const longitud = parqueo.longitud
 
       if (latitud && longitud) {
-        console.log(longitud + " " + latitud)
         markers.push(new mapboxgl.Marker()
           .setLngLat([longitud, latitud])
           .addTo(map))
@@ -63,24 +43,38 @@ const traerParqueos = async () => {
 
     });
 
-
-
-    //  map.fitBounds([
-    //   [arrayParqueos[0].longitud, arrayParqueos[0].latitud], // Southwest coordinates
-    //   [ arrayParqueos[1].longitud  , arrayParqueos[1].latitud] // Northeast coordinates
-    //   ]);
-
-    // map.flyTo({
-    //   center: [
-    //     arrayParqueos[0].longitud,
-    //     arrayParqueos[0].latitud
-    //   ]})
-
+    geocode(values.provincia + " " +  values.canton + " " +  values.distrito)
 
   } catch (e) {
-    console.log(e);
+    console.log(e + "El error");
   }
 }
 
 traerParqueos()
 
+
+const geocode = async (address) => {
+  const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=pk.eyJ1Ijoic3p1bmlnYWYiLCJhIjoiY2tlMXBpd3lxMDFtazJ4cXBtbTlqdGM1aSJ9.HYKB-SSvsP34UzUTi5rUbg&limit=1';
+
+  console.log(url)
+  try {
+    let geoCodeResponse = await fetch(url)
+    geoCodeResponse = await geoCodeResponse.json()
+    const latitud = geoCodeResponse.features[0].center[1]
+    const longitud = geoCodeResponse.features[0].center[0]
+
+    console.log(latitud + " " +  longitud)
+
+    map.flyTo({
+      center: [
+        longitud,
+        latitud
+      ],
+      zoom: 12,
+      essential: true 
+    });
+
+  } catch (e) {
+    console.log("Error al utilizar el servicio de GEOCODE")
+  }
+}

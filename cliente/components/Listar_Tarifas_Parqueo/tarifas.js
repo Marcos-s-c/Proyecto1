@@ -133,3 +133,203 @@ function deleteIcon() {
     }
   });
 }
+
+//List rates
+
+var ratesList = [];
+window.onload = function () {
+  //Este evento se dispara cuando la pantalla está cargada y ejecuta las funciones determinadas
+  loadData();
+};
+
+function loadData() {
+  fetch("http://localhost:4040/tarifas/listar", {
+    method: "GET",
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (json) {
+      var ratesTable = document.querySelector("#ratesTable tbody");
+      ratesTable.innerHTML = "";
+      ratesList = json;
+      for (var i = 0; i < json.length; i++) {
+        var row = document.createElement("tr");
+
+        var tableData1 = document.createElement("td");
+        tableData1.innerHTML = json[i].nombreDelVehiculo;
+
+        var tableData2 = document.createElement("td");
+        tableData2.innerHTML = json[i].tarifa;
+        /*var inputVehicle = document.createElement("input");
+        tableData2.appendChild(inputVehicle);*/
+        //inputVehicle.style = "disable";
+        // inputVehicle.setAttribute("type", "text");
+        // vehiclePlaceHolder = document.createElement("placeholder");
+        // vehiclePlaceHolder = json[i].tarifa;
+        //tableData2.innerHTML = json[i].tarifa;
+        // inputVehicle.innerHTML = json[i].tarifa;
+        var tableData3 = document.createElement("td");
+        var labelToggle = document.createElement("label");
+        var inputToggle = document.createElement("input");
+        var spanToggle = document.createElement("span");
+        tableData3.appendChild(labelToggle);
+        labelToggle.appendChild(inputToggle);
+        inputToggle.type = "checkbox";
+        if (json[i].estado == "Activo") {
+          inputToggle.checked = true;
+        }
+        labelToggle.appendChild(spanToggle);
+        labelToggle.classList.add("switch");
+        spanToggle.classList.add("slider");
+        spanToggle.classList.add("round");
+
+        var tableData4 = document.createElement("td");
+        var editIcon = document.createElement("i");
+        var deleteIcon = document.createElement("i");
+        tableData4.appendChild(editIcon);
+        tableData4.appendChild(deleteIcon);
+        editIcon.classList.add("far");
+
+        editIcon.classList.add("fa-edit");
+
+        deleteIcon.classList.add("far");
+        deleteIcon.classList.add("fa-trash-alt");
+        row.appendChild(tableData1);
+        row.appendChild(tableData2);
+        row.appendChild(tableData3);
+        row.appendChild(tableData4);
+        ratesTable.appendChild(row);
+      }
+    });
+}
+
+
+// slider
+
+tabla_empleados = document.getElementById("tabla_empleados");
+estadoUsuario = document.getElementById("estadoUsuario");
+
+const ListarUsuarios = () => {
+  fetch("/personas/empresa", {
+    method: "POST",
+    body: JSON.stringify({
+      empresa: "Toyota",
+    }),
+    headers: {
+      "content-type": "application/json",
+    },
+  })
+    .then(function (data) {
+      return data.json();
+    })
+    .then(function (usuarios) {
+      for (const usuario of usuarios) {
+        const { name, userID, email, estado } = usuario;
+        console.log(usuario);
+        if (usuario.estado == "activo") {
+          tabla_empleados.innerHTML += `
+                    <tr id="${userID}">
+                    <td id=""><input disabled type="text" id="name" name="fname" value="${name}"></td>
+                    <td id=""><input disabled type="text" id="userID" name="fname" value="${userID}"></td>
+                    <td id=""><input disabled type="text" id="email" name="fname" value="${email}"></td>
+                    <td>
+                      <label class="switch">
+                        <input type="checkbox" checked id="estadoUsuario" onclick="estado(${userID})"/>
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <span id="edit-employee" ">
+                        <i id="modify-employees" onClick=editEmployees(${userID}) class="far fa-edit"></i
+                      ></span>
+                      <span id="save-employee" style= "display:none" ">
+                      <i id="modify-employees" onClick=saveUpdatesForEmployee(${userID}) class="far fa-save" ></i
+                    ></span>
+                      <span onclick="eliminarEmpleado(${userID})"
+                        ><i class="far fa-trash-alt desasociar"></i
+                      ></span>
+                    </td>
+                    </tr>
+
+                    `;
+
+          console.log(estadoUsuario);
+        } else {
+          tabla_empleados.innerHTML += `
+                    <tr id="${userID}">
+                    <td id=""><input disabled type="text" id="name" name="fname" value="${name}"></td>
+                    <td id=""><input disabled type="text" id="userID" name="fname" value="${userID}"></td>
+                    <td id=""><input disabled type="text" id="email" name="fname" value="${email}"></td>
+                    <td>
+                      <label class="switch">
+                        <input type="checkbox" unchecked id="estadoUsuario" onclick="estado(${userID})"/>
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <span id="edit-employee" ">
+                        <i id="modify-employees" onClick=editEmployees(${userID}) class="far fa-edit"></i
+                      ></span>
+                      <span id="save-employee" style= "display:none" ">
+                      <i id="modify-employees" onClick=saveUpdatesForEmployee(${userID}) class="far fa-save" ></i
+                    ></span>
+                      <span onclick="eliminarEmpleado(${userID})"
+                        ><i class="far fa-trash-alt desasociar"></i
+                      ></span>
+                    </td>
+                    </tr>
+
+                    `;
+        }
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
+
+ListarUsuarios();
+
+const modify_Employees_btn = document.getElementById("modify-employees");
+
+function editEmployees(cedula) {
+  var filaEmpleado = document.getElementById(cedula);
+  filaEmpleado.getElementsByTagName("span").item(1).style.display = "none";
+  filaEmpleado.getElementsByTagName("span").item(2).style.display =
+    "inline-block";
+
+  var ejemplo = filaEmpleado.getElementsByTagName("input");
+  var ejemploArray = Array.from(ejemplo);
+  ejemploArray.forEach((element) => {
+    element.removeAttribute("disabled");
+  });
+}
+
+function saveUpdatesForEmployee(cedula) {
+  var filaEmpleado = document.getElementById(cedula);
+  console.log(filaEmpleado.getElementsByTagName("input"));
+
+  // LLamar al fetch
+
+  editarEmpleado(datos);
+
+  filaEmpleado.getElementsByTagName("span").item(2).style.display = "none";
+  filaEmpleado.getElementsByTagName("span").item(1).style.display = "block";
+}
+
+async function editarEmpleado(datos) {
+  try {
+    const response = await fetch("/asociar/" + cedula, {
+      method: "PUT",
+      body: JSON.stringify(datos),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+
+    console.log("success: " + response);
+  } catch (e) {
+    console.log(e);
+  }
+}

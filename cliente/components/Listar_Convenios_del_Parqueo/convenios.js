@@ -1,40 +1,43 @@
-//Función para mostrar y ocultar los inputs de agregar
-function showAndHideAdd() {
-  var add = document.getElementById("add");
-  var edit = document.getElementById("edit");
-  edit.style.display = "none";
-  if (add.offsetWidth > 0 && add.offsetHeight > 0) {
-    add.style.display = "none";
-  } else {
-    add.style.display = "block";
-  }
-}
+formulario = document.querySelector("#registerForm");
 
-//Función para mostrar y ocultar el espacios de editar
-
-function showAndHideEdit() {
-  var add = document.getElementById("add");
-  var edit = document.getElementById("edit");
-  add.style.display = "none";
-  if (edit.offsetWidth > 0 && edit.offsetHeight > 0) {
-    edit.style.display = "none";
-  } else {
-    edit.style.display = "block";
-  }
-}
-
-//Validar espacios agregar
 function validateAddSpaces() {
   var validateResult = validateCompany() && validateDiscount("#discountAdd");
   if (validateResult == true) {
     Swal.fire({
       position: "center",
       icon: "success",
-      title: "El convenio se ha agregado correctamente",
-      showConfirmButton: false,
-      timer: 2000,
+      title: "El convenio se ha agregado correctamente"
     });
   }
+  
+  var nombreConvenio = document.getElementById("company").value;
+  var porcentajeConvenio = document.getElementById("discountAdd").value;
+
+  console.log(nombreConvenio + " " + porcentajeConvenio);
+
+  var data = {
+    nombreConvenio: nombreConvenio,
+    porcentajeConvenio: porcentajeConvenio,
+  };
+
+  console.log(data);
+
+  var request = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    }
+  };
+
+  fetch("/guardar/convenios", request)
+    .then(function (data) {
+      console.log(data);
+      location.reload();
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 //Validar editar general
@@ -122,3 +125,93 @@ function deleteIcon() {
     }
   });
 }
+
+window.onload = function () {
+  cargarDatos();
+};
+
+function cargarDatos() {
+  fetch("/convenios/listar")
+      .then(function (response) {
+          return response.json();
+          console.log(response);
+      })
+      .then(function (json) {
+          var conventionsTable = document.querySelector("#conventionsTable tbody");
+          conventionsTable.innerHTML = "";
+          conventionsList = json;
+          for (var i = 0; i < json.length; i++) {
+          var row = document.createElement("tr");
+
+          var tableData1 = document.createElement("td");
+          tableData1.innerHTML = json[i].nombreConvenio;
+  
+          var tableData2 = document.createElement("td");
+          tableData2.innerHTML = json[i].porcentajeConvenio;
+  
+          var tableData3 = document.createElement("td");
+          tableData3.innerHTML =
+            '<label class="switch">'+
+            '<input type="checkbox" checked />'+
+            '<span class="slider round"></span>' +
+            '</label>';
+
+          var tableData4 = document.createElement("td");
+          tableData4.innerHTML =
+            '<i onclick="deleteIcon(' +
+            "'" +
+            json[i].nombreConvenio +
+            "'" +
+            ')" class="far fa-trash-alt"></i>';
+          
+  
+          
+            
+          row.appendChild(tableData1);
+          row.appendChild(tableData2);
+          row.appendChild(tableData3);
+          row.appendChild(tableData4);
+          conventionsTable.appendChild(row);
+          
+          }
+          
+      });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+//Función para mostrar y ocultar los inputs de agregar
+/*function showAndHideAdd() {
+  var add = document.getElementById("add");
+  var edit = document.getElementById("edit");
+  edit.style.display = "none";
+  if (add.offsetWidth > 0 && add.offsetHeight > 0) {
+    add.style.display = "none";
+  } else {
+    add.style.display = "block";
+  }
+}
+*/
+//Función para mostrar y ocultar el espacios de editar
+
+/*function showAndHideEdit() {
+  var add = document.getElementById("add");
+  var edit = document.getElementById("edit");
+  add.style.display = "none";
+  if (edit.offsetWidth > 0 && edit.offsetHeight > 0) {
+    edit.style.display = "none";
+  } else {
+    edit.style.display = "block";
+  }
+}
+*/
+//Validar espacios agregar
