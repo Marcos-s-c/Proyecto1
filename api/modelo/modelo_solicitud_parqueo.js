@@ -2,11 +2,11 @@
 let mongoose = require("mongoose");
 
 var solicitudSchema = new mongoose.Schema({
-  name : {
+  ownersName : {
     type: String,
     required: true
   },
-  userId : {
+  usersId : {
     type: String,
     required: true
   },
@@ -14,7 +14,7 @@ var solicitudSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  birthDate : {
+  dateOfBirth : {
     type: Date,
     required: true
   },
@@ -34,11 +34,11 @@ var solicitudSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  fullAddress : {
+  address : {
     type: String,
     required: true
   },
-  mall : {
+  shoppingCent : {
     type: String,
   },
   latitud : {
@@ -49,7 +49,7 @@ var solicitudSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  status : {
+  state : {
     type: String
   }
 });
@@ -59,3 +59,5 @@ module.exports = mongoose.model(
   solicitudSchema,
   "Solicitudes"
 );
+
+
