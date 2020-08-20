@@ -19,7 +19,7 @@
     />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous"/>
     <script src="https://kit.fontawesome.com/da33aea8dd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/global.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styles.csss" />
   </head>
   <body>
     <div class="outer-container">
@@ -72,51 +72,62 @@
             <input type="text" placeholder="Buscar..." />
             <button type="submit"><i class="fas fa-search"></i></button>
           </div>
-          <div class="add-container">
-            <div class="add-icon">
-              <span onclick="showAndHideAdd()">
-                <i class="fas fa-plus-circle"></i
-              ></span>
+
+          <form>
+            <div class="add-container">
+
+              <div id="add" class="add-inputs">
+
+                <input
+                  id="company"
+                  class="sub-inputs"
+                  type="text"
+                  placeholder="Nombre de la empresa"
+                />
+
+                <input
+                  id="discountAdd"
+                  class="sub-inputs"
+                  type="text"
+                  placeholder="Porcentaje de descuento"
+                />
+
+                <div class="add-icon">
+                  <button onclick="validateAddSpaces()">
+                    <i class="fas fa-plus-circle"></i>
+                  </button>
+                </div>
+
+              </div>
             </div>
-            <div id="add" class="add-inputs">
-              <input
-                id="company"
-                class="sub-inputs"
-                type="text"
-                placeholder="Nombre de la empresa"
-              />
-              <input
-                id="discountAdd"
-                class="sub-inputs"
-                type="text"
-                placeholder="Porcentaje de descuento"
-              />
-              <button
-                onclick="validateAddSpaces()"
-                id="addButton"
-                type="submit"
-              >
-                Agregar convenio
-              </button>
+          </form>
+
+          <form action="">
+            <div class="add-container">
+              <div id="edit" class="edit-wraper">
+
+                <input
+                  id="discountEdit"
+                  class="sub-inputs"
+                  type="text"
+                  placeholder="Porcentaje de descuento"
+                />
+
+                <button
+                  onclick="validateEditInput()"
+                  id="editButton"
+                  type="submit"
+                >
+                  Editar
+                </button>
+
+              </div>
+
             </div>
-            <div id="edit" class="edit-wraper">
-              <input
-                id="discountEdit"
-                class="sub-inputs"
-                type="text"
-                placeholder="Porcentaje de descuento"
-              />
-              <button
-                onclick="validateEditInput()"
-                id="editButton"
-                type="submit"
-              >
-                Editar
-              </button>
-            </div>
-          </div>
+          </form>
+
         </div>
-        <table class="table">
+        <table class="table" id="conventionsTable">
           <thead>
             <tr>
               <th><h1>Código de convenio</h1></th>
@@ -126,136 +137,7 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>5260</td>
-              <td>Walmart</td>
-              <td>15%</td>
-              <td>
-                <label class="switch">
-                  <input type="checkbox" checked />
-                  <span class="slider round"></span>
-                </label>
-              </td>
-              <td>
-                <span onclick="showAndHideEdit(event)">
-                  <i class="far fa-edit"></i></span>
-                  <span onclick="deleteIcon()"><i class="far fa-trash-alt"></i></span>
-              </td>
-            </tr>
-            <tr>
-              <td>1122</td>
-              <td>BCT</td>
-              <td>5%</td>
-              <td>
-                <label class="switch">
-                  <input type="checkbox" checked />
-                  <span class="slider round"></span>
-                </label>
-              </td>
-              <td>
-                <span onclick="showAndHideEdit(event)"
-                  ><i class="far fa-edit"></i></span
-                ><span onclick="deleteIcon()"><i class="far fa-trash-alt"></i></span>
-              </td>
-            </tr>
-            <tr>
-              <td>1250</td>
-              <td>Yamuni</td>
-              <td>10%</td>
-              <td>
-                <label class="switch">
-                  <input type="checkbox" checked />
-                  <span class="slider round"></span>
-                </label>
-              </td>
-              <td>
-                <span onclick="showAndHideEdit(event)"
-                  ><i class="far fa-edit"></i></span
-                ><span onclick="deleteIcon()"><i class="far fa-trash-alt"></i></span>
-              </td>
-            </tr>
-            <tr>
-              <td>1269</td>
-              <td>BCCR</td>
-              <td>20%</td>
-              <td>
-                <label class="switch">
-                  <input type="checkbox" checked />
-                  <span class="slider round"></span>
-                </label>
-              </td>
-              <td>
-                <span onclick="showAndHideEdit(event)"
-                  ><i class="far fa-edit"></i></span
-                ><span onclick="deleteIcon()"><i class="far fa-trash-alt"></i></span>
-              </td>
-            </tr>
-            <tr>
-              <td>1550</td>
-              <td>Automercado</td>
-              <td>5%</td>
-              <td id="icons">
-                <label class="switch">
-                  <input type="checkbox" checked />
-                  <span class="slider round"></span>
-                </label>
-              </td>
-              <td>
-                <span onclick="showAndHideEdit(event)"
-                  ><i class="far fa-edit"></i></span
-                ><span onclick="deleteIcon()"><i class="far fa-trash-alt"></i></span>
-              </td>
-            </tr>
-            <tr>
-              <td>2255</td>
-              <td>3M</td>
-              <td>5%</td>
-              <td>
-                <label class="switch">
-                  <input type="checkbox" checked />
-                  <span class="slider round"></span>
-                </label>
-              </td>
-              <td>
-                <span onclick="showAndHideEdit(event)"
-                  ><i class="far fa-edit"></i></span
-                ><span onclick="deleteIcon()"><i class="far fa-trash-alt"></i></span>
-              </td>
-            </tr>
-            <tr>
-              <td>4215</td>
-              <td>BCCR</td>
-              <td>15%</td>
-              <td>
-                <label class="switch">
-                  <input type="checkbox" checked />
-                  <span class="slider round"></span>
-                </label>
-              </td>
-              <td>
-                <span onclick="showAndHideEdit(event)"
-                  ><i class="far fa-edit"></i></span
-                ><span onclick="deleteIcon()"><i class="far fa-trash-alt"></i></span>
-              </td>
-            </tr>
-            <tr>
-              <td>2255</td>
-              <td>Keds</td>
-              <td>15%</td>
-              <td>
-                <label class="switch">
-                  <input type="checkbox" checked />
-                  <span class="slider round"></span>
-                </label>
-              </td>
-              <td>
-                <span onclick="showAndHideEdit(event)"
-                  ><i class="far fa-edit"></i></span
-                ><span onclick="deleteIcon()"><i class="far fa-trash-alt"></i></span>
-              </td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
       </div>
