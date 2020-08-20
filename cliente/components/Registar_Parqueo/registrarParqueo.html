@@ -32,12 +32,9 @@
     <div class="topHeaderFill">relleno</div>
     <h1 class="page-heading">Potencializa tu parqueo con MySpot</h1>
     <div class="main">
-      <form
-        action="http://127.0.0.1:4040/solicitud_parqueo/guardar"
-        method="POST"
-      >
+      <form>
         <div class="form-container" id="form-container">
-          <div class="first form" id="first-form">
+          <!--<div class="first form" id="first-form">
             <h3>Solicitud de registro</h3>
             <input
               type="text"
@@ -70,9 +67,35 @@
               />
               <p>*Opcional</p>
             </div>
-            <button type="button" id="next-button" onclick="replaceForm()">
-              Siguiente
-            </button>
+              <div class="buttons">
+                <button type="button" onclick="displayUserForm()">Atras</button>
+                <button type="button" id="send-button" onclick="saveRequest()">Enviar</button>
+              </div>
+            <div/>-->
+            <div class="second form" id="second-form">
+              <h3>Solicitud de registro</h3>
+              <input type="text" id="parking-name" class="form-input" placeholder="Nombre del parqueo">
+              <div class="address-box">
+                <select id="provincias">
+                  <option>Provincia</option>
+                </select>
+                <select id="cantones">
+                  <option>Cantón</option>
+                </select><select id="distritos">
+                  <option>Distrito</option>
+                </select>
+              </div>
+              <input type="text" id="full-address" class="form-input" placeholder="Dirección exacta">
+              <div class="mall-box">
+                <input type="text" id="mall-name" class="form-input" placeholder="Centro comercial"><p>*Opcional</p>
+              </div>
+              <div class="coordenadas-box">
+                <p>Coordenadas</p>
+                <input type="Number" placeholder="Latitud" id="latitud" class="coordenada">
+                <input type="Number" placeholder="Longitud" id="longitud" class="coordenada">
+              </div>
+              <button type="button" id="next-button" onclick="displayUserForm()">Siguiente</button>
+
             <!--<div class="second Form">    
                     <input type="text" id="parking-name" class="form-input" placeholder="Nombre del parqueo">
                     <div class="address-box">
@@ -102,5 +125,6 @@
     </footer>
     <script src="../../assets/js/traer_provincias.js"></script>
     <script src="registrar_parqueo.js"></script>
+    <script src="../../assets/js/enviar_correo.js"></script>
   </body>
 </html>

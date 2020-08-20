@@ -4,29 +4,17 @@ var mongoose = require("mongoose");
 
 var ParkingRequest = require("../modelo/modelo_solicitud_parqueo");
 
-router.post("/solicitud_parqueo/guardar", function (req, res) {
-  var savedRequests = new ParkingRequest({
-    state: "Pendiente",
-    ownersName: req.body.ownersName,
-    usersId: req.body.usersId,
-    email: req.body.email,
-    dateOfBirth: req.body.dateOfBirth,
-    parkingName: req.body.parkingName,
-    provincia: "San José",
-    canton: "Pérez Zeledón",
-    distrito: "San Isidro",
-    shoppingCenter: req.body.shoppingCenter,
-    address: req.body.address,
+router.post("/solicitud_parqueo/guardar", async function (req, res) {
+    const solicitud = new ParkingRequest(req.body);
+    try{
+      console.log("entro al try")
+      solicitud.save();
+      res.status(201).send("solicitud registrada");
+    }
+    catch(error){
+      console.log(error)
+      res.status(400).send("No se pudo registrar la solicitud");
+    }
   });
-
-  savedRequests
-    .save()
-    .then(function (result) {
-      res.json(result);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-});
 
 module.exports = router;

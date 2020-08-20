@@ -1,22 +1,61 @@
 "use strict";
 let mongoose = require("mongoose");
 
-let solicitudSchema = new mongoose.Schema({
-  state: { type: String, required: true },
-  ownersName: { type: String, required: true },
-  usersId: { type: Number, unique: true, required: true },
-  email: { type: String, unique: true, required: true },
-  dateOfBirth: { type: Date, unique: false, required: true },
-  parkingName: { type: String, required: true },
-  provincia: { type: String, required: true },
-  canton: { type: String, required: true },
-  distrito: { type: String, required: true },
-  shoppingCenter: { type: String, required: false },
-  address: { type: String, unique: false, required: false },
+var solicitudSchema = new mongoose.Schema({
+  name : {
+    type: String,
+    required: true
+  },
+  userId : {
+    type: String,
+    required: true
+  },
+  email : {
+    type: String,
+    required: true
+  },
+  birthDate : {
+    type: Date,
+    required: true
+  },
+  parkingName : {
+    type: String,
+    required: true
+  }, 
+  provincia :{
+    type: String,
+    required: true
+  }, 
+  canton : {
+    type: String,
+    required: true
+  },
+  distrito : {
+    type: String,
+    required: true
+  },
+  fullAddress : {
+    type: String,
+    required: true
+  },
+  mall : {
+    type: String,
+  },
+  latitud : {
+    type: Number,
+    required: true
+  },
+  longitud : {
+    type: Number,
+    required: true
+  },
+  status : {
+    type: String
+  }
 });
 
 module.exports = mongoose.model(
   "Solicitud",
   solicitudSchema,
-  "SolicitudesDeParqueo"
+  "Solicitudes"
 );
