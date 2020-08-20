@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Tarjeta = require('../modelo/modelo_tarjeta');
+var Convenio = require('../modelo/modelo_convenio');
 
-router.get("/tarjetas/listar", function (req, res) {
+router.get("/convenios/listar", function (req, res) {
 
     console.log(req.user)
     
-    Tarjeta.find().exec()
+    Convenio.find().exec()
     .then(function (result) {
         res.json(result);
     })
