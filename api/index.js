@@ -72,11 +72,8 @@ app.use(listarReservas);
 app.use(listarParqueosAdministrador);
 app.use(registrarPago);
 app.use(editarUsuario);
-<<<<<<< HEAD
 app.use(guardarConvenio);
-=======
 app.use(listar_tarifas);
->>>>>>> 1f213a1a1cceec9b5e92299a04aebb52e3da2514
 //app.use(authentication);
 app.use(public_dir);
 //app.use(cookieParser);
