@@ -1,6 +1,18 @@
 *{
     box-sizing: border-box;
 }
+body {
+    margin: 0;
+    padding: 0;
+}
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+}
 .row{
     min-height: 100%;
     padding: 0%;
@@ -29,19 +41,16 @@
     width: 100%;
     position:absolute;
 }
+
 .search-box{
-    padding: 5% 3%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 999;
-}
-.search-input{
-    width: 99%;
+    width: 90%;
     display: flex;
+    padding-top: 2%;
+    margin: auto;
 }
 .search-bar{
     width: 75%;
-    padding: 1%;
+    padding: 3% 0%;
     border-style: none;
     font-size: 15px;
     margin-right: 1%;
@@ -54,6 +63,8 @@
     background-color: #216c7a;
     width: 25%;
     margin-left: 1%;
+    border-style: none;
+    border-radius: 5px;
 }
 .search-button:hover{
     background-color: #0db1b1;
@@ -98,7 +109,6 @@
 }
 .details h3{
     margin: 0;
-
 }
 .star-rating{
     display: flex;
@@ -151,4 +161,39 @@
     background-color: #216c7a;
 }
 
+.search-container{
+    width: 90%;
+    overflow: hidden;
+    background-color: lightgray;
+}
+.search-container img{
+    width: 5%;
+}
+.search-form{
+    position: relative;
+}
+.resultsList-box select{
+    display: block;
+}
+.resultsList-box img{
+    width: 10%;
+}
+.search-form{
+    width: 90%;
+    margin: auto;
+    padding-top: 10%;
+}
+.search-form select{
+    width: 100%;
+    padding: 3% 0%;
+    border-style: none;
+    font-size: 15px;
+    margin: 3% 0%;
+    color:gray;
+}
+.search-form h3,
+.search-box h3{
+    display: inline;
+    margin: 5% 3%;
+}
 

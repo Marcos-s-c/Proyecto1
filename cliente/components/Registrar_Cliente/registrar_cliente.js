@@ -8,27 +8,25 @@ async function registerUser() {
     birthDate: document.getElementById("birthDate").value,
     phoneNumber: document.getElementById("phoneNumber").value,
     password: Math.random().toString(36).slice(-8),
-    email: document.getElementById("email").value,
+    email: document.getElementById('email').value,
   };
   try {
-    if (data.idType == "fisica") {
+    if(data.idType == 'fisica'){
       data.rol = "cliente";
-
-      await fetch("/personas", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
-      });
+      await fetch('/personas', { 
+        method: 'POST', 
+        body: JSON.stringify(data), 
+        headers: { 'Content-Type': 'application/json' } })     
       await sendEmail(data, "Confirmación de correo");
       window.location.href = "/";
-    } else {
+      
+    }else{
       data.rol = "empresa";
-      await fetch("/empresas", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
-      });
-      await sendEmail(data, "Confirmación de correo");
+      await fetch('/empresas', {
+        method: 'POST', 
+        body: JSON.stringify(data), 
+        headers: { 'Content-Type': 'application/json' } })     
+      await sendEmail(data, "Confirmación de correo");  
       window.location.href = "/";
     }
   } catch (e) {

@@ -1,24 +1,35 @@
 .search input {
-    margin-top: 8px;
-    outline: none;
-    width: 20%;
-    padding-left: 3%;
-  }
-  
-  .search {
-    text-align: left;
-    width: 50%;
-  }
-  
-  .add-icon {
-    padding: -3%;
-    float: right;
-    font-size: 24px;
-    color: #82b0b0;
-  }
+  margin-top: 8px;
+  outline: none;
+  width: 30%;
+  padding-left: 3%;
+}
 
-  .listado_usuarios{
-    width: 100%;
-  }
+.search {
+  text-align: left;
+  width: 50%;
+}
 
+.add-icon {
+  padding: -3%;
+  float: left;
+  font-size: 24px;
+  color: #82b0b0;
+}
 
+.listado_usuarios {
+  width: 100%;
+}
+.table {
+  padding: 0 0 0 0 !important;
+}
+
+.asociar:hover {
+  color: rgb(34, 131, 34);
+  cursor: pointer;
+}
+
+.desasociar:hover {
+  color: rgb(177, 45, 45);
+  cursor: pointer;
+}

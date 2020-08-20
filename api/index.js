@@ -23,8 +23,8 @@ var guardarTarjeta = require("./servicios/registrar_tarjeta");
 var listarTarjetas = require("./servicios/listar_tarjetas");
 var editarUsuario = require("./servicios/editar_usuario");
 var listarParqueosAdministrador = require("./servicios/listar_parqueos_administrador");
-var buscarParqueosCliente = require('./servicios/buscar_parqueos_cliente')
-
+var buscarParqueosCliente = require('./servicios/buscar_parqueos_cliente');
+var registrarPago = require('./servicios/registrar_pago');
 var crearReserva = require("./servicios/crear_reserva");
 var listarReservas = require("./servicios/listar_reservas");
 const enviarCorreo = require("./servicios/enviar_correo");
@@ -63,38 +63,18 @@ app.use(buscarSolicitud);
 app.use(enviarCorreo);
 app.use(guardarInfoExtraParqueos);
 app.use(guardarEmpresa);
+app.use(listarEmpresas);
 app.use(guardarTarjeta);
 app.use(listarTarjetas);
 app.use(crearReserva);
 app.use(listarReservas);
 app.use(listarParqueosAdministrador);
+app.use(registrarPago);
+app.use(editarUsuario);
 //app.use(authentication);
 app.use(public_dir);
 //app.use(cookieParser);
 
-app.use(logIn);
-app.use(guardarUsuarios);
-app.use(listarUsuarios);
-app.use(guardarSolicitudes);
-app.use(listarSolicitudes);
-app.use(denegarSolicitud);
-app.use(aprobarSolicitud);
-app.use(buscarSolicitud);
-app.use(logOut);
-app.use(enviarCorreo);
-app.use(guardarInfoExtraParqueos);
-app.use(guardarEmpresa);
-app.use(listarEmpresas);
-app.use(guardarTarjeta);
-app.use(listarTarjetas);
-app.use(loginEmpresa);
-app.use(crearReserva);
-app.use(editarUsuario);
-app.use(listarReservas);
-app.use(buscarParqueosCliente)
-//app.use(authentication);
-app.use(public_dir);
-//app.use(cookieParser);
 
 app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");

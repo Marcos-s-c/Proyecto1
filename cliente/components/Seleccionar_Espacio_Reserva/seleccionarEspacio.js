@@ -35,7 +35,7 @@
 
     const data = {
       code: Math.random().toString(36).slice(2),
-      reservation_hour: document.getElementById('time-select').value,
+      time: document.getElementById('time-select').value,
       spot_number: Math.floor(Math.random()*50) + 1,
       parking_id:  Math.floor(Math.random()*(999999 - 100000)) + 1,
       rate: 1000,

@@ -45,4 +45,88 @@ router.put("/asociar/:cedula", function (req, res) {
   );
 });
 
+router.put("/desasociar/:cedula", function (req, res) {
+  Usuario.updateOne(
+    { userID: req.params.cedula },
+    { $set: req.body },
+
+    function (error, info) {
+      if (error) {
+        res.json({
+          resultado: false,
+          msg: "No se pudo modificar el usuario",
+        });
+      } else {
+        res.json({
+          resultado: true,
+          info: info,
+        });
+      }
+    }
+  );
+});
+
+router.put("/activar/:cedula", function (req, res) {
+  Usuario.updateOne(
+    { userID: req.params.cedula },
+    { $set: req.body },
+
+    function (error, info) {
+      if (error) {
+        res.json({
+          resultado: false,
+          msg: "No se pudo modificar el usuario",
+        });
+      } else {
+        res.json({
+          resultado: true,
+          info: info,
+        });
+      }
+    }
+  );
+});
+
+router.put("/inactivar/:cedula", function (req, res) {
+  Usuario.updateOne(
+    { userID: req.params.cedula },
+    { $set: req.body },
+
+    function (error, info) {
+      if (error) {
+        res.json({
+          resultado: false,
+          msg: "No se pudo modificar el usuario",
+        });
+      } else {
+        res.json({
+          resultado: true,
+          info: info,
+        });
+      }
+    }
+  );
+});
+
+router.put("/editarUsuario", function (req, res) {
+  Usuario.updateOne(
+    { userID: req.params.cedula },
+    { $set: req.body },
+
+    function (error, info) {
+      if (error) {
+        res.json({
+          resultado: false,
+          msg: "No se pudo modificar el usuario",
+        });
+      } else {
+        res.json({
+          resultado: true,
+          info: info,
+        });
+      }
+    }
+  );
+});
+
 module.exports = router;

@@ -44,6 +44,9 @@ const userSchema = mongoose.Schema({
   empresa: {
     type: String,
   },
+  estado: {
+    type: String,
+  },
   //arreglo de tokens para cada sesion que mantenga abierta
   tokens: [
     {

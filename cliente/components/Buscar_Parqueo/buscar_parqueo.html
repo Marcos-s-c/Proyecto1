@@ -1,140 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styles.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="buscar_parqueo.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous"/>
-    <script src="https://kit.fontawesome.com/da33aea8dd.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <div class="outer-container">
-      <header>
-        <div class="logo">
-          <a href="index.html"><img src="../../assets/img/logo.png" /></a>      
-        </div>
-        <div class="sub-menu" id="sub">
-          <div class="dropdown">
-            <i class="fas fa-user-circle dropbtn" onclick="displayDropDownMenu()"></i>
-            <div id="myDropdown" class="dropdown-content">
-              <a href="../Perfil del cliente/perfil_cliente.html">Perfil</a>
-              <a href="config_cliente.html">Configuración</a>    <!--cambiar url-->
-              <a href="inicio_sesion.html">Cerrar sesión</a>     <!--cambiar url-->
-            </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="buscar_parqueo.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/da33aea8dd.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="outer-container">
+    <header>
+      <div class="logo">
+        <a href="index.html"><img src="../../assets/img/logo.png" /></a>
+      </div>
+      <div class="sub-menu" id="sub">
+        <div class="dropdown">
+          <i class="fas fa-user-circle dropbtn" onclick="displayDropDownMenu()"></i>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="../Perfil del cliente/perfil_cliente.html">Perfil</a>
+            <a href="config_cliente.html">Configuración</a>
+            <!--cambiar url-->
+            <a href="inicio_sesion.html">Cerrar sesión</a>
+            <!--cambiar url-->
           </div>
-        </div> 
-      </header>
-      <div class="topHeaderFill">relleno</div>
+        </div>
+      </div>
+    </header>
+    <div class="topHeaderFill">relleno</div>
     <!-- The flexible grid (content) -->
     <div class="row">
       <div class="side" id="side-section">
-        <div class="search-box">
-          <h3>Busca aquí tu parqueo</h3>
-          <div class="search-input">
-            <input type="text" class="search-bar" id="search-bar" placeholder="Zona de interés o nombre del parqueo"> 
-            <button type="button" onclick="getAllParkings()" class="search-button">
-              <i class="fas fa-search"></i>
-              <a href="#">Buscar</a></button>
-          </div>
-        </div>
         <div class="resultsList-box" id="resultsList-box">
           <div class="resultsList-items scroll-style">
-            <div class="items-content-wraper">
-              <div class="item-content">
-                <div class="image">
-                  <img src="../../assets/img/parqueos_usuarios/parqueo1.jpeg">
-                </div>
-                <div class="details">
-                  <h3 class="heading">Parking Name</h3>
-                  <div class="star-rating">                    
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                  </div>
-                  <div class="price">
-                    <span>&#8353 1000</span>
-                    <span>hora</span>
-                  </div>
-                </div>
-                <div class="controls">
-                  <button type="button" class="more-details" onclick="displayParkingProfile()">Detalles</button>
-                  <button type="button" class="book-parking"><a href="../seleccionar_espacio_reserva/seleccionarEspacio.html">Reservar</a></button>
-                </div>
-              </div>
+            <div class="search-form">
+              <h3>Selecciona la ubicación</h3>
+              <select id="provincias">
+                <option>Provincia</option>
+              </select>
+              <select id="cantones">
+                <option>Cantón</option>
+              </select>
+              <select id="distritos">
+                <option>Distrito</option>
+              </select>
             </div>
-            <div class="items-content-wraper">
-              <div class="item-content">
-                <div class="image">
-                  <img src="../../assets/img/parqueos_usuarios/parqueo1.jpeg">
-                </div>
-                <div class="details">
-                  <h3 class="heading">Parking Name</h3>
-                  <div class="star-rating">                    
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                  </div>
-                  <div class="price">
-                    <span>&#8353 1000</span>
-                    <span>hora</span>
-                  </div>
-                </div>
-                <div class="controls">
-                  <button type="button" class="more-details" onclick="displayParkingProfile()">Detalles</button>
-                  <button type="button" class="book-parking"><a href="../seleccionar_espacio_reserva/seleccionarEspacio.html">Reservar</a></button>
-                </div>
-              </div>
-            </div>
-            <div class="items-content-wraper">
-              <div class="item-content">
-                <div class="image">
-                  <img src="../../assets/img/parqueos_usuarios/parqueo1.jpeg">
-                </div>
-                <div class="details">
-                  <h3 class="heading">Parking Name</h3>
-                  <div class="star-rating">                    
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                  </div>
-                  <div class="price">
-                    <span>&#8353 1000</span>
-                    <span>hora</span>
-                  </div>
-                </div>
-                <div class="controls">
-                  <button type="button" class="more-details" onclick="displayParkingProfile()">Detalles</button>
-                  <button type="button" class="book-parking"><a href="../seleccionar_espacio_reserva/seleccionarEspacio.html">Reservar</a></button>
-                </div>
-              </div>
+            <div class="search-box">
+              <input type="text" class="search-bar" id="search-bar" placeholder="Nombre del parqueo">
+              <button type="button" onclick="getAllParkings()" class="search-button">
+                <i class="fas fa-search"></i>
+                <a href="#">Buscar</a></button>
             </div>
           </div>
         </div>
       </div>
       <div class="main">
         <div class="map-box">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13219.021741820432!2d-84.09404703991756!3d9.930736981002108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e35915b2d6d5%3A0xcc80672b83e6e552!2sParqueo%2C%20Merced%2C%20San%20Jos%C3%A9%2C%20Costa%20Rica!5e0!3m2!1ses!2sse!4v1596399499694!5m2!1ses!2sse" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          <div id="map"></div>
         </div>
       </div>
-      </div>
     </div>
-    </div>
-    <!-- Footer -->
-    <footer>
-      <p>San José, Costa Rica.</p>
-      <p>&reg;Todos los derechos reservados</p>
+  </div>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <p>San José, Costa Rica.</p>
+    <p>&reg;Todos los derechos reservados</p>
   </footer>
+  <script src="../../assets/js/traer_provincias.js"></script>
   <script src="../../assets/js/dropdown_menu.js"></script>
   <script src="buscar_parqueo.js"></script>
-  </body>
+  <script src="mapbox.js"></script>
+
+</body>
+
 </html>

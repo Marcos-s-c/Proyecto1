@@ -9,13 +9,13 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="../../../cliente/assets/css/styles.css"
+      href="empleados.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="empleados.css"
+      href="../../assets/css/styles.css"
     />
     <link
       rel="stylesheet"
@@ -69,109 +69,43 @@
         </div>
         <div class="main">
           <div class="title-table">
-            <h1>Agregar usuarios</h1>
+            <h1>Asociar usuario a empresa</h1>
           </div>
           <div class="table-header">
             <div class="search">
-              <input type="text" placeholder="Buscar..." />
-              <button type="submit"><i class="fas fa-search"></i></button>
+              <input type="text" placeholder="Buscar usuario para asociar..." /
+              id="buscadorUsuario">
+              <button type="button" onclick="buscarUsuario()">
+                <i class="fas fa-search"></i>
+              </button>
             </div>
-            <div class="add-icon">
-              <span
-                onclick=" window.location.href = '../Registrar_Empleado/registrar_empleado.html';"
-              >
-                <i class="fas fa-plus-circle"></i
-              ></span>
-            </div>
+            <table class="table" id="tabla_usuarios">
+              <thead>
+                <tr>
+                  <th><h1>Nombre</h1></th>
+                  <th><h1>Cedula</h1></th>
+                  <th><h1>Correo</h1></th>
+                  <th><h1>Asociar</h1></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
           </div>
-          <table class="table">
+          <div class="title-table">
+            <h1>Empleados de la empresa</h1>
+          </div>
+          <table class="table" id="tabla_empleados">
             <thead>
               <tr>
                 <th><h1>Nombre</h1></th>
                 <th><h1>Cedula</h1></th>
-                <th><h1>Puesto</h1></th>
+                <th><h1>Correo</h1></th>
                 <th><h1>Activar/desactivar</h1></th>
                 <th></th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Juan Perez Ramirez</td>
-                <td>11674052</td>
-                <td>Empleado</td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" checked />
-                    <span class="slider round"></span>
-                  </label>
-                </td>
-                <td>
-                  <span onclick="showAndHideEdit(event)">
-                    <i class="far fa-edit"></i
-                  ></span>
-                  <span onclick="deleteIcon()"
-                    ><i class="far fa-trash-alt"></i
-                  ></span>
-                </td>
-              </tr>
-              <tr>
-                <td>Diana Lopez Vindas</td>
-                <td>11674052</td>
-                <td>Empleado</td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" checked />
-                    <span class="slider round"></span>
-                  </label>
-                </td>
-                <td>
-                  <span onclick="showAndHideEdit(event)">
-                    <i class="far fa-edit"></i
-                  ></span>
-                  <span onclick="deleteIcon()"
-                    ><i class="far fa-trash-alt"></i
-                  ></span>
-                </td>
-              </tr>
-              <tr>
-                <td>Mauricio Quesada Rojas</td>
-                <td>11674052</td>
-                <td>Empleado</td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" checked />
-                    <span class="slider round"></span>
-                  </label>
-                </td>
-                <td>
-                  <span onclick="showAndHideEdit(event)">
-                    <i class="far fa-edit"></i
-                  ></span>
-                  <span onclick="deleteIcon()"
-                    ><i class="far fa-trash-alt"></i
-                  ></span>
-                </td>
-              </tr>
-              <tr>
-                <td>1269</td>
-                <td>11674052</td>
-                <td>Empleado</td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" checked />
-                    <span class="slider round"></span>
-                  </label>
-                </td>
-                <td>
-                  <span onclick="showAndHideEdit(event)">
-                    <i class="far fa-edit"></i
-                  ></span>
-                  <span onclick="deleteIcon()"
-                    ><i class="far fa-trash-alt"></i
-                  ></span>
-                </td>
-              </tr>
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
       </div>
@@ -182,5 +116,6 @@
     </footer>
     <script src="../../assets/js/dropdown_menu.js"></script>
     <script src="empleados.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </body>
 </html>
