@@ -76,6 +76,7 @@ app.use(editarUsuario);
 app.use(guardarConvenio);
 app.use(listar_tarifas);
 app.use(listarConvenios);
+app.use(buscarParqueosCliente);
 //app.use(authentication);
 app.use(public_dir);
 //app.use(cookieParser);
