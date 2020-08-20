@@ -84,6 +84,19 @@ var parkingSchema = mongoose.Schema({
   rol: {
     type: String,
   },
+  bicicletas: {
+    type: { Number },
+  },
+  motocicletas: {
+    type: { Number },
+  },
+  automoviles: {
+    type: { Number },
+  },
+  pesado: {
+    type: { Number },
+  },
+
   //arreglo de tokens para cada sesion que mantenga abierta
   tokens: [
     {

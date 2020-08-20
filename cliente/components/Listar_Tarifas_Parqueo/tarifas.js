@@ -1,3 +1,8 @@
+
+
+
+
+
 function edit() {
   Swal.fire({
     title: "Digite el monto por hora",
@@ -134,6 +139,7 @@ function deleteIcon() {
   });
 }
 
+<<<<<<< HEAD
 //List rates
 
 var ratesList = [];
@@ -196,3 +202,6 @@ function loadData() {
       }
     });
 }
+=======
+
+>>>>>>> b72e363f5a629defdf5888cd0df8cd62b34f569d
