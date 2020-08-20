@@ -1,25 +1,23 @@
+formulario = document.querySelector("#registerForm");
+
 function validateAddSpaces() {
-  /*var validateResult = validateCompany() && validateDiscount("#discountAdd");
+  var validateResult = validateCompany() && validateDiscount("#discountAdd");
   if (validateResult == true) {
     Swal.fire({
       position: "center",
       icon: "success",
-      title: "El convenio se ha agregado correctamente",
-      showConfirmButton: false,
-      timer: 2000,
+      title: "El convenio se ha agregado correctamente"
     });
   }
-  */
+  
+  var nombreConvenio = document.getElementById("company").value;
+  var porcentajeConvenio = document.getElementById("discountAdd").value;
 
-  var nombreEmpresa = document.getElementById('company').value;
-  var porcentajeDescuento = document.getElementById('discountAdd').value;
+  console.log(nombreConvenio + " " + porcentajeConvenio);
 
-  console.log(nombreEmpresa);
-  console.log(porcentajeDescuento);
-
-  /*var data = {
-    nombreEmpresa: nombreEmpresa,
-    porcentajeDescuento: porcentajeDescuento,
+  var data = {
+    nombreConvenio: nombreConvenio,
+    porcentajeConvenio: porcentajeConvenio,
   };
 
   console.log(data);
@@ -29,17 +27,17 @@ function validateAddSpaces() {
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",
-    },
+    }
   };
 
-  fetch("/guardar/tarjetas", request)
+  fetch("/guardar/convenios", request)
     .then(function (data) {
       console.log(data);
+      location.reload();
     })
     .catch(function (error) {
       console.log(error);
     });
-    */
 }
 
 //Validar editar general
