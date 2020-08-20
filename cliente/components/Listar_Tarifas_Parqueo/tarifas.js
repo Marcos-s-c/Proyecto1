@@ -1,3 +1,8 @@
+
+
+
+
+
 function edit() {
   Swal.fire({
     title: "Digite el monto por hora",
@@ -133,3 +138,5 @@ function deleteIcon() {
     }
   });
 }
+
+

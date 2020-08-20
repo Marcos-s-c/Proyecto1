@@ -38,6 +38,7 @@ var companieSchema = mongoose.Schema({
   estado: {
     type: String,
   },
+  
   tokens: [
     {
       token: {

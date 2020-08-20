@@ -23,10 +23,11 @@ var guardarTarjeta = require("./servicios/registrar_tarjeta");
 var listarTarjetas = require("./servicios/listar_tarjetas");
 var editarUsuario = require("./servicios/editar_usuario");
 var listarParqueosAdministrador = require("./servicios/listar_parqueos_administrador");
-var buscarParqueosCliente = require('./servicios/buscar_parqueos_cliente');
-var registrarPago = require('./servicios/registrar_pago');
+var buscarParqueosCliente = require("./servicios/buscar_parqueos_cliente");
+var registrarPago = require("./servicios/registrar_pago");
 var crearReserva = require("./servicios/crear_reserva");
 var listarReservas = require("./servicios/listar_reservas");
+var guardarConvenio = require("./servicios/guardar_convenios");
 const enviarCorreo = require("./servicios/enviar_correo");
 const cookieParser = require("cookie-parser");
 const nodeCron = require("node-cron");
@@ -71,10 +72,10 @@ app.use(listarReservas);
 app.use(listarParqueosAdministrador);
 app.use(registrarPago);
 app.use(editarUsuario);
+app.use(guardarConvenio);
 //app.use(authentication);
 app.use(public_dir);
 //app.use(cookieParser);
-
 
 app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
@@ -85,4 +86,3 @@ app.listen(4040, function () {
   const resp = await fetch('http://localhost:4040/reservas/listar')
   const reservas = await resp.json();
 });*/
-
