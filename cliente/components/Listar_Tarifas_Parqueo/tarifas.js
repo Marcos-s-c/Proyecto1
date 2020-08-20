@@ -161,7 +161,14 @@ function loadData() {
 
         var tableData2 = document.createElement("td");
         tableData2.innerHTML = json[i].tarifa;
-
+        /*var inputVehicle = document.createElement("input");
+        tableData2.appendChild(inputVehicle);*/
+        //inputVehicle.style = "disable";
+        // inputVehicle.setAttribute("type", "text");
+        // vehiclePlaceHolder = document.createElement("placeholder");
+        // vehiclePlaceHolder = json[i].tarifa;
+        //tableData2.innerHTML = json[i].tarifa;
+        // inputVehicle.innerHTML = json[i].tarifa;
         var tableData3 = document.createElement("td");
         var labelToggle = document.createElement("label");
         var inputToggle = document.createElement("input");
@@ -169,7 +176,7 @@ function loadData() {
         tableData3.appendChild(labelToggle);
         labelToggle.appendChild(inputToggle);
         inputToggle.type = "checkbox";
-        if (json[i].tarifa == "Activo") {
+        if (json[i].estado == "Activo") {
           inputToggle.checked = true;
         }
         labelToggle.appendChild(spanToggle);

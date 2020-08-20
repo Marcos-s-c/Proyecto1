@@ -8,7 +8,13 @@ router.get("/tarifas/listar", function (req, res) {
   var email = "maria_e@gmail.com";
 
   parking.findOne({ email: email }, function (err, parkingResult) {
-    res.json(parkingResult.tarifas);
+    if (parkingResult == null) {
+      console.log(
+        "El parqueo con el correo " + email + "no esta en la base de datos."
+      );
+    } else {
+      res.json(parkingResult.tarifas);
+    }
   });
 });
 
