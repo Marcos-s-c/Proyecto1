@@ -48,27 +48,30 @@ const ListarUsuarios = () => {
           console.log(estadoUsuario);
         } else {
           tabla_empleados.innerHTML += `
-          <tr>
-          <td id="">${name}</td>
-          <td id="">${userID}</td>
-          <td id="">${email}</td>
-          <td>
-            <label class="switch">
-              <input type="checkbox" uncheck id="estadoUsuario" onclick="estado(${userID})"/>
-              <span class="slider round"></span>
-            </label>
-          </td>
-          <td>
-            <span onclick="showAndHideEdit(event)">
-              <i class="far fa-edit"></i
-            ></span>
-            <span onclick="eliminarEmpleado(${userID})"
-              ><i class="far fa-trash-alt desasociar"></i
-            ></span>
-          </td>
-          </tr>
+                    <tr id="${userID}">
+                    <td id=""><input disabled type="text" id="name" name="fname" value="${name}"></td>
+                    <td id=""><input disabled type="text" id="userID" name="fname" value="${userID}"></td>
+                    <td id=""><input disabled type="text" id="email" name="fname" value="${email}"></td>
+                    <td>
+                      <label class="switch">
+                        <input type="checkbox" unchecked id="estadoUsuario" onclick="estado(${userID})"/>
+                        <span class="slider round"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <span id="edit-employee" ">
+                        <i id="modify-employees" onClick=editEmployees(${userID}) class="far fa-edit"></i
+                      ></span>
+                      <span id="save-employee" style= "display:none" ">
+                      <i id="modify-employees" onClick=saveUpdatesForEmployee(${userID}) class="far fa-save" ></i
+                    ></span>
+                      <span onclick="eliminarEmpleado(${userID})"
+                        ><i class="far fa-trash-alt desasociar"></i
+                      ></span>
+                    </td>
+                    </tr>
 
-          `;
+                    `;
         }
       }
     })
