@@ -169,9 +169,9 @@ function loadData() {
         tableData3.appendChild(labelToggle);
         labelToggle.appendChild(inputToggle);
         inputToggle.type = "checkbox";
-
-        inputToggle.checked = true;
-
+        if (json[i].tarifa == "Activo") {
+          inputToggle.checked = true;
+        }
         labelToggle.appendChild(spanToggle);
         labelToggle.classList.add("switch");
         spanToggle.classList.add("slider");
