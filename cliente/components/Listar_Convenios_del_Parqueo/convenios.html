@@ -19,7 +19,7 @@
     />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous"/>
     <script src="https://kit.fontawesome.com/da33aea8dd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styles.csss" />
+    
   </head>
   <body>
     <div class="outer-container">
@@ -73,7 +73,7 @@
             <button type="submit"><i class="fas fa-search"></i></button>
           </div>
 
-          <form>
+          <form id="registerForm">
             <div class="add-container">
 
               <div id="add" class="add-inputs">
@@ -93,7 +93,7 @@
                 />
 
                 <div class="add-icon">
-                  <button onclick="validateAddSpaces()">
+                  <button onclick="validateAddSpaces()" type="button">
                     <i class="fas fa-plus-circle"></i>
                   </button>
                 </div>
@@ -114,9 +114,9 @@
                 />
 
                 <button
-                  onclick="validateEditInput()"
+                  onclick="validateEditInput();"
                   id="editButton"
-                  type="submit"
+                  type="button"
                 >
                   Editar
                 </button>
@@ -130,7 +130,6 @@
         <table class="table" id="conventionsTable">
           <thead>
             <tr>
-              <th><h1>Código de convenio</h1></th>
               <th><h1>Empresa</h1></th>
               <th><h1>Monto de descuento</h1></th>
               <th><h1>Activar/desactivar</h1></th>

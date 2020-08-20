@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styles.css" />
   <script src="https://kit.fontawesome.com/da33aea8dd.js" crossorigin="anonymous"></script>
+  <script src="listar_tarjeta.js"></script>
 </head>
 
 <body>
@@ -71,11 +72,15 @@
             <i class="fas fa-plus-circle"></i></span>
         </div>
 
-        <table class="table">
+        <table class="table" id="myCards">
           <thead>
             <tr>
               <th>
-                <h1>Mis Tarjetas</h1>
+                <h1>Numero de Tarjeta</h1>
+              </th>
+
+              <th>
+                <h1>Nombre de Tarjeta</h1>
               </th>
 
               <th>
@@ -83,36 +88,7 @@
               </th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><span class="icon"><i class="far fa-credit-card"></i></span>***** 8364</td>
-
-              <td>
-                <span class="hvr-icon-bounce"><i class="far fa-trash-alt hvr-icon"></span></i></span>
-              </td>
-            </tr>
-            <tr>
-              <td><span class="icon"><i class="far fa-credit-card"></i></span>***** 3852</td>
-
-              <td>
-                <span class="hvr-icon-bounce"><i class="far fa-trash-alt hvr-icon"></></i></span>
-              </td>
-            </tr>
-            <tr>
-              <td><span class="icon"><i class="far fa-credit-card"></i></span>***** 0233</td>
-
-              <td>
-                <span class="hvr-icon-bounce"><i class="far fa-trash-alt hvr-icon"></></i></span>
-              </td>
-            </tr>
-            <tr>
-              <td><span class="icon"><i class="far fa-credit-card"></i></span>***** 3442</td>
-
-              <td>
-                <span class="hvr-icon-bounce"><i class="far fa-trash-alt hvr-icon"></></i></span>
-              </td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
     </div>

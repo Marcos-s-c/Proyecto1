@@ -42,18 +42,22 @@ router.post("/solicitud_parqueo/aprobar", async function (req, res) {
         {
           nombreDelVehiculo: "Bicicleta",
           tarifa: 0,
+          estado: "Activo",
         },
         {
           nombreDelVehiculo: "Motocicleta",
           tarifa: 0,
+          estado: "Activo",
         },
         {
           nombreDelVehiculo: "Automóvil",
           tarifa: 0,
+          estado: "Activo",
         },
         {
           nombreDelVehiculo: "Furgón y furgoneta",
           tarifa: 0,
+          estado: "Activo",
         },
       ],
     });
