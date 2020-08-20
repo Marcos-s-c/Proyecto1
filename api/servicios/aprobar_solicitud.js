@@ -37,6 +37,25 @@ router.post("/solicitud_parqueo/aprobar", async function (req, res) {
       latitud: 9.938277,
       longitud: -84.098574,
       estado: "Activo",
+
+      tarifas: [
+        {
+          nombreDelVehiculo: "Bicicleta",
+          tarifa: 0,
+        },
+        {
+          nombreDelVehiculo: "Motocicleta",
+          tarifa: 0,
+        },
+        {
+          nombreDelVehiculo: "Automóvil",
+          tarifa: 0,
+        },
+        {
+          nombreDelVehiculo: "Furgón y furgoneta",
+          tarifa: 0,
+        },
+      ],
     });
 
     newParking

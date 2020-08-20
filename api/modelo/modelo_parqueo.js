@@ -77,6 +77,7 @@ var parkingSchema = mongoose.Schema({
   fechaDeInicio: Date,
   horario: Array,
   tipoVehiculos: Array,
+
   password: {
     required: true,
     type: String,

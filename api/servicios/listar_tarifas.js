@@ -2,19 +2,14 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 
-var rate = require("../modelo/modelo_parqueo");
+var parking = require("../modelo/modelo_parqueo");
 
 router.get("/tarifas/listar", function (req, res) {
-  rate
-    .find()
-    .exec()
-    .then(function (result) {
-      res.json(result);
-    })
+  var email = "maria_e@gmail.com";
 
-    .catch(function (err) {
-      console.log(err);
-    });
+  parking.findOne({ email: email }, function (err, parkingResult) {
+    res.json(parkingResult.tarifas);
+  });
 });
 
 module.exports = router;

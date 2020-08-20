@@ -1,8 +1,3 @@
-
-
-
-
-
 function edit() {
   Swal.fire({
     title: "Digite el monto por hora",
@@ -139,7 +134,6 @@ function deleteIcon() {
   });
 }
 
-<<<<<<< HEAD
 //List rates
 
 var ratesList = [];
@@ -163,10 +157,10 @@ function loadData() {
         var row = document.createElement("tr");
 
         var tableData1 = document.createElement("td");
-        tableData1.innerHTML = json[i].nombre;
+        tableData1.innerHTML = json[i].nombreDelVehiculo;
 
         var tableData2 = document.createElement("td");
-        tableData2.innerHTML = json[i].nombreDelDueño;
+        tableData2.innerHTML = json[i].tarifa;
 
         var tableData3 = document.createElement("td");
         var labelToggle = document.createElement("label");
@@ -175,9 +169,9 @@ function loadData() {
         tableData3.appendChild(labelToggle);
         labelToggle.appendChild(inputToggle);
         inputToggle.type = "checkbox";
-        if (json[i].estado == "Activo") {
-          inputToggle.checked = true;
-        }
+
+        inputToggle.checked = true;
+
         labelToggle.appendChild(spanToggle);
         labelToggle.classList.add("switch");
         spanToggle.classList.add("slider");
@@ -198,10 +192,7 @@ function loadData() {
         row.appendChild(tableData2);
         row.appendChild(tableData3);
         row.appendChild(tableData4);
-        parkingTable.appendChild(row);
+        ratesTable.appendChild(row);
       }
     });
 }
-=======
-
->>>>>>> b72e363f5a629defdf5888cd0df8cd62b34f569d
