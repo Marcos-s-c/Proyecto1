@@ -1,31 +1,5 @@
-//Función para mostrar y ocultar los inputs de agregar
-function showAndHideAdd() {
-  var add = document.getElementById("add");
-  var edit = document.getElementById("edit");
-  edit.style.display = "none";
-  if (add.offsetWidth > 0 && add.offsetHeight > 0) {
-    add.style.display = "none";
-  } else {
-    add.style.display = "block";
-  }
-}
-
-//Función para mostrar y ocultar el espacios de editar
-
-function showAndHideEdit() {
-  var add = document.getElementById("add");
-  var edit = document.getElementById("edit");
-  add.style.display = "none";
-  if (edit.offsetWidth > 0 && edit.offsetHeight > 0) {
-    edit.style.display = "none";
-  } else {
-    edit.style.display = "block";
-  }
-}
-
-//Validar espacios agregar
 function validateAddSpaces() {
-  var validateResult = validateCompany() && validateDiscount("#discountAdd");
+  /*var validateResult = validateCompany() && validateDiscount("#discountAdd");
   if (validateResult == true) {
     Swal.fire({
       position: "center",
@@ -35,6 +9,37 @@ function validateAddSpaces() {
       timer: 2000,
     });
   }
+  */
+
+  var nombreEmpresa = document.getElementById('company').value;
+  var porcentajeDescuento = document.getElementById('discountAdd').value;
+
+  console.log(nombreEmpresa);
+  console.log(porcentajeDescuento);
+
+  /*var data = {
+    nombreEmpresa: nombreEmpresa,
+    porcentajeDescuento: porcentajeDescuento,
+  };
+
+  console.log(data);
+
+  var request = {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch("/guardar/tarjetas", request)
+    .then(function (data) {
+      console.log(data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    */
 }
 
 //Validar editar general
@@ -122,3 +127,41 @@ function deleteIcon() {
     }
   });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//Función para mostrar y ocultar los inputs de agregar
+/*function showAndHideAdd() {
+  var add = document.getElementById("add");
+  var edit = document.getElementById("edit");
+  edit.style.display = "none";
+  if (add.offsetWidth > 0 && add.offsetHeight > 0) {
+    add.style.display = "none";
+  } else {
+    add.style.display = "block";
+  }
+}
+*/
+//Función para mostrar y ocultar el espacios de editar
+
+/*function showAndHideEdit() {
+  var add = document.getElementById("add");
+  var edit = document.getElementById("edit");
+  add.style.display = "none";
+  if (edit.offsetWidth > 0 && edit.offsetHeight > 0) {
+    edit.style.display = "none";
+  } else {
+    edit.style.display = "block";
+  }
+}
+*/
+//Validar espacios agregar

@@ -89,7 +89,7 @@ input:checked + .slider:before {
   background-color: #f1f3f4;
   float: left;
   padding: 1%;
-  display: none;
+  display: block;
 }
 .edit-wraper {
   margin-left: 50%;
