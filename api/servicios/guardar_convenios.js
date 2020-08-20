@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 
 var Convenio = require("../modelo/modelo_convenio");
 
-router.post("/guardar/convenio", function (req, res) {
+router.post("/guardar/convenios", function (req, res) {
   console.log("alert");
 
 

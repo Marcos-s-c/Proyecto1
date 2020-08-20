@@ -19,7 +19,7 @@ var buscarSolicitud = require("./servicios/buscar_solicitud");
 var guardarUsuarios = require("./servicios/guardar_usuarios");
 var guardarInfoExtraParqueos = require("./servicios/guardar_infoExtraParqueo");
 var guardarEmpresa = require("./servicios/guardar_empresa");
-var guardarTarjeta = require("./servicios/registrar_tarjeta");
+var guardarTarjeta = require("./servicios/guardar_tarjeta");
 var listarTarjetas = require("./servicios/listar_tarjetas");
 var editarUsuario = require("./servicios/editar_usuario");
 var listarParqueosAdministrador = require("./servicios/listar_parqueos_administrador");
@@ -32,7 +32,7 @@ const enviarCorreo = require("./servicios/enviar_correo");
 const cookieParser = require("cookie-parser");
 const nodeCron = require("node-cron");
 const authentication = require("./middleware/authentication");
-
+var listar_tarifas = require("./servicios/listar_tarifas");
 const public_dir = express.static(path.join(__dirname, "../cliente"));
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
@@ -72,7 +72,11 @@ app.use(listarReservas);
 app.use(listarParqueosAdministrador);
 app.use(registrarPago);
 app.use(editarUsuario);
+<<<<<<< HEAD
 app.use(guardarConvenio);
+=======
+app.use(listar_tarifas);
+>>>>>>> 1f213a1a1cceec9b5e92299a04aebb52e3da2514
 //app.use(authentication);
 app.use(public_dir);
 //app.use(cookieParser);

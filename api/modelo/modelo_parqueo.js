@@ -21,6 +21,10 @@ var parkingSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  estado: {
+    type: String,
+    required: true,
+  },
   nombreDelDueño: {
     type: String,
     required: true,
