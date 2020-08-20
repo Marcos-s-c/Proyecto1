@@ -36,6 +36,7 @@ router.post("/solicitud_parqueo/aprobar", async function (req, res) {
       cantidadCampos: 0,
       latitud: 9.938277,
       longitud: -84.098574,
+      estado: "Activo",
     });
 
     newParking
@@ -47,6 +48,8 @@ router.post("/solicitud_parqueo/aprobar", async function (req, res) {
         console.log(error);
       });
   });
+
+  //rates registration
 });
 
 module.exports = router;
