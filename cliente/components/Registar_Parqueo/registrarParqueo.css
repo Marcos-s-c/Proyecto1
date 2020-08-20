@@ -24,6 +24,9 @@
   padding: 3% 0%;
   font-size: 20px;
 }
+input, p, select{
+  color: #666666;
+}
 .birth-date-box,
 .mall-box {
   overflow: auto;
@@ -37,7 +40,6 @@
 .mall-box p {
   position: left;
   display: inline;
-  color: #818181;
 }
 #birth-date,
 .mall-box input {
@@ -61,15 +63,9 @@
   width: 100%;
   margin: 2% 0%;
   border-style: none;
-  border-bottom: 1px solid #8c8c8c;
+  border-bottom: 1px solid #e6e6e6;
 }
 
-.form button {
-  margin-top: 30%;
-  float: right;
-  background-color: #82b0b0;
-  color: white;
-}
 .mall-box {
   display: flex;
   width: 100%;
@@ -85,4 +81,32 @@ select {
   background-color: #e7e7e7;
   padding: 2%;
   width: 30%;
+}
+.coordenadas-box{
+  overflow: auto;
+  padding-top: 2%;
+}
+
+.coordenada{
+  margin: 2%;
+  width: 45%;
+  border-bottom: 1px solid #e6e6e6;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.form button{
+  background-color: #82b0b0;
+  color: white;
+}
+.first button, .second button{
+  margin-top: 20%;
+}
+.second button{
+  width: 40%;
+  display: online;
 }

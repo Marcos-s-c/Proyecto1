@@ -65,5 +65,4 @@ provinciasSelect.addEventListener("change", function() {
 cantonesSelect.addEventListener("change", function() {
     traerDistritos(provinciasSelect.value, cantonesSelect.value)
 });
-
 traerProvincias();
