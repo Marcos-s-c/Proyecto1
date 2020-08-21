@@ -14,6 +14,7 @@ function cargarDatos() {
             var tableCards = document.querySelector("#myCards tbody");
             tableCards.innerHTML = "";
             listCards = json;
+            
             for (var i = 0; i < json.length; i++) {
             var row = document.createElement("tr");
 
@@ -25,9 +26,9 @@ function cargarDatos() {
 
             var tableData3 = document.createElement("td");
             tableData3.innerHTML =
-                '<i onclick="deleteIcon(' +
+                '<i onclick="eliminarTarjeta(' +
                 "'" +
-                json[i].numeroTarjeta +
+                json[i]._id +
                 "'" +
                 ')" class="far fa-trash-alt"></i>';
             
@@ -45,7 +46,31 @@ function cargarDatos() {
 
 }
 
-function deleteIcon() {
+  function eliminarTarjeta(id) {
+    var idTarjeta = id;
+    datos = {
+      id: idTarjeta,
+    };
+    console.log(datos);
+    fetch("/eliminar/tarjetas/"+id, {
+      method: "DELETE",
+      body: JSON.stringify(datos),
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then(function (data) {
+        return data.json();
+      })
+      .then(function (usuarios) {
+        location.reload();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  function deleteIcon() {
     Swal.fire({
       title: "¿Está seguro de que desea eliminar?",
       icon: "warning",
