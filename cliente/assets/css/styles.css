@@ -202,6 +202,10 @@ header .sub- {
   width: 80%;
 }
 
+input:focus{
+  outline:none !important;
+}
+
 /***** HEADER SUBMENU **********/
 
 .sub-menu {
