@@ -156,7 +156,7 @@ function loadData() {
       for (var i = 0; i < ratesArray.length; i++) {
         ratesTable.innerHTML += `
         <tr id="${ratesArray[i].nombreDelVehiculo}">
-        <td id=""><input disabled type="text" id="name" name="fname" value="${ratesArray[i].nombreDelVehiculo}"></td>
+        <td id=""><label>${ratesArray[i].nombreDelVehiculo}</label></td>
         <td id=""><input disabled type="text" id="userID" name="fname" value="${ratesArray[i].tarifa}"></td>
         <td>
           <label class="switch">
@@ -208,8 +208,19 @@ function editRates(vehicleType) {
 
 function saveUpdatesForRate(vehicleType) {
   var rateRow = document.getElementById(vehicleType);
+  var value = {
+    vehicle: vehicleType,
+  };
 
+  var request = {
+    method: "POST",
+    body: JSON.stringify(value),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
   // LLamar al fetch
+
   updateRateInServer(rateRow);
 
   showEditIcon(rateRow);
