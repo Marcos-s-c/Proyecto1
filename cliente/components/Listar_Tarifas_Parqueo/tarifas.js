@@ -169,7 +169,7 @@ function loadData() {
             <i id="modify-employees" onClick="editRates('${ratesArray[i].nombreDelVehiculo}')" class="far fa-edit"></i
           ></span>
           <span id="save-employee" style= "display:none" >
-          <i id="modify-employees" onClick="saveUpdatesForEmployee()" class="far fa-save" ></i
+          <i id="modify-employees" onClick="saveUpdatesForRate('${ratesArray[i].nombreDelVehiculo}')" class="far fa-save" ></i
         ></span>
           <span onclick="eliminarEmpleado()">
             <i class="far fa-trash-alt desasociar"></i>
@@ -208,13 +208,13 @@ function editRates(vehicleType) {
 
 function saveUpdatesForRate(vehicleType) {
   var rateRow = document.getElementById(vehicleType);
-  var value = {
+  var values = {
     vehicle: vehicleType,
   };
 
   var request = {
     method: "POST",
-    body: JSON.stringify(value),
+    body: JSON.stringify(values),
     headers: {
       "Content-Type": "application/json",
     },
