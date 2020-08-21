@@ -104,7 +104,29 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody>            
+            <tr id="rowBicicleta">
+            <td id=""><input disabled type="text" id="name" name="fname" value="bicicleta"></td>
+            <td id=""><input disabled type="text" id="userID" name="fname" value="0"></td>
+            <td>
+              <label class="switch">
+                <input type="checkbox" checked/>
+                <span class="slider round"></span>
+              </label>
+            </td>
+            <td>
+              <span id="edit-employee" >
+                <i id="modify-employees" onClick="editRates('rowBicicleta')" class="far fa-edit"></i
+              ></span>
+              <span id="save-employee" style= "display:none" >
+              <i id="modify-employees" onClick="saveUpdatesForEmployee(rowBicicleta)" class="far fa-save" ></i
+            ></span>
+              <span onclick="eliminarEmpleado(rowBicicleta)">
+                <i class="far fa-trash-alt desasociar"></i>
+              </span>
+            </td>
+            </tr>
+
           </tbody>
         </table>
       </div>

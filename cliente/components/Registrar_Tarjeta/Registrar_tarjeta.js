@@ -132,7 +132,6 @@ function sendForm() {
     footer: "<a href>Why do I have this issue?</a>",
   });
   document.getElementById("contenedor").innerHTML = "";
-  botonn.classList.toggle("active");
   console.log("antes");
 
   var numeroTarjeta = formulario.inputNumero.value;
@@ -166,4 +165,6 @@ function sendForm() {
     .catch(function (error) {
       console.log(error);
     });
+
+    
 }
