@@ -51,42 +51,38 @@ async function saveRequest() {
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     });
-    if(response.status == 201){
+    if (response.status == 201) {
       var solicitud = await response.json();
-      notifyAdmin(solicitud, "Solicitud de registro de parqueo", '../../cliente/assets/plantillas-correos/solicitud_parqueo.html');
-      window.location.href="/";
+      notifyAdmin(
+        solicitud,
+        "Solicitud de registro de parqueo",
+        "../../cliente/assets/plantillas-correos/solicitud_parqueo.html"
+      );
+      window.location.href = "/";
     }
-  
-  }
-  catch(error){
-    console.log(error);
-  }
-
-};
-
-
-
-
-
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "La solicitud ha sido enviada",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-
-    notifyAdmin(
-      solicitud,
-      "Solicitud de registro de parqueo",
-      "../../cliente/assets/plantillas-correos/solicitud_parqueo.html"
-    );
-
-    displayParkingForm();
   } catch (error) {
     console.log(error);
   }
+
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "La solicitud ha sido enviada",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+
+  notifyAdmin(
+    solicitud,
+    "Solicitud de registro de parqueo",
+    "../../cliente/assets/plantillas-correos/solicitud_parqueo.html"
+  );
+
+  displayParkingForm();
 }
+//} catch (error) {
+//  console.log(error);
+//}
 
 /*function clearInputFields() {
   document.getElementById('first-form').reset();
