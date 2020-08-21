@@ -6,10 +6,11 @@ var ParkingRequest = require("../modelo/modelo_solicitud_parqueo");
 
 router.post("/solicitud_parqueo/guardar", async function (req, res) {
     const solicitud = new ParkingRequest(req.body);
+    console.log(solicitud);
     try{
-      console.log("entro al try")
-      solicitud.save();
-      res.status(201).send("solicitud registrada");
+
+      await solicitud.save();
+      res.status(201).send(solicitud);
     }
     catch(error){
       console.log(error)

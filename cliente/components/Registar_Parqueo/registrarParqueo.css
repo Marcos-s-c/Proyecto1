@@ -103,10 +103,10 @@ select {
   background-color: #82b0b0;
   color: white;
 }
-.first button, .second button{
+.user-form button, .second button{
   margin-top: 20%;
 }
-.second button{
+.user-form button{
   width: 40%;
   display: online;
 }

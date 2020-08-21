@@ -1,4 +1,6 @@
 var requestsList = [];
+var parqueo = {};
+
 window.onload = function () {
   //Este evento se dispara cuando la pantalla está cargada y ejecuta las funciones determinadas
   cargarDatos();
@@ -129,9 +131,12 @@ function approve(email) {
 
     fetch("/solicitud_parqueo/aprobar", request)
       .then(function (result) {
-        return result.json();
+        parqueo = result.json();
+        return parqueo;
+        
       })
       .then(function (result) {
+        sendEmail(parqueo, "Confirmación de cuenta", '../../cliente/assets/plantillas-correos/verificar_cliente.html');
         Swal.fire({
           position: "top-end",
           icon: "success",
