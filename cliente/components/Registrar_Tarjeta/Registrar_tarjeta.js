@@ -126,14 +126,7 @@ formulario.inputCCV.addEventListener("keyup", () => {
 });
 
 function sendForm() {
-  Swal.fire({
-    icon: "success",
-    title: "Tarjeta Agregada",
-    footer: "<a href>Why do I have this issue?</a>",
-  });
-  document.getElementById("contenedor").innerHTML = "";
   console.log("antes");
-
   var numeroTarjeta = formulario.inputNumero.value;
   var nombreTarjeta = formulario.inputNombre.value;
   var mesSeleccionado = formulario.selectMes.value;
@@ -161,10 +154,10 @@ function sendForm() {
   fetch("/tarjetas/guardar", request)
     .then(function (data) {
       console.log(data);
+      window.location.href =
+        "http://localhost:4040/components/Listar_Tarjetas_Cliente/listar_tarjeta.html";
     })
     .catch(function (error) {
       console.log(error);
     });
-
-    
 }
