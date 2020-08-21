@@ -1,3 +1,5 @@
+const { db } = require("../../../api/modelo/modelo_empresa");
+
 tabla_empleados = document.getElementById("tabla_empleados");
 estadoUsuario = document.getElementById("estadoUsuario");
 
@@ -263,26 +265,12 @@ function asociarEmpleado(cedula) {
     });
 }
 
-function eliminarEmpleado(cedula) {
-  datos = {
-    empresa: "Ninguna",
-  };
-  fetch("/desasociar/" + cedula, {
-    method: "PUT",
-    body: JSON.stringify(datos),
-    headers: {
-      "content-type": "application/json",
-    },
+const eliminarTarjeta = id => {
+  console.log('el usuario a borrar es: ' +id)
+  fetch("/borrar/tarjeta"+id, {
+    method:"DELETE"
   })
-    .then(function (data) {
-      return data.json();
-    })
-    .then(function (usuarios) {
-      location.reload();
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  location.reload();
 }
 
 function editarUsuario(cedula) {
