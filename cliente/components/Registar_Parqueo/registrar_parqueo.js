@@ -4,8 +4,6 @@ var data = {
   password: Math.random().toString(36).slice(-8),
 };
 
-setParkingValues();
-
 function getUserValues() {
   data.ownersName = document.getElementById("name").value;
   data.usersId = document.getElementById("user-id").value;
@@ -27,6 +25,8 @@ function setParkingValues() {
 
 // remueve el form de parqueo
 function displayUserForm() {
+  setParkingValues();
+
   const userForm =
     '<div class="first form" id="user-form"><h3>Solicitud de registro</h3><input type="text"id="name"class="form-input"name="ownerName" placeholder= "Nombre físico o jurídico" required /><input type="number" id="user-id" class="form-input" placeholder="Cédula física o jurídica" required /><input type="email" id="email" class="form-input" placeholder="Correo electrónico" required /><div class="birth-date-box"><input type="date" id="birth-date" class="form-input" placeholder="Fecha de nacimiento" /><p>*Opcional</p></div><div class="buttons"><button type="button" onclick="displayParkingForm()">Atras</button><button type="button" id="send-button" onclick="saveRequest()">Enviar</button></div>';
   formContainer.removeChild(document.getElementById("parking-form"));
@@ -51,11 +51,22 @@ async function saveRequest() {
       headers: { "Content-Type": "application/json" },
     });
     var solicitud = await response.json();
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "La solicitud ha sido enviada",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+
     notifyAdmin(
       solicitud,
       "Solicitud de registro de parqueo",
       "../../cliente/assets/plantillas-correos/solicitud_parqueo.html"
     );
+
+    displayParkingForm();
   } catch (error) {
     console.log(error);
   }

@@ -2,66 +2,59 @@
 let mongoose = require("mongoose");
 
 var solicitudSchema = new mongoose.Schema({
-  ownersName : {
+  ownersName: {
     type: String,
-    required: true
+    required: true,
   },
-  usersId : {
+  usersId: {
     type: String,
-    required: true
+    required: true,
   },
-  email : {
+  email: {
     type: String,
-    required: true
+    required: true,
   },
-  dateOfBirth : {
+  dateOfBirth: {
     type: Date,
-    required: true
+    required: false,
   },
-  parkingName : {
+  parkingName: {
     type: String,
-    required: true
-  }, 
-  provincia :{
-    type: String,
-    required: true
-  }, 
-  canton : {
-    type: String,
-    required: true
+    required: true,
   },
-  distrito : {
+  provincia: {
     type: String,
-    required: true
+    required: true,
   },
-  address : {
+  canton: {
     type: String,
-    required: true
+    required: true,
   },
-  shoppingCent : {
+  distrito: {
+    type: String,
+    required: true,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  shoppingCent: {
     type: String,
   },
-  latitud : {
+  latitud: {
     type: Number,
-    required: true
+    required: true,
   },
-  longitud : {
+  longitud: {
     type: Number,
-    required: true
+    required: true,
   },
-  state : {
-    type: String
+  state: {
+    type: String,
   },
-  password : {
-    type: String
-  }
-    
+  password: {
+    type: String,
+  },
 });
 
-module.exports = mongoose.model(
-  "Solicitud",
-  solicitudSchema,
-  "Solicitudes"
-);
-
-
+module.exports = mongoose.model("Solicitud", solicitudSchema, "Solicitudes");
