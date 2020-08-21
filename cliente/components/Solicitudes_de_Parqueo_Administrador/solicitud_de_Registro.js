@@ -133,10 +133,8 @@ function approve(email) {
       .then(function (result) {
         parqueo = result.json();
         return parqueo;
-        
       })
       .then(function (result) {
-        sendEmail(parqueo, "Confirmación de cuenta", '../../cliente/assets/plantillas-correos/verificar_cliente.html');
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -145,6 +143,14 @@ function approve(email) {
           timer: 1500,
         });
         cargarDatos();
+
+        result.name = result.nombre;
+
+        sendEmail(
+          result,
+          "Confirmación de cuenta",
+          "../../cliente/assets/plantillas-correos/verificar_cliente.html"
+        );
       })
       .catch(function (error) {
         console.log(error);
