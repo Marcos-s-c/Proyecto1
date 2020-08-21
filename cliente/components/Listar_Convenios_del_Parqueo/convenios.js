@@ -158,9 +158,9 @@ function cargarDatos() {
 
           var tableData4 = document.createElement("td");
           tableData4.innerHTML =
-            '<i onclick="deleteIcon(' +
+            '<i onclick="eliminarConvenio(' +
             "'" +
-            json[i].nombreConvenio +
+            json[i]._id +
             "'" +
             ')" class="far fa-trash-alt"></i>';
           
@@ -177,6 +177,31 @@ function cargarDatos() {
           
       });
 
+}
+
+
+function eliminarConvenio(id) {
+  var idConvenio = id;
+  datos = {
+    id: idConvenio,
+  };
+  console.log(datos);
+  fetch("/eliminar/convenio/"+id, {
+    method: "DELETE",
+    body: JSON.stringify(datos),
+    headers: {
+      "content-type": "application/json",
+    },
+  })
+    .then(function (data) {
+      return data.json();
+    })
+    .then(function (usuarios) {
+      location.reload();
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 

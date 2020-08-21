@@ -35,6 +35,10 @@
     z-index: 2;
 }
 
+#btn-abrir-formulario:focus{
+    outline: none;
+}
+
 .tarjeta.active {
     transform: rotateY(180deg);
     
@@ -199,6 +203,8 @@
 
 .contenedor-btn .btn-abrir-formulario.active {
     transform: rotate(45deg);
+    background-color: red ;
+    box-shadow: -5px 4px 8px rgba(221, 47, 47, 0.4);
 }
 
 /*----------    Formulario de la Tarjeta ----------*/
