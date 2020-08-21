@@ -134,7 +134,7 @@ parkingSchema.pre("save", async function (next) {
 
 //esta función busca el usuario segun el email y password recibido por parametros
 parkingSchema.statics.findByCredentials = async (email, password) => {
-  const usuario = await Usuario.findOne({ email: email });
+  const usuario = await Parqueo.findOne({ email: email });
   const esValido = await bcrypt.compare(password, usuario.password);
 
   if (esValido == false) {

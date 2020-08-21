@@ -34,10 +34,10 @@ async function logInValidation() {
       console.log(response);
 
       const jsonResp = await response.json();
-      localStorage.setItem("token",  jsonResp.token)
-      localStorage.setItem("user",  jsonResp.user)
-      document.cookie = 'token=' +  jsonResp.token
-      document.cookie = 'user=' +  jsonResp.user
+      localStorage.setItem("token", jsonResp.token);
+      localStorage.setItem("user", jsonResp.user);
+      document.cookie = "token=" + jsonResp.token;
+      document.cookie = "user=" + jsonResp.user;
 
       console.log(jsonResp);
 
@@ -52,7 +52,7 @@ async function logInValidation() {
       } else if (jsonResp.user.rol === "parqueo") {
         console.log("parqueo");
         window.location.href =
-          "./components/Listar_Espacios_Parqueo/listarEspacios.html";
+          "./components/Perfil_Parqueo/modificarPerfil.html";
       } else if (jsonResp.user.rol === "admin") {
         window.location.href =
           "./components/Perfl_Administrador/ver_perfil_administrador.html";
