@@ -51,7 +51,11 @@ var solicitudSchema = new mongoose.Schema({
   },
   state : {
     type: String
+  },
+  password : {
+    type: String
   }
+    
 });
 
 module.exports = mongoose.model(

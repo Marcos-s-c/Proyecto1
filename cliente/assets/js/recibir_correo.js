@@ -1,25 +1,23 @@
-async function sendEmail(user, subj, url_html){
+async function notifyAdmin(user, subj, url_html){
 
     var body = {
         from: "myspotcr@gmail.com",
-        to: user.email,
+        to: "myspotcr@gmail.com" ,
         email : user.email,
         subject: subj,
-        name: user.name,
+        name: user.ownersName,
         password: user.password,
-        html: url_html
+        url: url_html
     }
     try{
-        const response = await fetch("/enviarCorreo" ,{
+        const response = await fetch("/recibir-correo" ,{
             method: 'POST',
             body: JSON.stringify(body), 
             headers:{'Content-Type': 'application/json'}
         })
-        console.log(response)
     }
     catch(error){
         console.log(error + "" )
     }
 
 }
-

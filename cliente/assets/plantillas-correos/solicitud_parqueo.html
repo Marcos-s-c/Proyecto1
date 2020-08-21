@@ -24,7 +24,7 @@
 
       .body-mail {
         width: 20%;
-
+ 
       }
     </style>
   </head>
@@ -46,38 +46,21 @@
       <tr>
         <td>
           <p>
-            Hola <spam id="nombre">{{name}}</spam>,
+            Se ha recibido una nueva solicitud de parqueo
             <br />
-            Gracias por registrarte a MySpot. Estas a un solo paso de abrir tu
-            cuenta.
-            <br />
-            Estos son tus credenciales para iniciar sesión:
-            <br />
+            Nombre del usuario: {{nombre}}
             Correo: {{email}}
             <br />
-            Contraseña: {{password}}
-            <br />
-            La contraseña es temporal, por lo que la deberás cambiar en el
-            momento de iniciar sesión.
-            <br />
-            Haz click en el siguiente enlace para confirmar tu correo
-            electrónico.
           </p>
           <br />
-          <button type="button">
-            <a href="http://localhost:4040"></a>Confirmar correo
-          </button>
-        </td>
-      </tr>
-      <tr class="footer-info">
-        <td>
-          <p>
-            Para más información visita nuestra página de
-            <a href="http://localhost:4040">Ayuda</a> en MySpot.
-          </p>
-          <p>O contáctanos a myspotcr@gmail.com</p>
+          <button type="button" onclick="redirect()">Administrar solicitudes</button>
         </td>
       </tr>
     </table>
+    <script>
+        function redirect(){
+            window.location.href = "localhost:4040/cliente/components/Solicitudes_de_Parqueo_Administrador/solicitud_de_Registro.html"
+        }
+    </script>
   </body>
 </html>

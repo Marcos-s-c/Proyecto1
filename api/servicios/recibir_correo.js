@@ -5,10 +5,9 @@ var fs = require('fs');
 var handlebars = require('handlebars');
 var path = require("path");
 
-router.post("/enviarCorreo", async function (req, res) {
-
-  const plantillas_dir = path.join(__dirname, req.body.url);  //"../../cliente/assets/plantillas-correos/verificar_cliente.html"
-  console.log(plantillas_dir);
+router.post("/recibir-correo", async function (req, res) {
+  console.log("entro al router")
+  const plantillas_dir = path.join(__dirname, req.body.url);              //"../../cliente/assets/plantillas-correos/verificar_cliente.html"
 
   const dataBuffer = fs.readFileSync(plantillas_dir);
   var template = handlebars.compile(dataBuffer.toString());
@@ -20,7 +19,6 @@ router.post("/enviarCorreo", async function (req, res) {
   };
 
   var htmlToSend = template(replacements);
-  console.log(htmlToSend)
 
   var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -50,5 +48,3 @@ router.post("/enviarCorreo", async function (req, res) {
 })
 
 module.exports = router;
-
-/**************************************/

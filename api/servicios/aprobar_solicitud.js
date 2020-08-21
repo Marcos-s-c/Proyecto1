@@ -66,6 +66,7 @@ router.post("/solicitud_parqueo/aprobar", async function (req, res) {
       .save()
       .then(function (result) {
         res.json({ message: "Solicitud aprobada" });
+        res.send(newParking);
       })
       .catch(function (error) {
         console.log(error);
