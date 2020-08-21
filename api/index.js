@@ -32,6 +32,7 @@ var guardarConvenio = require("./servicios/guardar_convenios");
 var listarConvenios = require("./servicios/listar_convenios");
 var borrarConvenio = require("./servicios/borrar_convenio");
 const enviarCorreo = require("./servicios/enviar_correo");
+const recibirCorreos = require('./servicios/recibir_correo');
 const cookieParser = require("cookie-parser");
 const nodeCron = require("node-cron");
 const authentication = require("./middleware/authentication");
@@ -79,6 +80,7 @@ app.use(guardarConvenio);
 app.use(listar_tarifas);
 app.use(listarConvenios);
 app.use(buscarParqueosCliente);
+app.use(recibirCorreos);
 app.use(borrarTarjeta);
 app.use(borrarConvenio);
 

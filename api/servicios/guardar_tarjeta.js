@@ -13,7 +13,6 @@ router.post("/tarjetas/guardar", function (req, res) {
     yearSeleccionado: req.body.yearSeleccionado,
     firmaCCV: req.body.firmaCCV,
   });
- 
 
   guardarTarjeta
     .save()

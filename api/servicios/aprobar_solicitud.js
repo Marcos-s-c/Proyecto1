@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
-
 var ParkingRequest = require("../modelo/modelo_solicitud_parqueo");
 var parking = require("../modelo/modelo_parqueo");
 
@@ -32,7 +31,8 @@ router.post("/solicitud_parqueo/aprobar", async function (req, res) {
       email: approvedRequest.email,
       centroComercial: approvedRequest.shoppingCenter,
       direccion: approvedRequest.address,
-      password: "12345",
+      password: approvedRequest.password,
+      rol: "parqueo",
       cantidadCampos: 0,
       latitud: 9.938277,
       longitud: -84.098574,
@@ -62,10 +62,13 @@ router.post("/solicitud_parqueo/aprobar", async function (req, res) {
       ],
     });
 
+    var elPasswordTemporal = approvedRequest.password;
+
     newParking
       .save()
       .then(function (result) {
-        res.json({ message: "Solicitud aprobada" });
+        newParking.password = elPasswordTemporal;
+        res.send(newParking);
       })
       .catch(function (error) {
         console.log(error);
