@@ -67,33 +67,42 @@
             <div class="box-image">
 
             </div>
-            <div class="box-info">
-              <div class="text">
-                <div class="controls">
-                  <h1>Parqueo ------------</h1>
-
-                  <button type="button" class="button">
-                    <a href="#">Eliminar</a></button>
-                  <button type="button" class="button" id="button" onclick="">
-                    <a href="#">Ver Estado</a></button>
-                  <button type="button" class="button">
-                    <a href="#">Finalizar Parqueo</a></button>
-
-                </div>
-
-                <p>qui dolorem ipsum, quia dolor sit amet consectetur adipisc velit, sed quia non numquam
-                  eius modi tempora cidunt, ut labore et dolore magnam aliquam quaerat voluptatem.
-                </p>
-                <div class="block" id="block">
-                  <div class="block-info">
-                    <p>Tiempo en el parqueo: </p>
-                    <p>Monto a pagar: </p>
+            <div class="reservation-box">
+              <div class="heading_box">
+                <h1 id="nombre_parqueo">Parqueo</h1>
+              </div>
+              <div class="info-reserva">
+                <div class="f-col">
+                  <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Dirección: <spam id="direccion"></spam></p>
                   </div>
-
+                  <div class="info-item">
+                    <i class="fas fa-street-view"></i>
+                    <p>Numero de espacio: <spam id="espacio"></spam></p>
+                  </div>
+                </div>
+                <div class="s-col">
+                  <div class="info-item">
+                    <i class="far fa-id-badge"></i>
+                    <p>Placa: <span id="placa"></p>
+                  </div>
+                  <div class="info-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <p>Tarifa: <span id="tarifa"></span></p>
+                  </div>
+                </div>
+                <div class="t-col">
+                  <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <p>Fecha y hora: <span id="fecha"></span></p>
+                  </div>
+                </div>
+                </div>
                 </div>
               </div>
             </div>
-
+            </div>
           </div>
         </div>
       </div>

@@ -19,7 +19,6 @@
 
 .box-image {
   background-image: url(https://picsum.photos/id/212/800/400);
-  background-color: darksalmon;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -76,4 +75,19 @@
 .block-info{
   position: absolute;
   top: 16%;
+}
+
+
+
+.info-reserva{
+  display: flex;
+  justify-content: center;
+}
+.f-col , .s-col, .t-col{
+  width: 30%;
+  border: 1px solid;
+  text-align: left;
+}
+.info-reserva p{
+  display: inline;
 }

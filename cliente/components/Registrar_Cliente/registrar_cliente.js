@@ -17,7 +17,7 @@ async function registerUser() {
         method: 'POST', 
         body: JSON.stringify(data), 
         headers: { 'Content-Type': 'application/json' } })     
-      await sendEmail(data, "Confirmación de correo");
+      await sendEmail(data, "Confirmación de correo", '../../cliente/assets/plantillas-correos/verificar_cliente.html');
       window.location.href = "/";
       
     }else{

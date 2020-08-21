@@ -43,7 +43,7 @@ const traerParqueos = async () => {
 
     });
 
-    geocode(values.provincia + " " +  values.canton + " " +  values.distrito)
+    geocode("Costa Rica " + values.provincia + " " +  values.canton + " " +  values.distrito)
 
   } catch (e) {
     console.log(e + "El error");

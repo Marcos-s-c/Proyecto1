@@ -9,7 +9,9 @@ window.onload = function () {
 function cargarDatos() {
   fetch("http://localhost:4040/solicitud_parqueo/listar", { method: "GET" })
     .then(function (response) {
-      return response.json();
+      const resp = response.json();
+      console.log(resp)
+      return resp; 
     })
     .then(function (json) {
       var requestsTable = document.querySelector("#requestsTable tbody");

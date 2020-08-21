@@ -1,18 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var date = require("date-and-time");
-
 var Reserva = require('../modelo/modelo_reserva');
 
 
 router.post('/reservas/crear', async(req, res) =>{
 
     try{
-        const currentDate = new Date();
+        console.log("entro al try del router")
+        const today = new Date();
+        const reservationDate = date.format(today, 'DD/MM/YYYY');
+        creationDate = date.parse(reservationDate + " " + req.body.time, 'DD/MM/YYYY hh:mm:ss');  
+
         const reservaData = {
-            code: req.code,
-            creation_date : date.format(currentDate, 'DD/MM/YYYY'),
-            time: date.format(req.body.time, 'hh:mm:ss'),
+            code: req.body.code,
+            creation_date : creationDate,
             spot_number: req.body.spot_number,
             parking_id: req.body.parking_id,
             rate: req.body.rate,
@@ -21,9 +23,9 @@ router.post('/reservas/crear', async(req, res) =>{
             reservation_status: req.body.reservation_status
         }
         const reserva = new Reserva(reservaData);
-        console.log(reserva);
         await reserva.save();
-        res.status(201).send();
+        console.log(reserva);
+        res.status(201).send(reserva);
     }
     catch(error){
         console.log(error)

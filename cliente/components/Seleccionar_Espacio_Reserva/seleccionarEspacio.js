@@ -1,5 +1,5 @@
 //FUNCION QUE RETORNA UN VALOR RANDOM ENTRE 1 Y 0
-function getSpotStatus() {
+/*function getSpotStatus() {
   return Math.round(Math.random(1, 0));
 }
 // FUNCION QUE RECORRE CADA FILA DE LA TABLA PARA ASIGNAR UN COLOR DE MANERA RANDOM
@@ -28,7 +28,7 @@ function displayGreenSpot(element) {
     "../../assets/img/green-car.png";
 }
 
-changeColorBox();
+changeColorBox();*/
 
 async function createReservation() {
   const data = {
@@ -43,13 +43,19 @@ async function createReservation() {
   };
 
   try {
+    console.log(data);
     const resp = await fetch("/reservas/crear", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     });
+    const reserva = await resp.json();
+    if(resp.status == 201){
+      localStorage.setItem("reserva", reserva);
+      window.location.href = "../ver_reserva/ver_reserva.html"
+    }
 
-    console.log(resp);
+    //console.log(resp);
   } catch (error) {
     console.log(error);
   }
@@ -59,7 +65,12 @@ function generateHoursList() {
   const timeList = new Array();
   timeList[0] = "00:00";
   for (var i = 1; i < 24; i++) {
-    timeList.push(`${i}:00`);
+    if(i < 10){
+      timeList.push(`0${i}:00`);
+    }else{
+      timeList.push(`${i}:00`);
+    }
+
   }
   const timeArray = Array.from(timeList);
   timeArray.forEach((element) => {
@@ -72,12 +83,4 @@ function generateHoursList() {
 
 generateHoursList();
 
-function randomStr(m) {
-  var m = m || 9;
-  (s = ""),
-    (r = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
-  for (var i = 0; i < m; i++) {
-    s += r.charAt(Math.floor(Math.random() * r.length));
-  }
-  return s;
-}
+

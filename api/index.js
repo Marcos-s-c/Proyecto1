@@ -37,6 +37,7 @@ const cookieParser = require("cookie-parser");
 const nodeCron = require("node-cron");
 const authentication = require("./middleware/authentication");
 var listar_tarifas = require("./servicios/listar_tarifas");
+const { Console } = require("console");
 const public_dir = express.static(path.join(__dirname, "../cliente"));
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
@@ -92,8 +93,14 @@ app.listen(4040, function () {
   console.log("Servidor corriendo en el puerto:4040");
 });
 
-/*nodeCron.schedule('* * * * *', async () => {
-  console.log('running a task every minute');
-  const resp = await fetch('http://localhost:4040/reservas/listar')
-  const reservas = await resp.json();
-});*/
+
+// nodeCron.schedule('* * * * *', async () => {
+//   const today = new Date()
+//   console.log('running a task every minute');
+//   const resp = await fetch('http://localhost:4040/reservas/listar')
+//   const reservas = await resp.json();
+//   for(key in reservas){
+//     console.log(reservas[key].date);
+//     console.log(date.format(today, 'DD/MM/YYYY hh:mm:ss'));
+//   }
+// });

@@ -12,10 +12,6 @@ const reservation_schema  = mongoose.Schema({
         type: Date,
         required: true,
     },
-    time: {
-        type: Date,
-        required: true
-    },
     spot_number: {
         type: Number,
         required: true

@@ -6,7 +6,6 @@ async function sendEmail(user, subj, url_html) {
     subject: subj,
     name: user.name,
     password: user.password,
-    html: url_html,
     url: url_html,
   };
   try {

@@ -12,15 +12,15 @@ function getUserValues() {
 }
 
 function setParkingValues() {
-  (data.state = "Pendiente"),
-    (data.parkingName = document.getElementById("parking-name").value),
-    (data.provincia = document.getElementById("provincias").value),
-    (data.canton = document.getElementById("cantones").value),
-    (data.distrito = document.getElementById("distritos").value),
-    (data.address = document.getElementById("full-address").value),
-    (data.shoppingCent = document.getElementById("mall-name").value),
-    (data.latitud = document.getElementById("latitud").value),
-    (data.longitud = document.getElementById("longitud").value);
+    data.state = "Pendiente"
+    data.parkingName = document.getElementById("parking-name").value,
+    data.provincia = document.getElementById("provincias").options[document.getElementById("provincias").value].text ,
+    data.canton = document.getElementById("cantones").options[document.getElementById("cantones").value].text ,
+    data.distrito = document.getElementById("distritos").value,
+    data.address = document.getElementById("full-address").value,
+    data.shoppingCent = document.getElementById("mall-name").value,
+    data.latitud = document.getElementById("latitud").value,
+    data.longitud = document.getElementById("longitud").value
 }
 
 // remueve el form de parqueo
@@ -36,10 +36,11 @@ function displayUserForm() {
 // remueve el form de usuario
 function displayParkingForm() {
   const parkingForm =
-    '<div class="second form" id="parking-form"><h3>Solicitud de registro</h3><input type="text" id="parking-name" class="form-input" placeholder="Nombre del parqueo"><div class="address-box"><select id="provincias"><option>Provincia</option></select><select id="cantones"><option>Cantón</option></select><select id="distritos"><option>Distrito</option></select></div><input type="text" id="full-address" class="form-input" placeholder="Dirección exacta"><div class="mall-box"><input type="text" id="mall-name" class="form-input" placeholder="Centro comercial"><p>*Opcional</p></div><div class="coordenadas-box"><p>Coordenadas</p><input type="Number" placeholder="Latitud" id="latitud" class="coordenada"><input type="Number" placeholder="Longitud" id="longitud" class="coordenada"></div><button type="button" id="next-button" onclick="displayUserForm()">Siguiente</button><div/>';
+    '<div class="second form" id="parking-form"><h3>Solicitud de registro</h3><input type="text" id="parking-name" class="form-input" placeholder="Nombre del parqueo"><div class="address-box"><select id="provincias"><option>Provincia</option></select><select id="cantones"><option>Cantón</option></select><select id="distritos"><option>Distrito</option></select></div><input type="text" id="full-address" class="form-input" placeholder="Dirección exacta"><div class="mall-box"><input type="text" id="mall-name" class="form-input" placeholder="Centro comercial"><p>*Opcional</p></div><div class="coordenadas-box"><p>Coordenadas</p><input placeholder="Latitud" id="latitud" class="coordenada"><input placeholder="Longitud" id="longitud" class="coordenada"></div><button type="button" id="next-button" onclick="displayUserForm()">Siguiente</button><div/>';
   formContainer.removeChild(document.getElementById("user-form"));
   formContainer.insertAdjacentHTML("afterbegin", parkingForm);
 }
+
 
 async function saveRequest() {
   getUserValues();
@@ -53,7 +54,14 @@ async function saveRequest() {
     });
     if(response.status == 201){
       var solicitud = await response.json();
-      notifyAdmin(solicitud, "Solicitud de registro de parqueo", '../../cliente/assets/plantillas-correos/solicitud_parqueo.html');
+      await notifyAdmin(solicitud, "Solicitud de registro de parqueo", '../../cliente/assets/plantillas-correos/solicitud_parqueo.html');
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "La solicitud ha sido enviada",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       window.location.href="/";
     }
   
@@ -63,30 +71,6 @@ async function saveRequest() {
   }
 
 };
-
-
-
-
-
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "La solicitud ha sido enviada",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-
-    notifyAdmin(
-      solicitud,
-      "Solicitud de registro de parqueo",
-      "../../cliente/assets/plantillas-correos/solicitud_parqueo.html"
-    );
-
-    displayParkingForm();
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 /*function clearInputFields() {
   document.getElementById('first-form').reset();
