@@ -49,11 +49,12 @@ async function createReservation() {
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     });
+    console.log(resp);
     const reserva = await resp.json();
-    if(resp.status == 201){
-      localStorage.setItem("reserva", reserva);
-      window.location.href = "../ver_reserva/ver_reserva.html"
-    }
+    console.log(reserva)
+    localStorage.setItem("reserva", reserva);
+      //window.location.href = "../ver_reserva/ver_reserva.html"
+    
 
     //console.log(resp);
   } catch (error) {

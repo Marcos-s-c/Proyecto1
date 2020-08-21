@@ -197,3 +197,6 @@ body {
     margin: 5% 3%;
 }
 
+.hide{
+    display: none;
+}

@@ -25,7 +25,7 @@ router.post('/reservas/crear', async(req, res) =>{
         const reserva = new Reserva(reservaData);
         await reserva.save();
         console.log(reserva);
-        res.status(201).send(reserva);
+        res.send(reserva);
     }
     catch(error){
         console.log(error)

@@ -26,6 +26,7 @@ const traerParqueos = async () => {
     },
   };
   try {
+    hideSearchForm();
     let response = await fetch("/parqueos/buscar/cliente", request)
     parqueos = await response.json()
     arrayParqueos = parqueos.parqueos
@@ -34,6 +35,8 @@ const traerParqueos = async () => {
     arrayParqueos.forEach(parqueo => {
       const latitud = parqueo.latitud
       const longitud = parqueo.longitud
+      console.log(parqueo.nombre);
+      displayParkings(parqueo.nombre);
 
       if (latitud && longitud) {
         markers.push(new mapboxgl.Marker()
@@ -77,4 +80,10 @@ const geocode = async (address) => {
   } catch (e) {
     console.log("Error al utilizar el servicio de GEOCODE")
   }
+}
+
+
+
+function hideSearchForm(){
+  document.getElementById('search-form').classList.add('hide');
 }
