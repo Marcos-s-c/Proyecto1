@@ -52,7 +52,7 @@ async function saveRequest() {
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     });
-    if(response.status == 201){
+    if (response.status == 201) {
       var solicitud = await response.json();
       await notifyAdmin(solicitud, "Solicitud de registro de parqueo", '../../cliente/assets/plantillas-correos/solicitud_parqueo.html');
       Swal.fire({

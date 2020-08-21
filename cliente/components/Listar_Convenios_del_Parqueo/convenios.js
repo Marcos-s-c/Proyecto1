@@ -147,7 +147,7 @@ function cargarDatos() {
           tableData1.innerHTML = json[i].nombreConvenio;
   
           var tableData2 = document.createElement("td");
-          tableData2.innerHTML = json[i].porcentajeConvenio;
+          tableData2.innerHTML = json[i].porcentajeConvenio + "%";
   
           var tableData3 = document.createElement("td");
           tableData3.innerHTML =
