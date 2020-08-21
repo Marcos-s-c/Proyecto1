@@ -44,15 +44,19 @@ function displayParkingForm() {
 
 async function saveRequest() {
   getUserValues();
-
+  console.log(data);
   try{
     var response = await fetch('/solicitud_parqueo/guardar', {
       method: "POST",
       body: JSON.stringify(data),
       headers: {"Content-Type": "application/json"}
     });
-    var solicitud = await response.json();
-    notifyAdmin(solicitud, "Solicitud de registro de parqueo", '../../cliente/assets/plantillas-correos/solicitud_parqueo.html');
+    if(response.status == 201){
+      var solicitud = await response.json();
+      notifyAdmin(solicitud, "Solicitud de registro de parqueo", '../../cliente/assets/plantillas-correos/solicitud_parqueo.html');
+      window.location.href="/";
+    }
+  
   }
   catch(error){
     console.log(error);
