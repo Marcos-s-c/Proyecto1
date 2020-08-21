@@ -143,7 +143,10 @@ window.onload = function () {
 };
 
 function loadData() {
-  fetch("http://localhost:4040/tarifas/listar", {
+  var token = localStorage.getItem("token");
+  var email = parseJwt(token).email;
+
+  fetch(`/tarifas/listar?email=${email}`, {
     method: "GET",
   })
     .then(function (response) {
@@ -227,106 +230,17 @@ function saveUpdatesForRate(vehicleType) {
   hideSaveIcon(rateRow);
 }
 
-// slider
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
 
-tabla_empleados = document.getElementById("tabla_empleados");
-estadoUsuario = document.getElementById("estadoUsuario");
-
-const ListarUsuarios = () => {
-  fetch("/personas/empresa", {
-    method: "POST",
-    body: JSON.stringify({
-      empresa: "Toyota",
-    }),
-    headers: {
-      "content-type": "application/json",
-    },
-  })
-    .then(function (data) {
-      return data.json();
-    })
-    .then(function (usuarios) {
-      for (const usuario of usuarios) {
-        const { name, userID, email, estado } = usuario;
-        console.log(usuario);
-        if (usuario.estado == "activo") {
-          tabla_empleados.innerHTML += `
-                    <tr id="${userID}">
-                    <td id=""><input disabled type="text" id="name" name="fname" value="${name}"></td>
-                    <td id=""><input disabled type="text" id="userID" name="fname" value="${userID}"></td>
-                    <td id=""><input disabled type="text" id="email" name="fname" value="${email}"></td>
-                    <td>
-                      <label class="switch">
-                        <input type="checkbox" checked id="estadoUsuario" onclick="estado(${userID})"/>
-                        <span class="slider round"></span>
-                      </label>
-                    </td>
-                    <td>
-                      <span id="edit-employee" ">
-                        <i id="modify-employees" onClick=editEmployees(${userID}) class="far fa-edit"></i
-                      ></span>
-                      <span id="save-employee" style= "display:none" ">
-                      <i id="modify-employees" onClick=saveUpdatesForEmployee(${userID}) class="far fa-save" ></i
-                    ></span>
-                      <span onclick="eliminarEmpleado(${userID})"
-                        ><i class="far fa-trash-alt desasociar"></i
-                      ></span>
-                    </td>
-                    </tr>
-
-                    `;
-
-          console.log(estadoUsuario);
-        } else {
-          tabla_empleados.innerHTML += `
-                    <tr id="${userID}">
-                    <td id=""><input disabled type="text" id="name" name="fname" value="${name}"></td>
-                    <td id=""><input disabled type="text" id="userID" name="fname" value="${userID}"></td>
-                    <td id=""><input disabled type="text" id="email" name="fname" value="${email}"></td>
-                    <td>
-                      <label class="switch">
-                        <input type="checkbox" unchecked id="estadoUsuario" onclick="estado(${userID})"/>
-                        <span class="slider round"></span>
-                      </label>
-                    </td>
-                    <td>
-                      <span id="edit-employee" ">
-                        <i id="modify-employees" onClick=editEmployees(${userID}) class="far fa-edit"></i
-                      ></span>
-                      <span id="save-employee" style= "display:none" ">
-                      <i id="modify-employees" onClick=saveUpdatesForEmployee(${userID}) class="far fa-save" ></i
-                    ></span>
-                      <span onclick="eliminarEmpleado(${userID})"
-                        ><i class="far fa-trash-alt desasociar"></i
-                      ></span>
-                    </td>
-                    </tr>
-
-                    `;
-        }
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-};
-
-ListarUsuarios();
-
-const modify_Employees_btn = document.getElementById("modify-employees");
-
-async function editarEmpleado(datos) {
-  try {
-    const response = await fetch("/asociar/" + cedula, {
-      method: "PUT",
-      body: JSON.stringify(datos),
-      headers: {
-        "content-type": "application/json",
-      },
-    });
-
-    console.log("success: " + response);
-  } catch (e) {
-    console.log(e);
-  }
+  return JSON.parse(jsonPayload);
 }
